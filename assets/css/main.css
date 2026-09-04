@@ -1,11 +1,12 @@
-/* PALETA OFICIAL INSA */
+/* PALETA OFICIAL ALARMASINSA.COM */
 :root {
-    --color-primary: #002B49;      /* Azul Escuro INSA */
-    --color-accent: #D9232D;       /* Vermelho INSA */
-    --color-accent-hover: #b81922;
-    --color-bg-light: #F4F6F8;
-    --color-text: #1A1A1A;
-    --color-white: #FFFFFF;
+    --color-primary: #121212;        /* Preto / Grafite Corporativo */
+    --color-secondary: #1A1A1A;      /* Grafite Secundário */
+    --color-accent: #FFC107;         /* Amarelo de Destaque / CTA */
+    --color-accent-hover: #e0a800;   /* Amarelo Hover */
+    --color-bg-light: #F8F9FA;       /* Cinza Claro Neutro */
+    --color-text: #212529;           /* Texto Principal */
+    --color-white: #FFFFFF;          /* Branco */
 }
 
 * {
@@ -40,7 +41,7 @@ body {
 
 .btn-primary {
     background-color: var(--color-accent);
-    color: var(--color-white);
+    color: var(--color-primary);
     border: none;
 }
 
@@ -54,7 +55,7 @@ body {
 }
 
 .btn-phone {
-    color: var(--color-primary);
+    color: var(--color-white);
 }
 
 .btn-large {
@@ -68,8 +69,7 @@ body {
 
 /* NAVBAR */
 .navbar {
-    background: var(--color-white);
-    border-bottom: 3px solid var(--color-primary);
+    background: var(--color-primary);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -87,7 +87,7 @@ body {
 }
 
 .logo h2 {
-    color: var(--color-primary);
+    color: var(--color-white);
     font-size: 1.8rem;
     font-weight: 900;
     letter-spacing: 1px;
@@ -100,8 +100,8 @@ body {
 .nav-menu a {
     margin: 0 15px;
     text-decoration: none;
-    color: var(--color-primary);
-    font-weight: 600;
+    color: var(--color-white);
+    font-weight: 500;
 }
 
 .nav-menu a:hover {
@@ -110,7 +110,7 @@ body {
 
 /* HERO BANNER */
 .hero {
-    background: linear-gradient(rgba(0, 43, 73, 0.9), rgba(0, 43, 73, 0.9)), url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1350&q=80');
+    background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
     color: var(--color-white);
