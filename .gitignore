@@ -1,0 +1,11 @@
+# Logs e arquivos de sistema
+*.log
+.DS_Store
+Thumbs.db
+
+# Credenciais e ambientes
+.env
+*.pem
+
+# VS Code / Editores
+.vscode/
