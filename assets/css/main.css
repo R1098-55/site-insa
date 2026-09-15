@@ -118,6 +118,24 @@ body {
     color: var(--color-accent);
 }
 
+
+/* FUNDO EM ALTA RESOLUÇÃO COM OVERLAY ESCURO */
+.hero-section {
+    /* Imagem de fundo + Degradê escuro para dar contraste aos textos */
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('../img/hero-bg.jpg') no-repeat center center;
+    
+    /* Garante que a foto cubra toda a área sem distorcer */
+    background-size: cover;
+    
+    /* Mantém a imagem fixa enquanto a página rola (Efeito Parallax opcional) */
+    background-attachment: fixed; 
+    
+    width: 100%;
+    min-height: 100vh;
+}
+
+
 /* HERO BANNER */
 .hero {
     background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1350&q=80');
@@ -249,15 +267,20 @@ body {
 
 .whatsapp-btn {
     background-color: #075e54;
-    color: white;
     border: none;
-    padding: 14px 20px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease; box-shadow: 0.2s ease;
+    padding: 0;
+
+
+    
 }
 
 .whatsapp-btn:hover {

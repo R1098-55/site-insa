@@ -87,13 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
     // ==========================================
     // 4. FEEDBACK DO FORMULÁRIO DE CONTATO
     // ==========================================
