@@ -1,12 +1,12 @@
 /* PALETA OFICIAL ALARMASINSA.COM */
 :root {
-    --color-primary: #121212;        /* Preto / Grafite Corporativo */
-    --color-secondary: #1A1A1A;      /* Grafite Secundário */
-    --color-accent: #FFC107;         /* Amarelo de Destaque / CTA */
-    --color-accent-hover: #e0a800;   /* Amarelo Hover */
+    --color-primary: #141414;        /* Preto / Grafite Corporativo */
+    --color-secondary: #f1ee34;      /* Grafite Secundário */
+    --color-accent: #dfdf30;         /* Amarelo de Destaque / CTA */
+    --color-accent-hover: #f8cd4c;   /* Amarelo Hover */
     --color-bg-light: #F8F9FA;       /* Cinza Claro Neutro */
-    --color-text: #212529;           /* Texto Principal */
-    --color-white: #FFFFFF;          /* Branco */
+    --color-text: #000000;           /* Texto Principal */
+    --color-white: #f1e20b;          /* Branco */
 }
 
 
@@ -119,32 +119,27 @@ body {
 }
 
 
-/* FUNDO EM ALTA RESOLUÇÃO COM OVERLAY ESCURO */
-.hero-section {
-    /* Imagem de fundo + Degradê escuro para dar contraste aos textos */
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
-                url('../img/hero-bg.jpg') no-repeat center center;
-    
-    /* Garante que a foto cubra toda a área sem distorcer */
-    background-size: cover;
-    
-    /* Mantém a imagem fixa enquanto a página rola (Efeito Parallax opcional) */
-    background-attachment: fixed; 
-    
+
+
+
+/* ==========================================
+   HERO SECTION (BANNER PRINCIPAL)
+   ========================================== */
+.hero {
+    position: relative;
     width: 100%;
     min-height: 100vh;
-}
-
-
-/* HERO BANNER */
-.hero {
-    background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1350&q=80');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* ADICIONE OU ATUALIZE ESTAS LINHAS DO BACKGROUND: */
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('../img/hero-bg.jpg') no-repeat center center;
     background-size: cover;
-    background-position: center;
-    color: var(--color-white);
-    padding: 110px 0;
-    text-align: center;
+    background-attachment: fixed;
 }
+
 
 .hero h1 {
     font-size: 2.8rem;
