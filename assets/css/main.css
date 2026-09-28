@@ -1,25 +1,18 @@
-/* PALETA OFICIAL ALARMASINSA.COM */
+/* ==========================================
+   PALETA OFICIAL E VARIÁVEIS ALARMASINSA.COM
+   ========================================== */
 :root {
-    --color-primary: #141414;        /* Preto / Grafite Corporativo */
-    --color-secondary: #f1ee34;      /* Grafite Secundário */
+    --color-primary: #121201;        /* Preto / Grafite Corporativo */
+    --color-secondary: #6A6A11;      /* Grafite Secundário */
     --color-accent: #dfdf30;         /* Amarelo de Destaque / CTA */
-    --color-accent-hover: #f8cd4c;   /* Amarelo Hover */
+    --color-accent-hover: #dfdf30;   /* Amarelo Hover */
     --color-bg-light: #F8F9FA;       /* Cinza Claro Neutro */
-    --color-text: #000000;           /* Texto Principal */
-    --color-white: #f1e20b;          /* Branco */
-}
+    --color-text: #1A1A1A;           /* Texto Principal */
+    --color-white: #FFFFFF;          /* Branco Puro */
+    --color-error: #e74c3c;          /* Vermelho de Erro */
 
-
-.flag-icon {
-    width: 20px;
-    height: 14px;
-    object-fit: cover;
-    margin-right: 8px;
-    vertical-align: middle;
-    border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-}
-* {
+    
+}/* RESET E BASE */* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -38,7 +31,19 @@ body {
     padding: 0 20px;
 }
 
-/* BOTÕES */
+.flag-icon {
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ==========================================
+   BOTÕES
+   ========================================== */
 .btn {
     display: inline-block;
     padding: 12px 24px;
@@ -47,6 +52,7 @@ body {
     font-weight: 700;
     transition: all 0.3s ease;
     cursor: pointer;
+    text-align: center;
 }
 
 .btn-primary {
@@ -62,6 +68,11 @@ body {
 .btn-secondary {
     background-color: var(--color-primary);
     color: var(--color-white);
+    border: 1px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secondary);
 }
 
 .btn-phone {
@@ -77,7 +88,9 @@ body {
     width: 100%;
 }
 
-/* NAVBAR */
+/* ==========================================
+   NAVBAR & SELETOR DE IDIOMAS
+   ========================================== */
 .navbar {
     background: var(--color-primary);
     position: sticky;
@@ -107,6 +120,11 @@ body {
     color: var(--color-accent);
 }
 
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
 .nav-menu a {
     margin: 0 15px;
     text-decoration: none;
@@ -118,9 +136,22 @@ body {
     color: var(--color-accent);
 }
 
+/* Dropdown de Idiomas */
+.lang-selector {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    border: 1px solid #444;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    margin-left: 15px;
+}
 
-
-
+.lang-selector:focus {
+    border-color: var(--color-accent);
+}
 
 /* ==========================================
    HERO SECTION (BANNER PRINCIPAL)
@@ -132,14 +163,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    /* ADICIONE OU ATUALIZE ESTAS LINHAS DO BACKGROUND: */
+    text-align: center;
+    color: var(--color-white);
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
                 url('../img/hero-bg.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
 }
-
 
 .hero h1 {
     font-size: 2.8rem;
@@ -157,7 +187,9 @@ body {
     margin: 0 10px;
 }
 
-/* SEÇÕES */
+/* ==========================================
+   SEÇÕES, GRIDS E CARDS
+   ========================================== */
 .section {
     padding: 80px 0;
 }
@@ -173,7 +205,6 @@ body {
     color: var(--color-primary);
 }
 
-/* GRIDS E CARDS */
 .grid {
     display: grid;
     gap: 30px;
@@ -219,7 +250,104 @@ body {
     margin-bottom: 15px;
 }
 
-/* FORMULÁRIO DE CONTACTO */
+/* ==========================================
+   ÁREA BLOQUEADA DO SIMULADOR
+   ========================================== */
+.sim-lock-card {
+    background: var(--color-white);
+    border: 2px dashed var(--color-accent);
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.sim-lock-card p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: var(--color-text);
+}
+
+/* ==========================================
+   MODAL DE PRÉ-CADASTRO
+   ========================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: var(--color-white);
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 480px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-top: 5px solid var(--color-accent);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.error-text {
+    display: none;
+    color: var(--color-error);
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+/* ==========================================
+   FORMULÁRIO DE CONTACTO
+   ========================================== */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -237,14 +365,19 @@ body {
     border: 1px solid #e1e1e1;
 }
 
-.contact-form input, .contact-form select {
+.contact-form input, 
+.contact-form select,
+.contact-form textarea {
     padding: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
+    width: 100%;
 }
 
-/* FOOTER */
+/* ==========================================
+   FOOTER
+   ========================================== */
 .footer {
     background: var(--color-primary);
     color: var(--color-white);
@@ -252,7 +385,9 @@ body {
     padding: 30px 0;
 }
 
-/* WIDGET WHATSAPP MULTILÍNGUE */
+/* ==========================================
+   WIDGET WHATSAPP MULTILÍNGUE
+   ========================================== */
 .whatsapp-widget {
     position: fixed;
     bottom: 25px;
@@ -263,35 +398,32 @@ body {
 .whatsapp-btn {
     background-color: #075e54;
     border: none;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     cursor: pointer;
-    transition: transform 0.2s ease; box-shadow: 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     padding: 0;
-
-
-    
 }
 
 .whatsapp-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .whatsapp-menu {
     display: none;
     position: absolute;
-    bottom: 60px;
+    bottom: 65px;
     right: 0;
     background: white;
     border-radius: 8px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
     padding: 15px;
-    width: 200px;
+    width: 220px;
     flex-direction: column;
     gap: 10px;
 }
@@ -307,29 +439,32 @@ body {
     padding: 8px;
     border-radius: 4px;
     transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
 }
 
 .whatsapp-menu a:hover {
     background: var(--color-bg-light);
 }
 
-
-/* BANNER DE COOKIES (RGPD) - POSICIONAMENTO FIXO */
+/* ==========================================
+   BANNER DE COOKIES (RGPD)
+   ========================================== */
 .cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: var(--color-primary); /* Preto / Grafite Corporativo */
+    background-color: var(--color-primary);
     color: var(--color-white);
     padding: 15px 20px;
-    z-index: 9999; /* Garante que fique acima de todos os elementos */
+    z-index: 9999;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    border-top: 2px solid var(--color-accent); /* Linha amarela de destaque */
+    border-top: 2px solid var(--color-accent);
 }
 
 .cookie-banner p {
@@ -356,25 +491,9 @@ body {
     font-size: 0.875rem;
 }
 
-/* RESPONSIVIDADE DO BANNER DE COOKIES */
-@media (max-width: 768px) {
-    .cookie-banner {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px;
-    }
-    
-    .cookie-buttons {
-        width: 100%;
-    }
-    
-    .cookie-buttons .btn {
-        width: 100%;
-    }
-}
-
-
-
+/* ==========================================
+   RESPONSIVIDADE E MEDIA QUERIES
+   ========================================== */
 @media (max-width: 992px) {
     .contact-wrapper {
         grid-template-columns: 1fr;
@@ -389,7 +508,6 @@ body {
     }
 
     .nav-menu {
-        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
@@ -399,8 +517,14 @@ body {
         margin: 0 5px;
     }
 
+    .lang-selector {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
     .hero {
         padding: 60px 0;
+        background-attachment: scroll; /* Desativa efeito fixed no mobile para performance */
     }
 
     .hero h1 {
@@ -419,6 +543,20 @@ body {
 
     .hero-buttons .btn {
         margin: 0;
+        width: 100%;
+    }
+
+    .cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .cookie-buttons {
+        width: 100%;
+    }
+    
+    .cookie-buttons .btn {
         width: 100%;
     }
 }

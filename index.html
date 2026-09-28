@@ -1,173 +1,307 @@
-<!DOCTYPE html>
-<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INSA Alarmas y Sistemas de Seguridad | Instalación y Protección 24/7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>INSA Alarmes i Sistemes de Seguretat | Protecció 24/7</title>
     
-    <!-- META TAGS DE SEO -->
-    <meta name="description" content="INSA Alarmas: Especialistas en instalación de sistemas de seguridad, alarmas anti-intrusión, videovigilancia CCTV y control de accesos para hogares y empresas.">
-    <meta name="keywords" content="alarmas insa, sistemas de seguridad, alarmas para hogar, camaras de vigilancia, cctv, control de accesos, instalacion de alarmas">
+    <!-- META TAGS SEO -->
+    <meta name="description" content="INSA Alarmes: Especialistes en instal·lació de sistemes de seguretat, alarmes anti-intrusió, videovigilància CCTV i control d'accessos.">
+    <meta name="keywords" content="alarmes insa, sistemes de seguretat, alarmes per a llar, càmeres de vigilància, cctv, control d'accessos">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://alarmasinsa.com/">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-
-
-    <!-- OPEN GRAPH (MARKETING & SOCIAL MEDIA) -->
-    <meta property="og:title" content="INSA Alarmas ">
-    <meta property="og:description" content="Protección integral 24/7 para tu hogar y negocio. Solicita tu estudio de seguridad gratuito.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alarmasinsa.com/">
-    <meta property="og:image" content="assets/img/og-banner.jpg">
-
-    <!-- CSS PRINCIPAL -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- REFERÊNCIA DO SEU CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
 
+<!-- NAVBAR FIXED GLASSMORPHISM CON LLAMADA RÁPIDA, WHATSAPP Y SIMULADOR -->
+<header class="navbar">
+    <div class="container navbar-content">
+        <div class="logo">
+            <a href="#inicio">
+                <h2>ALARMAS <span>INSA</span></h2>
+            </a>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="#inicio" data-i18n="nav_start">Inicio</a>
+            <a href="#soluciones" data-i18n="nav_solutions">Soluciones</a>
+            <a href="#servicios" data-i18n="nav_services">Servicios</a>
+            <a href="#simulador" data-i18n="nav_simulator">Simulador</a>
+            <a href="#contacto" data-i18n="nav_contact">Contacto</a>
+        </nav>
 
+        <div class="nav-actions">
+            <!-- Botón Llamar Ahora (Teléfono Directo) -->
+            <a href="tel:+34933004024" class="btn btn-call btn-sm" title="Llamar ahora">
+                📞 <span data-i18n="btn_call">Llama Ahora</span>
+            </a>
 
-    <!-- CABEÇALHO / HEADER -->
-    <header class="navbar">
-        <div class="container navbar-content">
-            <div class="logo">
-                <a href="#inicio">
-                    <h2>ALARMAS <span>INSA</span></h2>
-                </a>
+            <!-- Botón WhatsApp Directo -->
+            <button class="btn btn-whatsapp-header btn-sm" onclick="openDirectWhatsapp()" title="Chat de WhatsApp">
+                💬 WhatsApp
+            </button>
 
+            <!-- Botón presupuesto / Desbloquear Simulador -->
+            <button class="btn btn-primary btn-sm btn-open-sim" data-i18n="btn_quote">Solicitar Presupuesto</button>
+
+            <!-- Selector de Idioma -->
+            <select id="langSelect" class="lang-selector">
+                <option value="ca">CAT 🇪🇸</option>
+                <option value="es" selected>ESP 🇪🇸</option>
+                <option value="en">ENG 🇬🇧</option>
+            </select>
+        </div>
+    </div>
+</header>
+
+<!-- HERO BANNER -->
+<section id="inicio" class="hero">
+    <div class="container">
+        <h1 data-i18n="hero_title">Sistemas de Seguridad y Alarmas de <span>Última Generación</span></h1>
+        <p data-i18n="hero_desc">Protección inteligente 24/7 para tu hogar, negocio o gran empresa. Respuesta inmediata y tecnología avanzada anti-inhibición.</p>
+        <div class="hero-buttons">
+            <button class="btn btn-primary btn-large btn-open-sim" data-i18n="btn_free_study">Estudio de Seguridad Gratuito</button>
+            <a href="tel:+34933004024" class="btn btn-secondary btn-large">📞 <span data-i18n="btn_call_hero">Llamar a un Técnico</span></a>
+            <a href="#soluciones" class="btn btn-outline-hero btn-large" data-i18n="btn_view_solutions">Ver Soluciones</a>
+        </div>
+    </div>
+</section>
+
+<!-- SEÇÃO CONTADORES & "CÓMO FUNCIONA" -->
+<section class="section">
+    <div class="container">
+        
+        <!-- Contadores Numéricos com Animação Scroll JS -->
+        <div class="stats-grid" id="stats-section">
+            <div class="stat-item">
+                <div class="number"><span class="counter" data-target="40">0</span>+</div>
+                <div class="label" data-i18n="stat_1">AÑOS DE EXPERIENCIA</div>
             </div>
-            <nav class="nav-menu">
-                <a href="#inicio">Inicio</a>
-                <a href="#soluciones">Soluciones</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-            <div class="nav-cta">
-                <a href="tel:+34933004024" class="btn btn-phone">📞 93 300 40 24</a>
-                <a href="#contacto" class="btn btn-primary">Solicitar Presupuesto</a>
+            <div class="stat-item">
+                <div class="number"><span class="counter" data-target="800">0</span>+</div>
+                <div class="label" data-i18n="stat_2">CLIENTES SATISFECHOS</div>
+            </div>
+            <div class="stat-item">
+                <div class="number"><span class="counter" data-target="2000">0</span>+</div>
+                <div class="label" data-i18n="stat_3">INSTALACIONES</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">24/7</div>
+                <div class="label" data-i18n="stat_4">HORAS DE SOPORTE</div>
             </div>
         </div>
-    </header>
 
-    <!-- HERO BANNER -->
-    <section id="inicio" class="hero">
-        <div class="container hero-content">
-            <h1>Sistemas de Seguridad y Alarmas de Última Generación</h1>
-            <p>Protección inteligente 24/7 para tu hogar, negocio o gran empresa. Respuesta inmediata y tecnología avanzada anti-inhibición.</p>
-            <div class="hero-buttons">
-                <a href="#contacto" class="btn btn-primary btn-large">Estudio de Seguridad Gratuito</a>
-                <a href="#servicios" class="btn btn-secondary btn-large">Ver Soluciones</a>
+        <!-- Proceso Paso a Paso -->
+        <div class="section-header">
+            <div class="section-tag" data-i18n="tag_process">PROCESO</div>
+            <h2 class="section-title" data-i18n="title_process">CÓMO FUNCIONA</h2>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-card">
+                <div class="process-number">01</div>
+                <h4 data-i18n="proc_1_title">Consulta Gratuita</h4>
+                <p data-i18n="proc_1_desc">Contáctenos por WhatsApp. Evaluamos sus necesidades sin ningún costo.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-number">02</div>
+                <h4 data-i18n="proc_2_title">Propuesta Personalizada</h4>
+                <p data-i18n="proc_2_desc">Elaboramos un presupuesto con el equipo exacto para su propiedad.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-number">03</div>
+                <h4 data-i18n="proc_3_title">Instalación Profesional</h4>
+                <p data-i18n="proc_3_desc">Nuestro equipo instala y configura todo con garantía incluida.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-number">04</div>
+                <h4 data-i18n="proc_4_title">Monitoreo Continuo</h4>
+                <p data-i18n="proc_4_desc">Reciba alertas en tiempo real y acceda a sus cámaras desde cualquier dispositivo.</p>
             </div>
         </div>
-    </section>
 
-    <!-- SOLUCIONES -->
-    <section id="soluciones" class="section">
-        <div class="container">
-            <h2 class="section-title">Protección a Medida para Cada Inmueble</h2>
-            <div class="grid grid-3">
-                <article class="card">
-                    <h3>Alarmas para Hogar</h3>
-                    <p>Sistemas anti-okupa, detección de intrusión instantánea y verificación por vídeo desde tu smartphone.</p>
-                </article>
-                <article class="card">
-                    <h3>Seguridad para Negocios</h3>
-                    <p>Protege tu local comercial con videovigilancia HD, control de accesos y conexión directa a Central Receptora.</p>
-                </article>
-                <article class="card">
-                    <h3>Industria y Empresas</h3>
-                    <p>Proyectos de ingeniería de seguridad a medida, analítica de vídeo con IA y protección contra incendios.</p>
-                </article>
-            </div>
+    </div>
+</section>
+
+<!-- SOLUCIONES POR TIPO DE INMUEBLE -->
+<section id="soluciones" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag" data-i18n="tag_solutions">SOLUCIONES</div>
+            <h2 class="section-title" data-i18n="title_solutions">Protección a Medida para Cada Inmueble</h2>
         </div>
-    </section>
+        
+        <div class="grid grid-3">
+            <article class="card">
+                <h3 data-i18n="sol_1_title">Alarmas para el Hogar</h3>
+                <p data-i18n="sol_1_desc">Sistemas anti-okupa, detección de intrusión instantánea y verificación por vídeo desde tu smartphone.</p>
+            </article>
+            <article class="card">
+                <h3 data-i18n="sol_2_title">Seguridad para Negocios</h3>
+                <p data-i18n="sol_2_desc">Protege tu local comercial con videovigilancia HD, control de accesos y conexión a Central Receptora.</p>
+            </article>
+            <article class="card">
+                <h3 data-i18n="sol_3_title">Industria y Empresas</h3>
+                <p data-i18n="sol_3_desc">Proyectos de ingeniería de seguridad a medida, analítica de vídeo con IA y protección contra incendios.</p>
+            </article>
+        </div>
+    </div>
+</section>
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Nuestros Servicios de Seguridad</h2>
-            <div class="grid grid-4">
-                <div class="service-box">
-                    <div class="icon">🚨</div>
-                    <h4>Alarmas Conectadas</h4>
-                    <p>Aviso inmediato ante qualquer incidencia y tecnología anti-sabotaje.</p>
+<!-- SERVICIOS (CARDS CON ICONOS Y BADGES CIAN) -->
+<section id="servicios" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag" data-i18n="tag_services">SOLUCIONES</div>
+            <h2 class="section-title" data-i18n="title_services">NUESTROS SERVICIOS DE SEGURIDAD</h2>
+        </div>
+
+        <div class="grid grid-services">
+            
+            <!-- Card 1 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+                    </div>
+                    <h3 data-i18n="ser_1_title">Cámaras IP 4K POE</h3>
                 </div>
-                <div class="service-box">
-                    <div class="icon">📹</div>
-                    <h4>Videovigilancia CCTV</h4>
-                    <p>Cámaras de alta definición con visión nocturna e inteligencia artificial.</p>
-                </div>
-                <div class="service-box">
-                    <div class="icon">🔑</div>
-                    <h4>Control de Accesos</h4>
-                    <p>Biometría, tarjetas de presencia y apertura remota para empresas.</p>
-                </div>
-                <div class="service-box">
-                    <div class="icon">🔥</div>
-                    <h4>Detección de Incendios</h4>
-                    <p>Sistemas normativos de detección de humos, fuego y gases.</p>
+                <p data-i18n="ser_1_desc">Resolución Ultra HD, visión nocturna infrarroja, acceso remoto desde su smartphone. Resistentes IP67.</p>
+                <div class="tag-group">
+                    <span class="tag">8MP / 4K</span>
+                    <span class="tag">IR 30m</span>
+                    <span class="tag">IP67</span>
+                    <span class="tag">POE</span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- FORMULARIO DE CONTACTO (LEAD CAPTURE) -->
-    <section id="contacto" class="section">
-        <div class="container contact-wrapper">
-            <div class="contact-info">
-                <h2>¿Hablamos de tu seguridad?</h2>
-                <p>Nuestros ingenieros en seguridad realizarán un diagnóstico sin compromiso de tu inmueble.</p>
+            <!-- Card 2 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                    </div>
+                    <h3 data-i18n="ser_2_title">CCTV Analógico</h3>
+                </div>
+                <p data-i18n="ser_2_desc">Sistemas analógicos confiables y rentables para hogares y pequeñas empresas. Grabación continua.</p>
+                <div class="tag-group">
+                    <span class="tag">1080p HD</span>
+                    <span class="tag">DVR incluido</span>
+                    <span class="tag">Escalable</span>
+                </div>
             </div>
-            <form class="contact-form" action="#" method="POST">
-                <input type="text" name="nombre" placeholder="Nombre completo" required>
-                <input type="tel" name="telefono" placeholder="Teléfono de contacto" required>
-                <input type="email" name="email" placeholder="Correo electrónico" required>
-                <select name="tipo_inmueble" required>
-                    <option value="" disabled selected>Selecciona tipo de inmueble</option>
-                    <option value="hogar">Hogar / Chalet / Piso</option>
-                    <option value="negocio">Local Comercial / Oficina</option>
-                    <option value="empresa">Nave Industrial / Gran Empresa</option>
-                </select>
-                <button type="submit" class="btn btn-primary btn-block">Solicitar Información</button>
-            </form>
-        </div>
-    </section>
 
-    <!-- FOOTER -->
+            <!-- Card 3 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                    </div>
+                    <h3 data-i18n="ser_3_title">Sistemas de Alarma</h3>
+                </div>
+                <p data-i18n="ser_3_desc">Sensores de movimiento, contactos en puertas y ventanas, sirenas y comunicación con central.</p>
+                <div class="tag-group">
+                    <span class="tag">Inalámbrico</span>
+                    <span class="tag">Central 24/7</span>
+                    <span class="tag">App móvil</span>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 3C6.95 3 2.69 5.86 1 10c1.69 4.14 5.95 7 11 7s9.31-2.86 11-7c-1.69-4.14-5.95-7-11-7zm0 11.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 5.5 12 5.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5z"/></svg>
+                    </div>
+                    <h3 data-i18n="ser_4_title">Monitoreo Remoto 24/7</h3>
+                </div>
+                <p data-i18n="ser_4_desc">Vea sus cámaras en tiempo real desde cualquier lugar. Alertas instantáneas por WhatsApp.</p>
+                <div class="tag-group">
+                    <span class="tag">Tiempo real</span>
+                    <span class="tag">Alertas push</span>
+                    <span class="tag">Multi-cam</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SIMULADOR BLOQUEADO -->
+<section id="simulador" class="section">
+    <div class="container">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;" data-i18n="title_sim">Simulador de Seguridad y Cálculo de presupuesto</h2>
+        
+        <div id="simLockBox" class="sim-lock-card">
+            <p data-i18n="sim_locked_msg">Para acceder al simulador y calcular tu presupuesto personalizada, realiza un pre-registro rápido.</p>
+            <button class="btn btn-primary btn-open-sim" data-i18n="btn_unlock_sim">Desbloquear Simulador</button>
+        </div>
+
+        <div id="simContent" style="display:none; background: var(--bg-surface); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-light);">
+            <h3 style="color: var(--brand-yellow); margin-bottom: 1rem;">Bienvenido al Simulador INSA</h3>
+            <p style="margin-bottom: 1rem; color: var(--text-secondary);">Selecciona los elementos para calcular tu presupuesto:</p>
+            <div style="margin: 1.5rem 0;">
+                <label>Número de Cámaras CCTV: <span id="camCount" style="color:var(--brand-yellow); font-weight:bold;">2</span></label><br><br>
+                <input type="range" min="1" max="10" value="2" oninput="document.getElementById('camCount').innerText = this.value" style="width: 100%; max-width: 300px;">
+            </div>
+            <button class="btn btn-primary" onclick="sendWhatsappQuote()">Enviar presupuesto por WhatsApp</button>
+        </div>
+    </div>
+</section>
+
+<!-- MODAL DE PRÉ-CADASTRO -->
+<div id="preRegModal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <h3 data-i18n="modal_title">Pre-Registro para presupuesto</h3>
+        <form id="preRegForm">
+            <div class="form-group">
+                <label data-i18n="lbl_name">Nombre y Apellidos *</label>
+                <input type="text" id="regName" placeholder="Ex: Jordi Pujol" required>
+                <span id="nameErr" class="error-text" data-i18n="err_name">Por favor, indica tu nombre y apellidos.</span>
+            </div>
+            <div class="form-group">
+                <label data-i18n="lbl_email">Correo Electrónico *</label>
+                <input type="email" id="regEmail" placeholder="nom@exemple.com" required>
+                <span id="emailErr" class="error-text" data-i18n="err_email">Indica un correo electrónico válido.</span>
+            </div>
+            <div class="form-group">
+                <label data-i18n="lbl_phone">Teléfono de Contacto *</label>
+                <input type="tel" id="regPhone" placeholder="+34 600 000 000" required>
+                <span id="phoneErr" class="error-text" data-i18n="err_phone">Indica un teléfono válido (mínimo 8 dígitos).</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" data-i18n="btn_access_sim">Acceder al Simulador</button>
+        </form>
+    </div>
+</div>
+
+<!-- WIDGET WHATSAPP FLOTANTE -->
+<div class="whatsapp-widget">
+    <button class="whatsapp-btn" id="waToggleBtn" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    </button>
+    <div class="whatsapp-menu" id="waMenu">
+        <a href="https://api.whatsapp.com/send?phone=34933004024&text=Hola,%20vull%20informacio%20sobre%20les%20alarmes%20INSA" target="_blank">Chat Comercial 💬</a>
+        <a href="https://api.whatsapp.com/send?phone=34933004024&text=Hola,%20necessito%20suport%20tecnic" target="_blank">Soporte Técnico 🛠️</a>
+    </div>
+</div>
+
+<!-- BANNER COOKIES RGPD -->
+<div class="cookie-banner" id="cookie-banner">
+    <p>Utilitzem galetes pròpies i de tercers per millorar la teva experiència. <a href="#">Més informació</a>.</p>
+    <div class="cookie-buttons">
+        <button class="btn btn-primary btn-sm" id="accept-cookies">Acceptar</button>
+    </div>
+</div>
+<!-- FOOTER -->
     <footer class="footer">
-        <div class="container footer-content">
-            <p>&copy; 2026 INSA Alarmas. Todos los derechos reservados.</p>
-            <p>&copy; Developer by Ricardo Mendes.</p>
+        <div class="container">
+            <p>&copy; 2026 INSA Alarmes. Tots els drets reservats.</p>
         </div>
     </footer>
 
-  <!-- WIDGET WHATSAPP MULTILÍNGUE (UNIVERSAL MOBILE/PC) -->
-<div class="whatsapp-widget">
-    <button class="whatsapp-btn" id="waToggleBtn" aria-label="Chat de WhatsApp">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="wa-icon">
-    </button>
-    <div class="whatsapp-menu" id="waMenu">
-        <p><strong>Atención en tiempo real:</strong></p>
-        <a href="https://api.whatsapp.com/send?phone=34933004024&text=Hola,%20necesito%20información%20sobre%20las%20alarmas%20INSA" target="_blank" rel="noopener">🇪🇸 Español</a>
-        <a href="https://api.whatsapp.com/send?phone=34933004024&text=Hola,%20necessito%20informació%20sobre%20les%20alarmes%20INSA" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg" alt="Català" class="flag-icon"> Català</a>
-        <a href="https://api.whatsapp.com/send?phone=34933004024&text=Hello,%20I%20would%20like%20information%20about%20INSA%20alarms" target="_blank" rel="noopener">🇬🇧 English</a>
-    </div>
-</div>
-
+    <!-- REFERÊNCIA DO SEU JAVASCRIPT -->
     <script src="assets/js/main.js"></script>
-
-<!-- BANNER DE COOKIES (RGPD) -->
-<div id="cookie-banner" class="cookie-banner">
-    <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios y analizar la navegación. <a href="/privacidad">Más información </a>.</p>
-    <div class="cookie-buttons">
-        <button id="accept-cookies" class="btn btn-primary btn-sm">Aceptar todas</button>
-    </div>
-</div>
-
-    
-
 </body>
 </html>
