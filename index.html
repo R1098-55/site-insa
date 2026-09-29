@@ -1,4 +1,5 @@
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -10,42 +11,62 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://alarmasinsa.com/">
 
-    <!-- REFERÊNCIA DO SEU CSS -->
+    <!-- FONTAWESOME PARA ÍCONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SEU CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+<body>
 
-<!-- NAVBAR FIXED GLASSMORPHISM CON LLAMADA RÁPIDA, WHATSAPP Y SIMULADOR -->
+<!-- NAVBAR CORPORATIVA -->
 <header class="navbar">
     <div class="container navbar-content">
         <div class="logo">
-            <a href="#inicio">
+            <a href="index.html">
                 <h2>ALARMAS <span>INSA</span></h2>
             </a>
         </div>
-        
-        <nav class="nav-menu">
-            <a href="#inicio" data-i18n="nav_start">Inicio</a>
-            <a href="#soluciones" data-i18n="nav_solutions">Soluciones</a>
-            <a href="#servicios" data-i18n="nav_services">Servicios</a>
-            <a href="#simulador" data-i18n="nav_simulator">Simulador</a>
+       <nav class="nav-menu">
+            <a href="#soluciones">Soluciones</a>
+            <div class="dropdown">
+                <a class="dropdown-toggle">Servicios ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="videovigilancia.html">Videovigilancia</a></li>
+                    <li><a href="sistemas-alarma.html">Sistemas de Alarma</a></li>
+                    <li><a href="monitoreo.html">Monitoreo 24/7</a></li>
+                </ul>
+            </div>
+
+            <a href="#simulador">Simulador</a>
+            <div class="dropdown">
+                <a class="dropdown-toggle">Empresa ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <a href="#blog">Blog/FAQ</a>
             <a href="#contacto" data-i18n="nav_contact">Contacto</a>
         </nav>
+        <button class="mobile-toggle" aria-label="Abrir Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+         </button>
+        </div>
 
         <div class="nav-actions">
-            <!-- Botón Llamar Ahora (Teléfono Directo) -->
             <a href="tel:+34933004024" class="btn btn-call btn-sm" title="Llamar ahora">
                 📞 <span data-i18n="btn_call">Llama Ahora</span>
             </a>
 
-            <!-- Botón WhatsApp Directo -->
             <button class="btn btn-whatsapp-header btn-sm" onclick="openDirectWhatsapp()" title="Chat de WhatsApp">
                 💬 WhatsApp
             </button>
 
-            <!-- Botón presupuesto / Desbloquear Simulador -->
             <button class="btn btn-primary btn-sm btn-open-sim" data-i18n="btn_quote">Solicitar Presupuesto</button>
 
-            <!-- Selector de Idioma -->
             <select id="langSelect" class="lang-selector">
                 <option value="ca">CAT 🇪🇸</option>
                 <option value="es" selected>ESP 🇪🇸</option>
@@ -59,7 +80,7 @@
 <section id="inicio" class="hero">
     <div class="container">
         <h1 data-i18n="hero_title">Sistemas de Seguridad y Alarmas de <span>Última Generación</span></h1>
-        <p data-i18n="hero_desc">Protección inteligente 24/7 para tu hogar, negocio o gran empresa. Respuesta inmediata y tecnología avanzada anti-inhibición.</p>
+        <p data-i18n="hero_desc">Protección inteligente 24/7 para tu hogar, negocio o gran empresa en Barcelona. Respuesta inmediata y tecnología avanzada anti-inhibición.</p>
         <div class="hero-buttons">
             <button class="btn btn-primary btn-large btn-open-sim" data-i18n="btn_free_study">Estudio de Seguridad Gratuito</button>
             <a href="tel:+34933004024" class="btn btn-secondary btn-large">📞 <span data-i18n="btn_call_hero">Llamar a un Técnico</span></a>
@@ -68,14 +89,12 @@
     </div>
 </section>
 
-<!-- SEÇÃO CONTADORES & "CÓMO FUNCIONA" -->
+<!-- STATS & PROCESO -->
 <section class="section">
     <div class="container">
-        
-        <!-- Contadores Numéricos com Animação Scroll JS -->
         <div class="stats-grid" id="stats-section">
             <div class="stat-item">
-                <div class="number"><span class="counter" data-target="40">0</span>+</div>
+                <div class="number"><span class="counter" data-target="43">0</span>+</div>
                 <div class="label" data-i18n="stat_1">AÑOS DE EXPERIENCIA</div>
             </div>
             <div class="stat-item">
@@ -92,7 +111,6 @@
             </div>
         </div>
 
-        <!-- Proceso Paso a Paso -->
         <div class="section-header">
             <div class="section-tag" data-i18n="tag_process">PROCESO</div>
             <h2 class="section-title" data-i18n="title_process">CÓMO FUNCIONA</h2>
@@ -120,11 +138,10 @@
                 <p data-i18n="proc_4_desc">Reciba alertas en tiempo real y acceda a sus cámaras desde cualquier dispositivo.</p>
             </div>
         </div>
-
     </div>
 </section>
 
-<!-- SOLUCIONES POR TIPO DE INMUEBLE -->
+<!-- SOLUCIONES -->
 <section id="soluciones" class="section">
     <div class="container">
         <div class="section-header">
@@ -149,18 +166,16 @@
     </div>
 </section>
 
-<!-- SERVICIOS (CARDS CON ICONOS Y BADGES CIAN) -->
+<!-- SERVICIOS -->
 <section id="servicios" class="section">
     <div class="container">
         <div class="section-header">
-            <div class="section-tag" data-i18n="tag_services">SOLUCIONES</div>
+            <div class="section-tag" data-i18n="tag_services">SERVICIOS</div>
             <h2 class="section-title" data-i18n="title_services">NUESTROS SERVICIOS DE SEGURIDAD</h2>
         </div>
 
         <div class="grid grid-services">
-            
-            <!-- Card 1 -->
-            <div class="service-card">
+            <a href="servicios/videovigilancia.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
                 <div class="service-header">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
@@ -174,10 +189,9 @@
                     <span class="tag">IP67</span>
                     <span class="tag">POE</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- Card 2 -->
-            <div class="service-card">
+            <a href="servicios/videovigilancia.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
                 <div class="service-header">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
@@ -190,10 +204,9 @@
                     <span class="tag">DVR incluido</span>
                     <span class="tag">Escalable</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- Card 3 -->
-            <div class="service-card">
+            <a href="servicios/alarmas-hogar.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
                 <div class="service-header">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
@@ -206,10 +219,9 @@
                     <span class="tag">Central 24/7</span>
                     <span class="tag">App móvil</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- Card 4 -->
-            <div class="service-card">
+            <a href="servicios/monitoreo.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
                 <div class="service-header">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24"><path d="M12 3C6.95 3 2.69 5.86 1 10c1.69 4.14 5.95 7 11 7s9.31-2.86 11-7c-1.69-4.14-5.95-7-11-7zm0 11.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 5.5 12 5.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5z"/></svg>
@@ -222,13 +234,12 @@
                     <span class="tag">Alertas push</span>
                     <span class="tag">Multi-cam</span>
                 </div>
-            </div>
-
+            </a>
         </div>
     </div>
 </section>
 
-<!-- SIMULADOR BLOQUEADO -->
+<!-- SIMULADOR -->
 <section id="simulador" class="section">
     <div class="container">
         <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;" data-i18n="title_sim">Simulador y Cálculo de presupuesto</h2>
@@ -250,7 +261,7 @@
     </div>
 </section>
 
-<!-- MODAL DE PRÉ-CADASTRO -->
+<!-- MODAL -->
 <div id="preRegModal" class="modal-overlay">
     <div class="modal-content">
         <button class="modal-close">&times;</button>
@@ -276,7 +287,7 @@
     </div>
 </div>
 
-<!-- WIDGET WHATSAPP FLOTANTE -->
+<!-- WIDGET WHATSAPP -->
 <div class="whatsapp-widget">
     <button class="whatsapp-btn" id="waToggleBtn" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
@@ -287,23 +298,21 @@
     </div>
 </div>
 
-<!-- BANNER COOKIES RGPD -->
+<!-- COOKIES -->
 <div class="cookie-banner" id="cookie-banner">
     <p>Utilitzem galetes pròpies i de tercers per millorar la teva experiència. <a href="#">Més informació</a>.</p>
     <div class="cookie-buttons">
         <button class="btn btn-primary btn-sm" id="accept-cookies">Acceptar</button>
     </div>
 </div>
-<!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 INSA Alarmes. Tots els drets reservats.</p>
-        </div>
-    </footer>
 
-    <!-- REFERÊNCIA DO SEU JAVASCRIPT -->
-    <script src="assets/js/main.js"></script>
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 INSA Alarmes. Tots els drets reservats.</p>
+    </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
-
-https://www.figma.com/make/NdS0dVg4FqcfPsjtzJRpvP/Redesign-website-layout?code-node-id=0-6&p=f&t=OGm3uCmprDD8hLDH-0&fullscreen=1&preview-route=%2F%23servicios

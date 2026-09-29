@@ -1,51 +1,37 @@
 /* ==========================================================================
-   ALARMASINSA.COM — SISTEMA DE ESTILOS HIGH-TECH (2026)
+   ALARMASINSA.COM — IDENTIDADE UNIFICADA (AZUL HIGH-TECH, BRANCO E AMARELO INSA)
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. VARIÁVEIS LOCAIS & PALETA OFICIAL DARK HIGH-TECH
-   -------------------------------------------------------------------------- */
 :root {
-    /* Identidade da Marca INSA */
-    --brand-dark: #060913;                /* Azul Escuro Noturno Deep */
-    --brand-dark-soft: #0C1222;           /* Azul Secundário para Cards & Módulos */
-    --brand-dark-hover: #111A30;          /* Azul Hover para Interações */
-    --brand-yellow: #f1e406;              /* Amarelo  Oficial INSA */
-    --brand-yellow-hover: #f1e406;        /* Amarelo  Hover */
-    --brand-yellow-glow: rgba(204, 255, 0, 0.25); /* Efeito Brilho Néon */
-    --accent-cyan: #00E5FF;               /* Azul Cian para Tags/Badges */
+    --brand-yellow: #f1e406;            /* Amarelo Oficial INSA */
+    --brand-blue: #060913;              /* Azul Escuro Noturno High-Tech (substitui o preto) */
+    --brand-blue-soft: #0C1222;         /* Azul secundário para superfícies escuras */
+    --brand-blue-hover: #111A30;        /* Azul hover */
+    
+    /* Fundo do Body: Branco Puro com sutil toque dourado */
+    --bg-page: #FFFFFF;                 
+    --bg-surface: #FFFEFA;              
+    --bg-subtle: #FFFBEB;               
+    --bg-icon: #FEFCE8;                 
 
-    /* Superfícies & Fundos */
-    --bg-page: #060913;                    /* Fundo Principal Dark */
-    --bg-surface: #0C1222;                 /* Fundo de Cards & Containers */
-    --bg-subtle: #0F172A;                  /* Fundo Neutro Secundário */
-    --bg-dark-section: #03050A;            /* Fundo para Seções Ultra Dark */
-    --bg-icon: #131C31;                    /* Fundo para Caixas de Ícones */
+    /* Tipografia (Usando o Azul Escuro no lugar do preto para textos de destaque) */
+    --text-primary: #060913;            /* Azul escuro corporativo para títulos */
+    --text-secondary: #374151;          /* Cinza elegante para parágrafos */
+    --text-on-dark: #FFFFFF;            
+    --text-on-yellow: #060913;          
 
-    /* Tipografia & Cores de Texto */
-    --text-primary: #FFFFFF;               /* Texto Principal Branco */
-    --text-secondary: #8C9BAE;             /* Subtítulos e Descrições */
-    --text-muted: #64748B;                 /* Textos Desativados ou Secundários */
-    --text-on-dark: #FFFFFF;               /* Texto Claro */
+    /* Feedback & Bordas */
+    --color-error: #DC2626;             
+    --color-success: #16A34A;           
+    --border-light: #E5E7EB;            
+    --border-gold: rgba(241, 228, 6, 0.3); 
 
-    /* Feedback & Estados */
-    --color-error: #FF5555;                /* Vermelho Erro */
-    --color-success: #25D366;              /* Verde WhatsApp / Sucesso */
-    --border-light: #1A2642;               /* Bordas Suaves para Cards Dark */
-    --border-dark: rgba(255, 255, 255, 0.12); /* Bordas para Modo Glass/Dark */
-
-    /* Efeitos Modernos & Glassmorphism */
-    --glass-bg: rgba(6, 9, 19, 0.88);      /* Fundo Translúcido da Navbar */
-    --glass-card: rgba(12, 18, 34, 0.95);
-    --glass-border: rgba(204, 255, 0, 0.15);
-    --shadow-premium: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-    --shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    --shadow-premium: 0 15px 30px -10px rgba(241, 228, 6, 0.15);
+    --shadow-hover: 0 20px 40px -10px rgba(6, 9, 19, 0.12);
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* --------------------------------------------------------------------------
-   2. RESET & ESTILOS BASE
-   -------------------------------------------------------------------------- */
+/* RESET & BASE */
 * {
     margin: 0;
     padding: 0;
@@ -58,7 +44,8 @@
 body {
     color: var(--text-primary);
     line-height: 1.6;
-    background-color: var(--bg-page);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFFEFA 50%, #FFFBEB 100%);
+    background-attachment: fixed;
     overflow-x: hidden;
 }
 
@@ -68,43 +55,16 @@ body {
     padding: 0 24px;
 }
 
-/* Elementos Utilitários */
-.flag-icon {
-    width: 22px;
-    height: 15px;
-    object-fit: cover;
-    margin-right: 8px;
-    vertical-align: middle;
-    border-radius: 3px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.badge-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border-radius: 100px;
-    background: rgba(204, 255, 0, 0.1);
-    border: 1px solid rgba(204, 255, 0, 0.3);
-    color: var(--brand-yellow);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-/* Subtítulos com Etiqueta e Linha Amarela */
+/* SEÇÃO HEADERS */
 .section-header {
     text-align: left;
     margin-bottom: 2.5rem;
 }
 
 .section-tag {
-    color: var(--brand-yellow);
+    color: #9a8802; 
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
     display: flex;
@@ -121,70 +81,52 @@ body {
     background-color: var(--brand-yellow);
 }
 
-.gradient-text {
-    background: linear-gradient(135deg, #FFFFFF 0%, var(--brand-yellow) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* --------------------------------------------------------------------------
-   3. BOTÕES ULTRA-TÁTEIS & GLOW
-   -------------------------------------------------------------------------- */
+/* BOTÕES */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 14px 28px;
-    border-radius: 6px;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: 700;
     transition: var(--transition-smooth);
     cursor: pointer;
     text-align: center;
-    position: relative;
-    overflow: hidden;
     border: none;
 }
 
 .btn-primary {
     background: var(--brand-yellow);
-    color: #000000;
-    box-shadow: 0 8px 20px -4px var(--brand-yellow-glow);
+    color: var(--text-on-yellow); 
+    box-shadow: 0 8px 20px -4px rgba(241, 228, 6, 0.4);
 }
 
 .btn-primary:hover {
-    background: var(--brand-yellow-hover);
+    background: #dccc03;
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px -4px rgba(204, 255, 0, 0.4);
-}
-
-.btn-primary:active {
-    transform: translateY(0);
 }
 
 .btn-secondary {
-    background: transparent;
+    background: var(--brand-blue);
     color: var(--brand-yellow);
-    border: 1px solid var(--brand-yellow);
+    border: 2px solid var(--brand-yellow);
 }
 
 .btn-secondary:hover {
     background: var(--brand-yellow);
-    color: #000000;
+    color: var(--text-on-yellow);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(204, 255, 0, 0.2);
 }
 
 .btn-large {
     padding: 18px 36px;
     font-size: 1.125rem;
-    border-radius: 8px;
 }
 
 .btn-sm {
     padding: 8px 16px;
     font-size: 0.875rem;
-    border-radius: 4px;
 }
 
 .btn-block {
@@ -192,53 +134,65 @@ body {
 }
 
 .btn-call {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(6, 9, 19, 0.05);
     color: var(--text-primary);
-    border: 1px solid var(--border-light);
+    border: 1px solid rgba(6, 9, 19, 0.15);
+}
+
+.navbar.scrolled .btn-call {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-call:hover {
-    background: rgba(255, 255, 255, 0.18);
+    background: var(--brand-yellow);
+    color: var(--text-on-yellow);
     border-color: var(--brand-yellow);
-    color: var(--brand-yellow);
 }
 
 .btn-whatsapp-header {
     background: rgba(37, 211, 102, 0.15);
-    color: #25D366;
-    border: 1px solid rgba(37, 211, 102, 0.4);
+    color: #168a40;
+    border: 1px solid rgba(37, 211, 102, 0.3);
 }
 
 .btn-whatsapp-header:hover {
     background: #25D366;
     color: #FFFFFF;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
 }
 
 .btn-outline-hero {
-    border: 1px solid var(--border-light);
-    color: var(--text-primary);
+    border: 2px solid var(--brand-blue);
+    color: var(--brand-blue);
     background: transparent;
 }
 
 .btn-outline-hero:hover {
-    border-color: var(--brand-yellow);
+    background: var(--brand-blue);
     color: var(--brand-yellow);
 }
 
-/* --------------------------------------------------------------------------
-   4. NAVBAR GLASSMORPHISM & SELETOR DE IDIOMAS
-   -------------------------------------------------------------------------- */
+/* NAVBAR DINÂMICA */
 .navbar {
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: 16px 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(6, 9, 19, 0.95); 
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 2px solid var(--brand-yellow);
-    transition: var(--transition-smooth);
+    padding: 12px 0;
+    box-shadow: 0 10px 30px rgba(6, 9, 19, 0.3);
 }
 
 .navbar-content {
@@ -252,49 +206,137 @@ body {
 }
 
 .logo h2 {
-    color: var(--text-on-dark);
+    color: var(--brand-blue); 
     font-size: 1.8rem;
     font-weight: 900;
-    letter-spacing: -0.5px;
+    transition: color 0.3s ease;
+}
+
+.navbar.scrolled .logo h2 {
+    color: #FFFFFF; 
 }
 
 .logo h2 span {
-    color: var(--brand-yellow);
+    color: #b8a902; 
+    transition: color 0.3s ease;
+}
+
+.navbar.scrolled .logo h2 span {
+    color: var(--brand-yellow); 
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
+    gap: 18px;
 }
 
-.nav-menu a {
-    margin: 0 18px;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.85);
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: var(--transition-smooth);
-    position: relative;
+.nav-menu > a,
+.nav-menu > .dropdown {
+
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   text-decoration: none !important;
+   height: 100%;
 }
 
-.nav-menu a:hover {
+.nav-menu .dropdown-toggle {
+   display: inline-flex;
+   align-items: center;
+   text-decoration: none !important;
+   margin: 0 !important;
+
+}
+
+.nav-menu a, 
+.nav-menu .dropdown-toggle {
+    line-height: normal;
+    vertical-align: middle;
+}
+
+.navbar.scrolled .nav-menu a,
+.navbar.scrolled .nav-menu .dropdown-toggle {
+    color: rgba(255, 255, 255, 0.85); 
+}
+
+.nav-menu a:hover,
+.nav-menu .dropdown:hover .dropdown-toggle {
+    color: #b8a902;
+    text-decoration: none !important;
+}
+
+.navbar.scrolled .nav-menu a:hover,
+.navbar.scrolled .nav-menu .dropdown:hover .dropdown-toggle {
     color: var(--brand-yellow);
+    text-decoration: none !important;
 }
 
-.nav-menu a::after {
-    content: '';
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
     position: absolute;
-    bottom: -6px;
+    top: 100%;
     left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--brand-yellow);
+    background: #FFFFFF;
+    min-width: 210px;
+    box-shadow: 0 15px 35px rgba(6, 9, 19, 0.1);
+    border: 1px solid rgba(241, 228, 6, 0.3);
+    border-radius: 4px;
+    list-style: none;
+    padding: 8px 0;
+    margin-top: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
     transition: var(--transition-smooth);
-    border-radius: 2px;
+    z-index: 1100;
 }
 
-.nav-menu a:hover::after {
+.dropdown-menu li a {
+    text-decoration: none !important;
+}
+.navbar.scrolled .dropdown-menu {
+    background: var(--brand-blue-hover); 
+    border-color: rgba(241, 228, 6, 0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    list-style: none;
     width: 100%;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 18px;
+    color: #4b5563 !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.navbar.scrolled .dropdown-menu li a {
+    color: #CCCCCC !important;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #FEFCE8;
+    color: #b8a902 !important;
+    padding-left: 22px;
+}
+
+.navbar.scrolled .dropdown-menu li a:hover {
+    background-color: var(--brand-blue);
+    color: var(--brand-yellow) !important;
 }
 
 .nav-actions {
@@ -304,42 +346,45 @@ body {
 }
 
 .lang-selector {
-    background: var(--bg-surface);
-    color: var(--text-on-dark);
-    border: 1px solid var(--border-light);
+    background: rgba(241, 228, 6, 0.2);
+    color: var(--brand-blue);
+    border: 1px solid rgba(241, 228, 6, 0.4);
     padding: 8px 14px;
-    border-radius: 6px;
+    border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
     outline: none;
-    margin-left: 10px;
     transition: var(--transition-smooth);
 }
 
-.lang-selector:hover,
-.lang-selector:focus {
-    border-color: var(--brand-yellow);
+.navbar.scrolled .lang-selector {
+    background: #111A30;
+    color: #FFFFFF;
+    border-color: rgba(241, 228, 6, 0.3);
 }
 
 .lang-selector option {
-    background-color: var(--bg-surface);
-    color: var(--text-on-dark);
+    background-color: #FFFFFF;
+    color: var(--brand-blue);
 }
 
-/* --------------------------------------------------------------------------
-   5. HERO SECTION (BANNER PRINCIPAL)
-   -------------------------------------------------------------------------- */
+.navbar.scrolled .lang-selector option {
+    background-color: var(--brand-blue);
+    color: #FFFFFF;
+}
+
+/* HERO */
 .hero {
     position: relative;
     width: 100%;
-    min-height: 85vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--text-on-dark);
-    background: linear-gradient(180deg, rgba(204, 255, 0, 0.04) 0%, var(--bg-page) 100%);
-    padding: 80px 0;
+    color: var(--text-primary);
+    background: radial-gradient(circle at center, rgba(241, 228, 6, 0.15) 0%, transparent 70%);
+    padding: 60px 0;
 }
 
 .hero h1 {
@@ -347,11 +392,14 @@ body {
     margin-bottom: 24px;
     font-weight: 900;
     line-height: 1.15;
-    letter-spacing: -1px;
+    color: var(--brand-blue);
 }
 
 .hero h1 span {
-    color: var(--brand-yellow);
+    color: #9a8802;
+    background: rgba(241, 228, 6, 0.25);
+    padding: 0 8px;
+    border-radius: 4px;
 }
 
 .hero p {
@@ -359,7 +407,6 @@ body {
     max-width: 780px;
     margin: 0 auto 40px auto;
     color: var(--text-secondary);
-    font-weight: 400;
 }
 
 .hero-buttons {
@@ -368,9 +415,7 @@ body {
     gap: 16px;
 }
 
-/* --------------------------------------------------------------------------
-   6. CONTADORES & SEÇÃO "CÓMO FUNCIONA"
-   -------------------------------------------------------------------------- */
+/* ESTATÍSTICAS (CONTADORES COM O AMARELO OFICIAL DA LOGO INSA) */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -378,13 +423,14 @@ body {
     text-align: center;
     margin-bottom: 60px;
     padding-bottom: 40px;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-gold);
 }
 
 .stat-item .number {
     font-size: 3.2rem;
     font-weight: 900;
-    color: var(--brand-yellow);
+    color: #f1e406; /* Amarelo Oficial exato da Logo INSA */
+    -webkit-text-stroke: 1px #9a8802; 
     line-height: 1;
 }
 
@@ -404,13 +450,16 @@ body {
 }
 
 .process-card {
-    background-color: transparent;
-    padding: 10px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-gold);
+    padding: 24px;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(241, 228, 6, 0.08);
 }
 
 .process-number {
-    border: 1px solid var(--border-light);
-    color: var(--brand-yellow);
+    border: 1px solid var(--border-gold);
+    color: #9a8802;
     width: 48px;
     height: 48px;
     display: flex;
@@ -419,7 +468,7 @@ body {
     font-size: 1.1rem;
     font-weight: 800;
     margin-bottom: 20px;
-    background-color: var(--bg-surface);
+    background-color: #FEFCE8;
 }
 
 .process-card h4 {
@@ -433,16 +482,10 @@ body {
     color: var(--text-secondary);
 }
 
-/* --------------------------------------------------------------------------
-   7. SEÇÕES, GRIDS E NOVOS CARDS DE SERVIÇO
-   -------------------------------------------------------------------------- */
+/* SEÇÕES & CARDS */
 .section {
     padding: 90px 0;
     border-bottom: 1px solid var(--border-light);
-}
-
-.bg-light {
-    background-color: var(--bg-subtle);
 }
 
 .section-title {
@@ -467,52 +510,33 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
 
-@media (max-width: 550px) {
-    .grid-services {
-        grid-template-columns: 1fr;
-    }
-}
-
-.card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-light);
-    border-left: 4px solid var(--brand-yellow);
-    border-radius: 4px;
-    padding: 32px;
-    transition: var(--transition-smooth);
-    box-shadow: var(--shadow-premium);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background-color: var(--brand-dark-hover);
-    box-shadow: var(--shadow-hover);
-}
-
-.card h3 {
-    margin-bottom: 16px;
-    color: var(--text-primary);
-    font-size: 1.35rem;
-    font-weight: 800;
-}
-
-.card p {
-    color: var(--text-secondary);
-}
-
-.service-card {
+.card, .service-card {
     background-color: var(--bg-surface);
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border-gold);
+    border-left: 4px solid var(--brand-yellow);
     padding: 32px;
-    border-radius: 4px;
+    border-radius: 6px;
     transition: var(--transition-smooth);
+    box-shadow: 0 10px 25px rgba(6, 9, 19, 0.03);
 }
 
-.service-card:hover {
-    border-color: var(--brand-yellow);
-    background-color: var(--brand-dark-hover);
+.card:hover, .service-card:hover {
+    border-color: var(--brand-blue);
     transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 15px 35px rgba(241, 228, 6, 0.15);
+}
+
+.card h3, .service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.card p, .service-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
 }
 
 .service-header {
@@ -524,33 +548,21 @@ body {
 
 .service-icon {
     background-color: var(--bg-icon);
-    color: var(--brand-yellow);
+    color: #9a8802;
     width: 48px;
     height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
 }
 
 .service-icon svg {
     width: 24px;
     height: 24px;
     fill: currentColor;
-}
-
-.service-card h3 {
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin-top: 8px;
-    color: var(--text-primary);
-}
-
-.service-card p {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 24px;
 }
 
 .tag-group {
@@ -560,9 +572,9 @@ body {
 }
 
 .tag {
-    background-color: rgba(0, 229, 255, 0.05);
-    color: var(--accent-cyan);
-    border: 1px solid rgba(0, 229, 255, 0.2);
+    background-color: #FEFCE8;
+    color: #9a8802;
+    border: 1px solid rgba(241, 228, 6, 0.4);
     font-size: 0.72rem;
     font-weight: 700;
     padding: 4px 10px;
@@ -571,18 +583,16 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* --------------------------------------------------------------------------
-   8. ÁREA BLOQUEADA DO SIMULADOR (INTERATIVO)
-   -------------------------------------------------------------------------- */
+/* SIMULADOR & MODAL */
 .sim-lock-card {
     background: var(--bg-surface);
     border: 2px dashed var(--brand-yellow);
-    border-radius: 8px;
+    border-radius: 6px;
     padding: 50px 40px;
     text-align: center;
     max-width: 640px;
     margin: 0 auto;
-    box-shadow: var(--shadow-premium);
+    box-shadow: 0 10px 25px rgba(241, 228, 6, 0.1);
 }
 
 .sim-lock-card p {
@@ -591,9 +601,6 @@ body {
     color: var(--text-primary);
 }
 
-/* --------------------------------------------------------------------------
-   9. MODAL DE PRÉ-CADASTRO
-   -------------------------------------------------------------------------- */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -601,9 +608,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(6, 9, 19, 0.88);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(6, 9, 19, 0.8);
+    backdrop-filter: blur(6px);
     z-index: 10000;
     align-items: center;
     justify-content: center;
@@ -612,25 +618,13 @@ body {
 
 .modal-content {
     background: var(--bg-surface);
-    border-radius: 8px;
+    border-radius: 6px;
     padding: 40px;
     max-width: 500px;
     width: 100%;
     position: relative;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-    border: 2px solid var(--brand-yellow);
-    animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes modalSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    border: 3px solid var(--brand-yellow);
+    box-shadow: 0 25px 50px rgba(6, 9, 19, 0.2);
 }
 
 .modal-close {
@@ -641,18 +635,16 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--text-muted);
-    transition: var(--transition-smooth);
+    color: var(--text-secondary);
 }
 
 .modal-close:hover {
-    color: var(--brand-yellow);
-    transform: rotate(90deg);
+    color: var(--brand-blue);
 }
 
 .modal-content h3 {
     margin-bottom: 24px;
-    color: var(--brand-yellow);
+    color: var(--brand-blue);
     font-size: 1.5rem;
     font-weight: 800;
 }
@@ -672,17 +664,17 @@ body {
 .form-group input {
     width: 100%;
     padding: 14px 16px;
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border-gold);
     border-radius: 4px;
     font-size: 1rem;
-    background-color: var(--bg-page);
-    color: #FFFFFF;
-    transition: var(--transition-smooth);
+    background-color: #FFFEFA;
+    color: var(--text-primary);
 }
 
 .form-group input:focus {
     border-color: var(--brand-yellow);
     outline: none;
+    background-color: #ffffff;
 }
 
 .error-text {
@@ -690,12 +682,9 @@ body {
     color: var(--color-error);
     font-size: 0.85rem;
     margin-top: 6px;
-    font-weight: 500;
 }
 
-/* --------------------------------------------------------------------------
-   10. WIDGET WHATSAPP MULTILÍNGUE
-   -------------------------------------------------------------------------- */
+/* WIDGET WHATSAPP & COOKIES */
 .whatsapp-widget {
     position: fixed;
     bottom: 30px;
@@ -708,18 +697,17 @@ body {
     border: none;
     width: 56px;
     height: 56px;
-    border-radius: 4px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
     cursor: pointer;
     transition: var(--transition-smooth);
-    padding: 0;
 }
 
 .whatsapp-btn:hover {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
 .whatsapp-btn svg {
@@ -734,14 +722,13 @@ body {
     bottom: 72px;
     right: 0;
     background: var(--bg-surface);
-    border-radius: 8px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(6, 9, 19, 0.15);
     padding: 16px;
     width: 240px;
     flex-direction: column;
     gap: 10px;
-    border: 1px solid var(--border-light);
-    animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid var(--border-gold);
 }
 
 .whatsapp-menu.active {
@@ -755,42 +742,32 @@ body {
     padding: 10px;
     border-radius: 4px;
     transition: var(--transition-smooth);
-    display: flex;
-    align-items: center;
 }
 
 .whatsapp-menu a:hover {
-    background: var(--bg-dark-section);
-    color: var(--brand-yellow);
+    background: #FEFCE8;
+    color: #9a8802;
 }
 
-/* --------------------------------------------------------------------------
-   11. BANNER DE COOKIES & FOOTER
-   -------------------------------------------------------------------------- */
 .cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    color: var(--text-on-dark);
+    background: rgba(6, 9, 19, 0.95);
+    color: #FFFFFF;
     padding: 20px 28px;
     z-index: 9999;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 24px;
-    border-top: 1px solid var(--border-light);
+    border-top: 2px solid var(--brand-yellow);
 }
 
 .cookie-banner p {
-    margin: 0;
     font-size: 0.92rem;
-    line-height: 1.5;
-    color: var(--text-secondary);
+    color: #CCCCCC;
 }
 
 .cookie-banner a {
@@ -798,82 +775,258 @@ body {
     text-decoration: underline;
 }
 
-.cookie-banner a:hover {
-    color: var(--brand-yellow-hover);
-}
-
-.cookie-buttons {
-    flex-shrink: 0;
-}
-
+/* FOOTER (RODAPÉ EM AZUL HIGH-TECH) */
 .footer {
-    background: var(--bg-dark-section);
-    color: var(--text-secondary);
+    background: var(--brand-blue);
+    color: #9ca3af;
     text-align: center;
     padding: 40px 0;
-    border-top: 1px solid var(--border-light);
+    border-top: 3px solid var(--brand-yellow);
 }
 
-.footer p {
-    font-size: 0.95rem;
-}
-
-/* --------------------------------------------------------------------------
-   12. RESPONSIVIDADE (MOBILE & TABLET)
-   -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
     .navbar-content {
         flex-direction: column;
         gap: 16px;
     }
-
     .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .nav-actions {
         flex-wrap: wrap;
         justify-content: center;
     }
 }
+/* 1. ESTADO NO TOPO (Fundo branco/claro): Letras em Azul Escuro High-Tech */
+header.navbar:not(.scrolled) .nav-menu a,
+header.navbar:not(.scrolled) .nav-menu .dropdown-toggle,
+header.navbar:not(.scrolled) .nav-menu a:visited,
+header.navbar:not(.scrolled) .nav-menu a:link {
+    color: #060913 !important;
+}
 
-@media (max-width: 768px) {
-    .nav-menu a {
-        margin: 0 6px;
+header.navbar:not(.scrolled) .nav-menu a:hover,
+header.navbar:not(.scrolled) .nav-menu .dropdown:hover .dropdown-toggle {
+    color: #b8a902 !important;
+}
+
+/* 2. ESTADO COM SCROLL (Fundo Azul Escuro): Letras em Branco */
+header.navbar.scrolled .nav-menu a,
+header.navbar.scrolled .nav-menu .dropdown-toggle,
+header.navbar.scrolled .nav-menu a:visited,
+header.navbar.scrolled .nav-menu a:link {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+header.navbar.scrolled .nav-menu a:hover,
+header.navbar.scrolled .nav-menu .dropdown:hover .dropdown-toggle {
+    color: var(--brand-yellow) !important;
+}
+/* ==========================================================================
+   RESPONSIVIDADE GLOBAL (TABLETS E SMARTPHONES / IPHONE)
+   ========================================================================== */
+
+
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1200;
+    padding: 0;
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--brand-blue);
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+}
+
+header.navbar.scrolled .mobile-toggle span {
+    background-color: #FFFFFF;
+}
+
+/* Animação do botão para formato de 'X' */
+.mobile-toggle.active span:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+}
+.mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* RESPONSIVIDADE PARA TABLETS E SMARTPHONES (< 992px) */
+@media (max-width: 992px) {
+    .mobile-toggle {
+        display: flex;
     }
 
-    .hero {
-        padding: 60px 0;
-        min-height: 75vh;
+/* ==========================================================================
+   AJUSTE DEFINITIVO DA NAVBAR E MENU MOBILE
+   ========================================================================== */
+
+/* Organização padrão do container da navbar para desktop */
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Botão Hamburguer escondido no Desktop */
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1200;
+    padding: 0;
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--brand-blue);
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+}
+
+header.navbar.scrolled .mobile-toggle span {
+    background-color: #FFFFFF;
+}
+
+/* Animação do ícone para X */
+.mobile-toggle.active span:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+}
+.mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+}
+
+
+/* ==========================================================================
+   ESTADOS DE TELA ABAIXO DE 992px (TABLETS E SMARTPHONES)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .mobile-toggle {
+        display: flex;
     }
 
-    .hero h1 {
-        font-size: 2.2rem;
+    /* Esconde os botões extras do topo no mobile para evitar poluição visual */
+    .navbar .nav-actions {
+        display: none; 
     }
 
-    .hero p {
-        font-size: 1.05rem;
-    }
-
-    .hero-buttons {
+    /* Gaveta do menu mobile ocupando 100% da tela com alto contraste */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100vh;
+        background: #060913 !important; /* Azul High-Tech sólido */
         flex-direction: column;
-        gap: 14px;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1100;
+        gap: 22px;
+        box-shadow: none;
     }
 
-    .hero-buttons .btn {
-        width: 100%;
+    .nav-menu.active {
+        right: 0;
     }
 
-    .cookie-banner {
-        flex-direction: column;
+    /* Força os textos do menu mobile a ficarem grandes, brancos e visíveis */
+    .nav-menu a,
+    .nav-menu .dropdown-toggle,
+    .nav-menu a:visited,
+    .nav-menu a:link {
+        color: #FFFFFF !important;
+        font-size: 1.25rem !important;
+        font-weight: 600;
+        text-decoration: none !important;
+        margin: 0 !important;
         text-align: center;
-        padding: 20px;
     }
-    
-    .cookie-buttons,
-    .cookie-buttons .btn {
+
+    .nav-menu a:hover,
+    .nav-menu .dropdown:hover .dropdown-toggle {
+        color: #f1e406 !important; /* Amarelo INSA */
+    }
+
+    /* Submenus/Dropdowns visíveis e organizados dentro do mobile */
+    .dropdown-menu {
+        position: static;
+        background: rgba(255, 255, 255, 0.04);
+        border: none;
+        box-shadow: none;
         width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none; 
+        padding: 10px 0;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu li a {
+        font-size: 1.05rem !important;
+        color: #d1d5db !important;
+        padding: 6px 0;
+    }
+
+    /* Ajustes gerais de layout mobile */
+    .hero h1 {
+        font-size: 2.1rem;
+        line-height: 1.2;
+    }
+
+    .grid-3, .grid-services {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

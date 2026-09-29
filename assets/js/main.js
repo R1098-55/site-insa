@@ -1,3 +1,44 @@
+/* ==========================================================================
+                     MENU MOBILE 
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    // Cria dinamicamente o botão hamburguer caso ele ainda não exista no HTML
+    let mobileToggle = document.querySelector('.mobile-toggle');
+
+    if (!mobileToggle) {
+        mobileToggle = document.createElement('button');
+        mobileToggle.className = 'mobile-toggle';
+        mobileToggle.innerHTML = `
+            <span></span>
+            <span></span>
+            <span></span>
+        `;
+        // Insere antes das ações da navbar ou logo após o conteúdo principal
+        const navbarContent = document.querySelector('.navbar-content');
+        if (navbarContent) {
+            navbarContent.appendChild(mobileToggle);
+        }
+    }
+
+    // Alternar abertura do menu mobile 
+    mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Fechar o menu ao clicar em qualquer link interno
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+
+
 // Función para abrir WhatsApp directo
 function openDirectWhatsapp() {
     window.open('https://api.whatsapp.com/send?phone=34933004024&text=Hola,%20quiero%20informacion%20sobre%20las%20alarmes%20INSA', '_blank');
@@ -86,8 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const startCounters = () => {
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
-            const duration = 1500;
-            const stepTime = 20;
+            const duration = 2000;
+            const stepTime = 30;
             const steps = duration / stepTime;
             const increment = target / steps;
             let current = 0;
@@ -137,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stat_2: "CLIENTS SATISFETS",
             stat_3: "INSTAL·LACIONS",
             stat_4: "HORES DE SUPORT",
-            tag_process: "PROCES",
+            tag_process: "PROCÉS",
             title_process: "COM FUNCIONA",
             proc_1_title: "Consulta Gratuïta",
             proc_1_desc: "Contacta'ns per WhatsApp. Avaluem les teves necessitats sense cap cost.",
@@ -154,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sol_1_desc: "Sistemes anti-okupa, detecció d'intrusió instantània i verificació per vídeo des del teu smartphone.",
             sol_2_title: "Seguretat per a Negocis",
             sol_2_desc: "Protegeix el teu local comercial amb videovigilància HD, control d'accessos i connexió a Central Receptora.",
-            sol_3_title: "Industria i Empreses",
+            sol_3_title: "Indústria i Empreses",
             sol_3_desc: "Projectes d'enginyeria de seguretat a mida, analítica de vídeo amb IA i protecció contra incendis.",
 
             tag_services: "SERVEIS",
@@ -168,10 +209,10 @@ document.addEventListener('DOMContentLoaded', () => {
             ser_4_title: "Monitoratge Remot 24/7",
             ser_4_desc: "Veu les teves càmeres en temps real des de qualsevol lloc. Alertes instantànies per WhatsApp.",
 
-            title_sim: "Simulador  i Càlcul de pressupost",
-            sim_locked_msg: "Per accedir al simulador i calcular la teva pressupost personalitzada, realitza un pre-registre ràpid.",
+            title_sim: "Simulador i Càlcul de Pressupost",
+            sim_locked_msg: "Per accedir al simulador i calcular el teu pressupost personalitzat, realitza un pre-registre ràpid.",
             btn_unlock_sim: "Desbloquejar Simulador",
-            modal_title: "Pre-Registre per a la pressupost",
+            modal_title: "Pre-Registre per a Pressupost",
             lbl_name: "Nom i Cognoms *",
             lbl_email: "Correu Electrònic *",
             lbl_phone: "Telèfon de Contacte *",
@@ -218,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sol_3_title: "Industria y Empresas",
             sol_3_desc: "Proyectos de ingeniería de seguridad a medida, analítica de vídeo con IA y protección contra incendios.",
 
-            tag_services: "SOLUCIONES",
+            tag_services: "SERVICIOS",
             title_services: "NUESTROS SERVICIOS DE SEGURIDAD",
             ser_1_title: "Cámaras IP 4K POE",
             ser_1_desc: "Resolución Ultra HD, visión nocturna infrarroja, acceso remoto desde su smartphone. Resistentes IP67.",
@@ -229,8 +270,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ser_4_title: "Monitoreo Remoto 24/7",
             ser_4_desc: "Vea sus cámaras en tiempo real desde cualquier lugar. Alertas instantáneas por WhatsApp.",
 
-            title_sim: "Simulador y Cálculo de presupuesto",
-            sim_locked_msg: "Para acceder al simulador y calcular tu presupuesto personalizada, realiza un pre-registro rápido.",
+            title_sim: "Simulador y Cálculo de Presupuesto",
+            sim_locked_msg: "Para acceder al simulador y calcular tu presupuesto personalizado, realiza un pre-registro rápido.",
             btn_unlock_sim: "Desbloquear Simulador",
             modal_title: "Pre-Registro para Presupuesto",
             lbl_name: "Nombre y Apellidos *",
@@ -416,5 +457,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+  // 7. EFECTO DINÁMICO DE SCROLL EN LA NAVBAR
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+    /* ==========================================================================
+    MOBILE
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Fecha o menu ao clicar em qualquer link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+    });
 });
