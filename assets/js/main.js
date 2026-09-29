@@ -468,26 +468,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    /* ==========================================================================
-    MOBILE
-   ========================================================================== */
-document.addEventListener('DOMContentLoaded', () => {
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', () => {
-            mobileToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Fecha o menu ao clicar em qualquer link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    }
-    });
+ 
 });
