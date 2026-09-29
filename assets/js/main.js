@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ser_4_title: "Monitoratge Remot 24/7",
             ser_4_desc: "Veu les teves càmeres en temps real des de qualsevol lloc. Alertes instantànies per WhatsApp.",
 
-            title_sim: "Simulador de Seguretat i Càlcul de pressupost",
+            title_sim: "Simulador  i Càlcul de pressupost",
             sim_locked_msg: "Per accedir al simulador i calcular la teva pressupost personalitzada, realitza un pre-registre ràpid.",
             btn_unlock_sim: "Desbloquejar Simulador",
             modal_title: "Pre-Registre per a la pressupost",
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ser_4_title: "Monitoreo Remoto 24/7",
             ser_4_desc: "Vea sus cámaras en tiempo real desde cualquier lugar. Alertas instantáneas por WhatsApp.",
 
-            title_sim: "Simulador de Seguridad y Cálculo de presupuesto",
+            title_sim: "Simulador y Cálculo de presupuesto",
             sim_locked_msg: "Para acceder al simulador y calcular tu presupuesto personalizada, realiza un pre-registro rápido.",
             btn_unlock_sim: "Desbloquear Simulador",
             modal_title: "Pre-Registro para Presupuesto",
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ser_4_title: "24/7 Remote Monitoring",
             ser_4_desc: "Watch live feed from anywhere. Instant alerts via WhatsApp.",
 
-            title_sim: "Security Simulator & Instant Quote",
+            title_sim: "Simulator & Instant Quote",
             sim_locked_msg: "To access the simulator and get your custom quote, please complete a quick pre-registration.",
             btn_unlock_sim: "Unlock Simulator",
             modal_title: "Pre-Registration for Quote",
