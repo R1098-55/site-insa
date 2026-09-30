@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoreo Remoto 24/7 y CRA - INSA Seguridad Barcelona</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        body { background-color: #0b0f19; color: #fff; font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; }
+        .page-header-container { text-align: center; padding: 60px 20px 80px 20px; background-color: #0b0f19; }
+        .breadcrumb { font-size: 0.9rem; color: #aaa; margin-bottom: 15px; }
+        .breadcrumb a { color: #f1e406; text-decoration: none; }
+        .badge-category { display: inline-block; background: rgba(241, 228, 6, 0.1); color: #f1e406; border: 1px solid #f1e406; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .page-title { font-size: 2.8rem; font-weight: bold; color: #e9e5af; margin-bottom: 15px; }
+        .page-subtitle { font-size: 1.1rem; color: #ccc; max-width: 750px; margin: 0 auto; line-height: 1.6; }
+        .content-card-main { max-width: 1200px; margin: -40px auto 60px auto; background: #fff; color: #222; border-radius: 16px; padding: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .section-heading { color: #0b0f19; font-size: 1.8rem; margin-top: 40px; margin-bottom: 15px; border-left: 4px solid #f1e406; padding-left: 15px; }
+        .models-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 25px; margin-bottom: 40px; }
+        .card-item { background: #f9fafc; border: 1px solid #eaeaea; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease, border-color 0.3s ease; }
+        .card-item:hover { transform: translateY(-5px); border-color: #003366; }
+        .card-item h3 { color: #003366; font-size: 1.3rem; margin-bottom: 12px; }
+        .card-item p { color: #555; font-size: 0.92rem; line-height: 1.5; margin-bottom: 20px; }
+        .specs-list { list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.82rem; color: #333; border-top: 1px solid #eee; padding-top: 15px; }
+        .specs-list li { margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
+        .specs-list li::before { content: "🛡️"; font-size: 0.75rem; }
+        .whatsapp-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #25D366; color: #fff; padding: 10px 15px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: background 0.3s ease; width: 100%; box-sizing: border-box; }
+        .whatsapp-btn:hover { background-color: #1EBE5D; }
+        .back-link-container { text-align: center; margin-top: 40px; }
+        .back-btn { display: inline-block; background: #eee; color: #333; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s; }
+        .back-link-level:hover { background: #ddd; }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content" style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+            <a href="../index.html" class="logo" style="color: #f1e406; text-decoration: none; font-weight: bold; font-size: 1.2rem;">Alarmas <span>INSA</span></a>
+            <nav style="display: flex; gap: 20px;">
+                <a href="../index.html" style="color: #ccc; text-decoration: none;">Inicio</a>
+                <a href="../index.html#servicios" style="color: #ccc; text-decoration: none;">Servicios</a>
+                <a href="../index.html#contacto" style="color: #f1e406; text-decoration: none;">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header-container">
+        <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../index.html#servicios">Servicios</a> / <span>Monitoreo Remoto</span></div>
+        <div class="badge-category">Central Receptora de Alarmas (CRA) 24/7</div>
+        <h1 class="page-title">Monitoreo Remoto 24/7 y Conexión CRA</h1>
+        <p class="page-subtitle">Supervisión permanente desde Central Receptora de Alarmas con transmisiones redundantes IP/GPRS y protocolos de verificación visual inmediata.</p>
+    </div>
+
+    <main class="content-card-main">
+        <h2 class="section-heading">Especificaciones de Conectividad y Protocolos de Respuesta</h2>
+        <div class="models-grid">
+            <div class="card-item">
+                <div>
+                    <div style="font-size: 1.8rem; margin-bottom: 10px;">🛡️</div>
+                    <h3>Conexión Central Receptora de Alarmas (CRA)</h3>
+                    <p>Enlace permanente con operadores especializados para supervisión de señales y activación inmediata de protocolos de seguridad.</p>
+                    <ul class="specs-list">
+                        <li><strong>Transmisión Dual:</strong> Vías de comunicación redundantes IP (Ethernet) y 4G/5G con anti-jamming</li>
+                        <li><strong>Verificación de Alarmas:</strong> Validación visual y acústica en < 20 segundos tras el salto</li>
+                        <li><strong>Protocolos Homologados:</strong> Conexión bajo estándares SIA DC-09 y Ademco Contact ID</li>
+                        <li><strong>Intervención:</strong> Aviso inmediato prioritario a FF.CC. de Seguridad del Estado</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/34XXXXXXXXX?text=Hola,%20me%20interesa%20Conexión%20CRA%2024/7" target="_blank" class="whatsapp-btn">Pedir Presupuesto</a>
+            </div>
+
+            <div class="card-item">
+                <div>
+                    <div style="font-size: 1.8rem; margin-bottom: 10px;">📱</div>
+                    <h3>Autogestión y App Móvil Pro</h3>
+                    <p>Aplicación nativa para dispositivos iOS y Android con control total sobre el estado de la instalación y visualización de cámaras en directo.</p>
+                    <ul class="specs-list">
+                        <li><strong>Notificaciones Push:</strong> Alertas instantáneas cifradas AES-256 ante cualquier evento</li>
+                        <li><strong>Gestión de Particiones:</strong> Armado total, parcial (noche) o perimetral remoto</li>
+                        <li><strong>Registro de Auditoría:</strong> Historial detallado con marca de tiempo de accesos y armados</li>
+                        <li><strong>Multiusuario:</strong> Creación de subcuentas con permisos personalizables por operador</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/34XXXXXXXXX?text=Hola,%20quiero%20información%20sobre%20Autogestión%20y%20App" target="_blank" class="whatsapp-btn">Pedir Presupuesto</a>
+            </div>
+        </div>
+        <div class="back-link-container"><a href="../index.html#servicios" class="back-btn">← Volver a Servicios</a></div>
+    </main>
+
+    <footer style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
+        <div class="container"><p>&copy; 2026 INSA Seguridad Barcelona. Todos los derechos reservados.</p></div>
+    </footer>
+</body>
+</html>

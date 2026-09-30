@@ -14,7 +14,7 @@
     <!-- FONTAWESOME PARA ÍCONOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- SEU CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -169,70 +169,16 @@
             <h2 class="section-title" data-i18n="title_services">NUESTROS SERVICIOS DE SEGURIDAD</h2>
         </div>
 
-        <div class="grid grid-services">
-            <a href="servicios/videovigilancia.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
-                <div class="service-header">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
-                    </div>
-                    <h3 data-i18n="ser_1_title">Cámaras IP 4K POE</h3>
-                </div>
-                <p data-i18n="ser_1_desc">Resolución Ultra HD, visión nocturna infrarroja, acceso remoto desde su smartphone. Resistentes IP67.</p>
-                <div class="tag-group">
-                    <span class="tag">8MP / 4K</span>
-                    <span class="tag">IR 30m</span>
-                    <span class="tag">IP67</span>
-                    <span class="tag">POE</span>
-                </div>
-            </a>
-
-            <a href="servicios/videovigilancia.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
-                <div class="service-header">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                    </div>
-                    <h3 data-i18n="ser_2_title">CCTV Analógico</h3>
-                </div>
-                <p data-i18n="ser_2_desc">Sistemas analógicos confiables y rentables para hogares y pequeñas empresas. Grabación continua.</p>
-                <div class="tag-group">
-                    <span class="tag">1080p HD</span>
-                    <span class="tag">DVR incluido</span>
-                    <span class="tag">Escalable</span>
-                </div>
-            </a>
-
-            <a href="servicios/alarmas-hogar.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
-                <div class="service-header">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
-                    </div>
-                    <h3 data-i18n="ser_3_title">Sistemas de Alarma</h3>
-                </div>
-                <p data-i18n="ser_3_desc">Sensores de movimiento, contactos en puertas y ventanas, sirenas y comunicación con central.</p>
-                <div class="tag-group">
-                    <span class="tag">Inalámbrico</span>
-                    <span class="tag">Central 24/7</span>
-                    <span class="tag">App móvil</span>
-                </div>
-            </a>
-
-            <a href="servicios/monitoreo.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
-                <div class="service-header">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 3C6.95 3 2.69 5.86 1 10c1.69 4.14 5.95 7 11 7s9.31-2.86 11-7c-1.69-4.14-5.95-7-11-7zm0 11.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 5.5 12 5.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5z"/></svg>
-                    </div>
-                    <h3 data-i18n="ser_4_title">Monitoreo Remoto 24/7</h3>
-                </div>
-                <p data-i18n="ser_4_desc">Vea sus cámaras en tiempo real desde cualquier lugar. Alertas instantáneas por WhatsApp.</p>
-                <div class="tag-group">
-                    <span class="tag">Tiempo real</span>
-                    <span class="tag">Alertas push</span>
-                    <span class="tag">Multi-cam</span>
-                </div>
-            </a>
+        <!-- Container onde o JSON injeta os cards perfeitamente -->
+        <div id="servicios-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px 0;">
+            <!-- Carregando serviços via JavaScript... -->
         </div>
     </div>
 </section>
+
+<!-- Script responsável por carregar os dados -->
+<script src="js/load-servicios.js"></script>
+
 
 <!-- SIMULADOR -->
 <section id="simulador" class="section">
@@ -304,10 +250,11 @@
 <!-- FOOTER -->
 <footer class="footer">
     <div class="container">
-        <p>&copy; 2026 INSA Alarmes. Tots els drets reservats.</p>
+        <p>&copy;2026 Alarmas INSA  Barcelona. Todos los derechos reservados.</p>
     </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="js/load-servicios.js"></script>
 </body>
 </html>

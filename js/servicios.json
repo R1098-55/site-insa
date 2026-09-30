@@ -1,0 +1,60 @@
+[
+{
+    "id": "sistemas-alarma",
+    "titulo": "Alarmas",
+    "slug": "servicios/alarmas.html",
+    "descricao": "Sensores de movimiento, contactos en puertas y ventanas, sirenas y comunicación con central.",
+    "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z\"/></svg>",
+    "tags": ["Inalámbrico", "Central 24/7", "App móvil"]
+  },
+  {
+    "id": "cameravideovigilancia",
+    "titulo": "Cámara Video Vigilancias ",
+    "slug": "servicios/videovigilancia.html",
+    "descricao": "Resolución Ultra HD, visión nocturna infrarroja, acceso remoto desde su smartphone. Resistentes IP67.",
+    "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z\"/></svg>",
+    "tags": ["8MP / 4K", "IR 30m", "IP67", "POE"]
+  },
+  {
+    "id": "videoanalise",
+    "titulo": "Vídeo Análisis Inteligente",
+    "slug": "servicios/videoanalisis.html",
+    "descricao": "Inteligencia Artificial aplicada a la seguridad. Detección proactiva de intrusos, merodeo y alertas en tiempo real sin falsas alarmas.",
+    "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z\"/></svg>",
+    "tags": ["Deep Learning", "IA Proactiva", "Sin Falsas Alarmas", "Alertas 24/7"]
+  },
+   {
+    "id": "nibleoptica",
+    "titulo": "Niebla Óptica Antirrobo",
+    "slug": "servicios/nieblaoptica.html",
+    "descricao": "Generadores de niebla de alta densidad que bloquean la visión del intruso en segundos. Protección activa insuperable para comercios y viviendas.",
+    "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 3C6.95 3 2.69 5.86 1 10c1.69 4.14 5.95 7 11 7s9.31-2.86 11-7c-1.69-4.14-5.95-7-11-7zm0 11.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 5.5 12 5.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5z\"/></svg>",
+    "tags": ["Cero Visibilidad", "Disuasión Récord", "Homologado", "Independiente"]
+  },
+  {
+    "id": "Controlaccesos",
+    "titulo": "Control de Accesos Avanzado",
+    "slug": "servicios/controlaccesos.html",
+    "descricao": "Gestión inteligente de entradas y salidas mediante biometría, tarjetas RFID y reconocimiento de matrículas. Seguridad y control total para empresas y comunidades.",
+    "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 3C6.95 3 2.69 5.86 1 10c1.69 4.14 5.95 7 11 7s9.31-2.86 11-7c-1.69-4.14-5.95-7-11-7zm0 11.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 5.5 12 5.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5z\"/></svg>",
+    "tags": ["Biometría", "Tarjetas RFID", "Matrículas", "Gestión Cloud"]
+  },
+  {
+    "id": "deteccion-incendios",
+    "titulo": "Detección de Incendios",
+    "slug": "servicios/controlincendio.html",
+    "descricao": "Detección temprana de humo y calor con sistemas de alarma automáticos y notificaciones críticas instantáneas.",
+    "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 2C11.38 2 10.71 2.37 10.16 3.06C8.25 5.46 8.5 7.9 9.39 9.42C9.8 10.11 9.71 11 9.15 11.6C8.75 12.03 8.16 12.22 7.6 12.08C6.96 11.93 6.46 11.45 6.27 10.84C5.74 9.14 6.27 7.57 6.78 6.5C5.1 7.74 4 9.74 4 12C4 16.42 7.58 20 12 20C16.42 20 20 16.42 20 12C20 7.84 16.8 4.29 12 2Z\"/></svg>",
+    "tags": ["Detección de humo", "Sensores térmicos", "Alertas 24/7"]
+  },
+  {
+    "id": "monitoreo-remoto",
+    "titulo": "Monitoreo Remoto 24/7",
+    "slug": "servicios/monitoreoremoto.html",
+    "descricao": "Vea sus cámaras en tiempo real desde cualquier lugar. Alertas instantáneas por WhatsApp.",
+    "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 3C6.95 3 2.69 5.86 1 10c1.69 4.14 5.95 7 11 7s9.31-2.86 11-7c-1.69-4.14-5.95-7-11-7zm0 11.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 5.5 12 5.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5z\"/></svg>",
+    "tags": ["Tiempo real", "Alertas push", "Multi-cam"]
+  }
+
+  
+]

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Alarma - INSA Seguridad Barcelona</title>
+
+    <!-- Caminho relativo correto para voltar à raiz a partir da pasta servicios/ -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* Estilos específicos para manter o padrão exato da página modelo */
+        body {
+            background-color: #0b0f19;
+            color: #fff;
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .page-header-container {
+            text-align: center;
+            padding: 60px 20px 80px 20px;
+            background-color: #0b0f19;
+        }
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+        .breadcrumb a {
+            color: var(--brand-yellow, #f1e406);
+            text-decoration: none;
+        }
+        .badge-category {
+            display: inline-block;
+            background: rgba(241, 228, 6, 0.1);
+            color: var(--brand-yellow, #f1e406);
+            border: 1px solid var(--brand-yellow, #f1e406);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .page-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .content-card-main {
+            max-width: 1100px;
+            margin: -40px auto 60px auto;
+            background: #fff;
+            color: #222;
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .promo-banner {
+            background: linear-gradient(135deg, rgba(241, 228, 6, 0.15) 0%, rgba(0, 51, 102, 0.08) 100%);
+            border: 2px dashed var(--brand-yellow, #d4c700);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        .promo-banner h3 {
+            color: #0b0f19;
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 800;
+        }
+        .promo-banner span {
+            color: #003366;
+        }
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .segment-box {
+            background: #f9fafc;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .segment-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-blue, #003366);
+        }
+        .segment-box h3 {
+            color: var(--brand-blue, #003366);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        .segment-box p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: background 0.3s ease;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .whatsapp-btn:hover {
+            background-color: #1EBE5D;
+        }
+        .back-link-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #eee;
+            color: #333;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .back-btn:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Principal -->
+    <header class="site-header">
+        <div class="container header-content" style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+            <a href="../index.html" class="logo" style="color: #f1e406; text-decoration: none; font-weight: bold; font-size: 1.2rem;">Alarmas <span>INSA</span></a>
+            <nav style="display: flex; gap: 20px;">
+                <a href="../index.html" style="color: #ccc; text-decoration: none;">Inicio</a>
+                <a href="../index.html#servicios" style="color: #ccc; text-decoration: none;">Servicios</a>
+                <a href="../index.html#contacto" class="btn-cta" style="color: var(--brand-yellow, #f1e406); text-decoration: none;">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero com o padrão visual exato -->
+    <div class="page-header-container">
+        <div class="breadcrumb">
+            <a href="../index.html">Inicio</a> / <a href="../index.html#servicios">Servicios</a> / <span>Sistemas de Alarma</span>
+        </div>
+        <div class="badge-category">Protección Integral / Alta Fiabilidad</div>
+        <h1 class="page-title" style="color: #e9e5af ;">Sistemas de Alarma en Barcelona</h1>
+        <p class="page-subtitle">
+            Soluciones de seguridad avanzadas adaptadas a cada espacio. Protección activa, monitoreo continuo y respuesta inmediata para garantizar su total tranquilidad.
+        </p>
+    </div>
+
+    <!-- Bloco principal em cartão branco sobreposto -->
+    <main class="content-card-main">
+        
+        <!-- Faixa de Destaque Promocional -->
+        <div class="promo-banner">
+            <h3>¡Contrata tu alarma por menos de 1€ al día!</h3>
+        </div>
+
+        <h2 style="color: #111; margin-bottom: 10px; font-size: 1.8rem;">¿Para qué área necesita protección?</h2>
+        <p style="color: #666; margin-bottom: 30px;">Seleccione la opción que mejor se adapte a sus instalaciones en Barcelona:</p>
+
+        <div class="segments-grid">
+            
+            <!-- Hogar -->
+            <div class="segment-box">
+                <div>
+                    <div style="font-size: 2.2rem; margin-bottom: 15px;">🏠</div>
+                    <h3>Alarmas para Hogar</h3>
+                    <p>
+                        Proteja a su familia y su vivienda con sistemas inalámbricos inteligentes. Detectores de movimiento con verificación por imagen, contactos en puertas y ventanas, y control total desde el móvil.
+                    </p>
+                </div>
+                <a href="https://wa.me/34933004024?text=Hola,%20estoy%20interesado%20en%20una%20alarma%20para%20mi%20hogar" target="_blank" class="whatsapp-btn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+
+            <!-- Negocio -->
+            <div class="segment-box">
+                <div>
+                    <div style="font-size: 2.2rem; margin-bottom: 15px;">🏢</div>
+                    <h3>Alarmas para Negocios</h3>
+                    <p>
+                        Diseñado para comercios y oficinas a pie de calle. Proteja su inventario y empleados con doble vía de comunicación, sensores especiales y conexión directa con centrales de intervención.
+                    </p>
+                </div>
+                <a href="https://wa.me/34933004024?text=Hola,%20necesito%20información%20sobre%20alarmas%20para%20mi%20negocio" target="_blank" class="whatsapp-btn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+
+            <!-- Industria -->
+            <div class="segment-box">
+                <div>
+                    <div style="font-size: 2.2rem; margin-bottom: 15px;">🏭</div>
+                    <h3>Alarmas para Industria</h3>
+                    <p>
+                        Soluciones perimetrales y volumétricas de gran escala para naves industriales y polígonos. Integración con barreras infrarrojas, sensores de grado superior y control perimetral.
+                    </p>
+                </div>
+                <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas%20de%20alarma%20industrial" target="_blank" class="whatsapp-btn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+
+        </div>
+
+        <div class="back-link-container">
+            <a href="../index.html#servicios" class="back-btn">← Volver a Servicios</a>
+        </div>
+    </main>
+
+    <!-- Footer Simples -->
+    <footer style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
+        <div class="container">
+            <p>&copy; 2026 Alarmas INSA  Barcelona. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
