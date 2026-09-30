@@ -53,5 +53,12 @@
     "err_name": "Please enter your full name.",
     "err_email": "Please enter a valid email address.",
     "err_phone": "Please enter a valid phone number (min. 8 digits).",
-    "btn_access_sim": "Access Simulator"
+    "btn_access_sim": "Access Simulator",
+    "sub_videovigilancia": "Video Surveillance",
+    "sub_alarms": "Alarm Systems",
+    "sub_monitoring": "24/7 Monitoring",
+    "nav_company": "Company",
+    "sub_about": "About Us",
+    "sub_contact_dropdown": "Contact",
+    "nav_blog": "Blog/FAQ"
 }

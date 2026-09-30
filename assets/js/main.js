@@ -1,11 +1,10 @@
 /* ==========================================================================
-                     MENU MOBILE 
+                    MENU MOBILE 
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     const navMenu = document.querySelector('.nav-menu');
 
-    // Cria dinamicamente o botão hamburguer caso ele ainda não exista no HTML
     let mobileToggle = document.querySelector('.mobile-toggle');
 
     if (!mobileToggle) {
@@ -16,20 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
             <span></span>
             <span></span>
         `;
-        // Insere antes das ações da navbar ou logo após o conteúdo principal
         const navbarContent = document.querySelector('.navbar-content');
         if (navbarContent) {
             navbarContent.appendChild(mobileToggle);
         }
     }
 
-    // Alternar abertura do menu mobile 
     mobileToggle.addEventListener('click', () => {
         mobileToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
     });
 
-    // Fechar o menu ao clicar em qualquer link interno
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             mobileToggle.classList.remove('active');
@@ -50,6 +46,38 @@ function sendWhatsappQuote() {
     const text = encodeURIComponent(`Hola INSA, soy ${window.leadData.nome}. He completado el pre-registro (${window.leadData.telefone}, ${window.leadData.email}) y quiero finalizar mi presupuesto de alarmas.`);
     window.open(`https://api.whatsapp.com/send?phone=34933004024&text=${text}`, '_blank');
 }
+
+
+// ==========================================================================
+// FUNÇÃO GLOBAL DE TRADUÇÃO (I18N)
+// ==========================================================================
+async function applyLanguage(lang) {
+    try {
+        const isSubfolder = window.location.pathname.includes('/servicios/');
+        const jsonPath = isSubfolder ? `../assets/locales/${lang}.json` : `assets/locales/${lang}.json`;
+
+        const response = await fetch(jsonPath);
+        if (!response.ok) throw new Error(`No se pudo cargar el archivo de idioma: ${lang}`);
+
+        const translations = await response.json();
+
+        localStorage.setItem('insa_lang', lang);
+        document.documentElement.lang = lang;
+
+        // Recorremos y traducimos los elementos del DOM
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[key]) {
+                el.innerHTML = translations[key];
+            } else {
+                console.warn(`Clave no encontrada: ${key}`);
+            }
+        });
+    } catch (error) {
+        console.error("Error al aplicar el idioma:", error);
+    }
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -158,52 +186,19 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(statsSection);
     }
 
-
+    // 5. GESTÃO DO SELETOR DE IDIOMAS
     const langSelect = document.getElementById('langSelect');
+    const savedLang = localStorage.getItem('insa_lang') || 'es';
 
-    async function applyLanguage(lang) {
-        try {
-            const isSubfolder = window.location.pathname.includes('/servicios/');
-            const jsonPath = isSubfolder ? `../assets/locales/${lang}.json` : `assets/locales/${lang}.json`;
-
-            const response = await fetch(jsonPath);
-            if (!response.ok) throw new Error(`No se pudo cargar el archivo de idioma: ${lang}`);
-
-            const translations = await response.json();
-
-            localStorage.setItem('insa_lang', lang);
-            document.documentElement.lang = lang;
-
-            // Recorremos y traducimos los elementos del DOM
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[key]) {
-                    // Usamos innerHTML para permitir etiquetas HTML como <span> si las hay
-                    el.innerHTML = translations[key];
-                } else {
-                    console.warn(`Clave no encontrada: ${key}`);
-                }
-            });
-        } catch (error) {
-            console.error("Error al aplicar el idioma:", error);
-        }
+    if (langSelect) {
+        langSelect.value = savedLang;
+        langSelect.addEventListener('change', (e) => {
+            applyLanguage(e.target.value);
+        });
     }
 
-    // Lógica de ejecución al cargar cualquier página
-    document.addEventListener('DOMContentLoaded', () => {
-        const savedLang = localStorage.getItem('insa_lang') || 'es';
-
-        // Si existe el selector en esta página (ej. en el index)
-        if (langSelect) {
-            langSelect.value = savedLang;
-            langSelect.addEventListener('change', (e) => {
-                applyLanguage(e.target.value);
-            });
-        }
-
-        // Aplicamos el idioma guardado tanto en el index como en las subpáginas
-        applyLanguage(savedLang);
-    });
+    // Aplicamos o idioma guardado na inicialização
+    applyLanguage(savedLang);
 
     // 6. MODAL Y DESBLOQUEO DEL SIMULADOR
     const preRegModal = document.getElementById('preRegModal');
@@ -293,6 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
     // 7. EFECTO DINÁMICO DE SCROLL EN LA NAVBAR
     const navbar = document.querySelector('.navbar');
     if (navbar) {
