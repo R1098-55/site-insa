@@ -141,7 +141,7 @@ body {
 
 .navbar.scrolled .btn-call {
     background: rgba(255, 255, 255, 0.1);
-    color: #FFFFFF;
+    color: #FFFFFF ;
     border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -195,6 +195,14 @@ body {
     box-shadow: 0 10px 30px rgba(6, 9, 19, 0.3);
 }
 
+.navbar:not(.scrolled) .logo-alarmas {
+    color: #060913 !important;
+}
+
+
+.navbar.scrolled .logo-alarmas {
+    color: #ffffff !important;
+}
 .navbar-content {
     display: flex;
     align-items: center;
@@ -432,6 +440,7 @@ body {
     justify-content: center;
     gap: 16px;
 }
+
 
 /* ESTATÍSTICAS (CONTADORES COM O AMARELO OFICIAL DA LOGO INSA) */
 .stats-grid {
@@ -839,4 +848,75 @@ header.navbar.scrolled .nav-menu a:link {
 header.navbar.scrolled .nav-menu a:hover,
 header.navbar.scrolled .nav-menu .dropdown:hover .dropdown-toggle {
     color: var(--brand-yellow) !important;
+}
+//* ==========================================================================
+   ESTILOS ESPECÍFICOS: PÁGINA NOSOTROS / EMPRESA (FUNDO AZUL ESCURO E BLOCOS BRANCOS)
+   ========================================================================== */
+body {
+    background-color: #0C1222 !important;
+}
+
+.institutional-page {
+    padding: 60px 0;
+    background: #0C1222;
+}
+
+.institutional-page .container {
+    max-width: 900px;
+}
+
+.page-header-title {
+    text-align: center;
+    margin: 40px 0 40px 0;
+}
+
+.badge-desde {
+    background-color: var(--color-error);
+    color: #FFFFFF;
+    padding: 8px 18px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    border-radius: 4px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.page-header-title h1 {
+    font-size: 3.5rem;
+    margin-top: 16px;
+    color: #ffffff !important;
+    letter-spacing: 3px;
+    font-weight: 900;
+}
+
+/* Blocos institucionais com fundo branco puro e borda amarela elegante */
+.insa-section {
+    background: #ffffff !important;
+    border: 1px solid #1e293b;
+    border-left: 6px solid var(--brand-yellow);
+    padding: 36px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.insa-section h2 {
+    color: var(--brand-blue);
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--border-gold);
+    padding-bottom: 10px;
+}
+
+.insa-section p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.insa-section p:last-child {
+    margin-bottom: 0;
 }
