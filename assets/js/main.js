@@ -49,7 +49,7 @@ function sendWhatsappQuote() {
 
 
 // ==========================================================================
-// FUNÇÃO GLOBAL DE TRADUÇÃO (I18N)
+// FUNÇÃO GLOBAL DE TRADUÇÃO (I18N) - UNIFICADA (SUPORTA CHAVES SIMPLES E ANINHADAS)
 // ==========================================================================
 async function applyLanguage(lang) {
     try {
@@ -61,14 +61,28 @@ async function applyLanguage(lang) {
 
         const translations = await response.json();
 
-        localStorage.setItem('insa_lang', lang);
+        localStorage.setItem('preferred_lang', lang);
         document.documentElement.lang = lang;
 
-        // Recorremos y traducimos los elementos del DOM
+        // Função auxiliar para buscar chaves aninhadas (ex: "services.sistemas-alarma.titulo")
+        function getNestedTranslation(obj, path) {
+            return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
+        }
+
+        // Recorremos y traducimos los elementos del DOM (suporta aninhado e simples)
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
-            if (translations[key]) {
-                el.innerHTML = translations[key];
+
+            // 1. Tenta buscar como chave aninhada
+            let translation = getNestedTranslation(translations, key);
+
+            // 2. Se não achar, tenta buscar como chave simples (ex: ser_1_title da index)
+            if (!translation && translations[key]) {
+                translation = translations[key];
+            }
+
+            if (translation) {
+                el.innerHTML = translation;
             } else {
                 console.warn(`Clave no encontrada: ${key}`);
             }
@@ -188,17 +202,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. GESTÃO DO SELETOR DE IDIOMAS
     const langSelect = document.getElementById('langSelect');
-    const savedLang = localStorage.getItem('insa_lang') || 'es';
+    const savedLang = localStorage.getItem('preferred_lang') || 'es';
 
     if (langSelect) {
         langSelect.value = savedLang;
+
         langSelect.addEventListener('change', (e) => {
-            applyLanguage(e.target.value);
+            const selectedLang = e.target.value;
+            localStorage.setItem('preferred_lang', selectedLang);
+            applyLanguage(selectedLang); // Aplica direto sem precisar recarregar a página inteira, se quiser
         });
     }
 
-    // Aplicamos o idioma guardado na inicialização
-    applyLanguage(savedLang);
+    if (typeof applyLanguage === 'function') {
+        applyLanguage(savedLang);
+    }
+
+
+
 
     // 6. MODAL Y DESBLOQUEO DEL SIMULADOR
     const preRegModal = document.getElementById('preRegModal');

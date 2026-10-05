@@ -920,3 +920,7 @@ body {
 .insa-section p:last-child {
     margin-bottom: 0;
 }
+/* Deixa o texto Alarmas branco apenas nas páginas que tiverem essa classe no body */
+body.pagina-alarmas .logo-alarmas {
+    color: #ffffff;
+}
