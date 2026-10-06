@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videoanálisis con Inteligencia Artificial - INSA Seguridad Barcelona</title>
+    <title>Videoanálisis con Inteligencia Artificial - INSA Barcelona</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
         body { background-color: #0b0f19; color: #fff; font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; }
@@ -32,96 +32,172 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="container header-content" style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
-            <a href="../index.html" class="logo" style="color: #f1e406; text-decoration: none; font-weight: bold; font-size: 1.2rem;">Alarmas <span>INSA</span></a>
-            <nav style="display: flex; gap: 20px;">
-                <a href="../index.html" style="color: #ccc; text-decoration: none;">Inicio</a>
-                <a href="../index.html#servicios" style="color: #ccc; text-decoration: none;">Servicios</a>
-                <a href="../index.html#contacto" style="color: #f1e406; text-decoration: none;">Contacto</a>
+        <div class="container header-content"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 1200px; margin: 0 auto;">
+            <a href="../index.html" class="logo" style="text-decoration: none;">
+                <h2
+                    style="font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1;">
+                    <span class="logo-alarmas"
+                        style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #f4f5f8;">Alarmas</span>
+                    <span style="color: #f1e406; text-shadow: 0 1.5px 2px rgba(0,0,0,0.3);">INSA</span>
+                    <span
+                        style="font-size: 0.75rem; font-weight: 800; background: #f1e406; color: #060913; padding: 2px 6px; border-radius: 4px; position: relative; top: -2px;">1983</span>
+                </h2>
+            </a>
+
+            <nav style="display: flex; gap: 25px; align-items: center;">
+                <a href="../index.html#servicios" style="color: #ccc; text-decoration: none; font-weight: 500;"
+                    data-i18n="nav_services">Servicios</a>
+                <a href="../index.html#contacto" style="color: #f1e406; text-decoration: none; font-weight: 500;"
+                    data-i18n="nav_contacto">Contacto</a>
+
+                <select id="langSelect" class="lang-selector"
+                    style="background: #111; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
+                    <option value="ca">CAT 🇪🇸</option>
+                    <option value="es" selected>ESP 🇪🇸</option>
+                    <option value="en">ENG 🇬🇧</option>
+                </select>
             </nav>
         </div>
     </header>
 
     <div class="page-header-container">
-        <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../index.html#servicios">Servicios</a> / <span>Videoanálisis IA</span></div>
-        <div class="badge-category">Analítica de Vídeo Avanzada Deep Learning</div>
-        <h1 class="page-title">Videoanálisis con Inteligencia Artificial</h1>
-        <p class="page-subtitle">Algoritmos neuronales embarcados en servidores y cámaras IP para la clasificación de objetos, filtrado de falsas alarmas y respuestas automatizadas en tiempo real.</p>
+        <div class="breadcrumb">
+            <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> / 
+            <a href="../index.html#servicios" data-i18n="breadcrumb_servicios">Servicios</a> / 
+            <span data-i18n="breadcrumb_videoanalisis">Videoanálisis IA</span>
+        </div>
+        <div class="badge-category" data-i18n="va_badge">Analítica de Vídeo Avanzada Deep Learning</div>
+        <h1 class="page-title" data-i18n="va_title">Videoanálisis con Inteligencia Artificial</h1>
+        <p class="page-subtitle" data-i18n="va_subtitle">Algoritmos neuronales embarcados en servidores y cámaras IP para la clasificación de objetos, filtrado de falsas alarmas y respuestas automatizadas en tiempo real.</p>
     </div>
 
     <main class="content-card-main">
-        <h2 class="section-heading">Especificaciones Técnicas y Módulos Neuronales</h2>
+        <h2 class="section-heading" data-i18n="va_section_heading">Especificaciones Técnicas y Módulos Neuronales</h2>
         <div class="models-grid">
+            <!-- Card 1 -->
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">👤</div>
-                    <h3>Detección de Intrusos y Cruce de Línea</h3>
-                    <p>Redes neuronales convolucionales (CNN) entrenadas para distinguir siluetas humanas y de vehículos, descartando interferencias ambientales.</p>
+                    <h3 data-i18n="va_card1_title">Detección de Intrusos y Cruce de Línea</h3>
+                    <p data-i18n="va_card1_desc">Redes neuronales convolucionales (CNN) entrenadas para distinguir siluetas humanas y de vehículos, descartando interferencias ambientales.</p>
                     <ul class="specs-list">
-                        <li><strong>Procesamiento:</strong> NPU dedicada en borde / Servidor Deep Learning</li>
-                        <li><strong>Precisión:</strong> Filtrado >99% de falsas alarmas por fauna, lluvia o vegetación</li>
-                        <li><strong>Protocolos:</strong> ONVIF Profile S/G/T, RTSP, ISAPI</li>
-                        <li><strong>Latencia de Alerta:</strong> < 0.4 segundos hacia central receptora</li>
+                        <li><strong data-i18n="va_card1_spec1_label">Procesamiento:</strong> <span data-i18n="va_card1_spec1_val">NPU dedicada en borde / Servidor Deep Learning</span></li>
+                        <li><strong data-i18n="va_card1_spec2_label">Precisión:</strong> <span data-i18n="va_card1_spec2_val">Filtrado >99% de falsas alarmas por fauna, lluvia o vegetación</span></li>
+                        <li><strong data-i18n="va_card1_spec3_label">Protocolos:</strong> <span data-i18n="va_card1_spec3_val">ONVIF Profile S/G/T, RTSP, ISAPI</span></li>
+                        <li><strong data-i18n="va_card1_spec4_label">Latencia de Alerta:</strong> <span data-i18n="va_card1_spec4_val">< 0.4 segundos hacia central receptora</span></li>
                     </ul>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20Videoanálisis%20de%20Cruce%20de%20Línea" target="_blank" class="whatsapp-btn">Pedir Presupuesto</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20Videoanálisis%20de%20Cruce%20de%20Línea" target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
+            <!-- Card 2 -->
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">⏱️</div>
-                    <h3>Control de Merodeo y Estancia</h3>
-                    <p>Monitoreo dinámico de tiempo de residencia en zonas perimetrales críticas o áreas comerciales restringidas fuera de horario.</p>
+                    <h3 data-i18n="va_card2_title">Control de Merodeo y Estancia</h3>
+                    <p data-i18n="va_card2_desc">Monitoreo dinámico de tiempo de residencia en zonas perimetrales críticas o áreas comerciales restringidas fuera de horario.</p>
                     <ul class="specs-list">
-                        <li><strong>Configuración:</strong> Umbrales de tiempo ajustables (0s - 24h)</li>
-                        <li><strong>Metadatos:</strong> Extracción de atributos de color de ropa y dirección de marcha</li>
-                        <li><strong>Salida de Eventos:</strong> Disparo de relés de E/S físicos y notificaciones Push HTTP</li>
-                        <li><strong>Compresión:</strong> H.265+ / Ultra 265 con tasa de bits adaptable (VBR/CBR)</li>
+                        <li><strong data-i18n="va_card2_spec1_label">Configuración:</strong> <span data-i18n="va_card2_spec1_val">Umbrales de tiempo ajustables (0s - 24h)</span></li>
+                        <li><strong data-i18n="va_card2_spec2_label">Metadatos:</strong> <span data-i18n="va_card2_spec2_val">Extracción de atributos de color de ropa y dirección de marcha</span></li>
+                        <li><strong data-i18n="va_card2_spec3_label">Salida de Eventos:</strong> <span data-i18n="va_card2_spec3_val">Disparo de relés de E/S físicos y notificaciones Push HTTP</span></li>
+                        <li><strong data-i18n="va_card2_spec4_label">Compresión:</strong> <span data-i18n="va_card2_spec4_val">H.265+ / Ultra 265 con tasa de bits adaptable (VBR/CBR)</span></li>
                     </ul>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20información%20sobre%20Detección%20de%20Merodeo" target="_blank" class="whatsapp-btn">Pedir Presupuesto</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20información%20sobre%20Detección%20de%20Merodeo" target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
+            <!-- Card 3 -->
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">🚗</div>
-                    <h3>Reconocimiento de Matrículas (ANPR / LPR)</h3>
-                    <p>Tecnología óptica OCR de alta velocidad optimizada para la lectura nítida de placas reflectantes y estándar en condiciones de baja luminosidad.</p>
+                    <h3 data-i18n="va_card3_title">Reconocimiento de Matrículas (ANPR / LPR)</h3>
+                    <p data-i18n="va_card3_desc">Tecnología óptica OCR de alta velocidad optimizada para la lectura nítida de placas reflectantes y estándar en condiciones de baja luminosidad.</p>
                     <ul class="specs-list">
-                        <li><strong>Velocidad de Captura:</strong> Vehículos hasta 120 km/h</li>
-                        <li><strong>Listas:</strong> Gestión embebida de Listas Blancas/Negras (hasta 10.000 matrículas)</li>
-                        <li><strong>Iluminación:</strong> Lentes con infrarrojo pulsado sincronizado anti-reflejos</li>
-                        <li><strong>Integración:</strong> API REST y SDK para automatismo de barreras y relés</li>
+                        <li><strong data-i18n="va_card3_spec1_label">Velocidad de Captura:</strong> <span data-i18n="va_card3_spec1_val">Vehículos hasta 120 km/h</span></li>
+                        <li><strong data-i18n="va_card3_spec2_label">Listas:</strong> <span data-i18n="va_card3_spec2_val">Gestión embebida de Listas Blancas/Negras (hasta 10.000 matrículas)</span></li>
+                        <li><strong data-i18n="va_card3_spec3_label">Iluminación:</strong> <span data-i18n="va_card3_spec3_val">Lentes con infrarrojo pulsado sincronizado anti-reflejos</span></li>
+                        <li><strong data-i18n="va_card3_spec4_label">Integración:</strong> <span data-i18n="va_card3_spec4_val">API REST y SDK para automatismo de barreras y relés</span></li>
                     </ul>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20cotizar%20Reconocimiento%20de%20Matrículas" target="_blank" class="whatsapp-btn">Pedir Presupuesto</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20cotizar%20Reconocimiento%20de%20Matrículas" target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
+            <!-- Card 4 -->
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">🔥</div>
-                    <h3>Detección Precoz de Humo y Fuego</h3>
-                    <p>Analítica de espectro visual y patrones de movimiento caótico para la identificación temprana de conatos de incendio en naves logísticas.</p>
+                    <h3 data-i18n="va_card4_title">Detección Precoz de Humo y Fuego</h3>
+                    <p data-i18n="va_card4_desc">Analítica de espectro visual y patrones de movimiento caótico para la identificación temprana de conatos de incendio en naves logísticas.</p>
                     <ul class="specs-list">
-                        <li><strong>Tiempo de Respuesta:</strong> Alarma en 5 a 15 segundos desde el inicio de ignición</li>
-                        <li><strong>Sensibilidad:</strong> Detección de humo tenue previo a la elevación térmica</li>
-                        <li><strong>Normativa:</strong> Compatible con sistemas de centralización EN 54</li>
-                        <li><strong>Entorno:</strong> Cobertura de grandes volúmenes donde los sensores de techo tardan</li>
+                        <li><strong data-i18n="va_card4_spec1_label">Tiempo de Respuesta:</strong> <span data-i18n="va_card4_spec1_val">Alarma en 5 a 15 segundos desde el inicio de ignición</span></li>
+                        <li><strong data-i18n="va_card4_spec2_label">Sensibilidad:</strong> <span data-i18n="va_card4_spec2_val">Detección de humo tenue previo a la elevación térmica</span></li>
+                        <li><strong data-i18n="va_card4_spec3_label">Normativa:</strong> <span data-i18n="va_card4_spec3_val">Compatible con sistemas de centralización EN 54</span></li>
+                        <li><strong data-i18n="va_card4_spec4_label">Entorno:</strong> <span data-i18n="va_card4_spec4_val">Cobertura de grandes volúmenes donde los sensores de techo tardan</span></li>
                     </ul>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20Detección%20de%20Incendios%20por%20Vídeo" target="_blank" class="whatsapp-btn">Pedir Presupuesto</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20Detección%20de%20Incendios%20por%20Vídeo" target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
         </div>
-        <div class="back-link-container"><a href="../index.html#servicios" class="back-btn">← Volver a Servicios</a></div>
+        <div class="back-link-container">
+            <a href="../index.html#servicios" class="back-btn" data-i18n="back_to_services">← Volver a Servicios</a>
+        </div>
     </main>
 
-     <footer
-        style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
+    <footer style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
         <div class="container">
             <p>&copy;2026 Alarmas INSA Barcelona. Todos los derechos reservados.</p>
             <p>Desarrollado Por Ricardo Mendes.</p>
-    
         </div>
     </footer>
+
+    <script>
+        async function loadAlarmasLanguage() {
+            const savedLang = localStorage.getItem('preferred_lang') || 'es';
+
+            const selectElem = document.getElementById('langSelect');
+            if (selectElem) {
+                selectElem.value = savedLang;
+            }
+
+            try {
+                let response = await fetch(`../assets/locales/${savedLang}.json`);
+                if (!response.ok) throw new Error(`Não foi possível carregar o arquivo ../assets/locales/${savedLang}.json`);
+                let translations = await response.json();
+
+                function getNestedTranslation(obj, path) {
+                    return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
+                }
+
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    let translation = getNestedTranslation(translations, key);
+                    if (!translation && translations[key]) {
+                        translation = translations[key];
+                    }
+                    if (translation) {
+                        element.innerHTML = translation;
+                    }
+                });
+
+                document.documentElement.setAttribute('lang', savedLang);
+
+            } catch (error) {
+                console.error("Erro ao carregar tradução na página de alarmes:", error);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadAlarmasLanguage();
+
+            const selectElem = document.getElementById('langSelect');
+            if (selectElem) {
+                selectElem.addEventListener('change', (e) => {
+                    localStorage.setItem('preferred_lang', e.target.value);
+                    loadAlarmasLanguage();
+                });
+            }
+        });
+    </script>
 </body>
 </html>

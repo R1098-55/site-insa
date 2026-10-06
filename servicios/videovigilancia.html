@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,20 +14,24 @@
             margin: 0;
             padding: 0;
         }
+
         .page-header-container {
             text-align: center;
             padding: 60px 20px 80px 20px;
             background-color: #0b0f19;
         }
+
         .breadcrumb {
             font-size: 0.9rem;
             color: #aaa;
             margin-bottom: 15px;
         }
+
         .breadcrumb a {
             color: #f1e406;
             text-decoration: none;
         }
+
         .badge-category {
             display: inline-block;
             background: rgba(241, 228, 6, 0.1);
@@ -40,12 +45,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
         .page-title {
             font-size: 2.8rem;
             font-weight: bold;
             color: #e9e5af;
             margin-bottom: 15px;
         }
+
         .page-subtitle {
             font-size: 1.1rem;
             color: #ccc;
@@ -53,6 +60,7 @@
             margin: 0 auto;
             line-height: 1.6;
         }
+
         .content-card-main {
             max-width: 1200px;
             margin: -40px auto 60px auto;
@@ -60,8 +68,9 @@
             color: #222;
             border-radius: 16px;
             padding: 50px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
+
         .section-heading {
             color: #0b0f19;
             font-size: 1.8rem;
@@ -70,13 +79,16 @@
             border-left: 4px solid #f1e406;
             padding-left: 15px;
         }
-        .sectors-grid, .models-grid {
+
+        .sectors-grid,
+        .models-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
             margin-top: 25px;
             margin-bottom: 40px;
         }
+
         .card-item {
             background: #f9fafc;
             border: 1px solid #eaeaea;
@@ -87,21 +99,25 @@
             justify-content: space-between;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
+
         .card-item:hover {
             transform: translateY(-5px);
             border-color: #003366;
         }
+
         .card-item h3 {
             color: #003366;
             font-size: 1.3rem;
             margin-bottom: 12px;
         }
+
         .card-item p {
             color: #555;
             font-size: 0.92rem;
             line-height: 1.5;
             margin-bottom: 20px;
         }
+
         .specs-list {
             list-style: none;
             padding: 0;
@@ -111,32 +127,20 @@
             border-top: 1px solid #eee;
             padding-top: 15px;
         }
+
         .specs-list li {
             margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
+
         .specs-list li::before {
             content: "✓";
             color: #003366;
             font-weight: bold;
         }
-        .specs-badge-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 20px;
-        }
-        .spec-tag {
-            background: #eef2f7;
-            color: #003366;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-        }
+
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
@@ -153,13 +157,16 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .whatsapp-btn:hover {
             background-color: #1EBE5D;
         }
+
         .back-link-container {
             text-align: center;
             margin-top: 40px;
         }
+
         .back-btn {
             display: inline-block;
             background: #eee;
@@ -170,21 +177,41 @@
             font-weight: bold;
             transition: background 0.3s;
         }
+
         .back-btn:hover {
             background: #ddd;
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Header Principal -->
     <header class="site-header">
-        <div class="container header-content" style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
-            <a href="../index.html" class="logo" style="color: #f1e406; text-decoration: none; font-weight: bold; font-size: 1.2rem;">Alarmas <span>INSA</span></a>
-            <nav style="display: flex; gap: 20px;">
-                <a href="../index.html" style="color: #ccc; text-decoration: none;">Inicio</a>
-                <a href="../index.html#servicios" style="color: #ccc; text-decoration: none;">Servicios</a>
-                <a href="../index.html#contacto" style="color: #f1e406; text-decoration: none;">Contacto</a>
+        <div class="container header-content"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 1200px; margin: 0 auto;">
+            <a href="../index.html" class="logo" style="text-decoration: none;">
+                <h2
+                    style="font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1;">
+                    <span class="logo-alarmas"
+                        style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #f4f5f8;">Alarmas</span>
+                    <span style="color: #f1e406; text-shadow: 0 1.5px 2px rgba(0,0,0,0.3);">INSA</span>
+                    <span
+                        style="font-size: 0.75rem; font-weight: 800; background: #f1e406; color: #060913; padding: 2px 6px; border-radius: 4px; position: relative; top: -2px;">1983</span>
+                </h2>
+            </a>
+
+            <nav style="display: flex; gap: 25px; align-items: center;">
+                <a href="../index.html#servicios" style="color: #ccc; text-decoration: none; font-weight: 500;"
+                    data-i18n="nav_services">Servicios</a>
+                <a href="../index.html#contacto" style="color: #f1e406; text-decoration: none; font-weight: 500;"
+                    data-i18n="nav_contacto">Contacto</a>
+
+                <select id="langSelect" class="lang-selector"
+                    style="background: #111; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
+                    <option value="ca">CAT 🇪🇸</option>
+                    <option value="es" selected>ESP 🇪🇸</option>
+                    <option value="en">ENG 🇬🇧</option>
+                </select>
             </nav>
         </div>
     </header>
@@ -192,148 +219,218 @@
     <!-- Hero -->
     <div class="page-header-container">
         <div class="breadcrumb">
-            <a href="../index.html">Inicio</a> / <a href="../index.html#servicios">Servicios</a> / <span>Video vigilancia CCTV</span>
+            <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> / <a href="../index.html#servicios"
+                data-i18n="breadcrumb_servicios">Servicios</a> / <span data-i18n="breadcrumb_video_vigilancia">Video
+                vigilancia CCTV</span>
         </div>
-        <div class="badge-category">Tecnología Óptica Avanzada / 4K & PoE</div>
-        <h1 class="page-title">Sistemas de Videovigilancia en Barcelona</h1>
-        <p class="page-subtitle">
-            Imágenes ultra nítidas con resolución 4K real, conectividad PoE simplificada, visión nocturna infrarroja de largo alcance, lentes varifocales y analítica de vídeo con Inteligencia Artificial.
+        <div class="badge-category" data-i18n="video_badge">Tecnología Óptica Avanzada / 4K & PoE</div>
+        <h1 class="page-title" data-i18n="video_title">Sistemas de Videovigilancia en Barcelona</h1>
+        <p class="page-subtitle" data-i18n="video_subtitle">
+            Imágenes ultra nítidas con resolución 4K real, conectividad PoE simplificada, visión nocturna infrarroja de
+            largo alcance, lentes varifocales y analítica de vídeo con Inteligencia Artificial.
         </p>
     </div>
 
     <!-- Conteúdo Principal -->
     <main class="content-card-main">
-        
+
         <!-- Sectores de Aplicação -->
-        <h2 class="section-heading">Sectores de Instalación Especializados</h2>
-        <p style="color: #666; margin-bottom: 20px;">Soluciones adaptadas a las exigencias normativas y de seguridad de cada entorno en Barcelona:</p>
+        <h2 class="section-heading" data-i18n="video_sectors_heading">Sectores de Instalación Especializados</h2>
+        <p style="color: #666; margin-bottom: 20px;" data-i18n="video_sectors_desc">Soluciones adaptadas a las
+            exigencias normativas y de seguridad de cada entorno en Barcelona:</p>
 
         <div class="sectors-grid">
             <div class="card-item">
                 <div>
                     <div style="font-size: 2rem; margin-bottom: 10px;">🏠</div>
-                    <h3>Hogares y Comunidades</h3>
-                    <p>Vigilancia perimetral y de accesos residenciales con visualización en tiempo real desde el smartphone y alertas instantáneas por movimiento.</p>
+                    <h3 data-i18n="video_sector1_title">Hogares y Comunidades</h3>
+                    <p data-i18n="video_sector1_desc">Vigilancia perimetral y de accesos residenciales con visualización
+                        en tiempo real desde el smartphone y alertas instantáneas por movimiento.</p>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20videovigilancia%20para%20mi%20hogar" target="_blank" class="whatsapp-btn">Consultar Sector</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20videovigilancia%20para%20mi%20hogar"
+                    target="_blank" class="whatsapp-btn" data-i18n="btn_consultar_sector">Consultar Sector</a>
             </div>
 
             <div class="card-item">
                 <div>
                     <div style="font-size: 2rem; margin-bottom: 10px;">🏢</div>
-                    <h3>Negocios y Comercios</h3>
-                    <p>Control integral de cajas registradoras, zonas de atención al público y almacenes para prevenir hurtos y optimizar la operativa diaria.</p>
+                    <h3 data-i18n="video_sector2_title">Negocios y Comercios</h3>
+                    <p data-i18n="video_sector2_desc">Control integral de cajas registradoras, zonas de atención al
+                        público y almacenes para prevenir hurtos y optimizar la operativa diaria.</p>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20busco%20cámaras%20para%20mi%20negocio" target="_blank" class="whatsapp-btn">Consultar Sector</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20busco%20cámaras%20para%20mi%20negocio" target="_blank"
+                    class="whatsapp-btn" data-i18n="btn_consultar_sector">Consultar Sector</a>
             </div>
 
             <div class="card-item">
                 <div>
                     <div style="font-size: 2rem; margin-bottom: 10px;">🏭</div>
-                    <h3>Industria y Naves</h3>
-                    <p>Protección perimetral de grandes superficies, muelles de carga y perímetros exteriores con resistencia climática extrema y largo alcance.</p>
+                    <h3 data-i18n="video_sector3_title">Industria y Naves</h3>
+                    <p data-i18n="video_sector3_desc">Protección perimetral de grandes superficies, muelles de carga y
+                        perímetros exteriores con resistencia climática extrema y largo alcance.</p>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20necesito%20videovigilancia%20industrial" target="_blank" class="whatsapp-btn">Consultar Sector</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20necesito%20videovigilancia%20industrial" target="_blank"
+                    class="whatsapp-btn" data-i18n="btn_consultar_sector">Consultar Sector</a>
             </div>
 
             <div class="card-item">
                 <div>
                     <div style="font-size: 2rem; margin-bottom: 10px;">🏛️</div>
-                    <h3>Centros Públicos</h3>
-                    <p>Sistemas homologados de alta fiabilidad para edificios institucionales, colegios, centros deportivos y espacios de gran concurrencia.</p>
+                    <h3 data-i18n="video_sector4_title">Centros Públicos</h3>
+                    <p data-i18n="video_sector4_desc">Sistemas homologados de alta fiabilidad para edificios
+                        institucionales, colegios, centros deportivos y espacios de gran concurrencia.</p>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20requiero%20información%20para%20centros%20públicos" target="_blank" class="whatsapp-btn">Consultar Sector</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20requiero%20información%20para%20centros%20públicos"
+                    target="_blank" class="whatsapp-btn" data-i18n="btn_consultar_sector">Consultar Sector</a>
             </div>
         </div>
 
-        <!-- Modelos Tecnológicos Disponíveis com Especificações Detalhadas -->
-        <h2 class="section-heading">Catálogo de Modelos y Especificaciones Técnicas</h2>
-        <p style="color: #666; margin-bottom: 20px;">Equipos profesionales dotados de la más alta tecnología óptica, compresión eficiente e inteligencia integrada:</p>
+        <!-- Modelos Tecnológicos Disponíveis -->
+        <h2 class="section-heading" data-i18n="video_models_heading">Catálogo de Modelos y Especificaciones Técnicas
+        </h2>
+        <p style="color: #666; margin-bottom: 20px;" data-i18n="video_models_desc">Equipos profesionales dotados de la
+            más alta tecnología óptica, compresión eficiente e inteligencia integrada:</p>
 
         <div class="models-grid">
             <!-- Modelo 1 -->
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">📷</div>
-                    <h3>Cámara Bullet 8MP (4K) Pro</h3>
-                    <p>Diseño robusto para exteriores de alta gama, ideal para capturar matrículas, rostros y detalles críticos a larga distancia.</p>
+                    <h3 data-i18n="video_card1_title">Cámara Bullet 8MP (4K) Pro</h3>
+                    <p data-i18n="video_card1_desc">Diseño robusto para exteriores de alta gama, ideal para capturar
+                        matrículas, rostros y detalles críticos a larga distancia.</p>
                     <ul class="specs-list">
-                        <li>Resolución: 8MP Real (3840 × 2160)</li>
-                        <li>Conectividad: PoE (Power over Ethernet)</li>
-                        <li>Visión Nocturna: IR 30m / 50m Smart IR</li>
-                        <li>Compresión de Vídeo: H.265+ / H.265 / H.264</li>
-                        <li>Protección: IP67 (Impermeable y polvo)</li>
+                        <li data-i18n="video_card1_spec1">Resolución: 8MP Real (3840 × 2160)</li>
+                        <li data-i18n="video_card1_spec2">Conectividad: PoE (Power over Ethernet)</li>
+                        <li data-i18n="video_card1_spec3">Visión Nocturna: IR 30m / 50m Smart IR</li>
+                        <li data-i18n="video_card1_spec4">Compresión de Vídeo: H.265+ / H.265 / H.264</li>
+                        <li data-i18n="video_card1_spec5">Protección: IP67 (Impermeable y polvo)</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20cotizar%20la%20Cámara%20Bullet%208MP%204K%20Pro" target="_blank" class="whatsapp-btn">Pedir Presupuesto</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20cotizar%20la%20Cámara%20Bullet%208MP%204K%20Pro"
+                    target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
             <!-- Modelo 2 -->
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">🌐</div>
-                    <h3>Cámara Domo Antivandálica 4K</h3>
-                    <p>Formato discreto de techo con máxima protección estructural contra impactos, perfecta para comercios e interiores.</p>
+                    <h3 data-i18n="video_card2_title">Cámara Domo Antivandálica 4K</h3>
+                    <p data-i18n="video_card2_desc">Formato discreto de techo con máxima protección estructural contra
+                        impactos, perfecta para comercios e interiores.</p>
                     <ul class="specs-list">
-                        <li>Resolución: 4K Ultra HD (8 Megapíxeles)</li>
-                        <li>Resistencia: IK10 Antivandálica Antigolpes</li>
-                        <li>Óptica: Lente fija gran angular 2.8mm / 4mm</li>
-                        <li>Audio: Micrófono ambiental integrado</li>
-                        <li>Visión Nocturna: Infrarrojo alcance hasta 30m</li>
+                        <li data-i18n="video_card2_spec1">Resolución: 4K Ultra HD (8 Megapíxeles)</li>
+                        <li data-i18n="video_card2_spec2">Resistencia: IK10 Antivandálica Antigolpes</li>
+                        <li data-i18n="video_card2_spec3">Óptica: Lente fija gran angular 2.8mm / 4mm</li>
+                        <li data-i18n="video_card2_spec4">Audio: Micrófono ambiental integrado</li>
+                        <li data-i18n="video_card2_spec5">Visión Nocturna: Infrarrojo alcance hasta 30m</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20cotizar%20la%20Cámara%20Domo%20Antivandálica%204K" target="_blank" class="whatsapp-btn">Pedir Presupuesto</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20cotizar%20la%20Cámara%20Domo%20Antivandálica%204K"
+                    target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
             <!-- Modelo 3 -->
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">🔍</div>
-                    <h3>Cámara Varifocal Motorizada</h3>
-                    <p>Ajuste remoto de zoom y enfoque desde la app o grabador. Permite cambiar el ángulo de apertura sin manipular la cámara físicamente.</p>
+                    <h3 data-i18n="video_card3_title">Cámara Varifocal Motorizada</h3>
+                    <p data-i18n="video_card3_desc">Ajuste remoto de zoom y enfoque desde la app o grabador. Permite
+                        cambiar el ángulo de apertura sin manipular la cámara físicamente.</p>
                     <ul class="specs-list">
-                        <li>Lente: Varifocal motorizada 2.8mm - 12mm</li>
-                        <li>Zoom Óptico: 4X real sin pérdida de calidad</li>
-                        <li>Analítica IA: Clasificación de humanos y vehículos</li>
-                        <li>Almacenamiento: Slot MicroSD interno (hasta 256GB)</li>
-                        <li>Conectividad: PoE Plug & Play y alimentación 12V</li>
+                        <li data-i18n="video_card3_spec1">Lente: Varifocal motorizada 2.8mm - 12mm</li>
+                        <li data-i18n="video_card3_spec2">Zoom Óptico: 4X real sin pérdida de calidad</li>
+                        <li data-i18n="video_card3_spec3">Analítica IA: Clasificación de humanos y vehículos</li>
+                        <li data-i18n="video_card3_spec4">Almacenamiento: Slot MicroSD interno (hasta 256GB)</li>
+                        <li data-i18n="video_card3_spec5">Conectividad: PoE Plug & Play y alimentación 12V</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20la%20Cámara%20Varifocal%20Motorizada" target="_blank" class="whatsapp-btn">Pedir Presupuesto</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20la%20Cámara%20Varifocal%20Motorizada"
+                    target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
             <!-- Modelo 4 -->
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">🔄</div>
-                    <h3>Cámara PTZ Domo Motorizado IA</h3>
-                    <p>Giro de 360 grados ilimitado, inclinación y zoom de largo alcance con seguimiento automático de objetivos mediante inteligencia artificial.</p>
+                    <h3 data-i18n="video_card4_title">Cámara PTZ Domo Motorizado IA</h3>
+                    <p data-i18n="video_card4_desc">Giro de 360 grados ilimitado, inclinación y zoom de largo alcance
+                        con seguimiento automático de objetivos mediante inteligencia artificial.</p>
                     <ul class="specs-list">
-                        <li>Movimiento: Pan 360° continuo / Tilt -15° a 90°</li>
-                        <li>Zoom: Óptico avanzado de hasta 25X / 32X</li>
-                        <li>Seguimiento: Auto-tracking inteligente por IA</li>
-                        <li>Visión Nocturna: IR láser de hasta 100m / 150m</li>
-                        <li>Audio Bidirecional: Altavoz y micro integrados</li>
+                        <li data-i18n="video_card4_spec1">Movimiento: Pan 360° continuo / Tilt -15° a 90°</li>
+                        <li data-i18n="video_card4_spec2">Zoom: Óptico avanzado de hasta 25X / 32X</li>
+                        <li data-i18n="video_card4_spec3">Seguimiento: Auto-tracking inteligente por IA</li>
+                        <li data-i18n="video_card4_spec4">Visión Nocturna: IR láser de hasta 100m / 150m</li>
+                        <li data-i18n="video_card4_spec5">Audio Bidirecional: Altavoz y micro integrados</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20cotizar%20la%20Cámara%20PTZ%20Motorizada%20con%20IA" target="_blank" class="whatsapp-btn">Pedir Presupuesto</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20cotizar%20la%20Cámara%20PTZ%20Motorizada%20con%20IA"
+                    target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
         </div>
 
         <div class="back-link-container">
-            <a href="../index.html#servicios" class="back-btn">← Volver a Servicios</a>
+            <a href="../index.html#servicios" class="back-btn" data-i18n="back_to_services">← Volver a Servicios</a>
         </div>
     </main>
 
     <!-- Footer -->
-     <footer
+    <footer
         style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
         <div class="container">
             <p>&copy;2026 Alarmas INSA Barcelona. Todos los derechos reservados.</p>
             <p>Desarrollado Por Ricardo Mendes.</p>
-    
         </div>
     </footer>
 
+    <script>
+        async function loadAlarmasLanguage() {
+            const savedLang = localStorage.getItem('preferred_lang') || 'es';
+
+            const selectElem = document.getElementById('langSelect');
+            if (selectElem) {
+                selectElem.value = savedLang;
+            }
+
+            try {
+                let response = await fetch(`../assets/locales/${savedLang}.json`);
+                if (!response.ok) throw new Error(`Não foi possível carregar o arquivo ../assets/locales/${savedLang}.json`);
+                let translations = await response.json();
+
+                function getNestedTranslation(obj, path) {
+                    return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
+                }
+
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    let translation = getNestedTranslation(translations, key);
+                    if (!translation && translations[key]) {
+                        translation = translations[key];
+                    }
+                    if (translation) {
+                        element.innerHTML = translation;
+                    }
+                });
+
+                document.documentElement.setAttribute('lang', savedLang);
+
+            } catch (error) {
+                console.error("Erro ao carregar tradução na página de alarmes:", error);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadAlarmasLanguage();
+
+            const selectElem = document.getElementById('langSelect');
+            if (selectElem) {
+                selectElem.addEventListener('change', (e) => {
+                    localStorage.setItem('preferred_lang', e.target.value);
+                    loadAlarmasLanguage();
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>

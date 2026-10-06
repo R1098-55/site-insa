@@ -1,57 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - Alarmas INSA 1983</title>
-    <!-- Seus links de CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body style="background-color: #0C1222 !important; margin: 0; font-family: 'Montserrat', sans-serif;">
 
     <!-- HEADER / NAVBAR -->
     <header class="navbar">
-        <div class="navbar-content">
+        <div class="navbar-content"
+            style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 20px;">
             <div class="logo">
-                <a href="index.html">
-                    <h2 style="font-size: 2rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1; margin: 0;">
-                        <span class="logo-alarmas" style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Alarmas</span> 
-                        <span style="color: #f1e406; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">INSA</span> 
-                        <span style="font-size: 0.85rem; font-weight: 800; background: #f1e406; color: #060913; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.5px; position: relative; top: 4px; box-shadow: 0 3px 8px rgba(0,0,0,0.3);">1983</span>
+                <a href="index.html" style="text-decoration: none;">
+                    <h2
+                        style="font-size: 2rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1; margin: 0;">
+                        <span class="logo-alarmas"
+                            style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #fff;">Alarmas</span>
+                        <span style="color: #f1e406; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">INSA</span>
+                        <span
+                            style="font-size: 0.85rem; font-weight: 800; background: #f1e406; color: #060913; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.5px; position: relative; top: 4px; box-shadow: 0 3px 8px rgba(0,0,0,0.3);">1983</span>
                     </h2>
                 </a>
             </div>
-            <nav class="nav-menu">
-                <a href="index.html" data-i18n="nav_solutions">Solutions</a>
+            <nav class="nav-menu" style="display: flex; gap: 20px; align-items: center;">
+                <a href="index.html" style="color: #ccc; text-decoration: none;" data-i18n="nav_solutions">Solutions</a>
                 <div class="dropdown">
-                    <a class="dropdown-toggle" data-i18n="nav_services">Servicios</a>
+                    <a class="dropdown-toggle" style="color: #ccc; text-decoration: none;"
+                        data-i18n="nav_services">Servicios</a>
                     <ul class="dropdown-menu">
                         <li><a href="servicios/alarmas.html" data-i18n="sub_alarmas">Alarmas</a></li>
-                        <li><a href="servicios/videovigilancia.html" data-i18n="sub_videovigilancia">Cámara Video Vigilancia</a></li>
-                        <li><a href="servicios/videoanalisis.html" data-i18n="sub_videoanalisis">Video Análisis Inteligente</a></li>
-                        <li><a href="servicios/nieblaoptica.html" data-i18n="sub_niebla">Niebla Óptica Antirrobo</a></li>
-                        <li><a href="servicios/controlaccesos.html" data-i18n="sub_controlaccesos">Control de Accesos Avanzado</a></li>
-                        <li><a href="servicios/controlincendio.html" data-i18n="sub_incendios">Detección de Incendios</a></li>
-                        <li><a href="servicios/monitoreoremoto.html" data-i18n="sub_monitoreo">Monitoreo Remoto 24/7</a></li>
+                        <li><a href="servicios/videovigilancia.html" data-i18n="sub_videovigilancia">Cámara Video
+                                Vigilancia</a></li>
+                        <li><a href="servicios/videoanalisis.html" data-i18n="sub_videoanalisis">Video Análisis
+                                Inteligente</a></li>
+                        <li><a href="servicios/nieblaoptica.html" data-i18n="sub_niebla">Niebla Óptica Antirrobo</a>
+                        </li>
+                        <li><a href="servicios/controlaccesos.html" data-i18n="sub_controlaccesos">Control de Accesos
+                                Avanzado</a></li>
+                        <li><a href="servicios/controlincendio.html" data-i18n="sub_incendios">Detección de
+                                Incendios</a></li>
+                        <li><a href="servicios/monitoreoremoto.html" data-i18n="sub_monitoreo">Monitoreo Remoto 24/7</a>
+                        </li>
                     </ul>
                 </div>
-                <a href="index.html#simulator" data-i18n="nav_simulator">Simulator</a>
+                <a href="index.html#simulator" style="color: #ccc; text-decoration: none;"
+                    data-i18n="nav_simulator">Simulator</a>
                 <div class="dropdown">
-                    <a class="dropdown-toggle" data-i18n="nav_company">Empresa</a>
+                    <a class="dropdown-toggle" style="color: #f1e406; text-decoration: none;"
+                        data-i18n="nav_company">Empresa</a>
                     <ul class="dropdown-menu">
                         <li><a href="nosotros.html" data-i18n="sub_about">Sobre Nosotros</a></li>
                         <li><a href="trabaja.html" data-i18n="nav_trabaja">Trabaja con nosotros</a></li>
                     </ul>
                 </div>
-                <a href="index.html#blog" data-i18n="nav_blog">Blog/FAQ</a>
+                <a href="index.html#blog" style="color: #ccc; text-decoration: none;" data-i18n="nav_blog">Blog/FAQ</a>
             </nav>
-            <div class="nav-actions">
-                <a href="tel:+" class="btn btn-sm btn-call" data-i18n="btn_call">Call Now</a>
-                <a href="https://whatsapp.com" target="_blank" class="btn btn-sm btn-whatsapp-header" data-i18n="btn_whatsapp">Whatsapp</a>
+            <div class="nav-actions" style="display: flex; gap: 12px; align-items: center;">
+                <a href="tel:+34933004024" class="btn btn-sm btn-call" data-i18n="btn_call">Call Now</a>
+                <a href="https://wa.me/34933004024" target="_blank" class="btn btn-sm btn-whatsapp-header"
+                    data-i18n="btn_whatsapp">Whatsapp</a>
                 <a href="index.html#simulator" class="btn btn-sm btn-primary" data-i18n="btn_quote">Request Quote</a>
-             
-                <select id="langSelect" class="lang-selector">
+
+                <select id="langSelect" class="lang-selector"
+                    style="background: #111; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
                     <option value="ca">CAT 🇪🇸</option>
                     <option value="es" selected>ESP 🇪🇸</option>
                     <option value="en">EN 🇬🇧</option>
@@ -60,88 +77,99 @@
         </div>
     </header>
 
-    
-
-           
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros - Alarmas INSA 1983</title>
-    <!-- Certifique-se de que o caminho do seu CSS está correto -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="[https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap)" rel="stylesheet">
-</head>
-<body style="background-color: #0C1222 !important; margin: 0; font-family: 'Montserrat', sans-serif;">
-
- 
-
     <!-- CONTEÚDO INSTITUCIONAL -->
     <main class="institutional-page" style="padding: 60px 0;">
         <div class="container" style="max-width: 950px; margin: 0 auto; padding: 0 20px;">
-            
+
             <!-- TÍTULO DA PÁGINA -->
             <div class="page-header-title" style="text-align: center; margin: 40px 0;">
-                <span class="badge-desde" style="background-color: #dc2626; color: #fff; padding: 8px 18px; font-size: 0.95rem; font-weight: 800; border-radius: 4px; letter-spacing: 2px; text-transform: uppercase;">Sistemas de Alarma Desde 1983</span>
-                <h1 style="font-size: 2.8rem; margin-top: 16px; color: #ffffff; font-weight: 900; letter-spacing: 1px;">Instalaciones y servicios, por toda Cataluña</h1>
+                <span class="badge-desde"
+                    style="background-color: #dc2626; color: #fff; padding: 8px 18px; font-size: 0.95rem; font-weight: 800; border-radius: 4px; letter-spacing: 2px; text-transform: uppercase;"
+                    data-i18n="about_badge">Sistemas de Alarma Desde 1983</span>
+                <h1 style="font-size: 2.8rem; margin-top: 16px; color: #ffffff; font-weight: 900; letter-spacing: 1px;"
+                    data-i18n="about_main_title">Instalaciones y servicios, por toda Cataluña</h1>
             </div>
 
-            <!-- BLOCO 1: TEXTO + FOTO DA FAMÍLIA (LADO A LADO) -->
-            <div class="insa-section" style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+            <!-- BLOCO 1: TEXTO + FOTO DA FAMÍLIA -->
+            <div class="insa-section"
+                style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
                 <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
                     <div style="flex: 1; min-width: 280px;">
-                        <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;">Instalaciones de Sistemas de Alarma S.A.</h2>
-                        <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 14px;">
-                            En <strong>Instalaciones de Sistemas de Alarma S.A. (INSA)</strong>, nos dedicamos a la protección de personas y bienes. Estamos homologados y capacitados para detectar errores, analizarlos y ayudar a prevenirlos, procurando que no se vuelvan a producir.
+                        <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;"
+                            data-i18n="about_block1_title">Instalaciones de Sistemas de Alarma S.A.</h2>
+                        <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 14px;"
+                            data-i18n="about_block1_p1">
+                            En <strong>Instalaciones de Sistemas de Alarma S.A. (INSA)</strong>, nos dedicamos a la
+                            protección de personas y bienes. Estamos homologados y capacitados para detectar errores,
+                            analizarlos y ayudar a prevenirlos, procurando que no se vuelvan a producir.
                         </p>
-                        <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;">
-                            Durante más de 35 años, hemos recorrido un camino lleno de innumerables retos, con una confianza ciega en nuestra labor, seriedad y máxima profesionalidad.
+                        <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;"
+                            data-i18n="about_block1_p2">
+                            Durante más de 35 años, hemos recorrido un camino lleno de innumerables retos, con una
+                            confianza ciega en nuestra labor, seriedad y máxima profesionalidad.
                         </p>
                     </div>
                     <div style="flex: 1; min-width: 260px; text-align: center;">
-                        <!-- Verifique se a imagem está na pasta assets/img/ com este exato nome -->
-                        <img src="assets/img/alarma-en-el-hogar.jpg" alt="Instalación de alarma residencial INSA" style="width: 100%; max-width: 380px; height: auto; border-radius: 6px; border: 3px solid #f1e406; box-shadow: 0 6px 15px rgba(0,0,0,0.15);">
+                        <img src="assets/img/alarma-en-el-hogar.jpg" alt="Instalación de alarma residencial INSA"
+                            style="width: 100%; max-width: 380px; height: auto; border-radius: 6px; border: 3px solid #f1e406; box-shadow: 0 6px 15px rgba(0,0,0,0.15);">
                     </div>
                 </div>
             </div>
 
-            <!-- BLOCO 2: EMPRESA, HISTORIA E FOTO DA CORUJA (LADO A LADO INVERTIDO) -->
-            <div class="insa-section" style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
-                <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; flex-direction: row-reverse;">
+            <!-- BLOCO 2: EMPRESA, HISTORIA E FOTO -->
+            <div class="insa-section"
+                style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                <div
+                    style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; flex-direction: row-reverse;">
                     <div style="flex: 1; min-width: 280px;">
-                        <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;">Historia y Evolución</h2>
-                        <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 14px;">
-                            Fundada en Abril de 1983, con una dilatada experiencia a lo largo de más de 35 años en la seguridad residencial y empresarial. El proyecto que empezó en el abc de las alarmas con gran ilusión, ha evolucionado constantemente hacia CCTV, cámaras IP y vídeo-análisis.
+                        <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;"
+                            data-i18n="about_block2_title">Historia y Evolución</h2>
+                        <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 14px;"
+                            data-i18n="about_block2_p1">
+                            Fundada en Abril de 1983, con una dilatada experiencia a lo largo de más de 35 años en la
+                            seguridad residencial y empresarial. El proyecto que empezó en el abc de las alarmas con
+                            gran ilusión, ha evolucionado constantemente hacia CCTV, cámaras IP y vídeo-análisis.
                         </p>
-                        <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;">
-                            El Servicio Post-venta es una cualidad que nos distingue, realizándolo de todas las marcas del sector junto a un asesoramiento continuado.
+                        <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;"
+                            data-i18n="about_block2_p2">
+                            El Servicio Post-venta es una cualidad que nos distingue, realizándolo de todas las marcas
+                            del sector junto a un asesoramiento continuado.
                         </p>
                     </div>
                     <div style="flex: 1; min-width: 260px; text-align: center;">
-                        <!-- Verifique se a imagem está na pasta assets/img/ com este exato nome -->
-                        <img src="assets/img/hero-bg.jpg" alt="Tecnología y Videovigilancia INSA" style="width: 100%; max-width: 380px; height: auto; border-radius: 6px; border: 3px solid #f1e406; box-shadow: 0 6px 15px rgba(0,0,0,0.15);">
+                        <img src="assets/img/hero-bg.jpg" alt="Tecnología y Videovigilancia INSA"
+                            style="width: 100%; max-width: 380px; height: auto; border-radius: 6px; border: 3px solid #f1e406; box-shadow: 0 6px 15px rgba(0,0,0,0.15);">
                     </div>
                 </div>
             </div>
 
             <!-- BLOCO 3: FILOSOFÍA Y FUTURO -->
-            <div class="insa-section" style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
-                <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;">Filosofía & Futuro</h2>
-                <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 14px;">
-                    Ofrecemos Seguridad, Tranquilidad y Control. Nuestro equipo técnico da el trato personalizado que nos diferencia, captando las necesidades reales de cada Cliente y aconsejando la mejor opción con una óptima relación calidad-precio.
+            <div class="insa-section"
+                style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;"
+                    data-i18n="about_block3_title">Filosofía & Futuro</h2>
+                <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 14px;"
+                    data-i18n="about_block3_p1">
+                    Ofrecemos Seguridad, Tranquilidad y Control. Nuestro equipo técnico da el trato personalizado que
+                    nos diferencia, captando las necesidades reales de cada Cliente y aconsejando la mejor opción con
+                    una óptima relación calidad-precio.
                 </p>
-                <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;">
-                    Nos preocupamos en solucionar cualquier incidencia de otras marcas (por insatisfacción o mal servicio post-venta), convirtiéndonos en sus consultores de confianza para hacerles Clientes y Amigos.
+                <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;"
+                    data-i18n="about_block3_p2">
+                    Nos preocupamos en solucionar cualquier incidencia de otras marcas (por insatisfacción o mal
+                    servicio post-venta), convirtiéndonos en sus consultores de confianza para hacerles Clientes y
+                    Amigos.
                 </p>
             </div>
 
             <!-- BLOCO 4: RODAPÉ INSTITUCIONAL (HOMOLOGAÇÕES) -->
-            <div style="text-align: center; color: #f3f4f5; padding: 20px 0; font-size: 0.9rem; border-top: 1px solid #f8f9fa; margin-top: 40px;">
-                <p style="font-weight: 800; color: #f9fafc; margin-bottom: 6px; font-size: 1rem;">INSTALACIONES DE SISTEMAS DE ALARMA S.A.</p>
-                <p style="margin-bottom: 4px;">NUM. HOMOLOGACION D.G.P. 549 (15-09-1984)</p>
-                <p style="margin-bottom: 4px;">Inscrita en el Registro de Agentes de la Seguridad • Industrial de Cataluña. RASIC N.º 005006197</p>
+            <div
+                style="text-align: center; color: #f3f4f5; padding: 20px 0; font-size: 0.9rem; border-top: 1px solid #1e293b; margin-top: 40px;">
+                <p style="font-weight: 800; color: #f9fafc; margin-bottom: 6px; font-size: 1rem;">INSTALACIONES DE
+                    SISTEMAS DE ALARMA S.A.</p>
+                <p style="margin-bottom: 4px;" data-i18n="about_homolog_1">NUM. HOMOLOGACION D.G.P. 549 (15-09-1984)</p>
+                <p style="margin-bottom: 4px;" data-i18n="about_homolog_2">Inscrita en el Registro de Agentes de la
+                    Seguridad • Industrial de Cataluña. RASIC N.º 005006197</p>
                 <p style="margin-bottom: 0;">UNE EN ISO 9001:2015 Nº Q181203</p>
             </div>
 
@@ -149,18 +177,65 @@
     </main>
 
     <!-- RODAPÉ DA PÁGINA -->
-     <footer
+    <footer
         style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
         <div class="container">
             <p>&copy;2026 Alarmas INSA Barcelona. Todos los derechos reservados.</p>
             <p>Desarrollado Por Ricardo Mendes.</p>
-    
         </div>
     </footer>
 
-    <!-- Script para o comportamento da navbar scrolled -->
+    <!-- Script de Tradução Dinâmica (Caminho correto assets/locales/) -->
     <script>
-        window.addEventListener('scroll', function() {
+        async function loadNosotrosLanguage() {
+            const savedLang = localStorage.getItem('preferred_lang') || 'es';
+
+            const selectElem = document.getElementById('langSelect');
+            if (selectElem) {
+                selectElem.value = savedLang;
+            }
+
+            try {
+                let response = await fetch(`assets/locales/${savedLang}.json`);
+                if (!response.ok) throw new Error(`Não foi possível carregar o arquivo assets/locales/${savedLang}.json`);
+                let translations = await response.json();
+
+                function getNestedTranslation(obj, path) {
+                    return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
+                }
+
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    let translation = getNestedTranslation(translations, key);
+                    if (!translation && translations[key]) {
+                        translation = translations[key];
+                    }
+                    if (translation) {
+                        element.innerHTML = translation;
+                    }
+                });
+
+                document.documentElement.setAttribute('lang', savedLang);
+
+            } catch (error) {
+                console.error("Erro ao carregar tradução na página nosotros:", error);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadNosotrosLanguage();
+
+            const selectElem = document.getElementById('langSelect');
+            if (selectElem) {
+                selectElem.addEventListener('change', (e) => {
+                    localStorage.setItem('preferred_lang', e.target.value);
+                    loadNosotrosLanguage();
+                });
+            }
+        });
+
+        // Script para o comportamento da navbar scrolled
+        window.addEventListener('scroll', function () {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
@@ -170,4 +245,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -321,5 +321,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    function enviarPorEmail(e) {
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value;
+        const telefono = document.getElementById('telefono').value;
+        const email = document.getElementById('email').value;
+        const area = document.getElementById('area').value;
+        const fileInput = document.getElementById('cvFile');
+        const mensaje = document.getElementById('mensaje').value;
+
+        const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : 'Ningún archivo seleccionado';
+
+        // E-mail de destino da INSA (substitua pelo e-mail oficial se necessário)
+        const emailDestino = "info@alarmasinsa.com";
+        const asunto = `Candidatura - ${area} - ${nombre}`;
+
+        const cuerpo = `Hola Departamento de Selección,\n\n` +
+            `Me gustaría postularme para la posición de: ${area}.\n\n` +
+            `DATOS DEL CANDIDATO:\n` +
+            `- Nombre: ${nombre}\n` +
+            `- Teléfono: ${telefono}\n` +
+            `- Email: ${email}\n` +
+            `- Archivo de CV adjunto indicado: ${fileName}\n\n` +
+            `PRESENTACIÓN:\n${mensaje}\n\n` +
+            `*(Nota: Por favor, adjunte manualmente el archivo "${fileName}" en este correo antes de enviarlo).*`;
+
+        const mailtoUrl = `mailto:${emailDestino}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+
+        // Alerta informativa para o usuário anexar o arquivo no seu aplicativo de e-mail que vai abrir
+        alert(`Se abrirá tu cliente de correo electrónico para enviar la candidatura.\n\nPor favor, recuerda adjuntar tu archivo (${fileName}) en el mensaje antes de pulsar Enviar.`);
+
+        // Abre o cliente de e-mail padrão (Outlook, Gmail, Apple Mail, etc.)
+        window.location.href = mailtoUrl;
+    }
 
 });

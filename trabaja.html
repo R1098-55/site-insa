@@ -1,8 +1,315 @@
- <footer
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabaja con Nosotros - Alarmas INSA 1983</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body style="background-color: #0C1222 !important; margin: 0; font-family: 'Montserrat', sans-serif;">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="navbar">
+        <div class="navbar-content"
+            style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 20px;">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h2
+                        style="font-size: 2rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1; margin: 0;">
+                        <span class="logo-alarmas"
+                            style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #fff;">Alarmas</span>
+                        <span style="color: #f1e406; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">INSA</span>
+                        <span
+                            style="font-size: 0.85rem; font-weight: 800; background: #f1e406; color: #060913; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.5px; position: relative; top: 4px; box-shadow: 0 3px 8px rgba(0,0,0,0.3);">1983</span>
+                    </h2>
+                </a>
+            </div>
+            <nav class="nav-menu" style="display: flex; gap: 20px; align-items: center;">
+                <a href="index.html" style="color: #ccc; text-decoration: none;" data-i18n="nav_solutions">Solutions</a>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" style="color: #ccc; text-decoration: none;"
+                        data-i18n="nav_services">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="servicios/alarmas.html" data-i18n="sub_alarmas">Alarmas</a></li>
+                        <li><a href="servicios/videovigilancia.html" data-i18n="sub_videovigilancia">Cámara Video
+                                Vigilancia</a></li>
+                        <li><a href="servicios/videoanalisis.html" data-i18n="sub_videoanalisis">Video Análisis
+                                Inteligente</a></li>
+                        <li><a href="servicios/nieblaoptica.html" data-i18n="sub_niebla">Niebla Óptica Antirrobo</a>
+                        </li>
+                        <li><a href="servicios/controlaccesos.html" data-i18n="sub_controlaccesos">Control de Accesos
+                                Avanzado</a></li>
+                        <li><a href="servicios/controlincendio.html" data-i18n="sub_incendios">Detección de
+                                Incendios</a></li>
+                        <li><a href="servicios/monitoreoremoto.html" data-i18n="sub_monitoreo">Monitoreo Remoto 24/7</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="index.html#simulator" style="color: #ccc; text-decoration: none;"
+                    data-i18n="nav_simulator">Simulator</a>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" style="color: #f1e406; text-decoration: none;"
+                        data-i18n="nav_company">Empresa</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="nosotros.html" data-i18n="sub_about">Sobre Nosotros</a></li>
+                        <li><a href="trabaja.html" data-i18n="nav_trabaja">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+                <a href="index.html#blog" style="color: #ccc; text-decoration: none;" data-i18n="nav_blog">Blog/FAQ</a>
+            </nav>
+            <div class="nav-actions" style="display: flex; gap: 12px; align-items: center;">
+                <a href="tel:+34933004024" class="btn btn-sm btn-call" data-i18n="btn_call">Call Now</a>
+                <a href="https://wa.me/34933004024" target="_blank" class="btn btn-sm btn-whatsapp-header"
+                    data-i18n="btn_whatsapp">Whatsapp</a>
+                <a href="index.html#simulator" class="btn btn-sm btn-primary" data-i18n="btn_quote">Request Quote</a>
+
+                <select id="langSelect" class="lang-selector"
+                    style="background: #111; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
+                    <option value="ca">CAT 🇪🇸</option>
+                    <option value="es" selected>ESP 🇪🇸</option>
+                    <option value="en">EN 🇬🇧</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO INSTITUCIONAL: TRABAJA CON NOSOTROS -->
+    <main class="institutional-page" style="padding: 60px 0;">
+        <div class="container" style="max-width: 950px; margin: 0 auto; padding: 0 20px;">
+
+            <!-- TÍTULO DA PÁGINA -->
+            <div class="page-header-title" style="text-align: center; margin: 40px 0;">
+                <span class="badge-desde"
+                    style="background-color: #2563eb; color: #fff; padding: 8px 18px; font-size: 0.95rem; font-weight: 800; border-radius: 4px; letter-spacing: 2px; text-transform: uppercase;"
+                    data-i18n="job_badge">Únete al equipo INSA</span>
+                <h1 style="font-size: 2.8rem; margin-top: 16px; color: #ffffff; font-weight: 900; letter-spacing: 1px;"
+                    data-i18n="job_main_title">Trabaja con Nosotros en Barcelona</h1>
+            </div>
+
+            <!-- BLOCO 1: INTRODUÇÃO / POR QUE TRABALHAR CONOSCO -->
+            <div class="insa-section"
+                style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;"
+                    data-i18n="job_block1_title">Construye tu carrera en el sector de la seguridad</h2>
+                <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 14px;"
+                    data-i18n="job_block1_p1">
+                    En <strong>Instalaciones de Sistemas de Alarma S.A. (INSA)</strong> buscamos constantemente talento
+                    apasionado por la tecnología, la electrónica, la ciberseguridad y la atención al cliente de
+                    excelencia. Valoramos la experiencia, pero sobre todo la actitud proactiva y el compromiso con la
+                    seguridad de nuestros clientes en toda Cataluña.
+                </p>
+                <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;"
+                    data-i18n="job_block1_p2">
+                    Ofrecemos un entorno de trabajo dinámico, formación continua en sistemas avanzados de
+                    videovigilancia, inteligencia artificial aplicada y protección contra incendios, además de
+                    estabilidad laboral en una empresa sólida fundada en 1983.
+                </p>
+            </div>
+
+            <!-- BLOCO 2: PERFIS PROCURADOS -->
+            <div class="insa-section"
+                style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;"
+                    data-i18n="job_block2_title">Perfiles Habituales</h2>
+                <ul style="color: #475569; font-size: 1.05rem; line-height: 1.8; margin: 0; padding-left: 20px;">
+                    <li data-i18n="job_profile_1"><strong>Técnicos Instaladores y Mantenedores:</strong> Especialistas
+                        en sistemas de alarma, CCTV, redes IP y normativas PCI.</li>
+                    <li data-i18n="job_profile_2"><strong>Comerciales y Consultores de Seguridad:</strong> Asesores para
+                        clientes residenciales, comerciales e industriales en Barcelona.</li>
+                    <li data-i18n="job_profile_3"><strong>Personal de Soporte y Operadores CRA:</strong> Gestión técnica
+                        de incidencias y monitoreo de señales.</li>
+                </ul>
+            </div>
+
+            <!-- BLOCO 3: FORMULÁRIO DE ENVIO DE CV -->
+            <div class="insa-section"
+                style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;"
+                    data-i18n="job_form_title">Envía tu Currículum</h2>
+                <p style="color: #475569; font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px;"
+                    data-i18n="job_form_subtitle">
+                    Completa tus datos a continuación ou envíanos directamente un correo electrónico con tu CV adjunto
+                    al departamento de recursos humanos.
+                </p>
+                <!-- BLOCO 3: FORMULÁRIO DE ENVIO DE CV -->
+                <div class="insa-section"
+                    style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                    <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;"
+                        data-i18n="job_form_title">Envía tu Currículum</h2>
+                    <p style="color: #475569; font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px;"
+                        data-i18n="job_form_subtitle">
+                        Completa tus datos, adjunta tu currículum y envíalo directamente a nuestro departamento de
+                        recursos humanos.
+                    </p>
+
+                    <form id="cvForm" onsubmit="enviarPorEmail(event)" style="display: grid; gap: 20px;">
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                            <div>
+                                <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
+                                    data-i18n="form_name">Nombre completo *</label>
+                                <input type="text" id="nombre" required
+                                    style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
+                                    data-i18n="form_phone">Teléfono de contacto *</label>
+                                <input type="tel" id="telefono" required
+                                    style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
+                            </div>
+                        </div>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                            <div>
+                                <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
+                                    data-i18n="form_email">Correo electrónico *</label>
+                                <input type="email" id="email" required
+                                    style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
+                                    data-i18n="form_area">Área de interés *</label>
+                                <select id="area"
+                                    style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; background: #fff; box-sizing: border-box;">
+                                    <option value="Tecnico Instalador" data-i18n="opt_tech">Técnico Instalador /
+                                        Mantenimiento</option>
+                                    <option value="Comercial" data-i18n="opt_sales">Comercial / Ventas</option>
+                                    <option value="Administracion" data-i18n="opt_admin">Administración / Soporte
+                                    </option>
+                                    <option value="Otro" data-i18n="opt_other">Otro / Prácticas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
+                                data-i18n="form_cv_file">Adjuntar Currículum (PDF o Word) *</label>
+                            <input type="file" id="cvFile" accept=".pdf,.doc,.docx" required
+                                style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; background: #f8fafc; box-sizing: border-box; cursor: pointer;">
+                            <small style="color: #64748b; display: block; margin-top: 5px;"
+                                data-i18n="form_cv_hint">Formatos aceptados: PDF, DOC, DOCX (Máx. 5MB)</small>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
+                                data-i18n="form_msg">Breve presentación o comentarios *</label>
+                            <textarea id="mensaje" rows="4" required
+                                placeholder="Cuéntanos brevemente sobre tu experiencia..."
+                                style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            style="background-color: #2563eb; color: #fff; border: none; padding: 14px 25px; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.3s;"
+                            data-i18n="btn_send_email">
+                            Enviar Currículum por Correo Electrónico
+                        </button>
+                    </form>
+                </div>
+
+               
+
+            <!-- RODAPÉ INSTITUCIONAL -->
+            <div
+                style="text-align: center; color: #f3f4f5; padding: 20px 0; font-size: 0.9rem; border-top: 1px solid #1e293b; margin-top: 40px;">
+                <p style="font-weight: 800; color: #f9fafc; margin-bottom: 6px; font-size: 1rem;">INSTALACIONES DE
+                    SISTEMAS DE ALARMA S.A.</p>
+                <p style="margin-bottom: 4px;">NUM. HOMOLOGACION D.G.P. 549 (15-09-1984)</p>
+                <p style="margin-bottom: 0;">Inscrita en el Registro de Agentes de la Seguridad • Industrial de
+                    Cataluña. RASIC N.º 005006197</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- RODAPÉ DA PÁGINA -->
+    <footer
         style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
         <div class="container">
             <p>&copy;2026 Alarmas INSA Barcelona. Todos los derechos reservados.</p>
             <p>Desarrollado Por Ricardo Mendes.</p>
-    
         </div>
     </footer>
+
+    <!-- Script de Tradução Dinâmica e Envio -->
+    <script>
+        async function loadTrabajaLanguage() {
+            const savedLang = localStorage.getItem('preferred_lang') || 'es';
+
+            const selectElem = document.getElementById('langSelect');
+            if (selectElem) {
+                selectElem.value = savedLang;
+            }
+
+            try {
+                let response = await fetch(`assets/locales/${savedLang}.json`);
+                if (!response.ok) throw new Error(`Não foi possível carregar o arquivo assets/locales/${savedLang}.json`);
+                let translations = await response.json();
+
+                function getNestedTranslation(obj, path) {
+                    return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
+                }
+
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    let translation = getNestedTranslation(translations, key);
+                    if (!translation && translations[key]) {
+                        translation = translations[key];
+                    }
+                    if (translation) {
+                        element.innerHTML = translation;
+                    }
+                });
+
+                document.documentElement.setAttribute('lang', savedLang);
+
+            } catch (error) {
+                console.error("Erro ao carregar tradução na página trabaja:", error);
+            }
+        }
+
+        function enviarCurriculum(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const area = document.getElementById('area').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Opção 1: Enviar via WhatsApp formatado para o responsável
+            const textoWp = `Hola, me llamo *${nombre}* y quiero postularme para el área de *${area}*.\nTeléfono: ${telefono}\nEmail: ${email}\n\nMensaje/Experiencia:\n${mensaje}`;
+            const urlWp = `https://wa.me/34933004024?text=${encodeURIComponent(textoWp)}`;
+
+            // Abre o WhatsApp para envio direto
+            window.open(urlWp, '_blank');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadTrabajaLanguage();
+
+            const selectElem = document.getElementById('langSelect');
+            if (selectElem) {
+                selectElem.addEventListener('change', (e) => {
+                    localStorage.setItem('preferred_lang', e.target.value);
+                    loadTrabajaLanguage();
+                });
+            }
+        });
+
+        // Script para a navbar scrolled
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

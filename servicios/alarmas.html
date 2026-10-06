@@ -8,16 +8,53 @@
 
     <link rel="stylesheet" href="../assets/css/styles.css">
     <style>
+        .site-header {
+            background-color: var(--bg-surface, #0b0f19);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
         .page-header-container {
             text-align: center;
-            padding: 60px 20px 80px 20px;
+            padding: 40px 20px 60px 20px;
             background-color: var(--bg-surface, #0b0f19);
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb a {
+            color: #ffc107;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: #ccc;
+        }
+
+        .badge-category {
+            display: inline-block;
+            background: rgba(241, 228, 6, 0.1);
+            color: #f1e406;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px solid rgba(241, 228, 6, 0.2);
         }
 
         .content-card-main {
             max-width: 1100px;
-            margin: -40px auto 60px auto;
-            background: var(--bg-surface, #e6e7a4);
+            margin: -30px auto 60px auto;
+            background: var(--bg-surface, #ffffff);
             color: var(--text-primary, #222);
             border-radius: 16px;
             padding: 50px;
@@ -48,108 +85,78 @@
             gap: 10px;
             background-color: #0e7433;
             color: #fff;
-            padding: 12px 20px;
+            padding: 10px 16px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 0.9rem;
             margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-btn-card:hover {
+            background-color: #0b5c28;
         }
     </style>
 </head>
 
 <body>
 
-
-    <header class="navbar">
-        <div class="container navbar-content">
-            <div class="logo">
-                <a href="../index.html">
-                    <h2
-                        style="font-size: 2rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1;">
-                        <span class="logo-alarmas"
-                            style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Alarmas</span>
-                        <span style="color: #f1e406; text-shadow: 0 1.5px 2px rgba(0,0,0,0.3);">INSA</span>
-                        <span
-                            style="font-size: 0.85rem; font-weight: 800; background: #f1e406; color: #060913; padding: 3px 8px; border-radius: 4px; position: relative; top: 4px;">1983</span>
-                    </h2>
-                </a>
-            </div>
-
-            <!-- BREADCRUMB PERSONALIZADO (IDÊNTICO CAPTURA 10-01) -->
-            <div class="breadcrumb-wrapper"
-                style="background-color: #ffffff; padding: 20px 0 10px 0; text-align: left;">
-                <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
-
-
-                    <nav aria-label="breadcrumb" style="font-size: 14px; font-weight: 600;">
-                        <a href="../index.html" data-i18n="breadcrumb_home"
-                            style="color: #ffc107; text-decoration: none; transition: color 0.3s;">Inicio</a>
-                        <span style="color: #ffc107; margin: 0 8px;">/</span>
-
-
-                        <a href="index.html#soluciones" data-i18n="breadcrumb_services"
-                            style="color: #ffc107; text-decoration: none; transition: color 0.3s;" data-i18n="nav_solutions">Soluciones</a>
-                        <span style="color: #6c757d; margin: 0 8px;">/</span>
-
-
-                        <span data-i18n="breadcrumb_alarma_hogar" style="color: #6c757d;">Alarmas para el Hogar</span>
-                    </nav>
-                </div>
-            </div>
-
-
-            <nav class="nav-menu">
-                <a href="../index.html#soluciones" data-i18n="nav_solutions">Soluciones</a>
-                <a href="../index.html#servicios" data-i18n="nav_services">Servicios</a>
-                <a href="../index.html#contacto" data-i18n="nav_contact">Contacto</a>
-            </nav>
-
-            <div class="nav-actions">
-                <!-- Seletor de Idioma Sincronizado com o LocalStorage -->
-                <select id="langSelect" class="lang-selector">
+    <header class="site-header">
+        <div class="container header-content" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 1200px; margin: 0 auto;">
+            <a href="../index.html" class="logo" style="text-decoration: none;">
+                <h2 style="font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1;">
+                    <span class="logo-alarmas" style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #060913;">Alarmas</span>
+                    <span style="color: #f1e406; text-shadow: 0 1.5px 2px rgba(0,0,0,0.3);">INSA</span>
+                    <span style="font-size: 0.75rem; font-weight: 800; background: #f1e406; color: #060913; padding: 2px 6px; border-radius: 4px; position: relative; top: -2px;">1983</span>
+                </h2>
+            </a>
+            
+            <nav style="display: flex; gap: 25px; align-items: center;">
+                
+                <a href="../index.html#servicios" style="color: #ccc; text-decoration: none; font-weight: 500;" data-i18n="nav_services">Servicios</a>
+                <a href="../index.html#contacto" style="color: #f1e406; text-decoration: none; font-weight: 500;" data-i18n="nav_contact">Contacto</a>
+                
+                <select id="langSelect" class="lang-selector" style="background: #111; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
                     <option value="ca">CAT 🇪🇸</option>
                     <option value="es" selected>ESP 🇪🇸</option>
                     <option value="en">ENG 🇬🇧</option>
                 </select>
-            </div>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Header da Página com Breadcrumb Estilizado -->
     <div class="page-header-container">
-        <!-- Usando chave direta do seu JSON -->
-        <h1 class="page-title" style="color: #060913; font-size: 2.8rem;" data-i18n="sol_1_title">Alarmas para Hogar
-        </h1>
-        <p class="page-subtitle" data-i18n="hero_desc"
-            style="color: #060913; max-width: 750px; margin: 15px auto 0 auto;">
-            Protección inteligente 24/7 para su hogar, negocio o empresa.
+        <div class="breadcrumb">
+            <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> / 
+            <a href="../index.html#soluciones" data-i18n="breadcrumb_services">Soluciones</a> / 
+            <span data-i18n="breadcrumb_alarma_hogar">Alarmas para el Hogar</span>
+        </div>
+        <div class="badge-category" data-i18n="badge_protection_247">Protección Inteligente 24/7</div>
+        
+        <p class="page-subtitle" data-i18n="hero_desc" style="color: #4d4b4b; max-width: 950px; margin: 0 auto;">
+            Protección inteligente 24/7 para su hogar, negocio o empresa en Barcelona.
         </p>
     </div>
 
     <!-- Conteúdo Principal -->
     <main class="content-card-main">
-        <!-- Chave direta title_solutions -->
-        <h2 style="margin-bottom: 10px; font-size: 1.8rem;" data-i18n="title_solutions">Protección a Medida</h2>
-
-        <!-- Chave direta sim_locked_msg -->
-        <p style="color: #666; margin-bottom: 30px;" data-i18n="sim_locked_msg">Seleccione la opción...</p>
+        <h2 style="margin-bottom: 10px; font-size: 1.8rem; color: #060913;" data-i18n="title_solutions">Protección a Medida</h2>
+        <p style="color: #666; margin-bottom: 30px;" data-i18n="sim_locked_msg">Seleccione la opción que melhor se adapta às suas necessidades...</p>
 
         <div class="segments-grid">
             <!-- Hogar -->
             <div class="segment-box">
                 <div>
                     <div style="font-size: 2.2rem; margin-bottom: 15px;">🏠</div>
-                    <h3 style="color: #003366; font-size: 1.4rem; margin-bottom: 15px;"
-                        data-i18n="services.sistemas-alarma.titulo">Alarmas</h3>
+                    <h3 style="color: #003366; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.sistemas-alarma.titulo">Alarmas</h3>
                     <p style="color: #555; line-height: 1.6;" data-i18n="services.sistemas-alarma.descricao">
-                        Sensores de movimiento, contactos en puertas y ventanas, sirenas y comunicación con central de
-                        monitoreo.
+                        Sensores de movimiento, contactos en puertas y ventanas, sirenas y comunicación con central de monitoreo.
                     </p>
                 </div>
-                <div style="text-align: left;">
-                    <a href="https://wa.me/34933004024?text=Hola,%20estoy%20interesado%20en%20una%20alarma"
-                        target="_blank" class="whatsapp-btn-card"
-                        style="display: inline-flex; width: auto; padding: 5px 10px;">
+                <div>
+                    <a href="https://wa.me/34933004024?text=Hola,%20estoy%20interesado%20en%20una%20alarma" target="_blank" class="whatsapp-btn-card">
                         <span data-i18n="btn_call">Solicitar Presupuesto</span>
                     </a>
                 </div>
@@ -159,15 +166,13 @@
             <div class="segment-box">
                 <div>
                     <div style="font-size: 2.2rem; margin-bottom: 15px;">🏢</div>
-                    <h3 style="color: #003366; font-size: 1.4rem; margin-bottom: 15px;"
-                        data-i18n="services.cameravideovigilancia.titulo">Cámaras de Videovigilancia</h3>
+                    <h3 style="color: #003366; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.cameravideovigilancia.titulo">Cámaras de Videovigilancia</h3>
                     <p style="color: #555; line-height: 1.6;" data-i18n="services.cameravideovigilancia.descricao">
                         Resolución Ultra HD, visión nocturna por infrarrojos, acceso remoto desde su smartphone.
                     </p>
                 </div>
-                <div style="text-align: left;">
-                    <a href="https://wa.me/34933004024?text=Hola,%20necesito%20información" target="_blank"
-                        class="whatsapp-btn-card" style="display: inline-flex; width: auto; padding: 5px 10px;">
+                <div>
+                    <a href="https://wa.me/34933004024?text=Hola,%20necesito%20información" target="_blank" class="whatsapp-btn-card">
                         <span data-i18n="btn_call">Solicitar Presupuesto</span>
                     </a>
                 </div>
@@ -177,15 +182,13 @@
             <div class="segment-box">
                 <div>
                     <div style="font-size: 2.2rem; margin-bottom: 15px;">🏭</div>
-                    <h3 style="color: #003366; font-size: 1.4rem; margin-bottom: 15px;"
-                        data-i18n="services.videoanalise.titulo">Videoanálisis Inteligente</h3>
+                    <h3 style="color: #003366; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.videoanalise.titulo">Videoanálisis Inteligente</h3>
                     <p style="color: #555; line-height: 1.6;" data-i18n="services.videoanalise.descricao">
                         Inteligencia Artificial aplicada a la seguridad. Detección proactiva de intrusiones.
                     </p>
                 </div>
-                <div style="text-align: left;">
-                    <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas" target="_blank"
-                        class="whatsapp-btn-card" style="display: inline-flex; width: auto; padding: 5px 10px;">
+                <div>
+                    <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas" target="_blank" class="whatsapp-btn-card">
                         <span data-i18n="btn_call">Solicitar Presupuesto</span>
                     </a>
                 </div>
@@ -194,12 +197,10 @@
     </main>
 
     <!-- Footer -->
-    <footer
-        style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
-        <div class="container">
-            <p>&copy;2026 Alarmas INSA Barcelona. Todos los derechos reservados.</p>
-            <p>Desarrollado Por Ricardo Mendes.</p>
-    
+    <footer style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+            <p>&copy; 2026 Alarmas INSA Barcelona. Todos los derechos reservados.</p>
+            <p style="margin-top: 5px; font-size: 0.8rem; color: #555;">Desarrollado Por Ricardo Mendes.</p>
         </div>
     </footer>
 
@@ -207,33 +208,26 @@
         async function loadAlarmasLanguage() {
             const savedLang = localStorage.getItem('preferred_lang') || 'es';
 
-            // Sincroniza o select visualmente
             const selectElem = document.getElementById('langSelect');
             if (selectElem) {
                 selectElem.value = savedLang;
             }
 
             try {
-                
                 let response = await fetch(`../assets/locales/${savedLang}.json`);
                 if (!response.ok) throw new Error(`Não foi possível carregar o arquivo ../assets/locales/${savedLang}.json`);
                 let translations = await response.json();
 
-                // Função que navega por pontos (ex: "services.sistemas-alarma.titulo")
                 function getNestedTranslation(obj, path) {
                     return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
                 }
 
-                // Percorre todos os elementos que possuem o atributo data-i18n
                 document.querySelectorAll('[data-i18n]').forEach(element => {
                     const key = element.getAttribute('data-i18n');
-
-                    // Tenta buscar pelo caminho aninhado ou pela chave direta
                     let translation = getNestedTranslation(translations, key);
                     if (!translation && translations[key]) {
                         translation = translations[key];
                     }
-
                     if (translation) {
                         element.innerHTML = translation;
                     }
@@ -245,7 +239,6 @@
                 console.error("Erro ao carregar tradução na página de alarmes:", error);
             }
         }
-
 
         window.addEventListener('DOMContentLoaded', () => {
             loadAlarmasLanguage();
@@ -259,3 +252,5 @@
             }
         });
     </script>
+</body>
+</html>
