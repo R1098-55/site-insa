@@ -9,7 +9,6 @@
     <style>
         body {
             background-color: #FFFBEB;
-           
             color: #fff;
             font-family: system-ui, -apple-system, sans-serif;
             margin: 0;
@@ -62,7 +61,6 @@
             line-height: 1.6;
         }
 
-        
         .content-card-main {
             max-width: 1200px;
             margin: -40px auto 60px auto;
@@ -74,7 +72,6 @@
             border: 1px solid rgba(241, 228, 6, 0.3);
             border-left: 6px solid #f1e406;
         }
-        
 
         .section-heading {
             color: #0b0f19;
@@ -169,7 +166,9 @@
 
         .back-link-container {
             text-align: center;
-            margin-top: 40px;
+            width: 100%;
+            margin: 40px 0 10px 0;
+            display: block;
         }
 
         .back-btn {
@@ -212,7 +211,7 @@
                     data-i18n="nav_contacto">Contacto</a>
 
                 <select id="langSelect" class="lang-selector"
-                    style="background: #060913; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
+                    style="background: #111; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
                     <option value="ca">CAT 🇪🇸</option>
                     <option value="es" selected>ESP 🇪🇸</option>
                     <option value="en">ENG 🇬🇧</option>
@@ -221,24 +220,22 @@
         </div>
     </header>
 
-
     <div class="page-header-container">
         <div class="breadcrumb">
             <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> / <a href="../index.html#servicios"
-                data-i18n="breadcrumb_servicios">Servicios</a> / <span  style="font-size: 1.1rem;"   data-i18n="breadcrumb_video_vigilancia">Video
-                vigilancia CCTV</span>
+                data-i18n="breadcrumb_servicios">Servicios</a> / <span style="font-size: 1.1rem;"
+                data-i18n="breadcrumb_video_vigilancia">Video vigilancia CCTV</span>
         </div>
-        <div class="badge-category" style="font-size: 1.50rem;" data-i18n="video_badge">Tecnología Óptica Avanzada / 4K & PoE</div>
+        <div class="badge-category" style="font-size: 1.50rem;" data-i18n="video_badge">Tecnología Óptica Avanzada / 4K
+            & PoE</div>
         <h1 class="page-title" data-i18n="video_title">Sistemas de Videovigilancia en Barcelona</h1>
         <p class="page-subtitle" data-i18n="video_subtitle">
             Imágenes ultra nítidas con resolución 4K real, conectividad PoE simplificada, visión nocturna infrarroja de
-            largo alcance, lentes varifocales y analítica de vídeo con Inteligencia Artificial.
+            long largo alcance, lentes varifocales y analítica de vídeo con Inteligencia Artificial.
         </p>
     </div>
 
-
     <main class="content-card-main">
-
 
         <h2 class="section-heading" data-i18n="video_sectors_heading">Sectores de Instalación Especializados</h2>
         <p style="color: #666; margin-bottom: 20px;" data-i18n="video_sectors_desc">Soluciones adaptadas a las
@@ -290,7 +287,6 @@
             </div>
         </div>
 
-
         <h2 class="section-heading" data-i18n="video_models_heading">Catálogo de Modelos y Especificaciones Técnicas
         </h2>
         <p style="color: #666; margin-bottom: 20px;" data-i18n="video_models_desc">Equipos profesionales dotados de la
@@ -299,12 +295,16 @@
         <div class="models-grid">
 
             <div class="card-item">
-                <div>
-                    <div style="font-size: 1.8rem; margin-bottom: 10px;">📷</div>
+                <div style="text-align: center;">
+                    <div style="margin-bottom: 15px;">
+                        <img src="../assets/img/bullet-8mp-pro.jpg" alt="Cámara Bullet 8MP (4K) Pro"
+                            style="width: 100%; max-height: 180px; object-fit: contain; border-radius: 8px;">
+                    </div>
                     <h3 data-i18n="video_card1_title">Cámara Bullet 8MP (4K) Pro</h3>
                     <p data-i18n="video_card1_desc">Diseño robusto para exteriores de alta gama, ideal para capturar
                         matrículas, rostros y detalles críticos a larga distancia.</p>
-                    <ul class="specs-list">
+                    <ul class="specs-list"
+                        style="list-style-position: inside; padding-left: 0; text-align: left; display: inline-block;">
                         <li data-i18n="video_card1_spec1">Resolución: 8MP Real (3840 × 2160)</li>
                         <li data-i18n="video_card1_spec2">Conectividad: PoE (Power over Ethernet)</li>
                         <li data-i18n="video_card1_spec3">Visión Nocturna: IR 30m / 50m Smart IR</li>
@@ -316,14 +316,17 @@
                     target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
-
             <div class="card-item">
-                <div>
-                    <div style="font-size: 1.8rem; margin-bottom: 10px;">🌐</div>
+                <div style="text-align: center;">
+                    <div style="margin-bottom: 15px;">
+                        <img src="../assets/img/CámaraDomoAntivandálica4K.jpg" alt="Cámara Domo Antivandálica 4K"
+                            style="width: 100%; max-height: 180px; object-fit: contain; border-radius: 8px;">
+                    </div>
                     <h3 data-i18n="video_card2_title">Cámara Domo Antivandálica 4K</h3>
                     <p data-i18n="video_card2_desc">Formato discreto de techo con máxima protección estructural contra
                         impactos, perfecta para comercios e interiores.</p>
-                    <ul class="specs-list">
+                    <ul class="specs-list"
+                        style="list-style-position: inside; padding-left: 0; text-align: left; display: inline-block;">
                         <li data-i18n="video_card2_spec1">Resolución: 4K Ultra HD (8 Megapíxeles)</li>
                         <li data-i18n="video_card2_spec2">Resistencia: IK10 Antivandálica Antigolpes</li>
                         <li data-i18n="video_card2_spec3">Óptica: Lente fija gran angular 2.8mm / 4mm</li>
@@ -335,14 +338,17 @@
                     target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
-
             <div class="card-item">
-                <div>
-                    <div style="font-size: 1.8rem; margin-bottom: 10px;">🔍</div>
+                <div style="text-align: center;">
+                    <div style="margin-bottom: 15px;">
+                        <img src="../assets/img/CámaraVarifocalMotorizada.jpg" alt="Cámara Varifocal Motorizada"
+                            style="width: 100%; max-height: 180px; object-fit: contain; border-radius: 8px;">
+                    </div>
                     <h3 data-i18n="video_card3_title">Cámara Varifocal Motorizada</h3>
                     <p data-i18n="video_card3_desc">Ajuste remoto de zoom y enfoque desde la app o grabador. Permite
                         cambiar el ángulo de apertura sin manipular la cámara físicamente.</p>
-                    <ul class="specs-list">
+                    <ul class="specs-list"
+                        style="list-style-position: inside; padding-left: 0; text-align: left; display: inline-block;">
                         <li data-i18n="video_card3_spec1">Lente: Varifocal motorizada 2.8mm - 12mm</li>
                         <li data-i18n="video_card3_spec2">Zoom Óptico: 4X real sin pérdida de calidad</li>
                         <li data-i18n="video_card3_spec3">Analítica IA: Clasificación de humanos y vehículos</li>
@@ -354,14 +360,17 @@
                     target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
-
             <div class="card-item">
-                <div>
-                    <div style="font-size: 1.8rem; margin-bottom: 10px;">🔄</div>
+                <div style="text-align: center;">
+                    <div style="margin-bottom: 15px;">
+                        <img src="../assets/img/CámaraPTZ DomoMotorizado.jpg" alt="Cámara PTZ Domo Motorizado IA"
+                            style="width: 100%; max-height: 180px; object-fit: contain; border-radius: 8px;">
+                    </div>
                     <h3 data-i18n="video_card4_title">Cámara PTZ Domo Motorizado IA</h3>
                     <p data-i18n="video_card4_desc">Giro de 360 grados ilimitado, inclinación y zoom de largo alcance
                         con seguimiento automático de objetivos mediante inteligencia artificial.</p>
-                    <ul class="specs-list">
+                    <ul class="specs-list"
+                        style="list-style-position: inside; padding-left: 0; text-align: left; display: inline-block;">
                         <li data-i18n="video_card4_spec1">Movimiento: Pan 360° continuo / Tilt -15° a 90°</li>
                         <li data-i18n="video_card4_spec2">Zoom: Óptico avanzado de hasta 25X / 32X</li>
                         <li data-i18n="video_card4_spec3">Seguimiento: Auto-tracking inteligente por IA</li>
@@ -372,13 +381,15 @@
                 <a href="https://wa.me/34933004024?text=Hola,%20quiero%20cotizar%20la%20Cámara%20PTZ%20Motorizada%20con%20IA"
                     target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
-        </div>
 
+        </div> <!-- Fim da models-grid -->
+
+        <!-- Botão de voltar corrigido e alinhado fora da grid -->
         <div class="back-link-container">
             <a href="../index.html#servicios" class="back-btn" data-i18n="back_to_services">← Volver a Servicios</a>
         </div>
-    </main>
 
+    </main>
 
     <footer
         style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
