@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
  try {
       const [resServicios, resLocale] = await Promise.all([
         fetch('js/servicios.json'),
-        fetch(`/assets/locales/${idiomaAtual}.json`).catch(() => null) // <-- Apontando para assets/locales/
+        fetch(`/assets/locales/${idiomaAtual}.json`).catch(() => null) 
       ]);
 
       if (!resServicios.ok) throw new Error('Error al cargar el archivo de servicios.');
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Carrega ao iniciar
   carregarECriarServicos();
 
-  // Escuta a mudança no select
+  
   const langSelect = document.getElementById('langSelect');
   if (langSelect) {
     langSelect.addEventListener('change', function () {

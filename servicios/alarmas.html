@@ -8,13 +8,12 @@
 
     <link rel="stylesheet" href="../assets/css/styles.css">
     <style>
-        
         .site-header {
             background-color: var(--bg-surface, #FFFBEB);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-       .page-header-container {
+        .page-header-container {
             text-align: center;
             padding: 60px 20px 80px 20px;
             background-color: #0b0f19;
@@ -55,7 +54,7 @@
         .content-card-main {
             max-width: 1100px;
             margin: -30px auto 60px auto;
-            background: #FFFBEB; 
+            background: #FFFBEB;
             color: #222;
             border-radius: 16px;
             padding: 50px;
@@ -106,21 +105,28 @@
 <body>
 
     <header class="site-header">
-        <div class="container header-content" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 1200px; margin: 0 auto;">
+        <div class="container header-content"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 1200px; margin: 0 auto;">
             <a href="../index.html" class="logo" style="text-decoration: none;">
-                <h2 style="font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1;">
-                    <span class="logo-alarmas" style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #060913;">Alarmas</span>
+                <h2
+                    style="font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1;">
+                    <span class="logo-alarmas"
+                        style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #060913;">Alarmas</span>
                     <span style="color: #f1e406; text-shadow: 0 1.5px 2px rgba(0,0,0,0.3);">INSA</span>
-                    <span style="font-size: 0.75rem; font-weight: 800; background: #f1e406; color: #060913; padding: 2px 6px; border-radius: 4px; position: relative; top: -2px;">1983</span>
+                    <span
+                        style="font-size: 0.75rem; font-weight: 800; background: #f1e406; color: #060913; padding: 2px 6px; border-radius: 4px; position: relative; top: -2px;">1983</span>
                 </h2>
             </a>
-            
+
             <nav style="display: flex; gap: 25px; align-items: center;">
-                
-                <a href="../index.html#servicios" style="color: #ccc; text-decoration: none; font-weight: 500;" data-i18n="nav_services">Servicios</a>
-                <a href="../index.html#contacto" style="color: #f1e406; text-decoration: none; font-weight: 500;" data-i18n="nav_contact">Contacto</a>
-                
-                <select id="langSelect" class="lang-selector" style="background: #111; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
+
+                <a href="../index.html#servicios" style="color: #ccc; text-decoration: none; font-weight: 500;"
+                    data-i18n="nav_services">Servicios</a>
+                <a href="../index.html#contacto" style="color: #f1e406; text-decoration: none; font-weight: 500;"
+                    data-i18n="nav_contact">Contacto</a>
+
+                <select id="langSelect" class="lang-selector"
+                    style="background: #060913; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
                     <option value="ca">CAT 🇪🇸</option>
                     <option value="es" selected>ESP 🇪🇸</option>
                     <option value="en">ENG 🇬🇧</option>
@@ -132,36 +138,44 @@
     <!-- Header da Página com Breadcrumb Estilizado data-i18n="hero_desc" style="color: #4d4b4b; max-width: 950px; margin: 0 auto;" -->
     <div class="page-header-container">
         <div class="breadcrumb">
-            <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> / 
+            <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> /
 
-            <a href="../index.html#soluciones" data-i18n="breadcrumb_services">Soluciones</a> / 
+            <a href="../index.html#soluciones" data-i18n="breadcrumb_services">Soluciones</a> /
 
             <span style="font-size: 1.1rem ;" data-i18n="breadcrumb_alarma_hogar"></span>
         </div>
-        <div class="badge-category" style="font-size: 1.80rem;" data-i18n="badge_protection_247">Protección Inteligente 24/7</div>
-        
-        <p class="page-subtitle"  style="font-size: 1.13rem; font-weight: 500; color: #e9e5af; max-width: 950px; margin: 0 auto; line-height: 1.8; " data-i18n="hero_desc">
-           
+        <div class="badge-category" style="font-size: 1.80rem;" data-i18n="badge_protection_247">Protección Inteligente
+            24/7</div>
+
+        <p class="page-subtitle"
+            style="font-size: 1.13rem; font-weight: 500; color: #e9e5af; max-width: 950px; margin: 0 auto; line-height: 1.8; "
+            data-i18n="hero_desc">
+
         </p>
     </div>
 
     <!-- Conteúdo Principal -->
     <main class="content-card-main">
-        <h2 style="margin-bottom: 10px; font-size: 1.8rem; color: #060913;" data-i18n="title_solutions">Protección a Medida</h2>
-        <p style="color: #666; margin-bottom: 30px;" data-i18n="sim_locked_msg">Seleccione la opción que melhor se adapta às suas necessidades...</p>
+        <h2 style="margin-bottom: 10px; font-size: 1.8rem; color: #060913;" data-i18n="title_solutions">Protección a
+            Medida</h2>
+        <p style="color: #666; margin-bottom: 30px;" data-i18n="sim_locked_msg">Seleccione la opción que melhor se
+            adapta às suas necessidades...</p>
 
         <div class="segments-grid">
             <!-- Hogar -->
             <div class="segment-box">
                 <div>
                     <div style="font-size: 2.2rem; margin-bottom: 15px;">🏠</div>
-                    <h3 style="color: #060913; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.sistemas-alarma.titulo">Alarmas</h3>
+                    <h3 style="color: #060913; font-size: 1.4rem; margin-bottom: 15px;"
+                        data-i18n="services.sistemas-alarma.titulo">Alarmas</h3>
                     <p style="color: #555; line-height: 1.6;" data-i18n="services.sistemas-alarma.descricao">
-                        Sensores de movimiento, contactos en puertas y ventanas, sirenas y comunicación con central de monitoreo.
+                        Sensores de movimiento, contactos en puertas y ventanas, sirenas y comunicación con central de
+                        monitoreo.
                     </p>
                 </div>
                 <div>
-                    <a href="https://wa.me/34933004024?text=Hola,%20estoy%20interesado%20en%20una%20alarma" target="_blank" class="whatsapp-btn-card">
+                    <a href="https://wa.me/34933004024?text=Hola,%20estoy%20interesado%20en%20una%20alarma"
+                        target="_blank" class="whatsapp-btn-card">
                         <span data-i18n="btn_call">Solicitar Presupuesto</span>
                     </a>
                 </div>
@@ -171,13 +185,15 @@
             <div class="segment-box">
                 <div>
                     <div style="font-size: 2.2rem; margin-bottom: 15px;">🏢</div>
-                    <h3 style="color: #060913; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.cameravideovigilancia.titulo">Cámaras de Videovigilancia</h3>
+                    <h3 style="color: #060913; font-size: 1.4rem; margin-bottom: 15px;"
+                        data-i18n="services.cameravideovigilancia.titulo">Cámaras de Videovigilancia</h3>
                     <p style="color: #555; line-height: 1.6;" data-i18n="services.cameravideovigilancia.descricao">
                         Resolución Ultra HD, visión nocturna por infrarrojos, acceso remoto desde su smartphone.
                     </p>
                 </div>
                 <div>
-                    <a href="https://wa.me/34933004024?text=Hola,%20necesito%20información" target="_blank" class="whatsapp-btn-card">
+                    <a href="https://wa.me/34933004024?text=Hola,%20necesito%20información" target="_blank"
+                        class="whatsapp-btn-card">
                         <span data-i18n="btn_call">Solicitar Presupuesto</span>
                     </a>
                 </div>
@@ -187,13 +203,15 @@
             <div class="segment-box">
                 <div>
                     <div style="font-size: 2.2rem; margin-bottom: 15px;">🏭</div>
-                    <h3 style="color: #060913; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.videoanalise.titulo">Videoanálisis Inteligente</h3>
+                    <h3 style="color: #060913; font-size: 1.4rem; margin-bottom: 15px;"
+                        data-i18n="services.videoanalise.titulo">Videoanálisis Inteligente</h3>
                     <p style="color: #555; line-height: 1.6;" data-i18n="services.videoanalise.descricao">
                         Inteligencia Artificial aplicada a la seguridad. Detección proactiva de intrusiones.
                     </p>
                 </div>
                 <div>
-                    <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas" target="_blank" class="whatsapp-btn-card">
+                    <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas" target="_blank"
+                        class="whatsapp-btn-card">
                         <span data-i18n="btn_call">Solicitar Presupuesto</span>
                     </a>
                 </div>
@@ -202,7 +220,8 @@
     </main>
 
     <!-- Footer -->
-    <footer style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
+    <footer
+        style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
             <p>&copy; 2026 Alarmas INSA Barcelona. Todos los derechos reservados.</p>
             <p style="margin-top: 5px; font-size: 0.8rem; color: #555;">Desarrollado Por Ricardo Mendes.</p>
@@ -258,4 +277,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lang     = isset($_POST['lang']) ? $_POST['lang'] : 'es';
 
     $destinatario = "david@alarmasinsa.com";
-    $asunto = "Nueva Candidatura Pagina Web (" . strtoupper($lang) . "): " . $area . " - " . $nombre;
+    $asunto = "Nueva Candidatura - Pagina Web (" . strtoupper($lang) . "): " . $area . " - " . $nombre;
     $remetente = "no-reply@alarmasinsa.com";
 
     $separator = md5(time());
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $body .= "Content-Type: " . $fileType . "; name=\"" . $fileName . "\"\r\n";
         $body .= "Content-Transfer-Encoding: base64\r\n";
         $body .= "Content-Disposition: attachment; filename=\"" . $fileName . "\"\r\n\r\n";
-        $body .= $fileContent . "\r\.n";
+        $body .= $fileContent . "\r\n";
     }
 
     $body .= "--" . $separator . "--";
