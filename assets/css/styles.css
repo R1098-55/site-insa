@@ -532,7 +532,11 @@ body {
 .grid-3 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
 .grid-services {
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }

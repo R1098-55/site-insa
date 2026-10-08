@@ -33,6 +33,8 @@
   "sol_2_desc": "Protege tu local comercial con videovigilancia HD, control de accesos y conexión a Central Receptora.",
   "sol_3_title": "Industria y Empresas",
   "sol_3_desc": "Proyectos de ingeniería de seguridad a medida, analítica de vídeo con IA y protección contra incendios.",
+  "sol_4_title": "Centros Públicos",
+  "sol_4_desc": "Sistemas homologados de alta fiabilidad para edificios institucionales, colegios, centros deportivos y espacios de gran concurrencia.",
   "tag_services": "SERVICIOS",
   "title_services": "NUESTROS SERVICIOS DE SEGURIDAD",
   "ser_1_title": "Cámaras IP 4K POE",
@@ -83,7 +85,12 @@
   "about_future_p1": "Amén del servicio personal a nuestros Clientes, nos apresuramos y preocupamos en solucionar cualquier incidencia de otras marcas, (sea por mal servicio post-venta o insatisfacción de las instalaciones realizadas), y así poder convertirnos en sus consultores de seguridad para su asesoramiento y hacerles Clientes y Amigos.",
   
 
- "breadcrumb_alarma_hogar": "Alarmas",
+ "breadcrumb_alarma_hogar": "Alarmas ",
+
+ "alarmas_hogar": "Alarmas Para Hogar",
+ "alarmas_hogar_descricao": "La alarma para hogar está conectada a nuestra propia Central Receptora de alarmas. Nuestros operadores se pondrán en contacto contigo en caso de ocurrir cualquier incidencia. Además, si es necesario enviaran el servicio de acuda.",
+
+
 
 
   "breadcrumb_home": "Inicio",
