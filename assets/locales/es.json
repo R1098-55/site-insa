@@ -6,7 +6,7 @@
   "nav_contact": "Contacto",
   "btn_quote": "Solicitar Presupuesto",
   "btn_call": "Llama Ahora",
-  "btn_call_hero": "Llamar a un Técnico",
+  "btn_call_hero": "Llamar para un Presupuesto",
   "hero_title": "Contrate su alarma por  1€ Euro al Día! <span>Última Generación.</span>",
   "hero_desc": "Protección inteligente 24/7 para tu hogar, negocio o gran empresa. Respuesta inmediata y tecnología avanzada anti-inhibición.",
   "btn_free_study": "Estudio de Seguridad Gratuito",
@@ -82,6 +82,10 @@
   "about_future_title": "Futuro",
   "about_future_p1": "Amén del servicio personal a nuestros Clientes, nos apresuramos y preocupamos en solucionar cualquier incidencia de otras marcas, (sea por mal servicio post-venta o insatisfacción de las instalaciones realizadas), y así poder convertirnos en sus consultores de seguridad para su asesoramiento y hacerles Clientes y Amigos.",
   
+
+ "breadcrumb_alarma_hogar": "Alarmas",
+
+
   "breadcrumb_home": "Inicio",
   "breadcrumb_servicios": "Servicios",
   "breadcrumb_control_accesos": "Control de Accesos",
@@ -375,7 +379,7 @@
   "opt_admin": "Administración / Soporte",
   "opt_other": "Otro / Prácticas",
 
-  "btn_send_cv": "Enviar Candidatura por WhatsApp / Contacto",
+  "btn_send_email": "Enviar Currículum por Correo Electrónico",
 
   "services": {
     "sistemas-alarma": {

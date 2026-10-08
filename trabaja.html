@@ -12,7 +12,7 @@
 
 <body style="background-color: #0C1222 !important; margin: 0; font-family: 'Montserrat', sans-serif;">
 
-    <!-- HEADER / NAVBAR -->
+    
     <header class="navbar">
         <div class="navbar-content"
             style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 20px;">
@@ -77,11 +77,11 @@
         </div>
     </header>
 
-    <!-- CONTEÚDO INSTITUCIONAL: TRABAJA CON NOSOTROS -->
+    
     <main class="institutional-page" style="padding: 60px 0;">
         <div class="container" style="max-width: 950px; margin: 0 auto; padding: 0 20px;">
 
-            <!-- TÍTULO DA PÁGINA -->
+            
             <div class="page-header-title" style="text-align: center; margin: 40px 0;">
                 <span class="badge-desde"
                     style="background-color: #2563eb; color: #fff; padding: 8px 18px; font-size: 0.95rem; font-weight: 800; border-radius: 4px; letter-spacing: 2px; text-transform: uppercase;"
@@ -90,7 +90,7 @@
                     data-i18n="job_main_title">Trabaja con Nosotros en Barcelona</h1>
             </div>
 
-            <!-- BLOCO 1: INTRODUÇÃO / POR QUE TRABALHAR CONOSCO -->
+            
             <div class="insa-section"
                 style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
                 <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;"
@@ -110,7 +110,7 @@
                 </p>
             </div>
 
-            <!-- BLOCO 2: PERFIS PROCURADOS -->
+            
             <div class="insa-section"
                 style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
                 <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;"
@@ -125,95 +125,86 @@
                 </ul>
             </div>
 
-            <!-- BLOCO 3: FORMULÁRIO DE ENVIO DE CV -->
+            
             <div class="insa-section"
                 style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
                 <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;"
                     data-i18n="job_form_title">Envía tu Currículum</h2>
                 <p style="color: #475569; font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px;"
                     data-i18n="job_form_subtitle">
-                    Completa tus datos a continuación ou envíanos directamente un correo electrónico con tu CV adjunto
-                    al departamento de recursos humanos.
+                    Completa tus datos, adjunta tu currículum y envíalo directamente a nuestro departamento de
+                    recursos humanos.
                 </p>
-                <!-- BLOCO 3: FORMULÁRIO DE ENVIO DE CV -->
-                <div class="insa-section"
-                    style="background: #ffffff; border: 1px solid #1e293b; border-left: 6px solid #f1e406; padding: 36px; margin-bottom: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
-                    <h2 style="color: #0C1222; font-size: 1.8rem; font-weight: 900; margin-bottom: 16px; border-bottom: 2px solid #f1e406; padding-bottom: 10px;"
-                        data-i18n="job_form_title">Envía tu Currículum</h2>
-                    <p style="color: #475569; font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px;"
-                        data-i18n="job_form_subtitle">
-                        Completa tus datos, adjunta tu currículum y envíalo directamente a nuestro departamento de
-                        recursos humanos.
-                    </p>
 
-                    <form id="cvForm" onsubmit="enviarPorEmail(event)" style="display: grid; gap: 20px;">
-                        <div
-                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                            <div>
-                                <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
-                                    data-i18n="form_name">Nombre completo *</label>
-                                <input type="text" id="nombre" required
-                                    style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
-                            </div>
-                            <div>
-                                <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
-                                    data-i18n="form_phone">Teléfono de contacto *</label>
-                                <input type="tel" id="telefono" required
-                                    style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
-                            </div>
-                        </div>
+                
+                <form id="cvForm" action="enviar.php" method="POST" enctype="multipart/form-data"
+                    style="display: grid; gap: 20px;">
 
-                        <div
-                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                            <div>
-                                <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
-                                    data-i18n="form_email">Correo electrónico *</label>
-                                <input type="email" id="email" required
-                                    style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
-                            </div>
-                            <div>
-                                <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
-                                    data-i18n="form_area">Área de interés *</label>
-                                <select id="area"
-                                    style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; background: #fff; box-sizing: border-box;">
-                                    <option value="Tecnico Instalador" data-i18n="opt_tech">Técnico Instalador /
-                                        Mantenimiento</option>
-                                    <option value="Comercial" data-i18n="opt_sales">Comercial / Ventas</option>
-                                    <option value="Administracion" data-i18n="opt_admin">Administración / Soporte
-                                    </option>
-                                    <option value="Otro" data-i18n="opt_other">Otro / Prácticas</option>
-                                </select>
-                            </div>
-                        </div>
-
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
                         <div>
                             <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
-                                data-i18n="form_cv_file">Adjuntar Currículum (PDF o Word) *</label>
-                            <input type="file" id="cvFile" accept=".pdf,.doc,.docx" required
-                                style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; background: #f8fafc; box-sizing: border-box; cursor: pointer;">
-                            <small style="color: #64748b; display: block; margin-top: 5px;"
-                                data-i18n="form_cv_hint">Formatos aceptados: PDF, DOC, DOCX (Máx. 5MB)</small>
+                                data-i18n="form_name">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required
+                                style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
                         </div>
-
                         <div>
                             <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
-                                data-i18n="form_msg">Breve presentación o comentarios *</label>
-                            <textarea id="mensaje" rows="4" required
-                                placeholder="Cuéntanos brevemente sobre tu experiencia..."
-                                style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;"></textarea>
+                                data-i18n="form_phone">Teléfono de contacto *</label>
+                            <input type="tel" id="telefono" name="telefono" required
+                                style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
                         </div>
+                    </div>
 
-                        <button type="submit"
-                            style="background-color: #2563eb; color: #fff; border: none; padding: 14px 25px; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.3s;"
-                            data-i18n="btn_send_email">
-                            Enviar Currículum por Correo Electrónico
-                        </button>
-                    </form>
-                </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div>
+                            <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
+                                data-i18n="form_email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required
+                                style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
+                                data-i18n="form_area">Área de interés *</label>
+                            <select id="area" name="area"
+                                style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; background: #fff; box-sizing: border-box;">
+                                <option value="Tecnico Instalador" data-i18n="opt_tech">Técnico Instalador /
+                                    Mantenimiento</option>
+                                <option value="Comercial" data-i18n="opt_sales">Comercial / Ventas</option>
+                                <option value="Administracion" data-i18n="opt_admin">Administración / Soporte</option>
+                                <option value="Otro" data-i18n="opt_other">Otro / Prácticas</option>
+                            </select>
+                        </div>
+                    </div>
 
-               
+                    <div>
+                        <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
+                            data-i18n="form_cv_file">Adjuntar Currículum (PDF o Word) *</label>
+                        <input type="file" id="cvFile" name="cvFile" accept=".pdf,.doc,.docx" required
+                            style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; background: #f8fafc; box-sizing: border-box; cursor: pointer;">
+                        <small style="color: #64748b; display: block; margin-top: 5px;"
+                            data-i18n="form_cv_hint">Formatos aceptados: PDF, DOC, DOCX (Máx. 5MB)</small>
+                    </div>
 
-            <!-- RODAPÉ INSTITUCIONAL -->
+                    <div>
+                        <label style="display: block; font-weight: 700; color: #0C1222; margin-bottom: 8px;"
+                            data-i18n="form_msg">Breve presentación o comentarios *</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required
+                            placeholder="Cuéntanos brevemente sobre tu experiencia..."
+                            style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;"></textarea>
+                    </div>
+
+                    
+                    <input type="hidden" name="lang" id="formLang" value="es">
+
+                    <button type="submit"
+                        style="background-color: #2563eb; color: #fff; border: none; padding: 14px 25px; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.3s;"
+                        data-i18n="btn_send_email">
+                        Enviar Currículum por Correo Electrónico
+                    </button>
+                </form>
+            </div>
+
+            
             <div
                 style="text-align: center; color: #f3f4f5; padding: 20px 0; font-size: 0.9rem; border-top: 1px solid #1e293b; margin-top: 40px;">
                 <p style="font-weight: 800; color: #f9fafc; margin-bottom: 6px; font-size: 1rem;">INSTALACIONES DE
@@ -226,7 +217,7 @@
         </div>
     </main>
 
-    <!-- RODAPÉ DA PÁGINA -->
+    
     <footer
         style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
         <div class="container">
@@ -235,7 +226,7 @@
         </div>
     </footer>
 
-    <!-- Script de Tradução Dinâmica e Envio -->
+    
     <script>
         async function loadTrabajaLanguage() {
             const savedLang = localStorage.getItem('preferred_lang') || 'es';
@@ -243,6 +234,12 @@
             const selectElem = document.getElementById('langSelect');
             if (selectElem) {
                 selectElem.value = savedLang;
+            }
+
+            
+            const formLangInput = document.getElementById('formLang');
+            if (formLangInput) {
+                formLangInput.value = savedLang;
             }
 
             try {
@@ -272,35 +269,16 @@
             }
         }
 
-        function enviarCurriculum(e) {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value;
-            const telefono = document.getElementById('telefono').value;
-            const email = document.getElementById('email').value;
-            const area = document.getElementById('area').value;
-            const mensaje = document.getElementById('mensaje').value;
+        
+        window.addEventListener('DOMContentLoaded', loadTrabajaLanguage);
 
-            // Opção 1: Enviar via WhatsApp formatado para o responsável
-            const textoWp = `Hola, me llamo *${nombre}* y quiero postularme para el área de *${area}*.\nTeléfono: ${telefono}\nEmail: ${email}\n\nMensaje/Experiencia:\n${mensaje}`;
-            const urlWp = `https://wa.me/34933004024?text=${encodeURIComponent(textoWp)}`;
-
-            // Abre o WhatsApp para envio direto
-            window.open(urlWp, '_blank');
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
+        
+        document.getElementById('langSelect')?.addEventListener('change', function () {
+            localStorage.setItem('preferred_lang', this.value);
             loadTrabajaLanguage();
-
-            const selectElem = document.getElementById('langSelect');
-            if (selectElem) {
-                selectElem.addEventListener('change', (e) => {
-                    localStorage.setItem('preferred_lang', e.target.value);
-                    loadTrabajaLanguage();
-                });
-            }
         });
 
-        // Script para a navbar scrolled
+       
         window.addEventListener('scroll', function () {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {

@@ -8,15 +8,16 @@
 
     <link rel="stylesheet" href="../assets/css/styles.css">
     <style>
+        
         .site-header {
-            background-color: var(--bg-surface, #0b0f19);
+            background-color: var(--bg-surface, #FFFBEB);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .page-header-container {
+       .page-header-container {
             text-align: center;
-            padding: 40px 20px 60px 20px;
-            background-color: var(--bg-surface, #0b0f19);
+            padding: 60px 20px 80px 20px;
+            background-color: #0b0f19;
         }
 
         .breadcrumb {
@@ -54,11 +55,13 @@
         .content-card-main {
             max-width: 1100px;
             margin: -30px auto 60px auto;
-            background: var(--bg-surface, #ffffff);
-            color: var(--text-primary, #222);
+            background: #FFFBEB; 
+            color: #222;
             border-radius: 16px;
             padding: 50px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(241, 228, 6, 0.3);
+            border-left: 6px solid #f1e406;
         }
 
         .segments-grid {
@@ -69,8 +72,8 @@
         }
 
         .segment-box {
-            background: var(--bg-card, #f9fafc);
-            border: 1px solid var(--border-light, #eaeaea);
+            background: var(--bg-card, #FFFEFA);
+            border: 1px solid var(--border-light, #FFFEFA);
             border-radius: 12px;
             padding: 30px;
             display: flex;
@@ -83,8 +86,8 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background-color: #0e7433;
-            color: #fff;
+            background-color: #f1e406;
+            color: #060913;
             padding: 10px 16px;
             border-radius: 8px;
             text-decoration: none;
@@ -95,7 +98,7 @@
         }
 
         .whatsapp-btn-card:hover {
-            background-color: #0b5c28;
+            background-color: #b6ad04;
         }
     </style>
 </head>
@@ -126,17 +129,19 @@
         </div>
     </header>
 
-    <!-- Header da Página com Breadcrumb Estilizado -->
+    <!-- Header da Página com Breadcrumb Estilizado data-i18n="hero_desc" style="color: #4d4b4b; max-width: 950px; margin: 0 auto;" -->
     <div class="page-header-container">
         <div class="breadcrumb">
             <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> / 
+
             <a href="../index.html#soluciones" data-i18n="breadcrumb_services">Soluciones</a> / 
-            <span data-i18n="breadcrumb_alarma_hogar">Alarmas para el Hogar</span>
+
+            <span style="font-size: 1.1rem ;" data-i18n="breadcrumb_alarma_hogar"></span>
         </div>
-        <div class="badge-category" data-i18n="badge_protection_247">Protección Inteligente 24/7</div>
+        <div class="badge-category" style="font-size: 1.80rem;" data-i18n="badge_protection_247">Protección Inteligente 24/7</div>
         
-        <p class="page-subtitle" data-i18n="hero_desc" style="color: #4d4b4b; max-width: 950px; margin: 0 auto;">
-            Protección inteligente 24/7 para su hogar, negocio o empresa en Barcelona.
+        <p class="page-subtitle"  style="font-size: 1.13rem; font-weight: 500; color: #e9e5af; max-width: 950px; margin: 0 auto; line-height: 1.8; " data-i18n="hero_desc">
+           
         </p>
     </div>
 
@@ -150,7 +155,7 @@
             <div class="segment-box">
                 <div>
                     <div style="font-size: 2.2rem; margin-bottom: 15px;">🏠</div>
-                    <h3 style="color: #003366; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.sistemas-alarma.titulo">Alarmas</h3>
+                    <h3 style="color: #060913; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.sistemas-alarma.titulo">Alarmas</h3>
                     <p style="color: #555; line-height: 1.6;" data-i18n="services.sistemas-alarma.descricao">
                         Sensores de movimiento, contactos en puertas y ventanas, sirenas y comunicación con central de monitoreo.
                     </p>
@@ -166,7 +171,7 @@
             <div class="segment-box">
                 <div>
                     <div style="font-size: 2.2rem; margin-bottom: 15px;">🏢</div>
-                    <h3 style="color: #003366; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.cameravideovigilancia.titulo">Cámaras de Videovigilancia</h3>
+                    <h3 style="color: #060913; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.cameravideovigilancia.titulo">Cámaras de Videovigilancia</h3>
                     <p style="color: #555; line-height: 1.6;" data-i18n="services.cameravideovigilancia.descricao">
                         Resolución Ultra HD, visión nocturna por infrarrojos, acceso remoto desde su smartphone.
                     </p>
@@ -182,7 +187,7 @@
             <div class="segment-box">
                 <div>
                     <div style="font-size: 2.2rem; margin-bottom: 15px;">🏭</div>
-                    <h3 style="color: #003366; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.videoanalise.titulo">Videoanálisis Inteligente</h3>
+                    <h3 style="color: #060913; font-size: 1.4rem; margin-bottom: 15px;" data-i18n="services.videoanalise.titulo">Videoanálisis Inteligente</h3>
                     <p style="color: #555; line-height: 1.6;" data-i18n="services.videoanalise.descricao">
                         Inteligencia Artificial aplicada a la seguridad. Detección proactiva de intrusiones.
                     </p>

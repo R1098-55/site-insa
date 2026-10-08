@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>INSA Alarmes i Sistemes de Seguretat | Protecció 24/7</title>
 
-    <!-- META TAGS SEO -->
+    
     <meta name="description"
         content="INSA Alarmes: Especialistes en instal·lació de sistemes de seguretat, alarmes anti-intrusió, videovigilància CCTV i control d'accessos.">
     <meta name="keywords"
@@ -14,17 +14,17 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://alarmasinsa.com/">
 
-    <!-- FONTAWESOME PARA ÍCONOS -->
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS -->
+    
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
     
 
-    <!-- NAVBAR CORPORATIVA -->
+    
     <header class="navbar">
         <div class="container navbar-content">
            <div class="logo">
@@ -90,7 +90,7 @@
         </div>
     </header>
 
-    <!-- HERO BANNER -->
+   
     <section id="inicio" class="hero">
         <div class="container">
             <h1 data-i18n="hero_title">Contrate su alarma por 1€ Euro al Día! <span>Última Generación</span></h1>
@@ -107,7 +107,7 @@
         </div>
     </section>
 
-    <!-- STATS & PROCESO -->
+   
     <section class="section">
         <div class="container">
             <div class="stats-grid" id="stats-section">
@@ -160,7 +160,7 @@
         </div>
     </section>
 
-    <!-- SOLUCIONES -->
+    
     <section id="soluciones" class="section">
         <div class="container">
             <div class="section-header">
@@ -188,7 +188,7 @@
         </div>
     </section>
 
-    <!-- SERVICIOS -->
+   
     <section id="servicios" class="section">
         <div class="container">
             <div class="section-header">
@@ -196,19 +196,19 @@
                 <h2 class="section-title" data-i18n="title_services">NUESTROS SERVICIOS DE SEGURIDAD</h2>
             </div>
 
-            <!-- Container onde o JSON injeta os cards perfeitamente -->
+            
             <div id="servicios-container"
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px 0;">
-                <!-- Carregando serviços via JavaScript... -->
+                
             </div>
         </div>
     </section>
 
-    <!-- Script responsável por carregar os dados -->
+    
     <script src="js/load-servicios.js"></script>
 
 
-    <!-- SIMULADOR -->
+    
     <section id="simulador" class="section">
         <div class="container">
             <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;" data-i18n="title_sim">Simulador y
@@ -237,7 +237,7 @@
         </div>
     </section>
 
-    <!-- MODAL -->
+    
     <div id="preRegModal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
@@ -267,7 +267,7 @@
         </div>
     </div>
 
-    <!-- WIDGET WHATSAPP -->
+    
     <div class="whatsapp-widget">
         <button class="whatsapp-btn" id="waToggleBtn" aria-label="WhatsApp">
             <svg viewBox="0 0 24 24">
@@ -277,7 +277,7 @@
         </button>
         <div class="whatsapp-menu" id="waMenu">
             <a href="https://api.whatsapp.com/send?phone=34933004024&text=Hola,%20vull%20informacio%20sobre%20les%20alarmes%20INSA"
-                target="_blank">Chat Comercial 💬</a>
+                target="_blank">Chat Comercial 💬 </a>
 
         </div>
     </div>
@@ -290,7 +290,7 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
+    
      <footer
         style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
         <div class="container">
@@ -300,11 +300,11 @@
         </div>
     </footer>
 
-   <!-- SEUS SCRIPTS EXISTENTES -->
+  
     <script src="js/load-servicios.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- NOVO SCRIPT DE TRADUÇÃO PARA FAZER O SELECT FUNCIONAR NA INDEX -->
+   
     <script>
         async function loadLanguage(lang) {
             try {
@@ -319,7 +319,7 @@
                 document.querySelectorAll('[data-i18n]').forEach(element => {
                     const key = element.getAttribute('data-i18n');
                     
-                    // Tenta buscar como aninhado e, se não achar, busca como chave simples (como ser_1_title)
+                   
                     let translation = getNestedTranslation(translations, key);
                     if (!translation && translations[key]) {
                         translation = translations[key];

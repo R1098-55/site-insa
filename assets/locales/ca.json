@@ -6,7 +6,7 @@
   "nav_contact": "Contacte",
   "btn_quote": "Sol·licitar Pressupost",
   "btn_call": "Truca Ara",
-  "btn_call_hero": "Trucar a un Tècnic",
+  "btn_call_hero": "Trucar a un Pressupost",
   "hero_title": "Contracta la teva alarma per només 1€ al Dia! <span>Última Generació.</span>",
   "hero_desc": "Protecció intel·ligent 24/7 per a la teva llar, negoci o gran empresa. Resposta immediata i tecnologia avançada anti-inhibició.",
   "btn_free_study": "Estudi de Seguretat Gratuït",
@@ -82,7 +82,8 @@
   "about_future_title": "Futur",
   "about_future_p1": "A més del servei personal als nostres Clients, ens esforcem i ens preocupem a solucionar qualsevol incidència d'altres marques (sigui per mal servei postvenda o insatisfacció de les instal·lacions realitzadas), podent així convertir-nos en els vostres consultors de seguretat per al vostre assessorament i fer-vos Clients i Amics.",
   
-  
+  "breadcrumb_alarma_hogar": "Alarmes",
+
   "breadcrumb_home": "Inici",
   "breadcrumb_servicios": "Serveis",
   "breadcrumb_control_accesos": "Control d'Accessos",
@@ -373,7 +374,7 @@
   "opt_admin": "Administració / Suport",
   "opt_other": "Altres / Pràctiques",
 
-  "btn_send_cv": "Envia Candidatura per WhatsApp / Contacte",
+  "btn_send_email": "Enviar Currículum per Correu Electrònic",
 
   "services": {
     "sistemas-alarma": {

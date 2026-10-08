@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
         body {
-            background-color: #0b0f19;
+            background-color: #FFFBEB;
+           
             color: #fff;
             font-family: system-ui, -apple-system, sans-serif;
             margin: 0;
@@ -61,15 +62,19 @@
             line-height: 1.6;
         }
 
+        
         .content-card-main {
             max-width: 1200px;
             margin: -40px auto 60px auto;
-            background: #fff;
+            background: #FFFBEB;
             color: #222;
             border-radius: 16px;
             padding: 50px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(241, 228, 6, 0.3);
+            border-left: 6px solid #f1e406;
         }
+        
 
         .section-heading {
             color: #0b0f19;
@@ -90,8 +95,8 @@
         }
 
         .card-item {
-            background: #f9fafc;
-            border: 1px solid #eaeaea;
+            background: #FFFF;
+            border: 1px solid #ebec8e;
             border-radius: 12px;
             padding: 25px;
             display: flex;
@@ -102,11 +107,11 @@
 
         .card-item:hover {
             transform: translateY(-5px);
-            border-color: #003366;
+            border-color: #0b0f19;
         }
 
         .card-item h3 {
-            color: #003366;
+            color: #0b0f19;
             font-size: 1.3rem;
             margin-bottom: 12px;
         }
@@ -146,8 +151,8 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            background-color: #25D366;
-            color: #fff;
+            background-color: #f1e406;
+            color: #080808;
             padding: 10px 15px;
             border-radius: 6px;
             text-decoration: none;
@@ -159,7 +164,7 @@
         }
 
         .whatsapp-btn:hover {
-            background-color: #1EBE5D;
+            background-color: #c4ba04;
         }
 
         .back-link-container {
@@ -193,10 +198,10 @@
                 <h2
                     style="font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1;">
                     <span class="logo-alarmas"
-                        style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #f4f5f8;">Alarmas</span>
+                        style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #0b0f19;">Alarmas</span>
                     <span style="color: #f1e406; text-shadow: 0 1.5px 2px rgba(0,0,0,0.3);">INSA</span>
                     <span
-                        style="font-size: 0.75rem; font-weight: 800; background: #f1e406; color: #060913; padding: 2px 6px; border-radius: 4px; position: relative; top: -2px;">1983</span>
+                        style="font-size: 0.75rem; font-weight: 800; background: #f1e406; color: #0b0f19; padding: 2px 6px; border-radius: 4px; position: relative; top: -2px;">1983</span>
                 </h2>
             </a>
 
@@ -216,14 +221,14 @@
         </div>
     </header>
 
-    <!-- Hero -->
+
     <div class="page-header-container">
         <div class="breadcrumb">
             <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> / <a href="../index.html#servicios"
-                data-i18n="breadcrumb_servicios">Servicios</a> / <span data-i18n="breadcrumb_video_vigilancia">Video
+                data-i18n="breadcrumb_servicios">Servicios</a> / <span  style="font-size: 1.1rem;"   data-i18n="breadcrumb_video_vigilancia">Video
                 vigilancia CCTV</span>
         </div>
-        <div class="badge-category" data-i18n="video_badge">Tecnología Óptica Avanzada / 4K & PoE</div>
+        <div class="badge-category" style="font-size: 1.50rem;" data-i18n="video_badge">Tecnología Óptica Avanzada / 4K & PoE</div>
         <h1 class="page-title" data-i18n="video_title">Sistemas de Videovigilancia en Barcelona</h1>
         <p class="page-subtitle" data-i18n="video_subtitle">
             Imágenes ultra nítidas con resolución 4K real, conectividad PoE simplificada, visión nocturna infrarroja de
@@ -231,10 +236,10 @@
         </p>
     </div>
 
-    <!-- Conteúdo Principal -->
+
     <main class="content-card-main">
 
-        <!-- Sectores de Aplicação -->
+
         <h2 class="section-heading" data-i18n="video_sectors_heading">Sectores de Instalación Especializados</h2>
         <p style="color: #666; margin-bottom: 20px;" data-i18n="video_sectors_desc">Soluciones adaptadas a las
             exigencias normativas y de seguridad de cada entorno en Barcelona:</p>
@@ -285,14 +290,14 @@
             </div>
         </div>
 
-        <!-- Modelos Tecnológicos Disponíveis -->
+
         <h2 class="section-heading" data-i18n="video_models_heading">Catálogo de Modelos y Especificaciones Técnicas
         </h2>
         <p style="color: #666; margin-bottom: 20px;" data-i18n="video_models_desc">Equipos profesionales dotados de la
             más alta tecnología óptica, compresión eficiente e inteligencia integrada:</p>
 
         <div class="models-grid">
-            <!-- Modelo 1 -->
+
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">📷</div>
@@ -311,7 +316,7 @@
                     target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
-            <!-- Modelo 2 -->
+
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">🌐</div>
@@ -330,7 +335,7 @@
                     target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
-            <!-- Modelo 3 -->
+
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">🔍</div>
@@ -349,7 +354,7 @@
                     target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
-            <!-- Modelo 4 -->
+
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">🔄</div>
@@ -374,7 +379,7 @@
         </div>
     </main>
 
-    <!-- Footer -->
+
     <footer
         style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
         <div class="container">
