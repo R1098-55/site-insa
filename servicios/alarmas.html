@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <style>
         .site-header {
-            background-color: var(--bg-surface, #FFFBEB);
+            background-color: var(--bg-surface, #dbd956);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -42,7 +42,7 @@
 
         .badge-category {
             display: inline-block;
-            background: rgba(241, 228, 6, 0.1);
+            background: rgba(243, 232, 20, 0.1);
             color: #f1e406;
             padding: 6px 14px;
             border-radius: 20px;
@@ -69,12 +69,12 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 60px;
             margin-top: 30px;
-            
+
         }
 
         .segment-box {
-            background: var(--bg-card, #FFFEFA);
-            border: 1px solid var(--border-light, #FFFEFA);
+            background: var(--bg-card, #dbd956);
+            border: 1px solid var(--border-light, #dbd956);
             border-radius: 12px;
             padding: 30px;
             display: flex;
@@ -164,23 +164,29 @@
             adapta a sus necesidades...</p>
 
         <div class="segments-grid"
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px;">
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 25px;">
 
-            
+
             <div class="segment-box"
                 style="background: #FFFFFF; border: 1px solid #ebec8e; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <div style="font-size: 2.2rem; margin-bottom: 15px;">🏠</div>
-
-                    <h3 style="color: #060913; font-size: 1.1rem; margin-bottom: 15px;" data-i18n="alarmas_hogar">
-                        Alarmas Para Hogar</h3>
-                    <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_descricao">
-                        La alarma para hogar está conectada a nuestra propia Central Receptora de alarmas.
-                        Nuestros operadores se pondrán en contacto contigo en caso de ocurrir cualquier incidencia.
-                        Además, si es necesario enviarán el servicio de acuda.
-                    </p>
+                    <div style="text-align: center; overflow: hidden; border-radius: 18px; background: #FFFBEB;">
+                        <img src="../assets/img/AlarmaCasa.jpg" alt="Cámara Bullet 8MP (4K) Pro"
+                            style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 18px; opacity: 1.92; transition: opacity 0.9s ease;"
+                            onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.92'">
+                    </div>
                 </div>
-                <div style="margin-top: 20px;">
+
+                <h3 style="color: #060913; text-align: center; font-size: 1.1rem; margin-bottom: 15px; margin-top: 15px;"
+                    data-i18n="alarmas_hogar">
+                    Alarmas Para Hogar</h3>
+                <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_descricao">
+                    La alarma para hogar está conectada a nuestra propia Central Receptora de alarmas.
+                    Nuestros operadores se pondrán en contacto contigo en caso de ocurrir cualquier incidencia.
+                    Además, si es necesario enviarán el servicio de acuda.
+                </p>
+
+                <div style="margin-top: 20px; text-align: center;">
                     <a href="https://wa.me/34933004024?text=Hola,%20estoy%20interesado%20en%20una%20alarma"
                         target="_blank" class="whatsapp-btn-card">
                         <span data-i18n="btn_saibamas">Saíba más..</span>
@@ -188,68 +194,71 @@
                 </div>
             </div>
 
-            
-            <div class="segment-box"
-                style="background: #FFFFFF; border: 1px solid #ebec8e; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <div style="font-size: 2.2rem; margin-bottom: 15px;">🏢</div>
+        </div>
 
-                    <h3 style="color: #060913; font-size: 1.1rem; margin-bottom: 15px;"
-                        data-i18n="alarmas_hogar_empresa">Empresas y Negocios</h3>
-                    <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_empresa.descricao">
-                        Protege tu local comercial con videovigilancia HD, control de accesos y conexión a Central
-                        Receptora.
-                    </p>
-                </div>
-                <div style="margin-top: 20px;">
-                    <a href="https://wa.me/34933004024?text=Hola,%20necesito%20información" target="_blank"
-                        class="whatsapp-btn-card">
-                        <span data-i18n="btn_saibamas">Saíba más..</span>
-                    </a>
-                </div>
+
+        <div class=" segment-box"
+            style="background: #FFFFFF; border: 1px solid #ebec8e; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <div style="font-size: 2.2rem; margin-bottom: 15px;">🏢</div>
+
+                <h3 style="color: #060913; font-size: 1.1rem; margin-bottom: 15px;" data-i18n="alarmas_hogar_empresa">
+                    Empresas y Negocios</h3>
+                <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_empresa.descricao">
+                    Protege tu local comercial con videovigilancia HD, control de accesos y conexión a
+                    Central
+                    Receptora.
+                </p>
             </div>
-
-          
-            <div class="segment-box"
-                style="background: #FFFFFF; border: 1px solid #ebec8e; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <div style="font-size: 2.2rem; margin-bottom: 15px;">🏭</div>
-
-                    <h3 style="color: #060913; font-size: 1.1rem; margin-bottom: 15px;"
-                        data-i18n="alarmas_hogar_indust">Industria y Naves</h3>
-                    <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_indust.descricao">
-                        Proyectos de ingeniería de seguridad a medida, analítica de vídeo con IA y protección contra
-                        incendios.
-                    </p>
-                </div>
-                <div style="margin-top: 20px;">
-                    <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas" target="_blank"
-                        class="whatsapp-btn-card">
-                        <span data-i18n="btn_saibamas">Saíba más..</span>
-                    </a>
-                </div>
+            <div style="margin-top: 20px;">
+                <a href="https://wa.me/34933004024?text=Hola,%20necesito%20información" target="_blank"
+                    class="whatsapp-btn-card">
+                    <span data-i18n="btn_saibamas">Saíba más..</span>
+                </a>
             </div>
+        </div>
 
-            
-            <div class="segment-box"
-                style="background: #FFFFFF; border: 1px solid #ebec8e; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <div style="font-size: 2.2rem; margin-bottom: 15px;">🏛️</div>
 
-                    <h3 style="color: #060913; font-size: 1.1rem; margin-bottom: 15px;"
-                        data-i18n="alarmas_hogar_centro">Centros Públicos</h3>
-                    <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_centro.descricao">
-                        Sistemas homologados de alta fiabilidad para edificios institucionales, colegios y centros
-                        deportivos.
-                    </p>
-                </div>
-                <div style="margin-top: 20px;">
-                    <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas%20para%20centros%20publicos"
-                        target="_blank" class="whatsapp-btn-card">
-                        <span data-i18n="btn_saibamas">Saíba más..</span>
-                    </a>
-                </div>
+        <div class="segment-box"
+            style="background: #FFFFFF; border: 1px solid #ebec8e; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <div style="font-size: 2.2rem; margin-bottom: 15px;">🏭</div>
+
+                <h3 style="color: #060913; font-size: 1.1rem; margin-bottom: 15px;" data-i18n="alarmas_hogar_indust">
+                    Industria y Naves</h3>
+                <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_indust.descricao">
+                    Proyectos de ingeniería de seguridad a medida, analítica de vídeo con IA y protección contra
+                    incendios.
+                </p>
             </div>
+            <div style="margin-top: 20px;">
+                <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas" target="_blank"
+                    class="whatsapp-btn-card">
+                    <span data-i18n="btn_saibamas">Saíba más..</span>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="segment-box"
+            style="background: #FFFFFF; border: 1px solid #ebec8e; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <div style="font-size: 2.2rem; margin-bottom: 15px;">🏛️</div>
+
+                <h3 style="color: #060913; font-size: 1.1rem; margin-bottom: 15px;" data-i18n="alarmas_hogar_centro">
+                    Centros Públicos</h3>
+                <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_centro.descricao">
+                    Sistemas homologados de alta fiabilidad para edificios institucionales, colegios y centros
+                    deportivos.
+                </p>
+            </div>
+            <div style="margin-top: 20px;">
+                <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas%20para%20centros%20publicos"
+                    target="_blank" class="whatsapp-btn-card">
+                    <span data-i18n="btn_saibamas">Saíba más..</span>
+                </a>
+            </div>
+        </div>
 
         </div>
     </main>
@@ -274,7 +283,7 @@
 
             try {
                 let response = await fetch(`../assets/locales/${savedLang}.json`);
-                if (!response.ok) throw new Error(`Não foi possível carregar o arquivo ../assets/locales/${savedLang}.json`);
+                if (!response.ok) throw new Error(`No es posible recarregar el arquivo ../assets/locales/${savedLang}.json`);
                 let translations = await response.json();
 
                 function getNestedTranslation(obj, path) {
