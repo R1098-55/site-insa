@@ -83,6 +83,17 @@
   "about_future_p1": "A més del servei personal als nostres Clients, ens esforcem i ens preocupem a solucionar qualsevol incidència d'altres marques (sigui per mal servei postvenda o insatisfacció de les instal·lacions realitzadas), podent així convertir-nos en els vostres consultors de seguretat per al vostre assessorament i fer-vos Clients i Amics.",
   
   "breadcrumb_alarma_hogar": "Alarmes",
+  "alarmas_hogar_msg": "Seleccioneu l'opció que millor s'adapta a les vostres necessitats...",
+  "alarmas_hogar": "Alarmes Per a la Llar",
+  "alarmas_hogar_descricao": "L'alarma per a la llar està connectada a la nostra pròpia Central Receptora d'alarmes. Els nostres operadors es posaran en contacte amb tu en cas de produir-se qualsevol incidència. A més, si cal, enviaran el servei d'acuda.",
+  "alarmas_hogar_empresa": "Empreses i Negocis",
+  "alarmas_hogar_empresa.descricao": "Protegeix el teu local comercial amb videovigilància HD, control d'accessos i connexió a Central Receptora.",
+  "alarmas_hogar_indust": "Indústria i Naus",
+  "alarmas_hogar_indust.descricao": "Projectes d'enginyeria de seguretat a mida, analítica de vídeo amb IA i protecció contra incendis.",
+  "alarmas_hogar_centro": "Centres Públics",
+  "alarmas_hogar_centro.descricao": "Sistemes homologats d'alta fiabilitat per a edificis institucionals, col·legis i centres esportius.",
+  "btn_saibamas": "Saber-ne més..",
+  "badge_protection_247": "Protecció Intel·ligent 24/7",
 
   "breadcrumb_home": "Inici",
   "breadcrumb_servicios": "Serveis",

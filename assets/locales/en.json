@@ -84,6 +84,17 @@
   
 
   "breadcrumb_alarma_hogar": "Alarms",
+  "alarmas_hogar_msg": "Select the option that best fits your needs...",
+  "alarmas_hogar": "Home Alarms",
+  "alarmas_hogar_descricao": "The home alarm is connected to our own Alarm Receiving Center. Our operators will contact you in case of any incident. Furthermore, if necessary, they will dispatch the guard service.",
+  "alarmas_hogar_empresa": "Businesses and Shops",
+  "alarmas_hogar_empresa.descricao": "Protect your commercial premises with HD video surveillance, access control, and connection to a Receiving Center.",
+  "alarmas_hogar_indust": "Industry and Warehouses",
+  "alarmas_hogar_indust.descricao": "Tailored security engineering projects, AI video analytics, and fire protection.",
+  "alarmas_hogar_centro": "Public Centers",
+  "alarmas_hogar_centro.descricao": "Approved high-reliability systems for institutional buildings, schools, and sports centers.",
+  "btn_saibamas": "Learn more..",
+  "badge_protection_247": "Smart 24/7 Protection",
   
   "breadcrumb_home": "Home",
   "breadcrumb_servicios": "Services",
