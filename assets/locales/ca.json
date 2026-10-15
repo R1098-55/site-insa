@@ -1,4 +1,20 @@
 {
+
+  "meta": {
+    "title": "Alarmes INSA | Sistemes d'Alarma i Seguretat a Barcelona",
+    "description": "Protegiu la vostra llar o negoci a Barcelona amb sistemes d'alarma avançats. Màxima seguretat i instal·lació professional.",
+    "keywords": "alarmes barcelona, alarmes per a llars barcelona, alarmes per a negocis barcelona, alarmes per a empreses, instal·lació d'alarmes barcelona, sistemes de seguretat barcelona, alarmes anti okupes, càmeres de vigilància barcelona, cctv barcelona, control d'accessos, alarmes insa, seguretat privada barcelona"
+  },
+
+  "error404": {
+    "title": "Pàgina no trobada",
+    "desc": "La pàgina que busqueu no existeix, ha canviat d'adreça o l'enllaç és incorrecte. Protegiu la vostra llar o negoci tornant a l'inici.",
+    "btnHome": "Tornar a l'Inici",
+    "btnAlarmas": "Veure Sistemes d'Alarma"
+  },
+
+
+  
   "nav_start": "Inici",
   "nav_solutions": "Solucions",
   "nav_services": "Serveis",

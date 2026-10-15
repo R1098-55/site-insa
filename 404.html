@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página No Encontrada | Alarmas INSA</title>
+    <meta name="description"
+        content="Lo sentimos, la página que busca no existe o ha sido movida. Vuelva a la página principal de Alarmas INSA en Barcelona.">
+
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body class="pagina-alarmas">
+
+
+    <header class="navbar scrolled" id="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <a href="/index.html">
+                    <h2
+                        style="font-size: 2rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1;">
+                        <span class="logo-alarmas"
+                            style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Alarmas</span>
+                        <span style="color: #f1e406; text-shadow: 0 1.5px 2px rgba(0,0,0,0.3);">INSA</span>
+                        <span
+                            style="font-size: 0.85rem; font-weight: 800; background: #f1e406; color: #060913; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.5px; position: relative; top: 4px; box-shadow: 0 3px 8px rgba(0,0,0,0.3);">1983</span>
+                    </h2>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="/index.html" data-i18n="breadcrumb_home">Inicio</a>
+                <a href="servicios/alarmas.html"data-i18n="sub_alarmas">Alarmas</a>
+                <a href="/nosotros.html" data-i18n="sub_about">Nosotros</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="/index.html#contacto" class="btn btn-primary btn-sm" data-i18n="nav_contact">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+
+    <main
+        style="min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 60px 20px;">
+        <div class="container" style="max-width: 600px;">
+            <div class="card" style="padding: 50px 30px; border-top: 6px solid var(--brand-yellow);">
+
+                <span class="section-tag" style="justify-content: center; margin-bottom: 15px;">Error 404</span>
+
+                <h1 style="font-size: 2.8rem; font-weight: 900; color: var(--brand-blue); margin-bottom: 20px;"
+                    data-i18n="error404.title">
+                    Página no encontrada
+                </h1>
+
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 35px; line-height: 1.6; "
+                    data-i18n="error404.desc">
+                    La página que está buscando no existe, cambió de dirección o el enlace es incorrecto. Proteja su
+                    hogar o negocio volviendo al inicio.
+                </p>
+
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="/index.html" class="btn btn-primary" data-i18n="error404.btnHome">
+                        Volver al Inicio
+                    </a>
+                    <a href="servicios/alarmas.html" class="btn btn-secondary" data-i18n="error404.btnAlarmas">
+                        Ver Sistemas de Alarma
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <footer
+        style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
+        <div class="container">
+            <p>&copy;1983 - 2026 Alarmas INSA. Todos los derechos reservados. Barcelona, España.</p>
+            <p>Desarrollado Por Ricardo Mendes.</p>
+        </div>
+    </footer>
+    <script src="js/load-servicios.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        async function loadLanguage(lang) {
+            try {
+                let response = await fetch(`/locales/${lang}.json`);
+                if (!response.ok) throw new Error("Não foi possível carregar o arquivo de idioma");
+                let translations = await response.json();
+
+                function getNestedTranslation(obj, path) {
+                    return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
+                }
+
+                
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    let translation = getNestedTranslation(translations, key);
+                    if (translation) {
+                        element.innerHTML = translation;
+                    }
+                });
+
+                
+                const metaTitle = getNestedTranslation(translations, 'error404.metaTitle');
+                const metaDesc = getNestedTranslation(translations, 'error404.metaDesc');
+                if (metaTitle) document.title = metaTitle;
+                if (metaDesc) {
+                    const descElement = document.querySelector('meta[name="description"]');
+                    if (descElement) descElement.setAttribute('content', metaDesc);
+                }
+
+                document.documentElement.setAttribute('lang', lang);
+
+            } catch (error) {
+                console.error("Erro ao carregar tradução:", error);
+            }
+        }
+
+       
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred_lang') || 'es';
+            loadLanguage(savedLang);
+        });
+    </script>
+</body>
+
+</html>

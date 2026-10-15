@@ -1,4 +1,22 @@
 {
+
+  "meta": {
+    "title": "Alarmas INSA | Alarm Systems and Security in Barcelona",
+    "description": "Protect your home or business in Barcelona with advanced alarm systems. Professional installation and maximum security.",
+    "keywords": "alarm systems barcelona, home security barcelona, business alarms barcelona, alarm installation barcelona, security cameras barcelona, cctv barcelona, anti squatter alarms barcelona, access control barcelona, alarmas insa, security company barcelona"
+  },
+
+
+
+  "error404": {
+    "title": "Page Not Found",
+    "desc": "The page you are looking for does not exist, has been moved, or the link is incorrect. Protect your home or business by returning home.",
+    "btnHome": "Back to Home",
+    "btnAlarmas": "View Alarm Systems"
+  },
+
+
+
   "nav_start": "Home",
   "nav_solutions": "Solutions",
   "nav_services": "Services",

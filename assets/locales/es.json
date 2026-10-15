@@ -1,4 +1,19 @@
 {
+
+  "meta": {
+    "title": "Alarmas INSA | Alarmas para Casas y Negocios en Barcelona",
+    "description": "Proteja su hogar o empresa en Barcelona con sistemas de alarma avanzados. Máxima seguridad e instalación profesional.",
+    "keywords": "alarmas barcelona, alarmas para casas barcelona, alarmas para negocios barcelona, sistemas de seguridad"
+  },
+  
+  "error404": {
+    "title": "Página no encontrada",
+    "desc": "La página que está buscando no existe, cambió de dirección o el enlace es incorrecto. Proteja su hogar o negocio volviendo al inicio.",
+    "btnHome": "Volver al Inicio",
+    "btnAlarmas": "Ver Sistemas de Alarma"
+  },
+
+
   "nav_start": "Inicio",
   "nav_solutions": "Soluciones",
   "nav_services": "Servicios",
