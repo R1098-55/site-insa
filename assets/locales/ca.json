@@ -13,8 +13,51 @@
     "btnAlarmas": "Veure Sistemes d'Alarma"
   },
 
-
   
+  "wizard": {
+    "sectionTag": "Calculadora de Seguretat",
+    "sectionTitle": "Simulador de Pressupost",
+    "sectionSub": "Dissenyeu un sistema de protecció adaptat a la vostra llar o negoci en pocs clics.",
+    "step": "Pas",
+    "of": "de",
+    "finalStep": "Pas final",
+    "q1": "Què vols protegir?",
+    "q2Residencial": "Quina mida aproximada té l'immoble?",
+    "q2Negocio": "Quin tipus de negoci tens?",
+    "q3": "Quin és el teu codi postal?",
+    "q4": "Per què necessites una alarma?",
+    "q5": "Ja tens una alarma contractada?",
+    "q6": "Pas final",
+    "q6Sub": "Introdueix el teu telèfon per enviar-te el pressupost personalitzat immediatament.",
+    "btnNext": "Següent",
+    "btnBack": "← Tornar",
+    "btnSendWhatsapp": "Enviar Pressupost per WhatsApp",
+    "phPostal": "Ex: 08001 (Barcelona)",
+    "phPhone": "Número de telèfon*",
+    "options": {
+      "piso": "Pis / Apartament",
+      "chalet": "Xalet / Urbanització",
+      "casa": "Casa / Zona aïllada",
+      "negocio": "Negoci",
+      "sizeSmall": "Petit – Menys de 100m2",
+      "sizeMedium": "Mitjà – entre 100-250m2",
+      "sizeLarge": "Gran – més de 250m2",
+      "negAutonomo": "Autònom / Local petit",
+      "negPyme": "Pime / Oficina",
+      "negCorporation": "Gran Empresa / Nau",
+      "motRobo": "Robatori recent",
+      "motProteccion": "Protecció",
+      "motNueva": "Nou habitatge",
+      "motIncendio": "Incendi / Prevenció",
+      "almNo": "No",
+      "almSecuritas": "Sí, Securitas Direct",
+      "almMovistar": "Sí, Movistar Prosegur",
+      "almAdt": "Sí, ADT/Tyco",
+      "almOtros": "Sí, altres"
+    }
+  },
+
+
   "nav_start": "Inici",
   "nav_solutions": "Solucions",
   "nav_services": "Serveis",

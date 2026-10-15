@@ -935,3 +935,80 @@ body {
 body.pagina-alarmas .logo-alarmas {
     color: #ffffff;
 }
+/* ==========================================
+   ESTILOS DO SIMULADOR / WIZARD DE ORÇAMENTO
+   ========================================== */
+
+/* Caixa principal do passo a passo */
+.wizard-step {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botões de Opção do Wizard */
+.wizard-btn {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-gold);
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.wizard-btn:hover {
+    background-color: #FEFCE8;
+    border-color: var(--brand-yellow);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(241, 228, 6, 0.2);
+    color: var(--brand-blue);
+}
+
+/* Botão de Voltar */
+.btn-back {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+.btn-back:hover {
+    color: var(--brand-blue);
+}
+
+/* Campos de Input e Select dentro do Wizard */
+#simulador-presupuesto input[type="text"],
+#simulador-presupuesto input[type="tel"],
+#simulador-presupuesto select {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+}
+
+#simulador-presupuesto input:focus,
+#simulador-presupuesto select:focus {
+    border-color: var(--brand-yellow);
+    outline: none;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(241, 228, 6, 0.15);
+}

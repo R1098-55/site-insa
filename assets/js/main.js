@@ -351,8 +351,134 @@ document.addEventListener('DOMContentLoaded', () => {
         // Alerta informativa para o usuário anexar o arquivo no seu aplicativo de e-mail que vai abrir
         alert(`Se abrirá tu cliente de correo electrónico para enviar la candidatura.\n\nPor favor, recuerda adjuntar tu archivo (${fileName}) en el mensaje antes de pulsar Enviar.`);
 
-        // Abre o cliente de e-mail padrão (Outlook, Gmail, Apple Mail, etc.)
+        // Abre o cliente de e-mail padrão (Outlook, Gmail, Apple Mail, etc.) 34933004024
         window.location.href = mailtoUrl;
     }
 
+
+
+    let userAnswers = {
+        tipo: '',
+        subtipoNegocio: '',
+        tamanio: '',
+        codigoPostal: '',
+        motivo: '',
+        alarmaActual: '',
+        telefono: ''
+    };
+
+    let isNegocio = false;
+
+    async function getWizardTranslation() {
+        const lang = localStorage.getItem('preferred_lang') || 'es';
+        try {
+            const res = await fetch(`locales/${lang}.json`);
+            return await res.json();
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async function nextStep(currentStep, key, value) {
+        if (key) userAnswers[key] = value;
+
+        if (currentStep === 1) {
+            const data = await getWizardTranslation();
+            const w = data ? data.wizard : null;
+
+            if (value === 'Negocio') {
+                isNegocio = true;
+                const qText = w ? w.q2Negocio : '¿Qué tipo de negocio tienes?';
+                const optAut = w ? w.options.negAutonomo : 'Autónomo / Local pequeño';
+                const optPym = w ? w.options.negPyme : 'Pyme / Oficina';
+                const optCorp = w ? w.options.negCorporation : 'Gran Empresa / Nave';
+
+                document.getElementById('question-step-2').innerText = qText;
+                document.getElementById('options-step-2').innerHTML = `
+                <button type="button" class="wizard-btn" onclick="nextStep(2, 'subtipoNegocio', '${optAut}')">${optAut}</button>
+                <button type="button" class="wizard-btn" onclick="nextStep(2, 'subtipoNegocio', '${optPym}')">${optPym}</button>
+                <button type="button" class="wizard-btn" onclick="nextStep(2, 'subtipoNegocio', '${optCorp}')">${optCorp}</button>
+            `;
+            } else {
+                isNegocio = false;
+                const qText = w ? w.q2Residencial : '¿Qué tamaño aproximado tiene el inmueble?';
+                const optS = w ? w.options.sizeSmall : 'Pequeño – Menos de 100m2';
+                const optM = w ? w.options.sizeMedium : 'Medio – entre 100-250m2';
+                const optL = w ? w.options.sizeLarge : 'Grande – más de 250m2';
+
+                document.getElementById('question-step-2').innerText = qText;
+                document.getElementById('options-step-2').innerHTML = `
+                <button type="button" class="wizard-btn" onclick="nextStep(2, 'tamanio', '${optS}')">${optS}</button>
+                <button type="button" class="wizard-btn" onclick="nextStep(2, 'tamanio', '${optM}')">${optM}</button>
+                <button type="button" class="wizard-btn" onclick="nextStep(2, 'tamanio', '${optL}')">${optL}</button>
+            `;
+            }
+        }
+
+        const currentEl = document.getElementById(`step-${currentStep}`);
+        const nextEl = document.getElementById(`step-${currentStep + 1}`);
+
+        if (currentEl && nextEl) {
+            currentEl.style.display = 'none';
+            nextEl.style.display = 'block';
+            updateProgress(currentStep + 1);
+        }
+    }
+
+    function prevStep(currentStep) {
+        const currentEl = document.getElementById(`step-${currentStep}`);
+        const prevEl = document.getElementById(`step-${currentStep - 1}`);
+
+        if (currentEl && prevEl) {
+            currentEl.style.display = 'none';
+            prevEl.style.display = 'block';
+            updateProgress(currentStep - 1);
+        }
+    }
+
+    function submitPostal() {
+        const postal = document.getElementById('postal-input').value.trim();
+        if (!postal) {
+            alert('Por favor, introduce tu código postal.');
+            return;
+        }
+        userAnswers.codigoPostal = postal;
+        nextStep(3, null, null);
+    }
+
+    async function updateProgress(step) {
+        const percentages = { 1: 16.6, 2: 33.2, 3: 49.8, 4: 66.4, 5: 83.0, 6: 100 };
+        const bar = document.getElementById('progress-bar');
+        if (bar) bar.style.width = (percentages[step] || 16.6) + '%';
+
+        const data = await getWizardTranslation();
+        const w = data ? data.wizard : null;
+        const stepTxt = w ? w.step : 'Paso';
+        const ofTxt = w ? w.of : 'de';
+        const finalTxt = w ? w.finalStep : 'Paso final';
+
+        const label = step === 6 ? finalTxt : `${stepTxt} ${step} ${ofTxt} 6`;
+        const indicator = document.getElementById('step-indicator');
+        if (indicator) indicator.innerText = label;
+    }
+
+    function enviarPresupuesto() {
+        const phone = document.getElementById('phone-input').value.trim();
+        if (!phone) {
+            alert('Por favor, introduce tu número de teléfono.');
+            return;
+        }
+        userAnswers.telefono = phone;
+
+        let detalleInmueble = isNegocio
+            ? `- Tipo: Negocio (${userAnswers.subtipoNegocio})`
+            : `- Tipo: ${userAnswers.tipo}\n- Tamaño: ${userAnswers.tamanio}`;
+
+        const mensagem = `Hola Alarmas INSA, quiero solicitar un presupuesto personalizado:\n\n${detalleInmueble}\n- Código Postal: ${userAnswers.codigoPostal}\n- Motivo: ${userAnswers.motivo}\n- Alarma actual: ${userAnswers.alarmaActual}\n- Teléfono de contacto: ${userAnswers.telefono}`;
+
+        const numeroWhatsapp = '34600000000'; // Substituir pelo número real da INSA
+        const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
+
+        window.open(urlWhatsapp, '_blank');
+    }
 });

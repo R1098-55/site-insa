@@ -220,63 +220,168 @@
 
 
 
-    <section id="simulador" class="section">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;" data-i18n="title_sim">Simulador y
-                Cálculo de presupuesto</h2>
+    <!-- ==========================================
+     SIMULADOR DE PRESUPUESTO INTERATIVO (WIZARD)
+     ========================================== -->
+    <section class="section bg-light" id="simulador-presupuesto">
+        <div class="container" style="max-width: 750px;">
 
-            <div id="simLockBox" class="sim-lock-card">
-                <p data-i18n="sim_locked_msg">Para acceder al simulador y calcular tu presupuesto personalizada, realiza
-                    un pre-registro rápido.</p>
-                <button class="btn btn-primary btn-open-sim" data-i18n="btn_unlock_sim">Desbloquear Simulador</button>
+            <!-- Título Superior "Topzera" para a Seção -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span class="section-tag" style="justify-content: center; margin-bottom: 10px;"
+                    data-i18n="wizard.sectionTag">Calculadora de Seguridad</span>
+                <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--brand-blue); text-transform: uppercase; letter-spacing: 1px;"
+                    data-i18n="wizard.sectionTitle">
+                    Simulador de Presupuesto
+                </h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 8px;"
+                    data-i18n="wizard.sectionSub">
+                    Diseñe un sistema de protección adaptado a su hogar o negocio en pocos clics.
+                </p>
             </div>
 
-            <div id="simContent"
-                style="display:none; background: var(--bg-surface); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-light);">
-                <h3 style="color: var(--brand-yellow); margin-bottom: 1rem;">Bienvenido al Simulador INSA</h3>
-                <p style="margin-bottom: 1rem; color: var(--text-secondary);">Selecciona los elementos para calcular tu
-                    presupuesto:</p>
-                <div style="margin: 1.5rem 0;">
-                    <label>Número de Cámaras CCTV: <span id="camCount"
-                            style="color:var(--brand-yellow); font-weight:bold;">2</span></label><br><br>
-                    <input type="range" min="1" max="10" value="2"
-                        oninput="document.getElementById('camCount').innerText = this.value"
-                        style="width: 100%; max-width: 300px;">
+            <div class="card" style="padding: 40px; position: relative;">
+
+                <!-- Barra de Progresso -->
+                <div
+                    style="width: 100%; background: #E5E7EB; height: 6px; border-radius: 3px; margin-bottom: 30px; overflow: hidden;">
+                    <div id="progress-bar"
+                        style="width: 16.6%; height: 100%; background: var(--brand-yellow); transition: width 0.4s ease;">
+                    </div>
                 </div>
-                <button class="btn btn-primary" onclick="sendWhatsappQuote()">Enviar presupuesto por WhatsApp</button>
+
+                <!-- Indicador do Passo -->
+                <div id="step-indicator"
+                    style="text-align: center; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                    Paso 1 de 6
+                </div>
+
+                <!-- ================= PASSO 1 ================= -->
+                <div class="wizard-step" id="step-1">
+                    <h3 data-i18n="wizard.q1"
+                        style="text-align: center; font-size: 1.8rem; font-weight: 900; color: var(--brand-blue); margin-bottom: 30px;">
+                        ¿Qué quieres proteger?
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.piso"
+                            onclick="nextStep(1, 'tipo', 'Piso / Apartamento')">Piso / Apartamento</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.chalet"
+                            onclick="nextStep(1, 'tipo', 'Chalet / Urbanización')">Chalet / Urbanización</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.casa"
+                            onclick="nextStep(1, 'tipo', 'Casa / Zona aislada')">Casa / Zona aislada</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.negocio"
+                            onclick="nextStep(1, 'tipo', 'Negocio')">Negocio</button>
+                    </div>
+                </div>
+
+                <!-- ================= PASSO 2 (Dinâmico) ================= -->
+                <div class="wizard-step" id="step-2" style="display: none;">
+                    <h3 id="question-step-2" data-i18n="wizard.q2Residencial"
+                        style="text-align: center; font-size: 1.8rem; font-weight: 900; color: var(--brand-blue); margin-bottom: 30px;">
+                        ¿Qué tamaño aproximado tiene el inmueble?
+                    </h3>
+                    <div id="options-step-2" style="display: flex; flex-direction: column; gap: 15px;">
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.sizeSmall"
+                            onclick="nextStep(2, 'tamanio', 'Pequeño – Menos de 100m2')">Pequeño – Menos de
+                            100m2</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.sizeMedium"
+                            onclick="nextStep(2, 'tamanio', 'Medio – entre 100-250m2')">Medio – entre 100-250m2</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.sizeLarge"
+                            onclick="nextStep(2, 'tamanio', 'Grande – más de 250m2')">Grande – más de 250m2</button>
+                    </div>
+                    <button type="button" class="btn-back" data-i18n="wizard.btnBack" onclick="prevStep(2)">←
+                        Volver</button>
+                </div>
+
+                <!-- ================= PASSO 3 ================= -->
+                <div class="wizard-step" id="step-3" style="display: none;">
+                    <h3 data-i18n="wizard.q3"
+                        style="text-align: center; font-size: 1.8rem; font-weight: 900; color: var(--brand-blue); margin-bottom: 30px;">
+                        ¿Cuál es tu código postal?
+                    </h3>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <input type="text" id="postal-input" placeholder="Ej: 08001 (Barcelona)"
+                            style="padding: 16px; font-size: 1.1rem; text-align: center; width: 100%;">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" data-i18n="wizard.btnNext"
+                        onclick="submitPostal()">Siguiente</button>
+                    <button type="button" class="btn-back" data-i18n="wizard.btnBack" onclick="prevStep(3)"
+                        style="display: block; width: 100%; text-align: center;">← Volver</button>
+                </div>
+
+                <!-- ================= PASSO 4 ================= -->
+                <div class="wizard-step" id="step-4" style="display: none;">
+                    <h3 data-i18n="wizard.q4"
+                        style="text-align: center; font-size: 1.8rem; font-weight: 900; color: var(--brand-blue); margin-bottom: 30px;">
+                        ¿Por qué necesitas una alarma?
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.motRobo"
+                            onclick="nextStep(4, 'motivo', 'Robo reciente')">Robo reciente</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.motProteccion"
+                            onclick="nextStep(4, 'motivo', 'Protección')">Protección</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.motNueva"
+                            onclick="nextStep(4, 'motivo', 'Nueva vivienda')">Nueva vivienda</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.motIncendio"
+                            onclick="nextStep(4, 'motivo', 'Incendio / Prevención')">Incendio / Prevención</button>
+                    </div>
+                    <button type="button" class="btn-back" data-i18n="wizard.btnBack" onclick="prevStep(4)">←
+                        Volver</button>
+                </div>
+
+                <!-- ================= PASSO 5 ================= -->
+                <div class="wizard-step" id="step-5" style="display: none;">
+                    <h3 data-i18n="wizard.q5"
+                        style="text-align: center; font-size: 1.8rem; font-weight: 900; color: var(--brand-blue); margin-bottom: 30px;">
+                        ¿Tienes ya una alarma contratada?
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.almNo"
+                            onclick="nextStep(5, 'alarmaActual', 'No')">No</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.almSecuritas"
+                            onclick="nextStep(5, 'alarmaActual', 'Sí, Securitas Direct')">Sí, Securitas Direct</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.almMovistar"
+                            onclick="nextStep(5, 'alarmaActual', 'Sí, Movistar Prosegur')">Sí, Movistar
+                            Prosegur</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.almAdt"
+                            onclick="nextStep(5, 'alarmaActual', 'Sí, ADT/Tyco')">Sí, ADT/Tyco</button>
+                        <button type="button" class="wizard-btn" data-i18n="wizard.options.almOtros"
+                            onclick="nextStep(5, 'alarmaActual', 'Sí, otros')">Sí, otros</button>
+                    </div>
+                    <button type="button" class="btn-back" data-i18n="wizard.btnBack" onclick="prevStep(5)">←
+                        Volver</button>
+                </div>
+
+                <!-- ================= PASSO 6 ================= -->
+                <div class="wizard-step" id="step-6" style="display: none;">
+                    <h3 data-i18n="wizard.q6"
+                        style="text-align: center; font-size: 1.8rem; font-weight: 900; color: var(--brand-blue); margin-bottom: 10px;">
+                        Paso final
+                    </h3>
+                    <p data-i18n="wizard.q6Sub"
+                        style="text-align: center; color: var(--text-secondary); margin-bottom: 25px;">
+                        Introduce tu teléfono para enviarte el presupuesto personalizado de inmediato.
+                    </p>
+                    <div class="form-group" style="margin-bottom: 20px; display: flex; gap: 10px;">
+                        <select
+                            style="width: 110px; padding: 14px; border: 1px solid var(--border-gold); border-radius: 4px; font-weight: 600;">
+                            <option value="+34">🇪🇸 +34</option>
+                        </select>
+                        <input type="tel" id="phone-input" placeholder="Número de teléfono*"
+                            style="flex: 1; padding: 14px; font-size: 1.1rem; border: 1px solid var(--border-gold); border-radius: 4px;">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" data-i18n="wizard.btnSendWhatsapp"
+                        onclick="enviarPresupuesto()"
+                        style="background: #25D366; color: #FFFFFF; font-size: 1.1rem; padding: 16px;">
+                        Enviar Presupuesto por WhatsApp
+                    </button>
+                    <button type="button" class="btn-back" data-i18n="wizard.btnBack" onclick="prevStep(6)"
+                        style="display: block; width: 100%; text-align: center;">← Volver</button>
+                </div>
+
             </div>
         </div>
     </section>
-
-
-    <div id="preRegModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h3 data-i18n="modal_title">Pre-Registro para presupuesto</h3>
-            <form id="preRegForm">
-                <div class="form-group">
-                    <label data-i18n="lbl_name">Nombre y Apellidos *</label>
-                    <input type="text" id="regName" placeholder="Ex: Jordi Pujol" required>
-                    <span id="nameErr" class="error-text" data-i18n="err_name">Por favor, indica tu nombre y
-                        apellidos.</span>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="lbl_email">Correo Electrónico *</label>
-                    <input type="email" id="regEmail" placeholder="nom@exemple.com" required>
-                    <span id="emailErr" class="error-text" data-i18n="err_email">Indica un correo electrónico
-                        válido.</span>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="lbl_phone">Teléfono de Contacto *</label>
-                    <input type="tel" id="regPhone" placeholder="+34 600 000 000" required>
-                    <span id="phoneErr" class="error-text" data-i18n="err_phone">Indica un teléfono válido (mínimo 8
-                        dígitos).</span>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block" data-i18n="btn_access_sim">Acceder al
-                    Simulador</button>
-            </form>
-        </div>
-    </div>
 
 
     <div class="whatsapp-widget">

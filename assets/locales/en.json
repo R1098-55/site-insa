@@ -15,6 +15,50 @@
     "btnAlarmas": "View Alarm Systems"
   },
 
+  
+  "wizard": {
+    "sectionTag": "Security Calculator",
+    "sectionTitle": "Quote Simulator",
+    "sectionSub": "Design a protection system tailored to your home or business in just a few clicks.",
+    "step": "Step",
+    "of": "of",
+    "finalStep": "Final step",
+    "q1": "What do you want to protect?",
+    "q2Residencial": "What is the approximate size of the property?",
+    "q2Negocio": "What type of business do you have?",
+    "q3": "What is your postal code?",
+    "q4": "Why do you need an alarm?",
+    "q5": "Do you already have an alarm contracted?",
+    "q6": "Final step",
+    "q6Sub": "Enter your phone number to receive your personalized quote immediately.",
+    "btnNext": "Next",
+    "btnBack": "← Back",
+    "btnSendWhatsapp": "Send Quote via WhatsApp",
+    "phPostal": "E.g.: 08001 (Barcelona)",
+    "phPhone": "Phone number*",
+    "options": {
+      "piso": "Flat / Apartment",
+      "chalet": "Villa / Residential area",
+      "casa": "House / Isolated area",
+      "negocio": "Business",
+      "sizeSmall": "Small – Less than 100m2",
+      "sizeMedium": "Medium – between 100-250m2",
+      "sizeLarge": "Large – more than 250m2",
+      "negAutonomo": "Freelancer / Small shop",
+      "negPyme": "SME / Office",
+      "negCorporation": "Large Company / Warehouse",
+      "motRobo": "Recent burglary",
+      "motProteccion": "Protection",
+      "motNueva": "New home",
+      "motIncendio": "Fire / Prevention",
+      "almNo": "No",
+      "almSecuritas": "Yes, Securitas Direct",
+      "almMovistar": "Yes, Movistar Prosegur",
+      "almAdt": "Yes, ADT/Tyco",
+      "almOtros": "Yes, others"
+    }
+  },
+
 
 
   "nav_start": "Home",
