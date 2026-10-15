@@ -9,7 +9,7 @@
     --brand-blue-hover: #111A30;        /* Azul hover */
     
     /* Fundo do Body: Branco Puro com sutil toque dourado */
-    --bg-page: #FFFFFF;                 
+    --bg-page: #f1e406;                 
     --bg-surface: #FFFEFA;              
     --bg-subtle: #FFFBEB;               
     --bg-icon: #FEFCE8;                 
@@ -44,7 +44,7 @@
 body {
     color: var(--text-primary);
     line-height: 1.6;
-    background: linear-gradient(180deg, #FFFFFF 0%, #FFFEFA 50%, #FFFBEB 100%);
+    background: linear-gradient(20deg, #f1e406 0%, #FFFEFA 50%, #FFFBEB 100%);
     background-attachment: fixed;
     overflow-x: hidden;
 }
@@ -777,7 +777,7 @@ body {
 
 .whatsapp-menu a:hover {
     background: #FEFCE8;
-    color: #9a8802;
+    color: #f2e613;
 }
 
 .cookie-banner {
@@ -853,8 +853,15 @@ header.navbar.scrolled .nav-menu a:hover,
 header.navbar.scrolled .nav-menu .dropdown:hover .dropdown-toggle {
     color: var(--brand-yellow) !important;
 }
+
+
+
+
+
+
+
 //* ==========================================================================
-   ESTILOS ESPECÍFICOS: PÁGINA NOSOTROS / EMPRESA (FUNDO AZUL ESCURO E BLOCOS BRANCOS)
+   ESTILOS ESPECÍFICOS: PÁGINA NOSOTROS / EMPRESA 
    ========================================================================== */
 body {
     background-color: #0C1222 !important;
@@ -876,7 +883,7 @@ body {
 
 .badge-desde {
     background-color: var(--color-error);
-    color: #FFFFFF;
+    color: #f1e406;
     padding: 8px 18px;
     font-size: 0.95rem;
     font-weight: 800;
