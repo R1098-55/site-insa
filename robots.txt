@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Caminho para o seu sitemap recém-atualizado
+Sitemap: https://alarmasinsa.com/sitemap.xml

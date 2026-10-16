@@ -9,20 +9,74 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Página de Alarmes / Serviços -->
-    <url>
-        <loc>https://alarmasinsa.com/alarmas.html</loc>
-        <lastmod>2026-10-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Página Institucional (Nosotros) -->
+    <!-- Páginas Institucionais e Extras (Raiz) -->
     <url>
         <loc>https://alarmasinsa.com/nosotros.html</loc>
         <lastmod>2026-10-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://alarmasinsa.com/trabaja.html</loc>
+        <lastmod>2026-10-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://alarmasinsa.com/contacto.html</loc>
+        <lastmod>2026-10-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://alarmasinsa.com/blogfaq.html</loc>
+        <lastmod>2026-10-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Páginas de Serviços (Pasta /servicios/) -->
+    <url>
+        <loc>https://alarmasinsa.com/servicios/alarmas.html</loc>
+        <lastmod>2026-10-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alarmasinsa.com/servicios/videovigilancia.html</loc>
+        <lastmod>2026-10-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alarmasinsa.com/servicios/videoanalisis.html</loc>
+        <lastmod>2026-10-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alarmasinsa.com/servicios/nieblaoptica.html</loc>
+        <lastmod>2026-10-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alarmasinsa.com/servicios/controlaccesos.html</loc>
+        <lastmod>2026-10-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alarmasinsa.com/servicios/controlincendio.html</loc>
+        <lastmod>2026-10-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alarmasinsa.com/servicios/monitoreoremoto.html</loc>
+        <lastmod>2026-10-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
 </urlset>
