@@ -34,22 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 // Función para abrir WhatsApp directo
 function openDirectWhatsapp() {
     window.open('https://api.whatsapp.com/send?phone=34933004024&text=Hola,%20quiero%20informacion%20sobre%20las%20alarmes%20INSA', '_blank');
 }
 
-// Función para enviar presupuesto formateada por WhatsApp
-function sendWhatsappQuote() {
-    if (!window.leadData) return;
-    const text = encodeURIComponent(`Hola INSA, soy ${window.leadData.nome}. He completado el pre-registro (${window.leadData.telefone}, ${window.leadData.email}) y quiero finalizar mi presupuesto de alarmas.`);
-    window.open(`https://api.whatsapp.com/send?phone=34933004024&text=${text}`, '_blank');
-}
-
-
 // ==========================================================================
-// FUNÇÃO GLOBAL DE TRADUÇÃO (I18N) - UNIFICADA (SUPORTA CHAVES SIMPLES E ANINHADAS)
+// FUNCIÓN GLOBAL DE TRADUCCIÓN (I18N) - CORRIGIDA E COMPLETA
 // ==========================================================================
 async function applyLanguage(lang) {
     try {
@@ -57,54 +48,102 @@ async function applyLanguage(lang) {
         const jsonPath = isSubfolder ? `../assets/locales/${lang}.json` : `assets/locales/${lang}.json`;
 
         const response = await fetch(jsonPath);
-        if (!response.ok) throw new Error(`No se pudo cargar el archivo de idioma: ${lang}`);
+        if (!response.ok) throw new Error(`No se pudo cargar el archivo de idioma: ${jsonPath}`);
 
         const translations = await response.json();
 
         localStorage.setItem('preferred_lang', lang);
         document.documentElement.lang = lang;
 
-        // Função auxiliar para buscar chaves aninhadas (ex: "services.sistemas-alarma.titulo")
-        function getNestedTranslation(obj, path) {
-            return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
+        // Função de busca inteligente e flexível
+        function findTranslation(obj, path) {
+            if (!obj || !path) return null;
+
+            // 1. Busca direta por caminho com ponto (ex: wizard.q1, services.sistemas-alarma.titulo)
+            const parts = path.split('.');
+            let curr = obj;
+            let foundDirect = true;
+            for (const part of parts) {
+                if (curr && typeof curr === 'object' && part in curr) {
+                    curr = curr[part];
+                } else {
+                    foundDirect = false;
+                    break;
+                }
+            }
+            if (foundDirect && (typeof curr === 'string' || typeof curr === 'number')) return curr;
+
+            // 2. Busca direta na raiz (ex: nav_solutions, hero_title, btn_quote)
+            if (path in obj && typeof obj[path] === 'string') {
+                return obj[path];
+            }
+
+            return null;
         }
 
-        // Recorremos y traducimos los elementos del DOM (suporta aninhado e simples)
+        // Aplica a tradução em todos os elementos com data-i18n
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
-
-            // 1. Tenta buscar como chave aninhada
-            let translation = getNestedTranslation(translations, key);
-
-            // 2. Se não achar, tenta buscar como chave simples (ex: ser_1_title da index)
-            if (!translation && translations[key]) {
-                translation = translations[key];
-            }
+            const translation = findTranslation(translations, key);
 
             if (translation) {
-                el.innerHTML = translation;
-            } else {
-                console.warn(`Clave no encontrada: ${key}`);
+                if (translation.includes('<')) {
+                    el.innerHTML = translation;
+                } else {
+                    el.textContent = translation;
+                }
             }
         });
+
+        // Atualiza Meta Tags do Cabeçalho
+        const metaTitle = findTranslation(translations, 'meta.title');
+        const metaDesc = findTranslation(translations, 'meta.description');
+        const metaKeywords = findTranslation(translations, 'meta.keywords');
+
+        if (metaTitle) document.title = metaTitle;
+        if (metaDesc) {
+            const descElement = document.querySelector('meta[name="description"]');
+            if (descElement) descElement.setAttribute('content', metaDesc);
+        }
+        if (metaKeywords) {
+            const keywordsElement = document.querySelector('meta[name="keywords"]');
+            if (keywordsElement) keywordsElement.setAttribute('content', metaKeywords);
+        }
+
+        // Sincroniza o select visualmente
+        const langSelect = document.getElementById('langSelect');
+        if (langSelect) langSelect.value = lang;
+
+        // Dispara evento para componentes externos (como o load-servicios.js)
+        document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
+
     } catch (error) {
         console.error("Error al aplicar el idioma:", error);
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Carrega o idioma salvo ou 'es' por padrão
+    const savedLang = localStorage.getItem('preferred_lang') || 'es';
+    applyLanguage(savedLang);
 
-    // 1. CONTROL WIDGET WHATSAPP
+    // 2. Escuta mudanças no seletor de idiomas
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) {
+        langSelect.value = savedLang;
+        langSelect.addEventListener('change', (e) => {
+            applyLanguage(e.target.value);
+        });
+    }
+
+    // 3. Widget de WhatsApp
     const waToggleBtn = document.getElementById('waToggleBtn');
     const waMenu = document.getElementById('waMenu');
-
     if (waToggleBtn && waMenu) {
         waToggleBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             waMenu.classList.toggle('active');
         });
-
         document.addEventListener('click', (e) => {
             if (!waMenu.contains(e.target) && !waToggleBtn.contains(e.target)) {
                 waMenu.classList.remove('active');
@@ -112,16 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. BANNER DE COOKIES (RGPD)
+    // 4. Banner de Cookies
     const cookieBanner = document.getElementById('cookie-banner');
     const acceptCookiesBtn = document.getElementById('accept-cookies');
-
-    if (localStorage.getItem('cookiesAccepted') === 'true') {
-        if (cookieBanner) {
-            cookieBanner.style.display = 'none';
-        }
+    if (localStorage.getItem('cookiesAccepted') === 'true' && cookieBanner) {
+        cookieBanner.style.display = 'none';
     }
-
     if (acceptCookiesBtn && cookieBanner) {
         acceptCookiesBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -130,23 +165,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. ROLAGEM SUAVE (SMOOTH SCROLL)
+    // 5. Scroll Suave
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
     anchorLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href');
-
             if (targetId !== '#' && targetId !== '') {
                 const targetElement = document.querySelector(targetId);
-
                 if (targetElement) {
                     e.preventDefault();
-
-                    if (waMenu) {
-                        waMenu.classList.remove('active');
-                    }
-
+                    if (waMenu) waMenu.classList.remove('active');
                     const navbar = document.querySelector('.navbar');
                     const navbarHeight = navbar ? navbar.offsetHeight : 0;
                     const elementPosition = targetElement.getBoundingClientRect().top;
@@ -161,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. ANIMACIÓN DE CONTADORES NUMÉRICOS
+    // 6. Contadores de Estatísticas
     const counters = document.querySelectorAll('.counter');
     const statsSection = document.getElementById('stats-section');
     let animated = false;
@@ -196,121 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, { threshold: 0.3 });
-
         observer.observe(statsSection);
     }
 
-    // 5. GESTÃO DO SELETOR DE IDIOMAS
-    const langSelect = document.getElementById('langSelect');
-    const savedLang = localStorage.getItem('preferred_lang') || 'es';
-
-    if (langSelect) {
-        langSelect.value = savedLang;
-
-        langSelect.addEventListener('change', (e) => {
-            const selectedLang = e.target.value;
-            localStorage.setItem('preferred_lang', selectedLang);
-            applyLanguage(selectedLang); // Aplica direto sem precisar recarregar a página inteira, se quiser
-        });
-    }
-
-    if (typeof applyLanguage === 'function') {
-        applyLanguage(savedLang);
-    }
-
-
-
-
-    // 6. MODAL Y DESBLOQUEO DEL SIMULADOR
-    const preRegModal = document.getElementById('preRegModal');
-    const modalCloseBtn = document.querySelector('.modal-close');
-    const preRegForm = document.getElementById('preRegForm');
-    const openSimBtns = document.querySelectorAll('.btn-open-sim');
-
-    window.openPreRegisterModal = function () {
-        if (preRegModal) {
-            preRegModal.style.display = 'flex';
-        }
-    };
-
-    window.closePreRegisterModal = function () {
-        if (preRegModal) {
-            preRegModal.style.display = 'none';
-        }
-    };
-
-    if (modalCloseBtn) {
-        modalCloseBtn.addEventListener('click', closePreRegisterModal);
-    }
-
-    openSimBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openPreRegisterModal();
-        });
-    });
-
-    if (preRegForm) {
-        preRegForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const nameInput = document.getElementById('regName');
-            const emailInput = document.getElementById('regEmail');
-            const phoneInput = document.getElementById('regPhone');
-
-            const nameErr = document.getElementById('nameErr');
-            const emailErr = document.getElementById('emailErr');
-            const phoneErr = document.getElementById('phoneErr');
-
-            let isValid = true;
-
-            if (!nameInput || nameInput.value.trim().split(' ').length < 2) {
-                if (nameErr) nameErr.style.display = 'block';
-                isValid = false;
-            } else {
-                if (nameErr) nameErr.style.display = 'none';
-            }
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailInput || !emailRegex.test(emailInput.value.trim())) {
-                if (emailErr) emailErr.style.display = 'block';
-                isValid = false;
-            } else {
-                if (emailErr) emailErr.style.display = 'none';
-            }
-
-            const phoneClean = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
-            if (phoneClean.length < 8) {
-                if (phoneErr) phoneErr.style.display = 'block';
-                isValid = false;
-            } else {
-                if (phoneErr) phoneErr.style.display = 'none';
-            }
-
-            if (isValid) {
-                window.leadData = {
-                    nome: nameInput.value.trim(),
-                    email: emailInput.value.trim(),
-                    telefone: phoneInput.value.trim()
-                };
-
-                const simLockBox = document.getElementById('simLockBox');
-                const simContent = document.getElementById('simContent');
-
-                if (simLockBox) simLockBox.style.display = 'none';
-                if (simContent) simContent.style.display = 'block';
-
-                closePreRegisterModal();
-
-                const simSection = document.getElementById('simulador');
-                if (simSection) {
-                    simSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-    }
-
-    // 7. EFECTO DINÁMICO DE SCROLL EN LA NAVBAR
+    // 7. Navbar Scroll
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         window.addEventListener('scroll', () => {
@@ -321,164 +238,134 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    function enviarPorEmail(e) {
-        e.preventDefault();
-        const nombre = document.getElementById('nombre').value;
-        const telefono = document.getElementById('telefono').value;
-        const email = document.getElementById('email').value;
-        const area = document.getElementById('area').value;
-        const fileInput = document.getElementById('cvFile');
-        const mensaje = document.getElementById('mensaje').value;
+});
 
-        const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : 'Ningún archivo seleccionado';
+// ==========================================================================
+// SIMULADOR / WIZARD (FUNCIONES GLOBALES)
+// ==========================================================================
+let userAnswers = {
+    tipo: '',
+    subtipoNegocio: '',
+    tamanio: '',
+    codigoPostal: '',
+    motivo: '',
+    alarmaActual: '',
+    telefono: ''
+};
 
-        // E-mail de destino da INSA (substitua pelo e-mail oficial se necessário)
-        const emailDestino = "info@alarmasinsa.com";
-        const asunto = `Candidatura - ${area} - ${nombre}`;
+let isNegocio = false;
 
-        const cuerpo = `Hola Departamento de Selección,\n\n` +
-            `Me gustaría postularme para la posición de: ${area}.\n\n` +
-            `DATOS DEL CANDIDATO:\n` +
-            `- Nombre: ${nombre}\n` +
-            `- Teléfono: ${telefono}\n` +
-            `- Email: ${email}\n` +
-            `- Archivo de CV adjunto indicado: ${fileName}\n\n` +
-            `PRESENTACIÓN:\n${mensaje}\n\n` +
-            `*(Nota: Por favor, adjunte manualmente el archivo "${fileName}" en este correo antes de enviarlo).*`;
-
-        const mailtoUrl = `mailto:${emailDestino}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
-
-        // Alerta informativa para o usuário anexar o arquivo no seu aplicativo de e-mail que vai abrir
-        alert(`Se abrirá tu cliente de correo electrónico para enviar la candidatura.\n\nPor favor, recuerda adjuntar tu archivo (${fileName}) en el mensaje antes de pulsar Enviar.`);
-
-        // Abre o cliente de e-mail padrão (Outlook, Gmail, Apple Mail, etc.) 34933004024
-        window.location.href = mailtoUrl;
+async function getWizardTranslation() {
+    const lang = localStorage.getItem('preferred_lang') || 'es';
+    const isSubfolder = window.location.pathname.includes('/servicios/');
+    const jsonPath = isSubfolder ? `../assets/locales/${lang}.json` : `assets/locales/${lang}.json`;
+    try {
+        const res = await fetch(jsonPath);
+        return await res.json();
+    } catch (e) {
+        return null;
     }
+}
 
+async function nextStep(currentStep, key, value) {
+    if (key) userAnswers[key] = value;
 
+    if (currentStep === 1) {
+        const data = await getWizardTranslation();
+        const w = data ? data.wizard : null;
 
-    let userAnswers = {
-        tipo: '',
-        subtipoNegocio: '',
-        tamanio: '',
-        codigoPostal: '',
-        motivo: '',
-        alarmaActual: '',
-        telefono: ''
-    };
+        if (value === 'Negocio') {
+            isNegocio = true;
+            const qText = w ? w.q2Negocio : '¿Qué tipo de negocio tienes?';
+            const optAut = w ? w.options.negAutonomo : 'Autónomo / Local pequeño';
+            const optPym = w ? w.options.negPyme : 'Pyme / Oficina';
+            const optCorp = w ? w.options.negCorporation : 'Gran Empresa / Nave';
 
-    let isNegocio = false;
-
-    async function getWizardTranslation() {
-        const lang = localStorage.getItem('preferred_lang') || 'es';
-        try {
-            const res = await fetch(`locales/${lang}.json`);
-            return await res.json();
-        } catch (e) {
-            return null;
-        }
-    }
-
-    async function nextStep(currentStep, key, value) {
-        if (key) userAnswers[key] = value;
-
-        if (currentStep === 1) {
-            const data = await getWizardTranslation();
-            const w = data ? data.wizard : null;
-
-            if (value === 'Negocio') {
-                isNegocio = true;
-                const qText = w ? w.q2Negocio : '¿Qué tipo de negocio tienes?';
-                const optAut = w ? w.options.negAutonomo : 'Autónomo / Local pequeño';
-                const optPym = w ? w.options.negPyme : 'Pyme / Oficina';
-                const optCorp = w ? w.options.negCorporation : 'Gran Empresa / Nave';
-
-                document.getElementById('question-step-2').innerText = qText;
-                document.getElementById('options-step-2').innerHTML = `
+            document.getElementById('question-step-2').innerText = qText;
+            document.getElementById('options-step-2').innerHTML = `
                 <button type="button" class="wizard-btn" onclick="nextStep(2, 'subtipoNegocio', '${optAut}')">${optAut}</button>
                 <button type="button" class="wizard-btn" onclick="nextStep(2, 'subtipoNegocio', '${optPym}')">${optPym}</button>
                 <button type="button" class="wizard-btn" onclick="nextStep(2, 'subtipoNegocio', '${optCorp}')">${optCorp}</button>
             `;
-            } else {
-                isNegocio = false;
-                const qText = w ? w.q2Residencial : '¿Qué tamaño aproximado tiene el inmueble?';
-                const optS = w ? w.options.sizeSmall : 'Pequeño – Menos de 100m2';
-                const optM = w ? w.options.sizeMedium : 'Medio – entre 100-250m2';
-                const optL = w ? w.options.sizeLarge : 'Grande – más de 250m2';
+        } else {
+            isNegocio = false;
+            const qText = w ? w.q2Residencial : '¿Qué tamaño aproximado tiene el inmueble?';
+            const optS = w ? w.options.sizeSmall : 'Pequeño – Menos de 100m2';
+            const optM = w ? w.options.sizeMedium : 'Medio – entre 100-250m2';
+            const optL = w ? w.options.sizeLarge : 'Grande – más de 250m2';
 
-                document.getElementById('question-step-2').innerText = qText;
-                document.getElementById('options-step-2').innerHTML = `
+            document.getElementById('question-step-2').innerText = qText;
+            document.getElementById('options-step-2').innerHTML = `
                 <button type="button" class="wizard-btn" onclick="nextStep(2, 'tamanio', '${optS}')">${optS}</button>
                 <button type="button" class="wizard-btn" onclick="nextStep(2, 'tamanio', '${optM}')">${optM}</button>
                 <button type="button" class="wizard-btn" onclick="nextStep(2, 'tamanio', '${optL}')">${optL}</button>
             `;
-            }
-        }
-
-        const currentEl = document.getElementById(`step-${currentStep}`);
-        const nextEl = document.getElementById(`step-${currentStep + 1}`);
-
-        if (currentEl && nextEl) {
-            currentEl.style.display = 'none';
-            nextEl.style.display = 'block';
-            updateProgress(currentStep + 1);
         }
     }
 
-    function prevStep(currentStep) {
-        const currentEl = document.getElementById(`step-${currentStep}`);
-        const prevEl = document.getElementById(`step-${currentStep - 1}`);
+    const currentEl = document.getElementById(`step-${currentStep}`);
+    const nextEl = document.getElementById(`step-${currentStep + 1}`);
 
-        if (currentEl && prevEl) {
-            currentEl.style.display = 'none';
-            prevEl.style.display = 'block';
-            updateProgress(currentStep - 1);
-        }
+    if (currentEl && nextEl) {
+        currentEl.style.display = 'none';
+        nextEl.style.display = 'block';
+        updateProgress(currentStep + 1);
     }
+}
 
-    function submitPostal() {
-        const postal = document.getElementById('postal-input').value.trim();
-        if (!postal) {
-            alert('Por favor, introduce tu código postal.');
-            return;
-        }
-        userAnswers.codigoPostal = postal;
-        nextStep(3, null, null);
+function prevStep(currentStep) {
+    const currentEl = document.getElementById(`step-${currentStep}`);
+    const prevEl = document.getElementById(`step-${currentStep - 1}`);
+
+    if (currentEl && prevEl) {
+        currentEl.style.display = 'none';
+        prevEl.style.display = 'block';
+        updateProgress(currentStep - 1);
     }
+}
 
-    async function updateProgress(step) {
-        const percentages = { 1: 16.6, 2: 33.2, 3: 49.8, 4: 66.4, 5: 83.0, 6: 100 };
-        const bar = document.getElementById('progress-bar');
-        if (bar) bar.style.width = (percentages[step] || 16.6) + '%';
-
-        const data = await getWizardTranslation();
-        const w = data ? data.wizard : null;
-        const stepTxt = w ? w.step : 'Paso';
-        const ofTxt = w ? w.of : 'de';
-        const finalTxt = w ? w.finalStep : 'Paso final';
-
-        const label = step === 6 ? finalTxt : `${stepTxt} ${step} ${ofTxt} 6`;
-        const indicator = document.getElementById('step-indicator');
-        if (indicator) indicator.innerText = label;
+function submitPostal() {
+    const postal = document.getElementById('postal-input').value.trim();
+    if (!postal) {
+        alert('Por favor, introduce tu código postal.');
+        return;
     }
+    userAnswers.codigoPostal = postal;
+    nextStep(3, null, null);
+}
 
-    function enviarPresupuesto() {
-        const phone = document.getElementById('phone-input').value.trim();
-        if (!phone) {
-            alert('Por favor, introduce tu número de teléfono.');
-            return;
-        }
-        userAnswers.telefono = phone;
+async function updateProgress(step) {
+    const percentages = { 1: 16.6, 2: 33.2, 3: 49.8, 4: 66.4, 5: 83.0, 6: 100 };
+    const bar = document.getElementById('progress-bar');
+    if (bar) bar.style.width = (percentages[step] || 16.6) + '%';
 
-        let detalleInmueble = isNegocio
-            ? `- Tipo: Negocio (${userAnswers.subtipoNegocio})`
-            : `- Tipo: ${userAnswers.tipo}\n- Tamaño: ${userAnswers.tamanio}`;
+    const data = await getWizardTranslation();
+    const w = data ? data.wizard : null;
+    const stepTxt = w ? w.step : 'Paso';
+    const ofTxt = w ? w.of : 'de';
+    const finalTxt = w ? w.finalStep : 'Paso final';
 
-        const mensagem = `Hola Alarmas INSA, quiero solicitar un presupuesto personalizado:\n\n${detalleInmueble}\n- Código Postal: ${userAnswers.codigoPostal}\n- Motivo: ${userAnswers.motivo}\n- Alarma actual: ${userAnswers.alarmaActual}\n- Teléfono de contacto: ${userAnswers.telefono}`;
+    const label = step === 6 ? finalTxt : `${stepTxt} ${step} ${ofTxt} 6`;
+    const indicator = document.getElementById('step-indicator');
+    if (indicator) indicator.innerText = label;
+}
 
-        const numeroWhatsapp = '34600000000'; // Substituir pelo número real da INSA
-        const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
-
-        window.open(urlWhatsapp, '_blank');
+function enviarPresupuesto() {
+    const phone = document.getElementById('phone-input').value.trim();
+    if (!phone) {
+        alert('Por favor, introduce tu número de teléfono.');
+        return;
     }
-});
+    userAnswers.telefono = phone;
+
+    let detalleInmueble = isNegocio
+        ? `- Tipo: Negocio (${userAnswers.subtipoNegocio})`
+        : `- Tipo: ${userAnswers.tipo}\n- Tamaño: ${userAnswers.tamanio}`;
+
+    const mensagem = `Hola Alarmas INSA, quiero solicitar un presupuesto personalizado:\n\n${detalleInmueble}\n- Código Postal: ${userAnswers.codigoPostal}\n- Motivo: ${userAnswers.motivo}\n- Alarma actual: ${userAnswers.alarmaActual}\n- Teléfono de contacto: ${userAnswers.telefono}`;
+
+    const numeroWhatsapp = '34933004024'; 
+    const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(urlWhatsapp, '_blank');
+}
