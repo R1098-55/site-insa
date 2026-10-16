@@ -10,6 +10,11 @@
     "btnHome": "Volver al Inicio",
     "btnAlarmas": "Ver Sistemas de Alarma"
   },
+
+
+
+
+
   "wizard": {
     "sectionTag": "Calculadora de Seguridad",
     "sectionTitle": "Simulador de Presupuesto",
@@ -51,6 +56,9 @@
       "almAdt": "Sí, ADT/Tyco",
       "almOtros": "Sí, otros"
     },
+
+
+
     "nav_start": "Inicio",
     "nav_solutions": "Soluciones",
     "nav_services": "Servicios",
@@ -390,6 +398,13 @@
     "opt_admin": "Administración / Soporte",
     "opt_other": "Otro / Prácticas",
     "btn_send_email": "Enviar Currículum por Correo Electrónico",
+
+
+
+
+
+
+    
     "services": {
       "sistemas-alarma": {
         "titulo": "Alarmas",
