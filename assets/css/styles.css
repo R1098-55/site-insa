@@ -369,7 +369,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 40px; /* Altura uniforme para todos os botões e seletores */
+    height: 40px; 
     margin: 0;
     padding: 0 16px;
     box-sizing: border-box;
@@ -399,7 +399,7 @@ body {
     color: #FFFFFF;
 }
 
-/* HERO */
+
 .hero {
     position: relative;
     width: 100%;
@@ -828,7 +828,7 @@ body {
         width: 100%;
     }
 }
-/* 1. ESTADO NO TOPO (Fundo branco/claro): Letras em Azul Escuro High-Tech */
+
 header.navbar:not(.scrolled) .nav-menu a,
 header.navbar:not(.scrolled) .nav-menu .dropdown-toggle,
 header.navbar:not(.scrolled) .nav-menu a:visited,
@@ -901,7 +901,7 @@ body {
     font-weight: 900;
 }
 
-/* Blocos institucionais com fundo branco puro e borda amarela elegante */
+
 .insa-section {
     background: #ffffff !important;
     border: 1px solid #1e293b;
@@ -931,7 +931,7 @@ body {
 .insa-section p:last-child {
     margin-bottom: 0;
 }
-/* Deixa o texto Alarmas branco apenas nas páginas que tiverem essa classe no body */
+
 body.pagina-alarmas .logo-alarmas {
     color: #ffffff;
 }
@@ -939,7 +939,7 @@ body.pagina-alarmas .logo-alarmas {
    ESTILOS DO SIMULADOR / WIZARD DE ORÇAMENTO
    ========================================== */
 
-/* Caixa principal do passo a passo */
+
 .wizard-step {
     animation: fadeIn 0.4s ease-in-out;
 }
@@ -955,7 +955,7 @@ body.pagina-alarmas .logo-alarmas {
     }
 }
 
-/* Botões de Opção do Wizard */
+
 .wizard-btn {
     width: 100%;
     padding: 16px 20px;
@@ -979,7 +979,7 @@ body.pagina-alarmas .logo-alarmas {
     color: var(--brand-blue);
 }
 
-/* Botão de Voltar */
+
 .btn-back {
     background: none;
     border: none;
@@ -994,7 +994,7 @@ body.pagina-alarmas .logo-alarmas {
     color: var(--brand-blue);
 }
 
-/* Campos de Input e Select dentro do Wizard */
+
 #simulador-presupuesto input[type="text"],
 #simulador-presupuesto input[type="tel"],
 #simulador-presupuesto select {
@@ -1011,4 +1011,56 @@ body.pagina-alarmas .logo-alarmas {
     outline: none;
     background-color: #FFFFFF;
     box-shadow: 0 0 0 3px rgba(241, 228, 6, 0.15);
+}
+
+@media (max-width: 768px) {
+    
+    .navbar-content {
+        padding: 10px 15px;
+    }
+
+    
+    .logo h2 {
+        font-size: 1.5rem !important;
+    }
+
+   
+    .nav-menu a, .dropdown-toggle {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+    }
+
+   
+    .nav-actions .btn {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    
+    .lang-selector {
+        padding: 4px 6px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+   
+    .hero {
+        min-height: 80vh; 
+        background-size: cover;
+        background-position: center center;
+        padding-top: 80px; 
+        padding-bottom: 40px;
+    }
+
+    
+    .hero h1, .hero-title {
+        font-size: 1.8rem !important; 
+        line-height: 1.2;
+    }
+
+    
+    .hero p {
+        font-size: 1rem;
+    }
 }
