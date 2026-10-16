@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Función para abrir WhatsApp directo
+
 function openDirectWhatsapp() {
     window.open('https://api.whatsapp.com/send?phone=34933004024&text=Hola,%20quiero%20informacion%20sobre%20las%20alarmes%20INSA', '_blank');
 }
 
 // ==========================================================================
-// FUNCIÓN GLOBAL DE TRADUCCIÓN (I18N) - CORRIGIDA E COMPLETA
+// FUNCIÓN GLOBAL DE TRADUCCIÓN (I18N) 
 // ==========================================================================
 async function applyLanguage(lang) {
     try {
@@ -55,11 +55,11 @@ async function applyLanguage(lang) {
         localStorage.setItem('preferred_lang', lang);
         document.documentElement.lang = lang;
 
-        // Função de busca inteligente e flexível
+        
         function findTranslation(obj, path) {
             if (!obj || !path) return null;
 
-            // 1. Busca direta por caminho com ponto (ex: wizard.q1, services.sistemas-alarma.titulo)
+            
             const parts = path.split('.');
             let curr = obj;
             let foundDirect = true;
@@ -73,7 +73,7 @@ async function applyLanguage(lang) {
             }
             if (foundDirect && (typeof curr === 'string' || typeof curr === 'number')) return curr;
 
-            // 2. Busca direta na raiz (ex: nav_solutions, hero_title, btn_quote)
+            
             if (path in obj && typeof obj[path] === 'string') {
                 return obj[path];
             }
@@ -81,7 +81,7 @@ async function applyLanguage(lang) {
             return null;
         }
 
-        // Aplica a tradução em todos os elementos com data-i18n
+        
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             const translation = findTranslation(translations, key);
@@ -95,7 +95,7 @@ async function applyLanguage(lang) {
             }
         });
 
-        // Atualiza Meta Tags do Cabeçalho
+        
         const metaTitle = findTranslation(translations, 'meta.title');
         const metaDesc = findTranslation(translations, 'meta.description');
         const metaKeywords = findTranslation(translations, 'meta.keywords');
@@ -110,11 +110,11 @@ async function applyLanguage(lang) {
             if (keywordsElement) keywordsElement.setAttribute('content', metaKeywords);
         }
 
-        // Sincroniza o select visualmente
+        
         const langSelect = document.getElementById('langSelect');
         if (langSelect) langSelect.value = lang;
 
-        // Dispara evento para componentes externos (como o load-servicios.js)
+        
         document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
 
     } catch (error) {
@@ -123,11 +123,11 @@ async function applyLanguage(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Carrega o idioma salvo ou 'es' por padrão
+    
     const savedLang = localStorage.getItem('preferred_lang') || 'es';
     applyLanguage(savedLang);
 
-    // 2. Escuta mudanças no seletor de idiomas
+    
     const langSelect = document.getElementById('langSelect');
     if (langSelect) {
         langSelect.value = savedLang;
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Widget de WhatsApp
+    
     const waToggleBtn = document.getElementById('waToggleBtn');
     const waMenu = document.getElementById('waMenu');
     if (waToggleBtn && waMenu) {
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Banner de Cookies
+    
     const cookieBanner = document.getElementById('cookie-banner');
     const acceptCookiesBtn = document.getElementById('accept-cookies');
     if (localStorage.getItem('cookiesAccepted') === 'true' && cookieBanner) {
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Scroll Suave
+    
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Contadores de Estatísticas
+    
     const counters = document.querySelectorAll('.counter');
     const statsSection = document.getElementById('stats-section');
     let animated = false;
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================================================
-// SIMULADOR / WIZARD (FUNCIONES GLOBALES)
+// SIMULADOR de PRESUPUESTO - WIZARD
 // ==========================================================================
 let userAnswers = {
     tipo: '',
