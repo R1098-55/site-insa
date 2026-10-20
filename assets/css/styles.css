@@ -1347,43 +1347,52 @@ footer {
     box-sizing: border-box;
 }
 
-/* Aumentamos o breakpoint de 992px para 1280px. 
-   Isso ativa o menu hambúrguer no Nest Hub e tablets deitados, onde o menu desktop não cabe */
 @media (max-width: 1285px) {
-
-    /* Organiza o topo da barra: Hambúrguer e Logo na esquerda, Idioma na direita */
+    
+    /* Organiza a barra em três colunas iguais de espaço */
     .navbar-content {
         display: flex !important;
         align-items: center !important;
-        justify-content: flex-start !important;
-        /* Alinha o início à esquerda */
-        gap: 12px !important;
+        justify-content: space-between !important; /* Distribui as três partes igualmente */
+        gap: 0 !important;
+        width: 100% !important;
     }
 
-    /* O botão hambúrguer aparece na extrema esquerda */
+    /* O botão hambúrguer fica fixo na ponta esquerda */
     .mobile-toggle {
         display: flex !important;
+        flex: 1 !important; /* Ocupa um terço invisível da barra para equilibrar */
+        justify-content: flex-start !important;
     }
 
-    /* CORREÇÃO DA LOGO: Fica colada no hambúrguer à esquerda, e empurra o idioma para a direita */
+    /* CORREÇÃO DA LOGO: Centralizada perfeitamente no meio absoluto da barra */
     .logo {
         display: flex !important;
-        justify-content: flex-start !important;
-        margin-right: auto !important;
-        /* ISSO empurra o seletor de idiomas para o final direito */
-        margin-left: 4px !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important; /* Remove as margens automáticas laterais antigas */
+        flex: 2 !important; /* Dá o maior espaço para o meio não quebrar a logo */
+        text-align: center !important;
+    }
+    
+    .logo a {
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
     }
 
-    /* CORREÇÃO DO IDIOMA: Mantém o container ativo, mas esconde apenas os botões de chamada */
+    /* CORREÇÃO DO IDIOMA: Fixo na ponta direita */
     .nav-actions {
-        display: flex !important;
-        /* Reativa o container para o idioma aparecer */
+        display: flex !important; 
+        flex: 1 !important; /* Ocupa um terço invisível para dar o contra-peso perfeito ao hambúrguer */
+        justify-content: flex-end !important; /* Empurra o seletor para a parede direita */
         gap: 0 !important;
     }
 
     /* Esconde apenas os botões de texto/ligação no mobile */
     .nav-actions .btn {
-        display: none !important;
+        display: none !important; 
     }
 
     /* Garante que o select de idiomas fique visível e bonito no topo direito */
@@ -1392,6 +1401,7 @@ footer {
         padding: 6px 10px !important;
         font-size: 0.85rem !important;
         height: auto !important;
+        margin: 0 !important;
     }
 
     /* ==========================================================================
