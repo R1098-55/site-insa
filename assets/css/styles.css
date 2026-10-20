@@ -877,12 +877,7 @@ header.navbar.scrolled .nav-menu .dropdown:hover .dropdown-toggle {
 
 
 
-
-
-
-
-//* ==========================================================================
-ESTILOS ESPECÍFICOS: PÁGINA NOSOTROS / EMPRESA==========================================================================*/ body {
+body {
     background-color: #0C1222 !important;
 }
 
@@ -1127,35 +1122,33 @@ body.pagina-alarmas .logo-alarmas {
     transform: translateY(-7.5px) rotate(-45deg);
 }
 
-/* Regras aplicadas apenas em telas de tablets e celulares (Inversão para a Esquerda) */
+
 @media (max-width: 992px) {
 
-    /* Altera a ordem visual para o botão hambúrguer ficar no início (lado esquerdo) */
     .mobile-toggle {
         display: flex;
         order: -1;
-        /* Força o botão a ir para a extrema esquerda, antes do logo */
+
+
+
+        .nav-actions {
+            display: none;
+        }
     }
 
-    /* Oculta as ações do desktop no mobile */
-    .nav-actions {
-        display: none;
-    }
-
-    /* Transforma o menu em uma gaveta lateral oculta na ESQUERDA */
     .nav-menu {
         position: fixed;
         top: 0;
         left: -100%;
-        /* Começa totalmente para fora da tela pelo lado ESQUERDO */
+
         right: auto;
-        /* Anula o comportamento antigo */
+
         width: 80%;
         max-width: 320px;
         height: 100vh;
         background: var(--bg-surface);
         box-shadow: 10px 0 40px rgba(6, 9, 19, 0.15);
-        /* Sombra invertida para a direita */
+
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
@@ -1165,18 +1158,18 @@ body.pagina-alarmas .logo-alarmas {
         z-index: 1050;
     }
 
-    /* Adapta o fundo do menu lateral se for aberto com a página scrollada */
+
     .navbar.scrolled .nav-menu {
         background: var(--brand-blue-soft);
     }
 
-    /* CRÍTICO: Abre a gaveta lateral empurrando-a para a tela pelo lado ESQUERDO */
+
     .nav-menu.active {
         left: 0;
         right: auto;
     }
 
-    /* Ajuste dos links e dropdowns para ocuparem linhas verticais completas */
+
     .nav-menu>a,
     .nav-menu>.dropdown {
         width: 100%;
@@ -1187,13 +1180,13 @@ body.pagina-alarmas .logo-alarmas {
         padding: 8px 0;
     }
 
-    /* Ajusta a cor do texto no modo escuro mobile */
+
     .navbar.scrolled .nav-menu>a,
     .navbar.scrolled .nav-menu .dropdown-toggle {
         color: rgba(255, 255, 255, 0.9) !important;
     }
 
-    /* Ajuste do comportamento do Dropdown interno para mobile */
+
     .dropdown-menu {
         position: relative;
         top: 0;
@@ -1212,190 +1205,255 @@ body.pagina-alarmas .logo-alarmas {
     .dropdown:hover .dropdown-menu {
         display: block;
     }
-}
 
-/* ==========================================================================
-   AJUSTE UNIVERSAL RESPONSIVO (CELULARES E TABLETS)
-   ========================================================================== */
+    @media (max-width: 992px) {
 
-@media (max-width: 992px) {
 
-    /* 1. Previne quebras e rolagens laterais infinitas no body */
-    html,
-    body {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        /* Remove o scroll horizontal indesejado */
-        -webkit-text-size-adjust: 100%;
-        /* Evita zoom forçado de fontes no iOS */
+        html,
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+
+            -webkit-text-size-adjust: 100%;
+
+        }
+
+
+        .navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 0 16px !important;
+
+            box-sizing: border-box;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .container {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 0 20px !important;
+
+            margin: 0 auto !important;
+            float: none !important;
+        }
+
+
+        main,
+        section,
+        header,
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            justify-content: center;
+            text-align: center;
+
+            width: 100%;
+        }
+
+
+        .section-header {
+            text-align: center !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .section-tag {
+            justify-content: center;
+
+        }
+
+
+        .row,
+        .grid,
+        .flex-container,
+        .hero-buttons,
+        .footer-content {
+            display: flex !important;
+            flex-direction: column !important;
+
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            gap: 16px !important;
+
+        }
+
+
+        .btn,
+        button,
+        input,
+        select {
+            max-width: 100% !important;
+            box-sizing: border-box;
+        }
+
+
+        img,
+        video,
+        iframe {
+            max-width: 100% !important;
+            height: auto !important;
+            display: block;
+            margin: 0 auto;
+
+        }
     }
 
-    /* 2. Centralização da Barra de Navegação (Navbar) */
-    .navbar-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        /* Mantém logo e hambúrguer organizados */
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 16px !important;
-        /* Margem interna de segurança nas bordas */
-        box-sizing: border-box;
-    }
-
-    /* Força o container do logo a ficar alinhado corretamente */
-    .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* 3. Força a centralização de Seções, Containers e Textos Gerais */
-    .container {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 20px !important;
-        /* Espaçamento padrão para o conteúdo não colar na tela */
-        margin: 0 auto !important;
-        float: none !important;
-    }
-
-    /* Alinha todos os textos e elementos principais de blocos */
-    main,
-    section,
-    header,
+    .navbar,
     footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* Centraliza elementos filhos horizontalmente */
-        justify-content: center;
-        text-align: center;
-        /* Centraliza todos os textos nativos */
-        width: 100%;
-    }
-
-    /* Alinha os cabeçalhos de seções do seu tema */
-    .section-header {
-        text-align: center !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .section-tag {
-        justify-content: center;
-        /* Centraliza a tag com o tracinho amarelo */
-    }
-
-    /* 4. Ajuste Automático de Layouts em Grade/Colunas (Grids e Flex) */
-    /* Se você tiver elementos lado a lado (ex: cards, colunas de fotos), isso os empilha */
-    .row,
-    .grid,
-    .flex-container,
-    .hero-buttons,
-    .footer-content {
-        display: flex !important;
-        flex-direction: column !important;
-        /* Transforma linhas horizontais em verticais */
-        align-items: center !important;
-        justify-content: center !important;
         width: 100% !important;
-        gap: 16px !important;
-        /* Espaçamento padrão entre botões/cards empilhados */
-    }
-
-    /* Força botões ou inputs de formulários a não quebrarem o layout */
-    .btn,
-    button,
-    input,
-    select {
         max-width: 100% !important;
+        min-width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         box-sizing: border-box;
     }
-
-    /* 5. Proteção Máxima para Imagens e Vídeos */
-    /* Garante que nenhuma mídia seja maior que a tela do celular */
-    img,
-    video,
-    iframe {
-        max-width: 100% !important;
-        height: auto !important;
-        display: block;
-        margin: 0 auto;
-        /* Centraliza o elemento caso ele seja menor que a tela */
-    }
-}
-
-/* ==========================================================================
-   CORREÇÃO DE LARGURA TOTAL E BREAKPOINT PARA TABLETS/NEST HUB (1280px)
-   ========================================================================== */
-
-/* Força os blocos de cabeçalho e rodapé a ocuparem 100% da largura real da tela */
-.navbar,
-footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    box-sizing: border-box;
 }
 
 @media (max-width: 1285px) {
-    
-    /* Organiza a barra em três colunas iguais de espaço */
-    .navbar-content {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important; /* Distribui as três partes igualmente */
-        gap: 0 !important;
-        width: 100% !important;
-    }
 
-    /* O botão hambúrguer fica fixo na ponta esquerda */
+
     .mobile-toggle {
         display: flex !important;
-        flex: 1 !important; /* Ocupa um terço invisível da barra para equilibrar */
-        justify-content: flex-start !important;
+        /* Garante o comportamento do flexbox */
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 24px !important;
+        /* Força a largura máxima do botão fechado */
+        height: 18px !important;
+        /* Força a altura máxima do botão fechado */
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        flex: 0 0 24px !important;
+        /* Impede o flexbox de esticar o botão nas pontas */
+        z-index: 1100 !important;
     }
 
-    /* CORREÇÃO DA LOGO: Centralizada perfeitamente no meio absoluto da barra */
+    /* Configuração rigorosa das 3 linhas internas */
+    .mobile-toggle span {
+        display: block !important;
+        width: 24px !important;
+        /* Força as linhas a terem o tamanho exato do botão */
+        height: 3px !important;
+        /* Espessura das linhas */
+        background-color: var(--brand-blue) !important;
+        /* Cor escura oficial */
+        border-radius: 4px !important;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        transform-origin: center !important;
+        /* Garante que a rotação aconteça no meio da linha */
+    }
+
+    /* Transforma as linhas para branco quando a navbar tiver fundo escuro (scrolled) */
+    .navbar.scrolled .mobile-toggle span {
+        background-color: #FFFFFF !important;
+    }
+
+    /* ANIMAÇÃO DO "X" EM TAMANHO REAL (Ajustado matematicamente para 24x18px) */
+    .mobile-toggle.active span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg) !important;
+    }
+
+    .mobile-toggle.active span:nth-child(2) {
+        opacity: 0 !important;
+        width: 0 !important;
+    }
+
+    .mobile-toggle.active span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg) !important;
+    }
+
     .logo {
+        
+        position:absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translateX(-50%) translateY(-50%) !important;
+        margin: 0 !important;
+        padding: 0 !important;
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-        margin: 0 auto !important; /* Remove as margens automáticas laterais antigas */
-        flex: 2 !important; /* Dá o maior espaço para o meio não quebrar a logo */
-        text-align: center !important;
-    }
+        width: auto !important;
+        max-width: 60% !important;
+        z-index: 1000 !important;
     
-    .logo a {
-        display: inline-flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 100% !important;
     }
 
-    /* CORREÇÃO DO IDIOMA: Fixo na ponta direita */
+    .logo a {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-decoration: none !important;
+        width: auto !important;
+        
+    }
+    .logo h2 {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+    .logo span {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        display: inline-block !important;
+        transition: color 0.3s ease !important;
+
+        
+    }
+
+    .logo h2 span:last-child {
+
+        top: 9px !important;
+        margin-left: 0 !important;
+        white-space: nowrap !important;
+        
+    }
+
+
     .nav-actions {
-        display: flex !important; 
-        flex: 1 !important; /* Ocupa um terço invisível para dar o contra-peso perfeito ao hambúrguer */
-        justify-content: flex-end !important; /* Empurra o seletor para a parede direita */
+        display: flex !important;
+        flex: 1 !important;
+
+        justify-content: flex-end !important;
+
         gap: 0 !important;
     }
 
-    /* Esconde apenas os botões de texto/ligação no mobile */
+
     .nav-actions .btn {
-        display: none !important; 
+        display: none !important;
     }
 
-    /* Garante que o select de idiomas fique visível e bonito no topo direito */
+
     .lang-selector {
         display: inline-block !important;
         padding: 6px 10px !important;
@@ -1404,9 +1462,7 @@ footer {
         margin: 0 !important;
     }
 
-    /* ==========================================================================
-       GAVETA DO MENU (ESQUERDA)
-       ========================================================================== */
+
     .nav-menu {
         position: fixed !important;
         top: 0 !important;
@@ -1434,7 +1490,7 @@ footer {
         left: 0 !important;
     }
 
-    /* Formatação dos links internos */
+
     .nav-menu>a,
     .nav-menu>.dropdown {
         width: 100% !important;
@@ -1451,7 +1507,7 @@ footer {
         color: rgba(255, 255, 255, 0.9) !important;
     }
 
-   
+
     .dropdown-menu {
         position: relative !important;
         top: 0 !important;
