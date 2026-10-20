@@ -1,13 +1,10 @@
-/* ==========================================================================
-                    MENU MOBILE 
-   ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.querySelector('.navbar');
+    const navbarContent = document.querySelector('.navbar-content');
     const navMenu = document.querySelector('.nav-menu');
 
     let mobileToggle = document.querySelector('.mobile-toggle');
 
-    if (!mobileToggle) {
+    if (!mobileToggle && navbarContent) {
         mobileToggle = document.createElement('button');
         mobileToggle.className = 'mobile-toggle';
         mobileToggle.innerHTML = `
@@ -15,24 +12,26 @@ document.addEventListener('DOMContentLoaded', () => {
             <span></span>
             <span></span>
         `;
-        const navbarContent = document.querySelector('.navbar-content');
-        if (navbarContent) {
-            navbarContent.appendChild(mobileToggle);
-        }
+
+        
+        navbarContent.prepend(mobileToggle);
     }
 
-    mobileToggle.addEventListener('click', () => {
-        mobileToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
 
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
-            mobileToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+            if (mobileToggle) mobileToggle.classList.remove('active');
+            if (navMenu) navMenu.classList.remove('active');
         });
     });
 });
+
 
 
 function openDirectWhatsapp() {
@@ -55,11 +54,11 @@ async function applyLanguage(lang) {
         localStorage.setItem('preferred_lang', lang);
         document.documentElement.lang = lang;
 
-        
+
         function findTranslation(obj, path) {
             if (!obj || !path) return null;
 
-            
+
             const parts = path.split('.');
             let curr = obj;
             let foundDirect = true;
@@ -73,7 +72,7 @@ async function applyLanguage(lang) {
             }
             if (foundDirect && (typeof curr === 'string' || typeof curr === 'number')) return curr;
 
-            
+
             if (path in obj && typeof obj[path] === 'string') {
                 return obj[path];
             }
@@ -81,7 +80,7 @@ async function applyLanguage(lang) {
             return null;
         }
 
-        
+
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             const translation = findTranslation(translations, key);
@@ -95,7 +94,7 @@ async function applyLanguage(lang) {
             }
         });
 
-        
+
         const metaTitle = findTranslation(translations, 'meta.title');
         const metaDesc = findTranslation(translations, 'meta.description');
         const metaKeywords = findTranslation(translations, 'meta.keywords');
@@ -110,11 +109,11 @@ async function applyLanguage(lang) {
             if (keywordsElement) keywordsElement.setAttribute('content', metaKeywords);
         }
 
-        
+
         const langSelect = document.getElementById('langSelect');
         if (langSelect) langSelect.value = lang;
 
-        
+
         document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
 
     } catch (error) {
@@ -123,11 +122,11 @@ async function applyLanguage(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     const savedLang = localStorage.getItem('preferred_lang') || 'es';
     applyLanguage(savedLang);
 
-    
+
     const langSelect = document.getElementById('langSelect');
     if (langSelect) {
         langSelect.value = savedLang;
@@ -136,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
+
     const waToggleBtn = document.getElementById('waToggleBtn');
     const waMenu = document.getElementById('waMenu');
     if (waToggleBtn && waMenu) {
@@ -151,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
+
     const cookieBanner = document.getElementById('cookie-banner');
     const acceptCookiesBtn = document.getElementById('accept-cookies');
     if (localStorage.getItem('cookiesAccepted') === 'true' && cookieBanner) {
@@ -165,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
+
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -189,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    
+
     const counters = document.querySelectorAll('.counter');
     const statsSection = document.getElementById('stats-section');
     let animated = false;
@@ -364,7 +363,7 @@ function enviarPresupuesto() {
 
     const mensagem = `Hola Alarmas INSA, quiero solicitar un presupuesto personalizado:\n\n${detalleInmueble}\n- Código Postal: ${userAnswers.codigoPostal}\n- Motivo: ${userAnswers.motivo}\n- Alarma actual: ${userAnswers.alarmaActual}\n- Teléfono de contacto: ${userAnswers.telefono}`;
 
-    const numeroWhatsapp = '34933004024'; 
+    const numeroWhatsapp = '34933004024';
     const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
 
     window.open(urlWhatsapp, '_blank');

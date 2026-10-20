@@ -3,28 +3,34 @@
    ========================================================================== */
 
 :root {
-    --brand-yellow: #f1e406;            /* Amarelo Oficial INSA */
-    --brand-blue: #060913;              /* Azul Escuro Noturno High-Tech (substitui o preto) */
-    --brand-blue-soft: #0C1222;         /* Azul secundário para superfícies escuras */
-    --brand-blue-hover: #111A30;        /* Azul hover */
-    
+    --brand-yellow: #f1e406;
+    /* Amarelo Oficial INSA */
+    --brand-blue: #060913;
+    /* Azul Escuro Noturno High-Tech (substitui o preto) */
+    --brand-blue-soft: #0C1222;
+    /* Azul secundário para superfícies escuras */
+    --brand-blue-hover: #111A30;
+    /* Azul hover */
+
     /* Fundo do Body: Branco Puro com sutil toque dourado */
-    --bg-page: #f1e406;                 
-    --bg-surface: #FFFEFA;              
-    --bg-subtle: #FFFBEB;               
-    --bg-icon: #FEFCE8;                 
+    --bg-page: #f1e406;
+    --bg-surface: #FFFEFA;
+    --bg-subtle: #FFFBEB;
+    --bg-icon: #FEFCE8;
 
     /* Tipografia (Usando o Azul Escuro no lugar do preto para textos de destaque) */
-    --text-primary: #060913;            /* Azul escuro corporativo para títulos */
-    --text-secondary: #374151;          /* Cinza elegante para parágrafos */
-    --text-on-dark: #FFFFFF;            
-    --text-on-yellow: #060913;          
+    --text-primary: #060913;
+    /* Azul escuro corporativo para títulos */
+    --text-secondary: #374151;
+    /* Cinza elegante para parágrafos */
+    --text-on-dark: #FFFFFF;
+    --text-on-yellow: #060913;
 
     /* Feedback & Bordas */
-    --color-error: #DC2626;             
-    --color-success: #16A34A;           
-    --border-light: #E5E7EB;            
-    --border-gold: rgba(241, 228, 6, 0.3); 
+    --color-error: #DC2626;
+    --color-success: #16A34A;
+    --border-light: #E5E7EB;
+    --border-gold: rgba(241, 228, 6, 0.3);
 
     --shadow-premium: 0 15px 30px -10px rgba(241, 228, 6, 0.15);
     --shadow-hover: 0 20px 40px -10px rgba(6, 9, 19, 0.12);
@@ -62,7 +68,7 @@ body {
 }
 
 .section-tag {
-    color: #9a8802; 
+    color: #9a8802;
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 2px;
@@ -98,7 +104,7 @@ body {
 
 .btn-primary {
     background: var(--brand-yellow);
-    color: var(--text-on-yellow); 
+    color: var(--text-on-yellow);
     box-shadow: 0 8px 20px -4px rgba(241, 228, 6, 0.4);
 }
 
@@ -141,7 +147,7 @@ body {
 
 .navbar.scrolled .btn-call {
     background: rgba(255, 255, 255, 0.1);
-    color: #FFFFFF ;
+    color: #FFFFFF;
     border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -187,7 +193,7 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(6, 9, 19, 0.95); 
+    background: rgba(6, 9, 19, 0.95);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 2px solid var(--brand-yellow);
@@ -203,6 +209,7 @@ body {
 .navbar.scrolled .logo-alarmas {
     color: #ffffff !important;
 }
+
 .navbar-content {
     display: flex;
     align-items: center;
@@ -215,33 +222,35 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
-.logo{
+
+.logo {
     display: flex;
     align-items: center;
     flex-shrink: 0;
 }
+
 .logo a {
     text-decoration: none;
 }
 
 .logo h2 {
-    color: var(--brand-blue); 
+    color: var(--brand-blue);
     font-size: 1.8rem;
     font-weight: 900;
     transition: color 0.3s ease;
 }
 
 .navbar.scrolled .logo h2 {
-    color: #FFFFFF; 
+    color: #FFFFFF;
 }
 
 .logo h2 span {
-    color: #b8a902; 
+    color: #b8a902;
     transition: color 0.3s ease;
 }
 
 .navbar.scrolled .logo h2 span {
-    color: var(--brand-yellow); 
+    color: var(--brand-yellow);
 }
 
 .nav-menu {
@@ -250,25 +259,25 @@ body {
     gap: 18px;
 }
 
-.nav-menu > a,
-.nav-menu > .dropdown {
+.nav-menu>a,
+.nav-menu>.dropdown {
 
-   display: inline-flex;
-   align-items: center;
-   justify-content: center;
-   text-decoration: none !important;
-   height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    height: 100%;
 }
 
 .nav-menu .dropdown-toggle {
-   display: inline-flex;
-   align-items: center;
-   text-decoration: none !important;
-   margin: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none !important;
+    margin: 0 !important;
 
 }
 
-.nav-menu a, 
+.nav-menu a,
 .nav-menu .dropdown-toggle {
     line-height: normal;
     vertical-align: middle;
@@ -276,7 +285,7 @@ body {
 
 .navbar.scrolled .nav-menu a,
 .navbar.scrolled .nav-menu .dropdown-toggle {
-    color: rgba(255, 255, 255, 0.85); 
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .nav-menu a:hover,
@@ -319,8 +328,9 @@ body {
 .dropdown-menu li a {
     text-decoration: none !important;
 }
+
 .navbar.scrolled .dropdown-menu {
-    background: var(--brand-blue-hover); 
+    background: var(--brand-blue-hover);
     border-color: rgba(241, 228, 6, 0.2);
 }
 
@@ -364,23 +374,25 @@ body {
     gap: 16px;
     flex-shrink: 0;
 }
+
 .nav-actions .btn,
 .nav-actions .lang-selector {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 40px; 
+    height: 40px;
     margin: 0;
     padding: 0 16px;
     box-sizing: border-box;
     vertical-align: middle;
     white-space: nowrap;
 }
+
 .lang-selector {
     appearance: auto;
     -webkit-appearance: auto;
     line-height: 1;
-    
+
 }
 
 .navbar.scrolled .lang-selector {
@@ -456,8 +468,9 @@ body {
 .stat-item .number {
     font-size: 3.2rem;
     font-weight: 900;
-    color: #f1e406; /* Amarelo Oficial exato da Logo INSA */
-    -webkit-text-stroke: 1px #9a8802; 
+    color: #f1e406;
+    /* Amarelo Oficial exato da Logo INSA */
+    -webkit-text-stroke: 1px #9a8802;
     line-height: 1;
 }
 
@@ -532,16 +545,19 @@ body {
 .grid-3 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
+
 .grid-4 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
+
 .grid-services {
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
 
-.card, .service-card {
+.card,
+.service-card {
     background-color: var(--bg-surface);
     border: 1px solid var(--border-gold);
     border-left: 4px solid var(--brand-yellow);
@@ -551,20 +567,23 @@ body {
     box-shadow: 0 10px 25px rgba(6, 9, 19, 0.03);
 }
 
-.card:hover, .service-card:hover {
+.card:hover,
+.service-card:hover {
     border-color: var(--brand-blue);
     transform: translateY(-4px);
     box-shadow: 0 15px 35px rgba(241, 228, 6, 0.15);
 }
 
-.card h3, .service-card h3 {
+.card h3,
+.service-card h3 {
     font-size: 1.3rem;
     font-weight: 800;
     margin-bottom: 12px;
     color: var(--text-primary);
 }
 
-.card p, .service-card p {
+.card p,
+.service-card p {
     color: var(--text-secondary);
     font-size: 0.9rem;
     margin-bottom: 20px;
@@ -635,6 +654,7 @@ body {
 .modal-overlay {
     display: none;
     position: fixed;
+
     top: 0;
     left: 0;
     width: 100%;
@@ -822,6 +842,7 @@ body {
         padding: 10px 20px;
         gap: 16px;
     }
+
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
@@ -861,9 +882,7 @@ header.navbar.scrolled .nav-menu .dropdown:hover .dropdown-toggle {
 
 
 //* ==========================================================================
-   ESTILOS ESPECÍFICOS: PÁGINA NOSOTROS / EMPRESA 
-   ========================================================================== */
-body {
+ESTILOS ESPECÍFICOS: PÁGINA NOSOTROS / EMPRESA==========================================================================*/ body {
     background-color: #0C1222 !important;
 }
 
@@ -935,6 +954,7 @@ body {
 body.pagina-alarmas .logo-alarmas {
     color: #ffffff;
 }
+
 /* ==========================================
    ESTILOS DO SIMULADOR / WIZARD DE ORÇAMENTO
    ========================================== */
@@ -949,6 +969,7 @@ body.pagina-alarmas .logo-alarmas {
         opacity: 0;
         transform: translateY(8px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1014,29 +1035,30 @@ body.pagina-alarmas .logo-alarmas {
 }
 
 @media (max-width: 768px) {
-    
+
     .navbar-content {
         padding: 10px 15px;
     }
 
-    
+
     .logo h2 {
         font-size: 1.5rem !important;
     }
 
-   
-    .nav-menu a, .dropdown-toggle {
+
+    .nav-menu a,
+    .dropdown-toggle {
         font-size: 0.95rem;
         padding: 8px 12px;
     }
 
-   
+
     .nav-actions .btn {
         padding: 6px 10px;
         font-size: 0.85rem;
     }
 
-    
+
     .lang-selector {
         padding: 4px 6px;
         font-size: 0.85rem;
@@ -1044,23 +1066,405 @@ body.pagina-alarmas .logo-alarmas {
 }
 
 @media (max-width: 768px) {
-   
+
     .hero {
-        min-height: 80vh; 
+        min-height: 80vh;
         background-size: cover;
         background-position: center center;
-        padding-top: 80px; 
+        padding-top: 80px;
         padding-bottom: 40px;
     }
 
-    
-    .hero h1, .hero-title {
-        font-size: 1.8rem !important; 
+
+    .hero h1,
+    .hero-title {
+        font-size: 1.8rem !important;
         line-height: 1.2;
     }
 
-    
+
     .hero p {
         font-size: 1rem;
+    }
+}
+
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+
+.mobile-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--brand-blue);
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.navbar.scrolled .mobile-toggle span {
+    background-color: #FFFFFF;
+}
+
+
+.mobile-toggle.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Regras aplicadas apenas em telas de tablets e celulares (Inversão para a Esquerda) */
+@media (max-width: 992px) {
+
+    /* Altera a ordem visual para o botão hambúrguer ficar no início (lado esquerdo) */
+    .mobile-toggle {
+        display: flex;
+        order: -1;
+        /* Força o botão a ir para a extrema esquerda, antes do logo */
+    }
+
+    /* Oculta as ações do desktop no mobile */
+    .nav-actions {
+        display: none;
+    }
+
+    /* Transforma o menu em uma gaveta lateral oculta na ESQUERDA */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* Começa totalmente para fora da tela pelo lado ESQUERDO */
+        right: auto;
+        /* Anula o comportamento antigo */
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--bg-surface);
+        box-shadow: 10px 0 40px rgba(6, 9, 19, 0.15);
+        /* Sombra invertida para a direita */
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 90px 32px 40px 32px;
+        gap: 20px;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1050;
+    }
+
+    /* Adapta o fundo do menu lateral se for aberto com a página scrollada */
+    .navbar.scrolled .nav-menu {
+        background: var(--brand-blue-soft);
+    }
+
+    /* CRÍTICO: Abre a gaveta lateral empurrando-a para a tela pelo lado ESQUERDO */
+    .nav-menu.active {
+        left: 0;
+        right: auto;
+    }
+
+    /* Ajuste dos links e dropdowns para ocuparem linhas verticais completas */
+    .nav-menu>a,
+    .nav-menu>.dropdown {
+        width: 100%;
+        height: auto;
+        justify-content: flex-start;
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 8px 0;
+    }
+
+    /* Ajusta a cor do texto no modo escuro mobile */
+    .navbar.scrolled .nav-menu>a,
+    .navbar.scrolled .nav-menu .dropdown-toggle {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    /* Ajuste do comportamento do Dropdown interno para mobile */
+    .dropdown-menu {
+        position: relative;
+        top: 0;
+        margin-top: 10px;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--brand-yellow);
+        padding-left: 16px;
+        background: transparent !important;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   AJUSTE UNIVERSAL RESPONSIVO (CELULARES E TABLETS)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+
+    /* 1. Previne quebras e rolagens laterais infinitas no body */
+    html,
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        /* Remove o scroll horizontal indesejado */
+        -webkit-text-size-adjust: 100%;
+        /* Evita zoom forçado de fontes no iOS */
+    }
+
+    /* 2. Centralização da Barra de Navegação (Navbar) */
+    .navbar-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* Mantém logo e hambúrguer organizados */
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 16px !important;
+        /* Margem interna de segurança nas bordas */
+        box-sizing: border-box;
+    }
+
+    /* Força o container do logo a ficar alinhado corretamente */
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 3. Força a centralização de Seções, Containers e Textos Gerais */
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        /* Espaçamento padrão para o conteúdo não colar na tela */
+        margin: 0 auto !important;
+        float: none !important;
+    }
+
+    /* Alinha todos os textos e elementos principais de blocos */
+    main,
+    section,
+    header,
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Centraliza elementos filhos horizontalmente */
+        justify-content: center;
+        text-align: center;
+        /* Centraliza todos os textos nativos */
+        width: 100%;
+    }
+
+    /* Alinha os cabeçalhos de seções do seu tema */
+    .section-header {
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .section-tag {
+        justify-content: center;
+        /* Centraliza a tag com o tracinho amarelo */
+    }
+
+    /* 4. Ajuste Automático de Layouts em Grade/Colunas (Grids e Flex) */
+    /* Se você tiver elementos lado a lado (ex: cards, colunas de fotos), isso os empilha */
+    .row,
+    .grid,
+    .flex-container,
+    .hero-buttons,
+    .footer-content {
+        display: flex !important;
+        flex-direction: column !important;
+        /* Transforma linhas horizontais em verticais */
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 16px !important;
+        /* Espaçamento padrão entre botões/cards empilhados */
+    }
+
+    /* Força botões ou inputs de formulários a não quebrarem o layout */
+    .btn,
+    button,
+    input,
+    select {
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* 5. Proteção Máxima para Imagens e Vídeos */
+    /* Garante que nenhuma mídia seja maior que a tela do celular */
+    img,
+    video,
+    iframe {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block;
+        margin: 0 auto;
+        /* Centraliza o elemento caso ele seja menor que a tela */
+    }
+}
+
+/* ==========================================================================
+   CORREÇÃO DE LARGURA TOTAL E BREAKPOINT PARA TABLETS/NEST HUB (1280px)
+   ========================================================================== */
+
+/* Força os blocos de cabeçalho e rodapé a ocuparem 100% da largura real da tela */
+.navbar,
+footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Aumentamos o breakpoint de 992px para 1280px. 
+   Isso ativa o menu hambúrguer no Nest Hub e tablets deitados, onde o menu desktop não cabe */
+@media (max-width: 1285px) {
+
+    /* Organiza o topo da barra: Hambúrguer e Logo na esquerda, Idioma na direita */
+    .navbar-content {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        /* Alinha o início à esquerda */
+        gap: 12px !important;
+    }
+
+    /* O botão hambúrguer aparece na extrema esquerda */
+    .mobile-toggle {
+        display: flex !important;
+    }
+
+    /* CORREÇÃO DA LOGO: Fica colada no hambúrguer à esquerda, e empurra o idioma para a direita */
+    .logo {
+        display: flex !important;
+        justify-content: flex-start !important;
+        margin-right: auto !important;
+        /* ISSO empurra o seletor de idiomas para o final direito */
+        margin-left: 4px !important;
+    }
+
+    /* CORREÇÃO DO IDIOMA: Mantém o container ativo, mas esconde apenas os botões de chamada */
+    .nav-actions {
+        display: flex !important;
+        /* Reativa o container para o idioma aparecer */
+        gap: 0 !important;
+    }
+
+    /* Esconde apenas os botões de texto/ligação no mobile */
+    .nav-actions .btn {
+        display: none !important;
+    }
+
+    /* Garante que o select de idiomas fique visível e bonito no topo direito */
+    .lang-selector {
+        display: inline-block !important;
+        padding: 6px 10px !important;
+        font-size: 0.85rem !important;
+        height: auto !important;
+    }
+
+    /* ==========================================================================
+       GAVETA DO MENU (ESQUERDA)
+       ========================================================================== */
+    .nav-menu {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        right: auto !important;
+        width: 80% !important;
+        max-width: 320px !important;
+        height: 100vh !important;
+        background: var(--bg-surface) !important;
+        box-shadow: 10px 0 40px rgba(6, 9, 19, 0.15) !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        padding: 90px 32px 40px 32px !important;
+        gap: 20px !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        z-index: 1050 !important;
+    }
+
+    .navbar.scrolled .nav-menu {
+        background: var(--brand-blue-soft) !important;
+    }
+
+    .nav-menu.active {
+        left: 0 !important;
+    }
+
+    /* Formatação dos links internos */
+    .nav-menu>a,
+    .nav-menu>.dropdown {
+        width: 100% !important;
+        height: auto !important;
+        justify-content: flex-start !important;
+        font-size: 1.2rem !important;
+        font-weight: 600 !important;
+        padding: 8px 0 !important;
+        display: flex !important;
+    }
+
+    .navbar.scrolled .nav-menu>a,
+    .navbar.scrolled .nav-menu .dropdown-toggle {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+   
+    .dropdown-menu {
+        position: relative !important;
+        top: 0 !important;
+        margin-top: 10px !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-left: 2px solid var(--brand-yellow) !important;
+        padding-left: 16px !important;
+        background: transparent !important;
+        display: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block !important;
+    }
+
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 24px !important;
+        margin: 0 auto !important;
     }
 }
