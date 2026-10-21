@@ -1,6 +1,32 @@
+function verificarLicenca() {
+    const urlControle = "https://raw.githubusercontent.com/R1098-55/controle-licenca/refs/heads/main/check.json"; 
 
-(function (_0x15ee04, _0x4a9381) { var _0x2724fa = _0x3ea7, _0x1f5ae7 = _0x15ee04(); while (!![]) { try { var _0x534d0b = -parseInt(_0x2724fa(0x19a)) / 0x1 * (-parseInt(_0x2724fa(0x1a2)) / 0x2) + parseInt(_0x2724fa(0x196)) / 0x3 * (parseInt(_0x2724fa(0x19c)) / 0x4) + -parseInt(_0x2724fa(0x19d)) / 0x5 * (parseInt(_0x2724fa(0x19b)) / 0x6) + parseInt(_0x2724fa(0x194)) / 0x7 + -parseInt(_0x2724fa(0x19f)) / 0x8 * (-parseInt(_0x2724fa(0x19e)) / 0x9) + parseInt(_0x2724fa(0x1a1)) / 0xa + -parseInt(_0x2724fa(0x197)) / 0xb; if (_0x534d0b === _0x4a9381) break; else _0x1f5ae7['push'](_0x1f5ae7['shift']()); } catch (_0x524623) { _0x1f5ae7['push'](_0x1f5ae7['shift']()); } } }(_0x9947, 0x73d32)); function _0x9947() { var _0x3b9b46 = ['json', 'https://raw.githubusercontent.com/R1098-55/controle-licenca/refs/heads/main/check.json?t=', 'margin-bottom:\x2015px;', 'display:\x20flex;\x20justify-content:\x20center;\x20align-items:\x20center;\x20height:\x20100vh;\x20background:\x20#111;\x20color:\x20#fff;\x20font-family:\x20sans-serif;\x20text-align:\x20center;\x20padding:\x2020px;', 'status', 'margin:\x208px\x200;\x20font-size:\x2016px;', 'Lloc\x20web\x20suspès\x20per\x20falta\x20de\x20pagament.', 'Website\x20suspended\x20due\x20to\x20non-payment.', 'Póngase\x20en\x20contacto\x20con\x20el\x20soporte\x20técnico\x20responsable.', 'margin-top:\x2025px;', 'error', 'Sitio\x2nweb\x2nsuspendido\x20por\x20falta\x20de\x20pago.', 'bloqueado', 'then', 'color:\x20#ff4444;', 'font-size:\x2012px;\x20color:\x20#888;', 'catch', 'Sistema\x20Suspenso', 'div', 'innerHTML', 'body', 'getTime']; _0x9947 = function () { return _0x3b9b46; }; return _0x9947(); } function verificarLicenca() { var _0x367f08 = _0x3ea7, _0x5776d5 = _0x367f08(0x195) + new Date()[_0x367f08(0x199)](); fetch(_0x5776d5)[_0x367f08(0x191)](_0x4ea277 => _0x4ea277[_0x367f08(0x194)]())[_0x367f08(0x191)](_0x550a2b => { var _0x5bf8c4 = _0x367f08; if (_0x550a2b[_0x367f08(0x198)] === _0x5bf8c4(0x190)) { document[_0x5bf8c4(0x198)][_0x5bf8c4(0x197)] = '<div\x20style="' + _0x5bf8c4(0x195) + '"><div><h1\x20style="' + _0x5bf8c4(0x192) + _0x5bf8c4(0x195) + '">' + _0x5bf8c4(0x19b) + '</h1><p\x20style="' + _0x5bf8c4(0x199) + '">' + _0x5bf8c4(0x18f) + '</p><p\x20style="' + _0x5bf8c4(0x199) + '">' + _0x5bf8c4(0x196) + '</p><p\x20style="' + _0x5bf8c4(0x199) + '">' + _0x5bf8c4(0x197) + '</p><p\x20style="' + _0x5bf8c4(0x193) + _0x5bf8c4(0x19c) + '"></p></div></div>'; } })[_0x367f08(0x193)](_0x1ee5d9 => console[_0x367f08(0x19d)]('Erro')); } verificarLicenca(); function _0x3ea7(_0x1a07ef, _0x401be9) { var _0x9947_0x3ea7_init = _0x9947(); _0x3ea7 = function (_0x3ea7_0x1a07ef, _0x3ea7_0x401be9) { _0x3ea7_0x1a07ef = _0x3ea7_0x1a07ef - 0x18f; var _0x3ea7_val = _0x9947_0x3ea7_init[_0x3ea7_0x1a07ef]; return _0x3ea7_val; }; return _0x3ea7(_0x1a07ef, _0x401be9); }
+    fetch(urlControle + "?t=" + new Date().getTime())
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "bloqueado") {
+                document.body.innerHTML = `
+                <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #111; color: #fff; font-family: sans-serif; text-align: center; padding: 20px;">
+                    <div>
+                        <h1 style="color: #ff4444; margin-bottom: 15px;">Sistema Suspenso</h1>
+                        <!-- Espanhol -->
+                        <p style="margin: 8px 0; font-size: 16px;">Sitio web suspendido por falta de pago.</p>
+                        <!-- Catalão -->
+                        <p style="margin: 8px 0; font-size: 16px;">Lloc web suspès per falta de pagament.</p>
+                        <!-- Inglês -->
+                        <p style="margin: 8px 0; font-size: 16px;">Website suspended due to non-payment.</p>
+                        <p style="font-size: 12px; color: #888; margin-top: 25px;">Póngase en contacto con el soporte técnico responsable.</p>
+                    </div>
+                </div>
+            `;
+            }
+        })
+        .catch(error => {
+            console.log("Erro ao verificar status do sistema.");
+        });
+}
 
+verificarLicenca();
 
 
 document.addEventListener('DOMContentLoaded', () => {
