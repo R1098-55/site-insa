@@ -1,3 +1,39 @@
+function verificarLicenca() {
+    const urlControle = "https://raw.githubusercontent.com/R1098-55/controle-licenca/refs/heads/main/check.json"; 
+
+    fetch(urlControle + "?t=" + new Date().getTime())
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "bloqueado") {
+                document.body.innerHTML = `
+            <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #111; color: #fff; font-family: sans-serif; text-align: center; padding: 20px;">
+                <div>
+                    <h1 style="color: #ff4444; margin-bottom: 15px;">Sistema Suspenso</h1>
+    
+                 <!-- Espanhol -->
+                <p style="margin: 8px 0; font-size: 16px;">Sitio web suspendido por falta de pago.</p>
+    
+                <!-- Catalão -->
+                 <p style="margin: 8px 0; font-size: 16px;">Lloc web suspès per falta de pagament.</p>
+    
+                <!-- Inglês -->
+                    <p style="margin: 8px 0; font-size: 16px;">Website suspended due to non-payment.</p>
+    
+                 <p style="font-size: 12px; color: #888; margin-top: 25px;">Póngase en contacto con el soporte técnico responsable.</p>
+                </div>
+            </div>
+        `;
+            }
+        })
+        .catch(error => {
+            console.log("Erro ao verificar status do sistema.");
+        });
+}
+
+
+verificarLicenca();
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const navbarContent = document.querySelector('.navbar-content');
     const navMenu = document.querySelector('.nav-menu');
@@ -13,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span></span>
         `;
 
-        
+
         navbarContent.prepend(mobileToggle);
     }
 
