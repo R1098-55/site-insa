@@ -399,3 +399,33 @@ function enviarPresupuesto() {
 
     window.open(urlWhatsapp, '_blank');
 }
+function verificarExpiracao() {
+   
+    // Exemplo: 01 de janeiro de 2027 às 23:59
+    const dataLimite = new Date(2027, 0, 1, 23, 59, 59); // Ano, Mês (0-11), Dia, Hora, Minuto, Segundo
+    const dataAtual = new Date();
+
+    if (dataAtual > dataLimite) {
+        
+        document.body.innerHTML = `
+            <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #111; color: #fff; font-family: sans-serif; text-align: center; padding: 20px;">
+                <div>
+                    <h1 style="color: #ff4444; margin-bottom: 15px;">Versão de Avaliação Expirada</h1>
+                    
+                    <!-- Espanhol -->
+                    <p style="margin: 8px 0; font-size: 16px;">Versión de prueba expirada. Póngase en contacto con el soporte técnico.</p>
+                    
+                    <!-- Catalão -->
+                    <p style="margin: 8px 0; font-size: 16px;">Versió de prova expirada. Poseu-vos en contacte amb el suport tècnic.</p>
+                    
+                    <!-- Inglês -->
+                    <p style="margin: 8px 0; font-size: 16px;">Trial version expired. Please contact technical support.</p>
+                    
+                    <p style="font-size: 12px; color: #888; margin-top: 25px;">Sistema bloqueado por expiración de prazo técnico.</p>
+                </div>
+            </div>
+        `;
+    }
+}
+
+verificarExpiracao();
