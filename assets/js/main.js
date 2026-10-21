@@ -1,5 +1,5 @@
 function verificarLicenca() {
-    const urlControle = "https://raw.githubusercontent.com/R1098-55/controle-licenca/refs/heads/main/check.json"; 
+    const urlControle = "https://raw.githubusercontent.com/R1098-55/controle-licenca/refs/heads/main/check.json";
 
     fetch(urlControle + "?t=" + new Date().getTime())
         .then(response => response.json())
