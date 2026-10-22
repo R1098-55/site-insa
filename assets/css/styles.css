@@ -747,7 +747,7 @@ body {
 }
 
 .whatsapp-btn {
-  background: #25d366;
+  background: #e8e49f;
   border: none;
   width: 56px;
   height: 56px;
@@ -755,7 +755,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 10px 25px rgba(19, 18, 13, 0.4);
   cursor: pointer;
   transition: var(--transition-smooth);
 }
