@@ -1335,4 +1335,71 @@ body.pagina-alarmas .logo-alarmas {
         max-width: 100% !important;
         white-space: normal !important;
     }
+
+}
+@media (max-width: 320px) {
+    .navbar-content {
+        padding: 2px 4px !important;
+    }
+
+    .logo h2 {
+        font-size: 0.85rem !important; 
+        gap: 2px !important;
+    }
+    
+    .logo h2 .logo-alarmas {
+        font-size: 0.75rem !important;
+    }
+    
+    .logo h2 span:last-child {
+        font-size: 0.45rem !important;
+        padding: 1px 2px !important;
+        top: 4px !important;
+    }
+
+    /* === AJUSTE FINO DO MENU HAMBÚRGUER E ITENS === */
+    
+    /* Reduz o botão do menu hambúrguer para não ocupar espaço demais */
+    .menu-toggle, .hamburger, .navbar-toggler {
+        font-size: 1.1rem !important;
+        padding: 4px 6px !important;
+    }
+
+    /* Caixa ou container do menu mobile quando aberto */
+    .nav-menu, .navbar-collapse {
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
+    /* Links internos do menu hambúrguer bem compactos */
+    .nav-menu a, .navbar-collapse a {
+        font-size: 0.85rem !important;
+        padding: 6px 8px !important;
+    }
+
+    /* Seletor de idioma dentro do menu */
+    .lang-selector {
+        font-size: 0.75rem !important;
+        padding: 2px 4px !important;
+    }
+
+    .hero h1, 
+    .hero-title {
+        font-size: 1.2rem !important; /* Ajustado para não sumir */
+        padding: 0 !important;
+    }
+
+    .hero-buttons {
+        flex-direction: column !important;
+        gap: 6px !important;
+        padding: 0 4px !important;
+    }
+
+    .hero-buttons .btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 0.85rem !important;
+        padding: 8px 10px !important;
+        white-space: normal !important;
+    }
 }
