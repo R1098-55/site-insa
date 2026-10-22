@@ -10,6 +10,18 @@
 
 
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .site-header *:empty {
+            display: none !important;
+        }
+        .header-content> :first-child:not(.logo) {
+            display: none !important;
+        }
+
+
+       
+       
+    </style>
 </head>
 
 <body class="pagina-alarmas">
@@ -31,7 +43,7 @@
             </div>
             <nav class="nav-menu">
                 <a href="/index.html" data-i18n="breadcrumb_home">Inicio</a>
-                <a href="servicios/alarmas.html"data-i18n="sub_alarmas">Alarmas</a>
+                <a href="servicios/alarmas.html" data-i18n="sub_alarmas">Alarmas</a>
                 <a href="/nosotros.html" data-i18n="sub_about">Nosotros</a>
             </nav>
             <div class="nav-actions">
@@ -93,7 +105,7 @@
                     return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
                 }
 
-                
+
                 document.querySelectorAll('[data-i18n]').forEach(element => {
                     const key = element.getAttribute('data-i18n');
                     let translation = getNestedTranslation(translations, key);
@@ -102,7 +114,7 @@
                     }
                 });
 
-                
+
                 const metaTitle = getNestedTranslation(translations, 'error404.metaTitle');
                 const metaDesc = getNestedTranslation(translations, 'error404.metaDesc');
                 if (metaTitle) document.title = metaTitle;
@@ -118,7 +130,7 @@
             }
         }
 
-       
+
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferred_lang') || 'es';
             loadLanguage(savedLang);

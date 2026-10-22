@@ -105,7 +105,6 @@ body {
   cursor: pointer;
   text-align: center;
   border: none;
-
 }
 
 .btn-primary {
@@ -456,7 +455,6 @@ body {
   display: flex;
   justify-content: center;
   gap: 16px;
-  
 }
 
 /* ESTATÍSTICAS (CONTADORES COM O AMARELO OFICIAL DA LOGO INSA) */
@@ -1026,382 +1024,394 @@ body.pagina-alarmas .logo-alarmas {
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(241, 228, 6, 0.15);
 }
-
+/* Remove qualquer elemento vazio indesejado na barra de navegação */
+.site-header *:empty {
+  display: none !important;
+}
 
 /* ==========================================================================
    1. TABLETS E NEST HUB (Telas até 1285px)
    ========================================================================== */
 @media (max-width: 1285px) {
-    
-    /* Prepara a barra de navegação para ter elementos flutuando em cima dela */
-    .navbar-content {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 16px !important;
-        box-sizing: border-box !important;
-        position: relative !important;
-        height: 60px !important;
-    }
+  
+  .navbar,
+  .navbar-content {
+    position: relative !important;
+  }
+  
+  button,
+  .mobile-toggle,
+  [class*="toggle"],
+  [class*="hamburger"] {
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
 
-    /* HAMBÚRGUER: Travado fisicamente no canto esquerdo da barra */
-    .mobile-toggle {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        width: 24px !important;
-        height: 18px !important;
-        background: transparent !important;
-        border: none !important;
-        cursor: pointer !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        position: absolute !important;
-        left: 16px !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        z-index: 1100 !important;
-    }
+  
+  .mobile-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 24px !important;
+    height: 18px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: absolute !important;
+    left: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 1100 !important;
+  }
 
-    .mobile-toggle span {
-        display: block !important;
-        float: none !important;
-        clear: both !important;
-        width: 24px !important;
-        height: 3px !important;
-        background-color: var(--brand-blue) !important;
-        border-radius: 4px !important;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    }
-    .navbar.scrolled .mobile-toggle span {
-        background-color: #060913 !important;
-    }
+  .mobile-toggle span {
+    display: block !important;
+    float: none !important;
+    clear: both !important;
+    width: 24px !important;
+    height: 3px !important;
+    background-color: var(--brand-blue) !important;
+    border-radius: 4px !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .navbar.scrolled .mobile-toggle span {
+    background-color: #060913 !important;
+  }
 
-    /* ANIMAÇÃO DO "X" */
-    .mobile-toggle.active span:nth-child(1) {
-        transform: translateY(7.5px) rotate(45deg) !important;
-    }
-    .mobile-toggle.active span:nth-child(2) {
-        opacity: 50 !important;
-        width: 0 !important;
-    }
-    .mobile-toggle.active span:nth-child(3) {
-        transform: translateY(-7.5px) rotate(-45deg) !important;
-    }
+  /* ANIMAÇÃO DO "X" */
+  .mobile-toggle.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg) !important;
+  }
+  .mobile-toggle.active span:nth-child(2) {
+    opacity: 50 !important;
+    width: 0 !important;
+  }
+  .mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg) !important;
+  }
 
-    /* LOGOTIPO: Cravado no meio absoluto da tela sem interferência */
-    .logo {
-        position: static !important;
-        transform: none !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        flex: 1 !important;
-        z-index: 1000 !important;
-    }
-    
-    .logo a {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-decoration: none !important;
-    }
+  
+  .logo {
+    position: static !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 1 !important;
+    z-index: 1000 !important;
+  }
 
-    .logo h2 {
-        font-size: 1.5rem !important;
-    }
+  .logo a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+  }
 
-    .logo h2 span {
-        position: relative !important;
-        display: inline-block !important;
-    }
+  .logo h2 {
+    font-size: 1.5rem !important;
+  }
 
-    .logo h2 span:last-child {
-        top: 9px !important;
-        margin-left: 0 !important;
-        white-space: nowrap !important;
-    }
+  .logo h2 span {
+    position: relative !important;
+    display: inline-block !important;
+  }
 
-    /* SELETOR DE IDIOMAS: Travado fisicamente no canto direito da barra */
-    .nav-actions {
-        display: flex !important; 
-        position: absolute !important;
-        right: 16px !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        justify-content: flex-end !important;
-        align-items: center !important;
-        z-index: 1100 !important;
-        width: auto !important;
-    }
+  .logo h2 span:last-child {
+    top: 9px !important;
+    margin-left: 0 !important;
+    white-space: nowrap !important;
+  }
 
-    .nav-actions .btn {
-        display: none !important; 
-    }
+  
+  .nav-actions {
+    display: flex !important;
+    position: absolute !important;
+    right: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    z-index: 1100 !important;
+    width: auto !important;
+  }
 
-    .lang-selector {
-        display: inline-block !important;
-        padding: 6px 10px !important;
-        font-size: 0.85rem !important;
-        height: auto !important;
-        margin: 0 !important;
-        background: #060913;
-        color: #fff;
-        border: 1px solid #333;
-        border-radius: 6px;
-    }
+  .nav-actions .btn {
+    display: none !important;
+  }
 
-    /* GAVETA DO MENU LATERAL */
-    .nav-menu {
-        position: fixed !important;
-        top: 0 !important;
-        left: -100% !important; 
-        right: auto !important;
-        width: 80% !important;
-        max-width: 320px !important;
-        height: 100vh !important;
-        background: var(--bg-surface) !important; 
-        box-shadow: 10px 0 40px rgba(6, 9, 19, 0.15) !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        justify-content: flex-start !important;
-        padding: 90px 32px 40px 32px !important;
-        gap: 20px !important;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        z-index: 1050 !important;
-    }
+  .lang-selector {
+    display: inline-block !important;
+    padding: 6px 10px !important;
+    font-size: 0.85rem !important;
+    height: auto !important;
+    margin: 0 !important;
+    background: #060913;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 6px;
+  }
 
-    .navbar.scrolled .nav-menu {
-        background: var(--brand-blue-soft) !important;
-    }
+  
+  .nav-menu {
+    position: fixed !important;
+    top: 0 !important;
+    left: -100% !important;
+    right: auto !important;
+    width: 80% !important;
+    max-width: 320px !important;
+    height: 100vh !important;
+    background: var(--bg-surface) !important;
+    box-shadow: 10px 0 40px rgba(6, 9, 19, 0.15) !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding: 90px 32px 40px 32px !important;
+    gap: 20px !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    z-index: 1050 !important;
+  }
 
-    .nav-menu.active {
-        left: 0 !important;
-        right: auto !important; 
-    }
+  .navbar.scrolled .nav-menu {
+    background: var(--brand-blue-soft) !important;
+  }
 
-    .nav-menu > a, 
-    .nav-menu > .dropdown {
-        width: 100% !important;
-        height: auto !important;
-        justify-content: flex-start !important;
-        font-size: 1.2rem !important;
-        font-weight: 600 !important;
-        padding: 8px 0 !important;
-        display: flex !important;
-    }
+  .nav-menu.active {
+    left: 0 !important;
+    right: auto !important;
+  }
 
-    .navbar.scrolled .nav-menu > a,
-    .navbar.scrolled .nav-menu .dropdown-toggle {
-        color: rgba(14, 14, 14, 0.9) !important;
-    }
+  .nav-menu > a,
+  .nav-menu > .dropdown {
+    width: 100% !important;
+    height: auto !important;
+    justify-content: flex-start !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    padding: 8px 0 !important;
+    display: flex !important;
+  }
 
-    .dropdown-menu {
-        position: relative !important;
-        top: 0 !important;
-        margin-top: 10px !important;
-        box-shadow: none !important;
-        border: none !important;
-        border-left: 2px solid var(--brand-yellow) !important;
-        padding-left: 16px !important;
-        background: transparent !important;
-        display: none !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-    }
+  .navbar.scrolled .nav-menu > a,
+  .navbar.scrolled .nav-menu .dropdown-toggle {
+    color: rgba(14, 14, 14, 0.9) !important;
+  }
 
-    .dropdown:hover .dropdown-menu {
-        display: block !important;
-    }
+  .dropdown-menu {
+    position: relative !important;
+    top: 0 !important;
+    margin-top: 10px !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-left: 2px solid var(--brand-yellow) !important;
+    padding-left: 16px !important;
+    background: transparent !important;
+    display: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
 
-    .container {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 24px !important;
-        margin: 0 auto !important;
-    }
+  .dropdown:hover .dropdown-menu {
+    display: block !important;
+  }
 
-    /* FORÇA O CONTEÚDO DAS PÁGINAS INTERNAS A DESCER PARA NÃO TAPAR A LOGO */
-    .navbar + * {
-        margin-top: 90px !important;
-    }
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 24px !important;
+    margin: 0 auto !important;
+  }
 
-    /* TEXTOS DO BANNER HERO NO NEST HUB */
-    .hero h1, 
-    .hero-title {
-        font-size: 2.2rem !important;
-        line-height: 1.3 !important;
-        text-align: center !important;
-        width: 100% !important;
-    }
+  /* FORÇA O CONTEÚDO DAS PÁGINAS INTERNAS A DESCER PARA NÃO TAPAR A LOGO */
+  .navbar + * {
+    margin-top: 90px !important;
+  }
 
-    .hero-buttons {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 16px !important;
-        width: 100% !important;
-        flex-wrap: wrap !important;
-    }
+  
+  .hero h1,
+  .hero-title {
+    font-size: 2.2rem !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
 
-    .hero-buttons .btn {
-        padding: 14px 20px !important;
-        font-size: 0.95rem !important;
-        white-space: nowrap !important;
-    }
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    width: 100% !important;
+    flex-wrap: wrap !important;
+  }
+
+  .hero-buttons .btn {
+    padding: 14px 20px !important;
+    font-size: 0.95rem !important;
+    white-space: nowrap !important;
+  }
 }
+@media (min-width: 1286px) {
+  .mobile-toggle {
+    display: none !important;
+  }
+}
+
 
 /* ==========================================================================
    2. DISPOSITIVOS INTERMEDIÁRIOS (Telas até 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    .navbar-content {
-        padding: 10px 15px;
-    }
+  .navbar-content {
+    padding: 10px 15px;
+  }
 
-    .logo h2 {
-        font-size: 1.35rem !important;
-        gap: 6px !important;
-    }
-    .logo h2 span:last-child {
-        display: inline-block !important;  
-        font-size: 0.65rem !important;
-        padding: 1px 4px !important;
-        top: 9px !important;
-    }
+  .logo h2 {
+    font-size: 1.35rem !important;
+    gap: 6px !important;
+  }
+  .logo h2 span:last-child {
+    display: inline-block !important;
+    font-size: 0.65rem !important;
+    padding: 1px 4px !important;
+    top: 9px !important;
+  }
 
-    .nav-menu a,
-    .dropdown-toggle {
-        font-size: 0.95rem;
-        padding: 8px 12px;
-    }
+  .nav-menu a,
+  .dropdown-toggle {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+  }
 
-    .lang-selector {
-        padding: 4px 6px;
-        font-size: 0.85rem;
-    }
+  .lang-selector {
+    padding: 4px 6px;
+    font-size: 0.85rem;
+  }
 
-    .hero {
-        min-height: 80vh;
-        background-size: cover;
-        background-position: center center;
-        padding-top: 80px;
-        padding-bottom: 40px;
-    }
+  .hero {
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
 
-    .hero p {
-        font-size: 1rem;
-    }
+  .hero p {
+    font-size: 1rem;
+  }
 }
 
 /* ==========================================================================
    3. SMARTPHONES E IPHONES (Telas até 480px)
    ========================================================================== */
 @media (max-width: 440px) {
-    .logo h2 {
-        font-size: 1.2rem !important;
-        gap: 4px !important;
-    }
-    
-    .logo h2 .logo-alarmas {
-        font-size: 0.95rem !important;
-    }
-    
-    .logo h2 span:last-child {
-        display: inline-block !important;  
-        font-size: 0.6rem !important;
-        padding: 1px 3px !important;
-        top: 9px !important;
-      }
-    .hero h1, 
-    .hero-title {
-        font-size: 1.8rem !important;
-        padding: 0 5px !important;
-    }
+  .logo h2 {
+    font-size: 1.2rem !important;
+    gap: 4px !important;
+  }
 
-    .hero-buttons {
-        flex-direction: column !important;
-        gap: 12px !important;
-        padding: 0 10px !important;
-    }
+  .logo h2 .logo-alarmas {
+    font-size: 0.95rem !important;
+  }
 
-    .hero-buttons .btn {
-        width: 100% !important;
-        max-width: 100% !important;
-        white-space: normal !important;
-    }
+  .logo h2 span:last-child {
+    display: inline-block !important;
+    font-size: 0.6rem !important;
+    padding: 1px 3px !important;
+    top: 9px !important;
+  }
+  .hero h1,
+  .hero-title {
+    font-size: 1.8rem !important;
+    padding: 0 5px !important;
+  }
 
+  .hero-buttons {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 0 10px !important;
+  }
+
+  .hero-buttons .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
 }
 @media (max-width: 320px) {
-    .navbar-content {
-        padding: 2px 4px !important;
-    }
+  .navbar-content {
+    padding: 2px 4px !important;
+  }
 
-    .logo h2 {
-        font-size: 0.85rem !important; 
-        gap: 2px !important;
-    }
-    
-    .logo h2 .logo-alarmas {
-        font-size: 0.75rem !important;
-    }
-    
-    .logo h2 span:last-child {
-        font-size: 0.45rem !important;
-        padding: 1px 2px !important;
-        top: 4px !important;
-    }
+  .logo h2 {
+    font-size: 0.85rem !important;
+    gap: 2px !important;
+  }
 
-    /* === AJUSTE FINO DO MENU HAMBÚRGUER E ITENS === */
-    
-    /* Reduz o botão do menu hambúrguer para não ocupar espaço demais */
-    .menu-toggle, .hamburger, .navbar-toggler {
-        font-size: 1.1rem !important;
-        padding: 4px 6px !important;
-    }
+  .logo h2 .logo-alarmas {
+    font-size: 0.75rem !important;
+  }
 
-    /* Caixa ou container do menu mobile quando aberto */
-    .nav-menu, .navbar-collapse {
-        width: 100% !important;
-        padding: 10px !important;
-    }
+  .logo h2 span:last-child {
+    font-size: 0.45rem !important;
+    padding: 1px 2px !important;
+    top: 4px !important;
+  }
 
-    /* Links internos do menu hambúrguer bem compactos */
-    .nav-menu a, .navbar-collapse a {
-        font-size: 0.85rem !important;
-        padding: 6px 8px !important;
-    }
+  /* === AJUSTE FINO DO MENU HAMBÚRGUER E ITENS === */
 
-    /* Seletor de idioma dentro do menu */
-    .lang-selector {
-        font-size: 0.75rem !important;
-        padding: 2px 4px !important;
-    }
+  /* Reduz o botão do menu hambúrguer */
+  .menu-toggle,
+  .hamburger,
+  .navbar-toggler {
+    font-size: 1.1rem !important;
+    padding: 4px 6px !important;
+  }
 
-    .hero h1, 
-    .hero-title {
-        font-size: 1.2rem !important; /* Ajustado para não sumir */
-        padding: 0 !important;
-    }
+ 
+  .nav-menu,
+  .navbar-collapse {
+    width: 100% !important;
+    padding: 10px !important;
+  }
 
-    .hero-buttons {
-        flex-direction: column !important;
-        gap: 6px !important;
-        padding: 0 4px !important;
-    }
+  
+  .nav-menu a,
+  .navbar-collapse a {
+    font-size: 0.85rem !important;
+    padding: 6px 8px !important;
+  }
 
-    .hero-buttons .btn {
-        width: 100% !important;
-        max-width: 100% !important;
-        font-size: 0.85rem !important;
-        padding: 8px 10px !important;
-        white-space: normal !important;
-    }
+  
+  .lang-selector {
+    font-size: 0.75rem !important;
+    padding: 2px 4px !important;
+  }
+
+  .hero h1,
+  .hero-title {
+    font-size: 1.2rem !important; /* Ajustado para não sumir */
+    padding: 0 !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding: 0 4px !important;
+  }
+
+  .hero-buttons .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 0.85rem !important;
+    padding: 8px 10px !important;
+    white-space: normal !important;
+  }
 }

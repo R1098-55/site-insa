@@ -20,7 +20,7 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://alarmasinsa.com/">
 
-    
+
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alarmasinsa.com/">
@@ -305,10 +305,10 @@
                 <!-- PASSO 1 -->
                 <div class="wizard-step" id="step-1">
                     <h3 data-i18n="wizard.q1"
-                        style="text-align: center; font-size: 1.8rem; font-weight: 900; color: var(--brand-blue); margin-bottom: 30px;">
+                        style="text-align: center; font-size: 1.8rem; font-weight: 900; color: var(--brand-blue); margin-bottom: 30px;border-radius: 4px; padding: 10px; background: rgba(241, 228, 6, 0.25);">
                         ¿Qué quieres proteger?
                     </h3>
-                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; flex-direction: column; gap: 15px;border-radius: 20px;">
                         <button type="button" class="wizard-btn" data-i18n="wizard.options.piso"
                             onclick="nextStep(1, 'tipo', 'Piso / Apartamento')">Piso / Apartamento</button>
                         <button type="button" class="wizard-btn" data-i18n="wizard.options.chalet"
@@ -418,7 +418,7 @@
                     </div>
                     <button type="button" class="btn btn-primary btn-block" data-i18n="wizard.btnSendWhatsapp"
                         onclick="enviarPresupuesto()"
-                        style="background: #25D366; color: #FFFFFF; font-size: 1.1rem; padding: 16px;">
+                        style="background: #f1e406; color: #0a0a0a; font-size: 1.1rem; padding: 16px;border-radius: 20px; font-weight: 700; width: 100%; text-align: center; cursor: pointer;">
                         Enviar Presupuesto por WhatsApp
                     </button>
                     <button type="button" class="btn-back" data-i18n="wizard.btnBack" onclick="prevStep(6)"
@@ -429,7 +429,7 @@
     </section>
 
     <div class="whatsapp-widget">
-        <button class="whatsapp-btn" id="waToggleBtn" aria-label="WhatsApp">
+        <button class="whatsapp-btn" id="waToggleBtn" aria-label="WhatsApp" nome="WhatsApp">
             <svg viewBox="0 0 24 24">
                 <path
                     d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
@@ -442,9 +442,10 @@
     </div>
 
     <div class="cookie-banner" id="cookie-banner">
-        <p>Utilitzem galetes pròpies i de tercers per millorar la teva experiència. <a href="#">Més informació</a>.</p>
+        <p>Utilizamos cookies propias y de terceros para mejorar tu experiencia. <a href="/privacidad.html">Más
+                información</a>.</p>
         <div class="cookie-buttons">
-            <button class="btn btn-primary btn-sm" id="accept-cookies">Acceptar</button>
+            <button class="btn btn-primary btn-sm" id="accept-cookies">Aceptar</button>
         </div>
     </div>
 
