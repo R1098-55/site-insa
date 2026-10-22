@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,47 +10,205 @@
 
 
     <style>
-        body { background-color: #0b0f19; color: #fff; font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; }
-        .page-header-container { text-align: center; padding: 60px 20px 80px 20px; background-color: #0b0f19; }
-        .breadcrumb { font-size: 0.9rem; color: #aaa; margin-bottom: 15px; }
-        .breadcrumb a { color: #f1e406; text-decoration: none; }
-        .badge-category { display: inline-block; background: rgba(241, 228, 6, 0.1); color: #f1e406; border: 1px solid #f1e406; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
-        .page-title { font-size: 2.8rem; font-weight: bold; color: #e9e5af; margin-bottom: 15px; }
-        .page-subtitle { font-size: 1.1rem; color: #ccc; max-width: 750px; margin: 0 auto; line-height: 1.6; }
-        .content-card-main { max-width: 1200px; margin: -40px auto 60px auto; background: #fff; color: #222; border-radius: 16px; padding: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        .section-heading { color: #0b0f19; font-size: 1.8rem; margin-top: 40px; margin-bottom: 15px; border-left: 4px solid #f1e406; padding-left: 15px; }
-        .models-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 25px; margin-bottom: 40px; }
-        .card-item { background: #f9fafc; border: 1px solid #eaeaea; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease, border-color 0.3s ease; }
-        .card-item:hover { transform: translateY(-5px); border-color: #003366; }
-        .card-item h3 { color: #003366; font-size: 1.3rem; margin-bottom: 12px; }
-        .card-item p { color: #555; font-size: 0.92rem; line-height: 1.5; margin-bottom: 20px; }
-        .specs-list { list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.82rem; color: #333; border-top: 1px solid #eee; padding-top: 15px; }
-        .specs-list li { margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
-        .specs-list li::before { content: "🔥"; font-size: 0.75rem; }
-        .whatsapp-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #25D366; color: #fff; padding: 10px 15px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: background 0.3s ease; width: 100%; box-sizing: border-box; }
-        .whatsapp-btn:hover { background-color: #1EBE5D; }
-        .back-link-container { text-align: center; margin-top: 40px; }
-        .back-btn { display: inline-block; background: #eee; color: #333; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s; }
-        .back-btn:hover { background: #ddd; }
+        body {
+            background-color: #0b0f19;
+            color: #fff;
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-header-container {
+            text-align: center;
+            padding: 60px 20px 80px 20px;
+            background-color: #0b0f19;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb a {
+            color: #f1e406;
+            text-decoration: none;
+        }
+
+        .badge-category {
+            display: inline-block;
+            background: rgba(241, 228, 6, 0.1);
+            color: #f1e406;
+            border: 1px solid #f1e406;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .page-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #e9e5af;
+            margin-bottom: 15px;
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content-card-main {
+            max-width: 1200px;
+            margin: -40px auto 60px auto;
+            background: #fff;
+            color: #222;
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-heading {
+            color: #0b0f19;
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-left: 4px solid #f1e406;
+            padding-left: 15px;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card-item {
+            background: #f9fafc;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card-item:hover {
+            transform: translateY(-5px);
+            border-color: #003366;
+        }
+
+        .card-item h3 {
+            color: #003366;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .card-item p {
+            color: #555;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .specs-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            font-size: 0.82rem;
+            color: #333;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .specs-list li {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.4;
+        }
+
+        .specs-list li::before {
+            content: "🔥";
+            font-size: 0.75rem;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #25D366;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1EBE5D;
+        }
+
+        .back-link-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #eee;
+            color: #333;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #ddd;
+        }
     </style>
 </head>
-<body>
+
+<body class="pagina-alarmas">
     <header class="site-header">
         <div class="container header-content"
             style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 1200px; margin: 0 auto;">
             <a href="../index.html" class="logo" style="text-decoration: none;">
-                <h2 style="font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1;">
-                    <span class="logo-alarmas" style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #f4f5f8;">Alarmas</span>
+                <h2
+                    style="font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1;">
+                    <span class="logo-alarmas"
+                        style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #f4f5f8;">Alarmas</span>
                     <span style="color: #f1e406; text-shadow: 0 1.5px 2px rgba(0,0,0,0.3);">INSA</span>
-                    <span style="font-size: 0.75rem; font-weight: 800; background: #f1e406; color: #060913; padding: 2px 6px; border-radius: 4px; position: relative; top: -2px;">1983</span>
+                    <span
+                        style="font-size: 0.75rem; font-weight: 800; background: #f1e406; color: #060913; padding: 2px 6px; border-radius: 4px; position: relative; top: -2px;">1983</span>
                 </h2>
             </a>
 
             <nav style="display: flex; gap: 25px; align-items: center;">
-                <a href="../index.html#servicios" style="color: #ccc; text-decoration: none; font-weight: 500;" data-i18n="nav_services">Servicios</a>
-                <a href="../index.html#contacto" style="color: #f1e406; text-decoration: none; font-weight: 500;" data-i18n="nav_contacto">Contacto</a>
+                <a href="../index.html#servicios" style="color: #ccc; text-decoration: none; font-weight: 500;"
+                    data-i18n="nav_services">Servicios</a>
+                <a href="../index.html#contacto" style="color: #f1e406; text-decoration: none; font-weight: 500;"
+                    data-i18n="nav_contacto">Contacto</a>
 
-                <select id="langSelect" class="lang-selector" style="background: #111; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
+                <select id="langSelect" class="lang-selector"
+                    style="background: #111; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
                     <option value="ca">CAT 🇪🇸</option>
                     <option value="es" selected>ESP 🇪🇸</option>
                     <option value="en">ENG 🇬🇧</option>
@@ -60,64 +219,95 @@
 
     <div class="page-header-container">
         <div class="breadcrumb">
-            <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> / 
-            <a href="../index.html#servicios" data-i18n="breadcrumb_servicios">Servicios</a> / 
+            <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> /
+            <a href="../index.html#servicios" data-i18n="breadcrumb_servicios">Servicios</a> /
             <span data-i18n="breadcrumb_incendios">Control Incendios</span>
         </div>
         <div class="badge-category" data-i18n="incendio_badge">Homologación PCI & Normativa EN 54</div>
         <h1 class="page-title" data-i18n="incendio_title">Sistemas de Detección y Extinción de Incendios</h1>
-        <p class="page-subtitle" data-i18n="incendio_subtitle">Centrales de control direccionables, sensores ópticos de alta precisión y equipamiento contraincendios certificado para licencias de actividad.</p>
+        <p class="page-subtitle" data-i18n="incendio_subtitle">Centrales de control direccionables, sensores ópticos de
+            alta precisión y equipamiento contraincendios certificado para licencias de actividad.</p>
     </div>
 
     <main class="content-card-main">
-        <h2 class="section-heading" data-i18n="incendio_section_heading">Especificaciones Técnicas de Protección Contra Incendios</h2>
+        <h2 class="section-heading" data-i18n="incendio_section_heading">Especificaciones Técnicas de Protección Contra
+            Incendios</h2>
         <div class="models-grid">
-            
+
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">🚨</div>
                     <h3 data-i18n="incendio_card1_title">Centrales de Incendio Convencionales y Analógicas</h3>
-                    <p data-i18n="incendio_card1_desc">Paneles microprocesados de control y señalización con capacidad de direccionamiento en bucle abierto o cerrado.</p>
+                    <p data-i18n="incendio_card1_desc">Paneles microprocesados de control y señalización con capacidad
+                        de direccionamiento en bucle abierto o cerrado.</p>
                     <ul class="specs-list">
-                        <li><strong data-i18n="incendio_card1_spec1_label">Certificación:</strong> <span data-i18n="incendio_card1_spec1_val">Homologación estricta EN 54-2 y EN 54-4</span></li>
-                        <li><strong data-i18n="incendio_card1_spec2_label">Capacidad de Bucle:</strong> <span data-i18n="incendio_card1_spec2_val">Hasta 250 dispositivos direccionables por lazo</span></li>
-                        <li><strong data-i18n="incendio_card1_spec3_label">Alimentación Auxiliar:</strong> <span data-i18n="incendio_card1_spec3_val">Fuentes conmutadas supervisadas con baterías de respaldo 24V</span></li>
-                        <li><strong data-i18n="incendio_card1_spec4_label">Salidas de Alarma:</strong> <span data-i18n="incendio_card1_spec4_val">Relés libres de tensión y salidas sirena auto-regenerativas</span></li>
+                        <li><strong data-i18n="incendio_card1_spec1_label">Certificación:</strong> <span
+                                data-i18n="incendio_card1_spec1_val">Homologación estricta EN 54-2 y EN 54-4</span></li>
+                        <li><strong data-i18n="incendio_card1_spec2_label">Capacidad de Bucle:</strong> <span
+                                data-i18n="incendio_card1_spec2_val">Hasta 250 dispositivos direccionables por
+                                lazo</span></li>
+                        <li><strong data-i18n="incendio_card1_spec3_label">Alimentación Auxiliar:</strong> <span
+                                data-i18n="incendio_card1_spec3_val">Fuentes conmutadas supervisadas con baterías de
+                                respaldo 24V</span></li>
+                        <li><strong data-i18n="incendio_card1_spec4_label">Salidas de Alarma:</strong> <span
+                                data-i18n="incendio_card1_spec4_val">Relés libres de tensión y salidas sirena
+                                auto-regenerativas</span></li>
                     </ul>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20Central%20Contra%20Incendios" target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20Central%20Contra%20Incendios"
+                    target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
-            
+
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">☁️</div>
                     <h3 data-i18n="incendio_card2_title">Detectores Ópticos de Humo y Térmicos</h3>
-                    <p data-i18n="incendio_card2_desc">Sensores puntuales con cámara de análisis de dispersión de luz infrarroja y termistores de velocidad de aumento térmico.</p>
+                    <p data-i18n="incendio_card2_desc">Sensores puntuales con cámara de análisis de dispersión de luz
+                        infrarroja y termistores de velocidad de aumento térmico.</p>
                     <ul class="specs-list">
-                        <li><strong data-i18n="incendio_card2_spec1_label">Normativa Óptica:</strong> <span data-i18n="incendio_card2_spec1_val">Certificados EN 54-7 (Humo) y EN 54-5 (Térmicos)</span></li>
-                        <li><strong data-i18n="incendio_card2_spec2_label">Compensación:</strong> <span data-i18n="incendio_card2_spec2_val">Algoritmo de autocompensación de deriva por acumulación de polvo</span></li>
-                        <li><strong data-i18n="incendio_card2_spec3_label">Área de Cobertura:</strong> <span data-i18n="incendio_card2_spec3_val">Hasta 60 m² con altura máxima de instalación de 12 metros</span></li>
-                        <li><strong data-i18n="incendio_card2_spec4_label">Base de Conexión:</strong> <span data-i18n="incendio_card2_spec4_val">Zócalo universal con dispositivo opcional de bloqueo anti-sustracción</span></li>
+                        <li><strong data-i18n="incendio_card2_spec1_label">Normativa Óptica:</strong> <span
+                                data-i18n="incendio_card2_spec1_val">Certificados EN 54-7 (Humo) y EN 54-5
+                                (Térmicos)</span></li>
+                        <li><strong data-i18n="incendio_card2_spec2_label">Compensación:</strong> <span
+                                data-i18n="incendio_card2_spec2_val">Algoritmo de autocompensación de deriva por
+                                acumulación de polvo</span></li>
+                        <li><strong data-i18n="incendio_card2_spec3_label">Área de Cobertura:</strong> <span
+                                data-i18n="incendio_card2_spec3_val">Hasta 60 m² con altura máxima de instalación de 12
+                                metros</span></li>
+                        <li><strong data-i18n="incendio_card2_spec4_label">Base de Conexión:</strong> <span
+                                data-i18n="incendio_card2_spec4_val">Zócalo universal con dispositivo opcional de
+                                bloqueo anti-sustracción</span></li>
                     </ul>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20cotizar%20Detectores%20de%20Humo" target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20quiero%20cotizar%20Detectores%20de%20Humo"
+                    target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
 
-            
+
             <div class="card-item">
                 <div>
                     <div style="font-size: 1.8rem; margin-bottom: 10px;">🧯</div>
                     <h3 data-i18n="incendio_card3_title">Pulsadores de Alarma y Extintores Homologados</h3>
-                    <p data-i18n="incendio_card3_desc">Equipamiento manual de emergencia y elementos portátiles de extinción conforme al Reglamento de Instalaciones de Protección Contra Incendios (RIPCI).</p>
+                    <p data-i18n="incendio_card3_desc">Equipamiento manual de emergencia y elementos portátiles de
+                        extinción conforme al Reglamento de Instalaciones de Protección Contra Incendios (RIPCI).</p>
                     <ul class="specs-list">
-                        <li><strong data-i18n="incendio_card3_spec1_label">Pulsadores:</strong> <span data-i18n="incendio_card3_spec1_val">Elemento deformable rearmable con indicador LED de estado y llave de prueba</span></li>
-                        <li><strong data-i18n="incendio_card3_spec2_label">Extintores:</strong> <span data-i18n="incendio_card3_spec2_val">Polvo seco ABC de eficacia 21A-144B y CO2 para riesgos eléctricos</span></li>
-                        <li><strong data-i18n="incendio_card3_spec3_label">Señalización:</strong> <span data-i18n="incendio_card3_spec3_val">Cartelería fotoluminiscente clase A según norma UNE 23035</span></li>
-                        <li><strong data-i18n="incendio_card3_spec4_label">Mantenimiento:</strong> <span data-i18n="incendio_card3_spec4_val">Homologación para revisiones trimestrales y anuales obligatorias</span></li>
+                        <li><strong data-i18n="incendio_card3_spec1_label">Pulsadores:</strong> <span
+                                data-i18n="incendio_card3_spec1_val">Elemento deformable rearmable con indicador LED de
+                                estado y llave de prueba</span></li>
+                        <li><strong data-i18n="incendio_card3_spec2_label">Extintores:</strong> <span
+                                data-i18n="incendio_card3_spec2_val">Polvo seco ABC de eficacia 21A-144B y CO2 para
+                                riesgos eléctricos</span></li>
+                        <li><strong data-i18n="incendio_card3_spec3_label">Señalización:</strong> <span
+                                data-i18n="incendio_card3_spec3_val">Cartelería fotoluminiscente clase A según norma UNE
+                                23035</span></li>
+                        <li><strong data-i18n="incendio_card3_spec4_label">Mantenimiento:</strong> <span
+                                data-i18n="incendio_card3_spec4_val">Homologación para revisiones trimestrales y anuales
+                                obligatorias</span></li>
                     </ul>
                 </div>
-                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20Extintores%20y%20Pulsadores" target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
+                <a href="https://wa.me/34933004024?text=Hola,%20me%20interesa%20Extintores%20y%20Pulsadores"
+                    target="_blank" class="whatsapp-btn" data-i18n="btn_presupuesto">Pedir Presupuesto</a>
             </div>
         </div>
         <div class="back-link-container">
@@ -125,7 +315,8 @@
         </div>
     </main>
 
-    <footer style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
+    <footer
+        style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
         <div class="container">
             <p>&copy;2026 Alarmas INSA Barcelona. Todos los derechos reservados.</p>
             <p>Desarrollado Por Ricardo Mendes.</p>
@@ -181,4 +372,5 @@
         });
     </script>
 </body>
+
 </html>

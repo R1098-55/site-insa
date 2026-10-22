@@ -13,7 +13,7 @@
   /* Azul hover */
 
   /* Fundo do Body: Branco Puro com sutil toque dourado */
-  --bg-page: #f1e406;
+  --bg-page: #fffefa;
   --bg-surface: #fffefa;
   --bg-subtle: #fffbeb;
   --bg-icon: #fefce8;
@@ -947,7 +947,7 @@ body {
 }
 
 body.pagina-alarmas .logo-alarmas {
-  color: #ffffff;
+  color: var(--brand-blue) !important;
 }
 
 /* ==========================================
@@ -1024,6 +1024,8 @@ body.pagina-alarmas .logo-alarmas {
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(241, 228, 6, 0.15);
 }
+
+
 /* ==========================================================================
    1. TABLETS E NEST HUB (Telas até 1285px)
    ========================================================================== */
@@ -1042,7 +1044,7 @@ body.pagina-alarmas .logo-alarmas {
         height: 60px !important;
     }
 
-    /* CORREÇÃO DO HAMBÚRGUER: Travado fisicamente no canto esquerdo da barra */
+    /* HAMBÚRGUER: Travado fisicamente no canto esquerdo da barra */
     .mobile-toggle {
         display: flex !important;
         flex-direction: column !important;
@@ -1073,7 +1075,7 @@ body.pagina-alarmas .logo-alarmas {
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
     .navbar.scrolled .mobile-toggle span {
-        background-color: #FFFFFF !important;
+        background-color: #060913 !important;
     }
 
     /* ANIMAÇÃO DO "X" */
@@ -1109,12 +1111,7 @@ body.pagina-alarmas .logo-alarmas {
     }
 
     .logo h2 {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 6px !important;
-        margin: 0 !important;
-        font-size: 1.3rem !important;
+        font-size: 1.5rem !important;
     }
 
     .logo h2 span {
@@ -1199,7 +1196,7 @@ body.pagina-alarmas .logo-alarmas {
 
     .navbar.scrolled .nav-menu > a,
     .navbar.scrolled .nav-menu .dropdown-toggle {
-        color: rgba(255, 255, 255, 0.9) !important;
+        color: rgba(14, 14, 14, 0.9) !important;
     }
 
     .dropdown-menu {
@@ -1268,7 +1265,14 @@ body.pagina-alarmas .logo-alarmas {
     }
 
     .logo h2 {
-        font-size: 1.5rem !important;
+        font-size: 1.35rem !important;
+        gap: 6px !important;
+    }
+    .logo h2 span:last-child {
+        display: inline-block !important;  
+        font-size: 0.65rem !important;
+        padding: 1px 4px !important;
+        top: 9px !important;
     }
 
     .nav-menu a,
@@ -1298,9 +1302,9 @@ body.pagina-alarmas .logo-alarmas {
 /* ==========================================================================
    3. SMARTPHONES E IPHONES (Telas até 480px)
    ========================================================================== */
-@media (max-width: 480px) {
+@media (max-width: 440px) {
     .logo h2 {
-        font-size: 1.4rem !important;
+        font-size: 1.2rem !important;
         gap: 4px !important;
     }
     
@@ -1309,9 +1313,11 @@ body.pagina-alarmas .logo-alarmas {
     }
     
     .logo h2 span:last-child {
-        display: none !important;
-    }
-
+        display: inline-block !important;  
+        font-size: 0.6rem !important;
+        padding: 1px 3px !important;
+        top: 9px !important;
+      }
     .hero h1, 
     .hero-title {
         font-size: 1.8rem !important;
