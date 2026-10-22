@@ -98,13 +98,14 @@ body {
   align-items: center;
   justify-content: center;
   padding: 14px 28px;
-  border-radius: 4px;
+  border-radius: 20px;
   text-decoration: none;
   font-weight: 700;
   transition: var(--transition-smooth);
   cursor: pointer;
   text-align: center;
   border: none;
+
 }
 
 .btn-primary {
@@ -441,7 +442,7 @@ body {
   color: #9a8802;
   background: rgba(241, 228, 6, 0.25);
   padding: 0 8px;
-  border-radius: 4px;
+  border-radius: 20px;
 }
 
 .hero p {
@@ -455,6 +456,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 16px;
+  
 }
 
 /* ESTATÍSTICAS (CONTADORES COM O AMARELO OFICIAL DA LOGO INSA) */
