@@ -43,10 +43,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family:
-    "Segoe UI",
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -220,7 +217,6 @@ body {
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
-
   min-width: 60px;
   margin: 0 auto;
   padding: 0 20px;
@@ -457,7 +453,7 @@ body {
   gap: 16px;
 }
 
-/* ESTATÍSTICAS (CONTADORES COM O AMARELO OFICIAL DA LOGO INSA) */
+/* ESTATÍSTICAS */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -472,7 +468,6 @@ body {
   font-size: 3.2rem;
   font-weight: 900;
   color: #f1e406;
-  /* Amarelo Oficial exato da Logo INSA */
   -webkit-text-stroke: 1px #9a8802;
   line-height: 1;
 }
@@ -486,43 +481,86 @@ body {
   text-transform: uppercase;
 }
 
+/* ==========================================
+   NOVOS CARDS DE PROCESSO (BORDER HOVER + GLOW)
+   ========================================== */
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
 
 .process-card {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-gold);
-  padding: 24px;
-  border-radius: 6px;
-  box-shadow: 0 4px 15px rgba(241, 228, 6, 0.08);
+  position: relative;
+  background-color: #ffffff !important; /* Fundo branco limpo por defeito */
+  padding: 35px 25px;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
+/* --- QUANDO PASSAS O RATO: O FUNDO MUDA PARA O DEGRADÉ DO JSFIDDLE --- */
+.process-card:hover {
+  background: linear-gradient(135deg, #060913 0%, #f1e406 50%, #706b03 100%) !important;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(241, 228, 6, 0.25);
+  border-color: transparent;
+}
+
+/* --- NÚMERO DO CARD (01, 02...) --- */
 .process-number {
-  border: 1px solid var(--border-gold);
-  color: #9a8802;
-  width: 48px;
-  height: 48px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(241, 228, 6, 0.15);
+  color: var(--brand-blue, #060913);
+  font-weight: 700;
   font-size: 1.1rem;
-  font-weight: 800;
+  border-radius: 10px;
   margin-bottom: 20px;
-  background-color: #fefce8;
+  border: 1px solid rgba(241, 228, 6, 0.3);
+  transition: all 0.3s ease;
 }
 
+/* Quando o rato passa no card, o bloco do número inverte para destacar no fundo escuro/dourado */
+.process-card:hover .process-number {
+  background-color: #060913;
+  color: #f1e406;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- TÍTULOS E TEXTOS DO CARD --- */
 .process-card h4 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: var(--text-primary);
+  font-size: 1.25rem;
+  color: #111827;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  transition: color 0.3s ease;
 }
 
 .process-card p {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+  font-family: inherit;
+  transition: color 0.3s ease;
+}
+
+/* Como o fundo fica escuro/dourado no hover, os textos mudam para garantir legibilidade perfeita se necessário */
+.process-card:hover h4 {
+  color: #060913; /* Texto escuro bem contrastante sobre o degradé dourado */
+}
+
+.process-card:hover p {
+  color: #1f2937; /* Texto secundário ajustado para o hover */
 }
 
 /* SEÇÕES & CARDS */
@@ -657,7 +695,6 @@ body {
 .modal-overlay {
   display: none;
   position: fixed;
-
   top: 0;
   left: 0;
   width: 100%;
@@ -829,7 +866,7 @@ body {
   text-decoration: underline;
 }
 
-/* FOOTER (RODAPÉ EM AZUL HIGH-TECH) */
+/* FOOTER */
 .footer {
   background: var(--brand-blue);
   color: #9ca3af;
@@ -865,7 +902,6 @@ header.navbar:not(.scrolled) .nav-menu .dropdown:hover .dropdown-toggle {
   color: #b8a902 !important;
 }
 
-/* 2. ESTADO COM SCROLL (Fundo Azul Escuro): Letras em Branco */
 header.navbar.scrolled .nav-menu a,
 header.navbar.scrolled .nav-menu .dropdown-toggle,
 header.navbar.scrolled .nav-menu a:visited,
@@ -950,10 +986,7 @@ body.pagina-alarmas .logo-alarmas {
   color: var(--brand-blue) !important;
 }
 
-/* ==========================================
-   ESTILOS DO SIMULADOR / WIZARD DE ORÇAMENTO
-   ========================================== */
-
+/* SIMULADOR / WIZARD DE ORÇAMENTO */
 .wizard-step {
   animation: fadeIn 0.4s ease-in-out;
 }
@@ -963,7 +996,6 @@ body.pagina-alarmas .logo-alarmas {
     opacity: 0;
     transform: translateY(8px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1024,21 +1056,18 @@ body.pagina-alarmas .logo-alarmas {
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(241, 228, 6, 0.15);
 }
-/* Remove qualquer elemento vazio indesejado na barra de navegação */
+
 .site-header *:empty {
   display: none !important;
 }
 
-/* ==========================================================================
-   1. TABLETS E NEST HUB (Telas até 1285px)
-   ========================================================================== */
+/* RESPONSIVIDADE & MEDIA QUERIES */
 @media (max-width: 1285px) {
-  
   .navbar,
   .navbar-content {
     position: relative !important;
   }
-  
+
   button,
   .mobile-toggle,
   [class*="toggle"],
@@ -1047,7 +1076,6 @@ body.pagina-alarmas .logo-alarmas {
     -webkit-tap-highlight-color: transparent !important;
   }
 
-  
   .mobile-toggle {
     display: flex !important;
     flex-direction: column !important;
@@ -1077,11 +1105,11 @@ body.pagina-alarmas .logo-alarmas {
     border-radius: 4px !important;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
+
   .navbar.scrolled .mobile-toggle span {
     background-color: #060913 !important;
   }
 
-  /* ANIMAÇÃO DO "X" */
   .mobile-toggle.active span:nth-child(1) {
     transform: translateY(7.5px) rotate(45deg) !important;
   }
@@ -1093,7 +1121,6 @@ body.pagina-alarmas .logo-alarmas {
     transform: translateY(-7.5px) rotate(-45deg) !important;
   }
 
-  
   .logo {
     position: static !important;
     transform: none !important;
@@ -1128,7 +1155,6 @@ body.pagina-alarmas .logo-alarmas {
     white-space: nowrap !important;
   }
 
-  
   .nav-actions {
     display: flex !important;
     position: absolute !important;
@@ -1157,7 +1183,6 @@ body.pagina-alarmas .logo-alarmas {
     border-radius: 6px;
   }
 
-  
   .nav-menu {
     position: fixed !important;
     top: 0 !important;
@@ -1228,12 +1253,10 @@ body.pagina-alarmas .logo-alarmas {
     margin: 0 auto !important;
   }
 
-  /* FORÇA O CONTEÚDO DAS PÁGINAS INTERNAS A DESCER PARA NÃO TAPAR A LOGO */
   .navbar + * {
     margin-top: 90px !important;
   }
 
-  
   .hero h1,
   .hero-title {
     font-size: 2.2rem !important;
@@ -1258,16 +1281,13 @@ body.pagina-alarmas .logo-alarmas {
     white-space: nowrap !important;
   }
 }
+
 @media (min-width: 1286px) {
   .mobile-toggle {
     display: none !important;
   }
 }
 
-
-/* ==========================================================================
-   2. DISPOSITIVOS INTERMEDIÁRIOS (Telas até 768px)
-   ========================================================================== */
 @media (max-width: 768px) {
   .navbar-content {
     padding: 10px 15px;
@@ -1308,9 +1328,6 @@ body.pagina-alarmas .logo-alarmas {
   }
 }
 
-/* ==========================================================================
-   3. SMARTPHONES E IPHONES (Telas até 480px)
-   ========================================================================== */
 @media (max-width: 440px) {
   .logo h2 {
     font-size: 1.2rem !important;
@@ -1345,6 +1362,7 @@ body.pagina-alarmas .logo-alarmas {
     white-space: normal !important;
   }
 }
+
 @media (max-width: 320px) {
   .navbar-content {
     padding: 2px 4px !important;
@@ -1365,9 +1383,6 @@ body.pagina-alarmas .logo-alarmas {
     top: 4px !important;
   }
 
-  /* === AJUSTE FINO DO MENU HAMBÚRGUER E ITENS === */
-
-  /* Reduz o botão do menu hambúrguer */
   .menu-toggle,
   .hamburger,
   .navbar-toggler {
@@ -1375,21 +1390,18 @@ body.pagina-alarmas .logo-alarmas {
     padding: 4px 6px !important;
   }
 
- 
   .nav-menu,
   .navbar-collapse {
     width: 100% !important;
     padding: 10px !important;
   }
 
-  
   .nav-menu a,
   .navbar-collapse a {
     font-size: 0.85rem !important;
     padding: 6px 8px !important;
   }
 
-  
   .lang-selector {
     font-size: 0.75rem !important;
     padding: 2px 4px !important;
@@ -1397,7 +1409,7 @@ body.pagina-alarmas .logo-alarmas {
 
   .hero h1,
   .hero-title {
-    font-size: 1.2rem !important; /* Ajustado para não sumir */
+    font-size: 1.2rem !important;
     padding: 0 !important;
   }
 

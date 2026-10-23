@@ -17,6 +17,15 @@ function verificarLicenca() {
                         <p style="margin: 8px 0; font-size: 16px;">Website suspended due to non-payment.</p>
                         <p style="font-size: 12px; color: #888; margin-top: 25px;">Póngase en contacto con el soporte técnico responsable.</p>
                     </div>
+                    <footer
+                         style="background: #111; color: #fcf6f6; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
+                            <div class="container">
+                                   
+                                <p>Desarrollado Por Ricardo Mendes.</p>
+                             
+                            
+                            </div>
+                    </footer>
                 </div>
             `;
             }
@@ -400,13 +409,13 @@ function enviarPresupuesto() {
     window.open(urlWhatsapp, '_blank');
 }
 function verificarExpiracao() {
-   
+
     // Exemplo: 01 de janeiro de 2027 às 23:59
     const dataLimite = new Date(2027, 0, 1, 23, 59, 59); // Ano, Mês (0-11), Dia, Hora, Minuto, Segundo
     const dataAtual = new Date();
 
     if (dataAtual > dataLimite) {
-        
+
         document.body.innerHTML = `
             <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #111; color: #fff; font-family: sans-serif; text-align: center; padding: 20px;">
                 <div>
