@@ -464,3 +464,29 @@ document.addEventListener("DOMContentLoaded", function () {
         cardObserver.observe(card);
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const solutionCards = document.querySelectorAll(".solutions-container .flip-card");
+
+    const scrollOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.01 // Ativa quando 20% do card estiver visível
+    };
+
+    const solutionsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Entrou no ecrã (a descer ou a subir): abre os cartões
+                entry.target.classList.add("is-revealed");
+            } else {
+                // Saiu do ecrã: esconde os cartões para o efeito repetir ao voltar
+                entry.target.classList.remove("is-revealed");
+            }
+        });
+    }, scrollOptions);
+
+    solutionCards.forEach(card => {
+        solutionsObserver.observe(card);
+    });
+});

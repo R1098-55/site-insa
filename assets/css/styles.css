@@ -480,6 +480,35 @@ body {
   margin-top: 8px;
   text-transform: uppercase;
 }
+/* --- ESTADO INICIAL (Empilhados / Escondidos antes do scroll) --- */
+.solutions-container .flip-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition:
+    transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+    opacity 0.8s ease;
+  will-change: transform, opacity;
+}
+
+/* Atraso em cascata para cada card abrir um a seguir ao outro */
+.solutions-container .flip-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.solutions-container .flip-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.solutions-container .flip-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.solutions-container .flip-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+/* --- ESTADO ATIVO (Quando o utilizador faz scroll até lá) --- */
+.solutions-container .flip-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 
 /* ==========================================
    NOVOS CARDS DE PROCESSO (BORDER HOVER + GLOW)
@@ -588,20 +617,47 @@ body {
 }
 
 /* --- EFEITO FLIP CARD 3D PARA SOLUÇÕES --- */
-.flip-grid {
+/* --- 1. CONTAINER & ANIMAÇÃO DE SCROLL (REVEAL) --- */
+.solutions-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
-  perspective: 1000px; /* Cria o espaço de profundidade 3D */
 }
 
-.flip-card {
+.solutions-container .flip-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition:
+    transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+    opacity 0.8s ease;
+  will-change: transform, opacity;
   background-color: transparent;
   width: 100%;
-  height: 260px; /* Altura fixa para garantir que a rotação 3D funcione redonda */
+  height: 260px;
+  perspective: 1000px;
   cursor: pointer;
 }
 
+/* Atraso em cascata para cada card abrir um a seguir ao outro no scroll */
+.solutions-container .flip-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.solutions-container .flip-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.solutions-container .flip-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.solutions-container .flip-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.solutions-container .flip-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* --- 2. O ELEMENTO QUE FAZ O GIRO 3D (INNER) --- */
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -613,19 +669,20 @@ body {
   border-radius: 16px;
 }
 
-/* Roda o card 180 graus ao passar o rato (ou ao tocar no telemóvel) */
 .flip-card:hover .flip-card-inner,
 .flip-card:active .flip-card-inner {
-  transform: rotateY(180deg);
+  transform: rotateY(
+    180deg
+  ); /* Podes trocar para rotateX(180deg) se preferires o flip vertical */
 }
 
-/* Estilo comum da Frente e do Verso */
-.flip-card-front, 
-.flip-card-back {
+/* --- 3. AS FACES DO CARD (FRENTE E VERSO) --- */
+.card-front,
+.card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* Esconde o lado oposto durante a rotação */
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -635,9 +692,61 @@ body {
   box-sizing: border-box;
 }
 
+/* Frente com o amarelo suave translúcido e efeito vidro fosco */
+.card-front {
+  background: rgba(254, 252, 232, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-primary, #060913);
+  border: 1px solid rgba(241, 228, 6, 0.4);
+}
+
+.card-front h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.flip-hint {
+  font-size: 0.75rem;
+  color: #9a8802;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Verso com gradiente azul high-tech da INSA */
+.card-back {
+  background: linear-gradient(135deg, #060913 0%, #111a30 100%);
+  color: #ffffff;
+  transform: rotateY(180deg);
+  border: 2px solid var(--brand-yellow, #f1e406);
+}
+
+.card-back h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--brand-yellow, #f1e406);
+  margin-bottom: 10px;
+}
+
+.card-back p {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* --- FRENTE DO CARD --- */
 .flip-card-front {
-  background: rgba(254, 252, 232, 0.85); /* Tom suave de amarelo/creme translúcido (corresponde ao --bg-icon / --bg-subtle) */
+  background: rgba(
+    254,
+    252,
+    232,
+    0.85
+  ); /* Tom suave de amarelo/creme translúcido (corresponde ao --bg-icon / --bg-subtle) */
   backdrop-filter: blur(8px); /* Efeito de vidro fosco moderno */
   -webkit-backdrop-filter: blur(8px);
   color: var(--text-primary, #060913);
@@ -682,34 +791,6 @@ body {
   line-height: 1.5;
   margin: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* SEÇÕES & CARDS */
 .section {
