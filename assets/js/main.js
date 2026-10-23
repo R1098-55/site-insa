@@ -438,3 +438,26 @@ function verificarExpiracao() {
 }
 
 verificarExpiracao();
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".process-card");
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Ativa quando 50% do card estiver visível
+    };
+
+    // Removi o 'observer' extra dos parâmetros para evitar o aviso
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+            }
+        });
+    }, observerOptions);
+
+    cards.forEach(card => {
+        cardObserver.observe(card);
+    });
+});
