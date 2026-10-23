@@ -587,6 +587,130 @@ body {
   color: #1f2937;
 }
 
+/* --- EFEITO FLIP CARD 3D PARA SOLUÇÕES --- */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  perspective: 1000px; /* Cria o espaço de profundidade 3D */
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 260px; /* Altura fixa para garantir que a rotação 3D funcione redonda */
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+}
+
+/* Roda o card 180 graus ao passar o rato (ou ao tocar no telemóvel) */
+.flip-card:hover .flip-card-inner,
+.flip-card:active .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Estilo comum da Frente e do Verso */
+.flip-card-front, 
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde o lado oposto durante a rotação */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+/* --- FRENTE DO CARD --- */
+.flip-card-front {
+  background: rgba(254, 252, 232, 0.85); /* Tom suave de amarelo/creme translúcido (corresponde ao --bg-icon / --bg-subtle) */
+  backdrop-filter: blur(8px); /* Efeito de vidro fosco moderno */
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-primary, #060913);
+  border: 1px solid rgba(241, 228, 6, 0.4); /* Borda suave com o amarelo da marca */
+  box-shadow: 0 10px 30px rgba(241, 228, 6, 0.08); /* Sombra subtil dourada */
+}
+
+.flip-card-front h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.flip-hint {
+  font-size: 0.75rem;
+  color: #9a8802; /* Tom de amarelo escuro/dourado para combinar */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* --- VERSO DO CARD (Gradiente Oficial INSA) --- */
+.flip-card-back {
+  background: linear-gradient(135deg, #060913 0%, #111a30 100%);
+  color: #ffffff;
+  transform: rotateY(180deg); /* Já começa virado para trás */
+  border: 2px solid var(--brand-yellow, #f1e406);
+}
+
+.flip-card-back h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--brand-yellow, #f1e406);
+  margin-bottom: 10px;
+}
+
+.flip-card-back p {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* SEÇÕES & CARDS */
 .section {
   padding: 90px 0;
