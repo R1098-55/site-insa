@@ -493,18 +493,20 @@ body {
 
 .process-card {
   position: relative;
-  background-color: #ffffff !important; /* Fundo branco limpo por defeito */
+  background-color: #ffffff !important;
   padding: 35px 25px;
   border-radius: 16px;
   overflow: hidden;
   z-index: 1;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  /* Borda subtil permanente para destacar visualmente em qualquer ecrã */
+  border: 1px solid rgba(241, 228, 6, 0.35);
 }
 
 /* --- QUANDO PASSAS O RATO: O FUNDO MUDA PARA O DEGRADÉ DO JSFIDDLE --- */
-.process-card:hover {
+.process-card:hover,
+.process-card:active {
   background: linear-gradient(135deg, #060913 0%, #f1e406 50%, #706b03 100%) !important;
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 40px rgba(241, 228, 6, 0.25);
@@ -529,7 +531,8 @@ body {
 }
 
 /* Quando o rato passa no card, o bloco do número inverte para destacar no fundo escuro/dourado */
-.process-card:hover .process-number {
+.process-card:hover .process-number,
+.process-card:active .process-number {
   background-color: #060913;
   color: #f1e406;
   border-color: rgba(255, 255, 255, 0.2);
@@ -554,6 +557,15 @@ body {
   transition: color 0.3s ease;
 }
 
+.process-card:hover h4,
+.process-card:active h4 {
+  color: #060913;
+}
+
+.process-card:hover p,
+.process-card:active p {
+  color: #1f2937;
+}
 /* Como o fundo fica escuro/dourado no hover, os textos mudam para garantir legibilidade perfeita se necessário */
 .process-card:hover h4 {
   color: #060913; /* Texto escuro bem contrastante sobre o degradé dourado */
@@ -991,6 +1003,33 @@ body.pagina-alarmas .logo-alarmas {
   animation: fadeIn 0.4s ease-in-out;
 }
 
+/* ==========================================
+   ANIMAÇÕES E EFEITOS GLOBAIS
+   ========================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Adiciona o teu keyframe aqui, por exemplo: */
+@keyframes cardGlowPulse {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1426,4 +1465,23 @@ body.pagina-alarmas .logo-alarmas {
     padding: 8px 10px !important;
     white-space: normal !important;
   }
+}
+
+/* No mobile, fazemos com que o gradiente tenha uma animação suave opcional, ou ative com o toque */
+@media (max-width: 768px) {
+  .process-card {
+    /* Garante que o card já tenha uma leve pista visual da borda ou fundo no mobile */
+    border: 1px solid rgba(241, 228, 6, 0.4);
+  }
+  
+  /* Se quiser que o card de vez em quando mostre o brilho sozinho para chamar atenção */
+  .process-card::before {
+    opacity: 0.3; /* Deixa uma bordinha visível no mobile para não passar batido */
+  }
+}
+
+/* Quando o usuário toca no card no celular (:active) */
+.process-card:active {
+  background: linear-gradient(135deg, #060913 0%, #f1e406 50%, #706b03 100%) !important;
+  transform: scale(0.98);
 }
