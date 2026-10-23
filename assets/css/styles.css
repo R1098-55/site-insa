@@ -507,7 +507,12 @@ body {
 /* --- QUANDO PASSAS O RATO: O FUNDO MUDA PARA O DEGRADÉ DO JSFIDDLE --- */
 .process-card:hover,
 .process-card:active {
-  background: linear-gradient(135deg, #060913 0%, #f1e406 50%, #706b03 100%) !important;
+  background: linear-gradient(
+    135deg,
+    #060913 0%,
+    #f1e406 50%,
+    #706b03 100%
+  ) !important;
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 40px rgba(241, 228, 6, 0.25);
   border-color: transparent;
@@ -1030,17 +1035,6 @@ body.pagina-alarmas .logo-alarmas {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .wizard-btn {
   width: 100%;
   padding: 16px 20px;
@@ -1365,6 +1359,22 @@ body.pagina-alarmas .logo-alarmas {
   .hero p {
     font-size: 1rem;
   }
+  .process-card {
+    /* Garante que o card já tenha uma leve pista visual da borda ou fundo no mobile */
+    border: 1px solid rgba(241, 228, 6, 0.4);
+  }
+  .process-card::before {
+    opacity: 0.3; /* Deixa uma bordinha visível no mobile para não passar batido */
+  }
+  .process-card:active {
+    background: linear-gradient(
+      135deg,
+      #060913 0%,
+      #f1e406 50%,
+      #706b03 100%
+    ) !important;
+    transform: scale(0.98);
+  }
 }
 
 @media (max-width: 440px) {
@@ -1473,7 +1483,7 @@ body.pagina-alarmas .logo-alarmas {
     /* Garante que o card já tenha uma leve pista visual da borda ou fundo no mobile */
     border: 1px solid rgba(241, 228, 6, 0.4);
   }
-  
+
   /* Se quiser que o card de vez em quando mostre o brilho sozinho para chamar atenção */
   .process-card::before {
     opacity: 0.3; /* Deixa uma bordinha visível no mobile para não passar batido */
@@ -1482,6 +1492,11 @@ body.pagina-alarmas .logo-alarmas {
 
 /* Quando o usuário toca no card no celular (:active) */
 .process-card:active {
-  background: linear-gradient(135deg, #060913 0%, #f1e406 50%, #706b03 100%) !important;
+  background: linear-gradient(
+    135deg,
+    #060913 0%,
+    #f1e406 50%,
+    #706b03 100%
+  ) !important;
   transform: scale(0.98);
 }
