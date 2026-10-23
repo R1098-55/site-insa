@@ -445,14 +445,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.5 // Ativa quando 50% do card estiver visível
+        threshold: 0.4 // Ativa quando 40% do card estiver visível
     };
 
-    // Removi o 'observer' extra dos parâmetros para evitar o aviso
     const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Entrou no ecrã: ativa o efeito
                 entry.target.classList.add("is-visible");
+            } else {
+                // Saiu do ecrã: remove o efeito para voltar ao normal suavemente
+                entry.target.classList.remove("is-visible");
             }
         });
     }, observerOptions);
