@@ -791,6 +791,109 @@ body {
   line-height: 1.5;
   margin: 0;
 }
+.service-main-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  border: 1px solid rgba(241, 228, 6, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+.service-main-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--brand-yellow, #f1e406);
+  box-shadow: 0 20px 40px rgba(6, 9, 19, 0.12);
+}
+
+/* --- CARDS DE SERVIÇOS DINÂMICOS --- */
+.service-card-dynamic {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--bg-surface, #FFFEFA);
+  border: 1px solid var(--border-light, #E5E7EB);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card-dynamic:hover {
+  border-color: var(--brand-yellow, #f1e406);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(6, 9, 19, 0.08);
+}
+
+.service-card-dynamic .service-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.service-card-dynamic .service-icon {
+  color: var(--brand-yellow, #f1e406);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card-dynamic h3 {
+  color: var(--text-primary, #060913);
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.service-card-dynamic p {
+  color: var(--text-secondary, #374151);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+/* Rodapé do Card com Seta Animada */
+.service-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(229, 231, 235, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.service-action {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary, #060913);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.service-card-dynamic:hover .service-action {
+  color: #9a8802;
+}
+
+.service-action .arrow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card-dynamic:hover .service-action .arrow {
+  transform: translateX(6px);
+}
+
+
+
+
 
 /* SEÇÕES & CARDS */
 .section {

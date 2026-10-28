@@ -2,116 +2,101 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("servicios-container");
   if (!container) return;
 
-  async function carregarECriarServicos() {
-    // Pega o idioma do select ou do localStorage (caso já tenha sido salvo antes)
-    const langSelect = document.getElementById('langSelect');
-    let idiomaAtual = 'es';
-
-    if (langSelect && langSelect.value) {
-      idiomaAtual = langSelect.value;
-      localStorage.setItem('site_lang', idiomaAtual);
-    } else {
-      idiomaAtual = localStorage.getItem('site_lang') || 'es';
-      if (langSelect) langSelect.value = idiomaAtual;
+  // Dados do JSON direto para evitar bloqueios de fetch em ambientes de teste
+  const servicios = [
+    {
+      "id": "sistemas-alarma",
+      "titulo": "Alarmas",
+      "slug": "servicios/alarmas.html",
+      "descricao": "Sensores de movimiento, contactos en puertas y ventanas, sirenas y comunicación con central.",
+      "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z\"/></svg>",
+      "tags": ["Inalámbrico", "Central 24/7", "App móvil"]
+    },
+    {
+      "id": "cameravideovigilancia",
+      "titulo": "Cámara Video Vigilancias",
+      "slug": "servicios/videovigilancia.html",
+      "descricao": "Resolución Ultra HD, visión nocturna infrarroja, acceso remoto desde su smartphone. Resistentes IP67.",
+      "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z\"/></svg>",
+      "tags": ["8MP / 4K", "IR 30m", "IP67", "POE"]
+    },
+    {
+      "id": "videoanalise",
+      "titulo": "Vídeo Análisis Inteligente",
+      "slug": "servicios/videoanalisis.html",
+      "descricao": "Inteligencia Artificial aplicada a la seguridad. Detección proactiva de intrusos, merodeo y alertas en tiempo real sin falsas alarmas.",
+      "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z\"/></svg>",
+      "tags": ["Deep Learning", "IA Proactiva", "Sin Falsas Alarmas", "Alertas 24/7"]
+    },
+    {
+      "id": "nibleoptica",
+      "titulo": "Niebla Óptica Antirrobo",
+      "slug": "servicios/nieblaoptica.html",
+      "descricao": "Generadores de niebla de alta densidad que bloquean la visión del intruso en segundos. Protección activa insuperable para comercios y viviendas.",
+      "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 3C6.95 3 2.69 5.86 1 10c1.69 4.14 5.95 7 11 7s9.31-2.86 11-7c-1.69-4.14-5.95-7-11-7zm0 11.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 5.5 12 5.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5z\"/></svg>",
+      "tags": ["Cero Visibilidad", "Disuasión Récord", "Homologado", "Independiente"]
+    },
+    {
+      "id": "Controlaccesos",
+      "titulo": "Control de Accesos Avanzado",
+      "slug": "servicios/controlaccesos.html",
+      "descricao": "Gestión inteligente de entradas y salidas mediante biometría, tarjetas RFID y reconocimiento de matrículas. Seguridad y control total para empresas y comunidades.",
+      "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 3C6.95 3 2.69 5.86 1 10c1.69 4.14 5.95 7 11 7s9.31-2.86 11-7c-1.69-4.14-5.95-7-11-7zm0 11.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 5.5 12 5.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5z\"/></svg>",
+      "tags": ["Biometría", "Tarjetas RFID", "Matrículas", "Gestión Cloud"]
+    },
+    {
+      "id": "deteccion-incendios",
+      "titulo": "Detección de Incendios",
+      "slug": "servicios/controlincendio.html",
+      "descricao": "Detección temprana de humo y calor con sistemas de alarma automáticos y notificaciones críticas instantáneas.",
+      "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 2C11.38 2 10.71 2.37 10.16 3.06C8.25 5.46 8.5 7.9 9.39 9.42C9.8 10.11 9.71 11 9.15 11.6C8.75 12.03 8.16 12.22 7.6 12.08C6.96 11.93 6.46 11.45 6.27 10.84C5.74 9.14 6.27 7.57 6.78 6.5C5.1 7.74 4 9.74 4 12C4 16.42 7.58 20 12 20C16.42 20 20 16.42 20 12C20 7.84 16.8 4.29 12 2Z\"/></svg>",
+      "tags": ["Detección de humo", "Sensores térmicos", "Alertas 24/7"]
+    },
+    {
+      "id": "monitoreo-remoto",
+      "titulo": "Monitoreo Remoto 24/7",
+      "slug": "servicios/monitoreoremoto.html",
+      "descricao": "Vea sus cámaras en tiempo real desde cualquier lugar. Alertas instantáneas por WhatsApp.",
+      "icone": "<svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M12 3C6.95 3 2.69 5.86 1 10c1.69 4.14 5.95 7 11 7s9.31-2.86 11-7c-1.69-4.14-5.95-7-11-7zm0 11.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 5.5 12 5.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5z\"/></svg>",
+      "tags": ["Tiempo real", "Alertas push", "Multi-cam"]
     }
+  ];
 
- try {
-      const [resServicios, resLocale] = await Promise.all([
-        fetch('js/servicios.json'),
-        fetch(`/assets/locales/${idiomaAtual}.json`).catch(() => null) 
-      ]);
+  container.innerHTML = '';
+  const fragmento = document.createDocumentFragment();
 
-      if (!resServicios.ok) throw new Error('Error al cargar el archivo de servicios.');
-      
-      const servicios = await resServicios.json();
-      
-      let localesData = {};
-      if (resLocale && resLocale.ok) {
-        const localeJson = await resLocale.json();
-        localesData = localeJson.services || {};
-      }
-
-      container.innerHTML = '';
-      const fragmento = document.createDocumentFragment();
-
-      servicios.forEach(servicio => {
-        const traduccionCard = localesData[servicio.id] || {};
-        
-        const tituloFinal = traduccionCard.titulo || servicio.titulo;
-        const descFinal = traduccionCard.descricao || servicio.descricao;
-        const tagsFinal = traduccionCard.tags || servicio.tags;
-
-        let tagsHTML = '';
-        if (tagsFinal && Array.isArray(tagsFinal)) {
-          tagsHTML = '<div class="tag-group" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 15px;">';
-          tagsFinal.forEach(tag => {
-            tagsHTML += `<span class="tag" style="background: var(--bg-subtle, #FFFBEB); color: var(--text-primary, #060913); font-size: 0.75rem; font-weight: 600; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border-gold, rgba(241, 228, 6, 0.3));">${tag}</span>`;
-          });
-          tagsHTML += '</div>';
-        }
-
-        const elementoTarjeta = document.createElement('a');
-        elementoTarjeta.href = servicio.slug;
-        elementoTarjeta.className = 'service-card-dynamic';
-        elementoTarjeta.style.cssText = `
-          text-decoration: none; 
-          color: inherit; 
-          display: flex; 
-          flex-direction: column; 
-          justify-content: space-between; 
-          background: var(--bg-surface, #FFFEFA); 
-          border: 1px solid var(--border-light, #E5E7EB); 
-          border-radius: 12px; 
-          padding: 30px; 
-          box-shadow: var(--shadow-hover); 
-          transition: var(--transition-smooth, all 0.4s cubic-bezier(0.16, 1, 0.3, 1));
-        `;
-
-        elementoTarjeta.innerHTML = `
-          <div>
-            <div class="service-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-              <div class="service-icon" style="color: var(--brand-yellow, #f1e406); display: flex; align-items: center; justify-content: center;">
-                ${servicio.icone}
-              </div>
-              <h3 style="color: var(--text-primary, #060913); font-size: 1.25rem; margin: 0;">${tituloFinal}</h3>
-            </div>
-            <p style="color: var(--text-secondary, #374151); font-size: 0.95rem; line-height: 1.5; margin: 0 0 20px 0;">${descFinal}</p>
-          </div>
-          ${tagsHTML}
-        `;
-
-        elementoTarjeta.addEventListener('mouseenter', () => {
-          elementoTarjeta.style.borderColor = 'var(--brand-yellow, #f1e406)';
-          elementoTarjeta.style.transform = 'translateY(-4px)';
-          elementoTarjeta.style.boxShadow = 'var(--shadow-premium)';
-        });
-        
-        elementoTarjeta.addEventListener('mouseleave', () => {
-          elementoTarjeta.style.borderColor = 'var(--border-light, #E5E7EB)';
-          elementoTarjeta.style.transform = 'translateY(0)';
-          elementoTarjeta.style.boxShadow = 'var(--shadow-hover)';
-        });
-
-        fragmento.appendChild(elementoTarjeta);
+  servicios.forEach(servicio => {
+    let tagsHTML = '';
+    if (servicio.tags && Array.isArray(servicio.tags)) {
+      tagsHTML = '<div class="tag-group" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 15px;">';
+      servicio.tags.forEach(tag => {
+        tagsHTML += `<span class="tag" style="background: var(--bg-subtle, #FFFBEB); color: var(--text-primary, #060913); font-size: 0.75rem; font-weight: 600; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border-gold, rgba(241, 228, 6, 0.3));">${tag}</span>`;
       });
-
-      container.appendChild(fragmento);
-
-    } catch (error) {
-      console.error('Error al cargar servicios:', error);
-      container.innerHTML = '<p style="color: var(--color-error);">No ha sido posible cargar los servicios en este momento.</p>';
+      tagsHTML += '</div>';
     }
-  }
 
-  // Carrega ao iniciar
-  carregarECriarServicos();
+    const elementoTarjeta = document.createElement('a');
+    elementoTarjeta.href = servicio.slug;
+    elementoTarjeta.className = 'service-card-dynamic';
 
-  
-  const langSelect = document.getElementById('langSelect');
-  if (langSelect) {
-    langSelect.addEventListener('change', function () {
-      localStorage.setItem('site_lang', this.value);
-      carregarECriarServicos();
-    });
-  }
+    elementoTarjeta.innerHTML = `
+      <div class="service-card-inner-content">
+        <div class="service-header">
+          <div class="service-icon">
+            ${servicio.icone}
+          </div>
+          <h3>${servicio.titulo}</h3>
+        </div>
+        <p>${servicio.descricao}</p>
+        ${tagsHTML}
+      </div>
+      <div class="service-footer">
+        <span class="service-action">Saber más <span class="arrow">→</span></span>
+      </div>
+    `;
+
+    fragmento.appendChild(elementoTarjeta);
+  });
+
+  container.appendChild(fragmento);
 });
