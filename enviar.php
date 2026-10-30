@@ -86,3 +86,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<p><b>Mensagem:</b> " . htmlspecialchars($mensaje) . "</p>";
     exit;
 }
+
+    if (mail($destinatario, $asunto, $body, $headers)) {
+        echo "<script>alert('" . $mensagens[$lang]['sucesso'] . "'); window.location.href = 'contacto.html';</script>";
+    } else {
+        echo "<script>alert('" . $mensagens[$lang]['erro'] . "'); window.location.href = 'contacto.html';</script>";
+    }
+}
+?>  
