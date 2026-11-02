@@ -1,4 +1,35 @@
 {
+
+
+
+    "video_features_heading": "Características Técnicas Principales",
+    "video_features_desc": "Tecnología de última generación instalada por ingenieros especializados en Barcelona:",
+    
+    "video_feat1_title": "Resolución 4K Real",
+    "video_feat1_desc": "Captura de rostros, matrículas e indicios críticos con claridad absoluta y zoom digital sin pérdidas.",
+    
+    "video_feat2_title": "Visión Nocturna IR",
+    "video_feat2_desc": "Sensores de alta sensibilidad y tecnología Smart IR para imágenes nítidas en total oscuridad.",
+    
+    "video_feat3_title": "Analítica IA",
+    "video_feat3_desc": "Filtros inteligentes que diferencian personas y vehículos, eliminando falsas alarmas.",
+    
+    "video_feat4_title": "Acceso Remoto",
+    "video_feat4_desc": "Monitoreo en tiempo real de todas las cámaras directo en el smartphone con encriptación.",
+
+    "sim_box_title": "Calculadora Rápida de Videovigilancia",
+    "sim_box_desc": "Estime rápidamente el tipo de proyecto ideal para su espacio en Barcelona.",
+    "sim_opt_hogar": "Hogar / Residencial",
+    "sim_opt_negocio": "Comercio / Negocio",
+    "sim_opt_industrial": "Nave Industrial",
+    "sim_cam_1": "1 a 4 Cámaras",
+    "sim_cam_2": "5 a 8 Cámaras",
+    "sim_cam_3": "Más de 8 Cámaras",
+    "sim_btn_action": "Pedir Asesoramiento",
+
+  "promo_banner_sub": "Protección profesional adaptada a su presupuesto en Barcelona." ,
+
+
   "meta": {
     "title": "Alarmas INSA | Alarmas para Casas y Negocios en Barcelona",
     "description": "Proteja su hogar o empresa en Barcelona con sistemas de alarma avanzados. Máxima seguridad e instalación profesional.",

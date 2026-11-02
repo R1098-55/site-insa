@@ -1,4 +1,38 @@
 {
+
+
+
+    "video_features_heading": "Main Technical Features",
+    "video_features_desc": "Latest generation technology installed by specialized engineers in Barcelona:",
+    
+    "video_feat1_title": "Real 4K Resolution",
+    "video_feat1_desc": "Capture faces, license plates, and critical evidence with absolute clarity and lossless digital zoom.",
+    
+    "video_feat2_title": "IR Night Vision",
+    "video_feat2_desc": "High-sensitivity sensors and Smart IR technology for sharp images in total darkness.",
+    
+    "video_feat3_title": "AI Analytics",
+    "video_feat3_desc": "Intelligent filters that differentiate people and vehicles, eliminating false alarms.",
+    
+    "video_feat4_title": "Remote Access",
+    "video_feat4_desc": "Real-time monitoring of all cameras directly on your smartphone with encryption.",
+
+    "sim_box_title": "Quick Video Surveillance Calculator",
+    "sim_box_desc": "Quickly estimate the ideal project type for your space in Barcelona.",
+    "sim_opt_hogar": "Home / Residential",
+    "sim_opt_negocio": "Retail / Business",
+    "sim_opt_industrial": "Industrial Warehouse",
+    "sim_cam_1": "1 to 4 Cameras",
+    "sim_cam_2": "5 to 8 Cameras",
+    "sim_cam_3": "More than 8 Cameras",
+    "sim_btn_action": "Request Consultation",
+
+  "promo_banner_sub": "Professional protection tailored to your budget in Barcelona.",
+
+
+
+
+
   "meta": {
     "title": "Alarmas INSA | Alarm Systems and Security in Barcelona",
     "description": "Protect your home or business in Barcelona with advanced alarm systems. Professional installation and maximum security.",

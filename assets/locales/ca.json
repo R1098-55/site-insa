@@ -1,4 +1,33 @@
 {
+
+
+    "video_features_heading": "Característiques Tècniques Principals",
+    "video_features_desc": "Tecnologia d'última generació instal·lada per enginyers especialitzats a Barcelona:",
+    
+    "video_feat1_title": "Resolució 4K Real",
+    "video_feat1_desc": "Captura de rostres, matrícules i indicis crítics amb claredat absoluta i zoom digital sense pèrdues.",
+    
+    "video_feat2_title": "Visió Nocturna IR",
+    "video_feat2_desc": "Sensors d'alta sensibilitat i tecnologia Smart IR per a imatges nítides en total foscor.",
+    
+    "video_feat3_title": "Analítica IA",
+    "video_feat3_desc": "Filtres intel·ligents que diferencien persones i vehicles, eliminant falses alarmes.",
+    
+    "video_feat4_title": "Accés Remot",
+    "video_feat4_desc": "Monitoratge en temps real de totes les càmeres directe al telèfon intel·ligent amb xifratge.",
+
+    "sim_box_title": "Calculadora Ràpida de Videovigilància",
+    "sim_box_desc": " Estimi ràpidament el tipus de projecte ideal per al seu espai a Barcelona.",
+    "sim_opt_hogar": "Llar / Residencial",
+    "sim_opt_negocio": "Comerç / Negoci",
+    "sim_opt_industrial": "Nau Industrial",
+    "sim_cam_1": "1 a 4 Càmeres",
+    "sim_cam_2": "5 a 8 Càmeres",
+    "sim_cam_3": "Més de 8 Càmeres",
+    "sim_btn_action": "Demanar Assessorament",
+  "promo_banner_sub": "Protecció professional adaptada al seu pressupost a Barcelona.",
+
+
   "meta": {
     "title": "Alarmes INSA | Sistemes d'Alarma i Seguretat a Barcelona",
     "description": "Protegiu la vostra llar o negoci a Barcelona amb sistemes d'alarma avançats. Màxima seguretat i instal·lació professional.",
