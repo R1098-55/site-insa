@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
@@ -12,99 +11,194 @@
         content="instalacion de alarmas barcelona, alarmas para casas, alarmas para negocios, camaras de seguridad">
 
     <link rel="stylesheet" href="../assets/css/styles.css">
+    
     <style>
-        .site-header {
-            background-color: var(--bg-surface, #f1e406);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        /* Estilo Apple com Fundo Amarelo Claro Imersivo */
+        body {
+            background-color: #FFFDF0; /* Amarelo claríssimo / creme de fundo */
+            color: #1d1d1f;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
+        /* Header Translúcido Estilo Apple (Com fundo escuro elegante para contraste) */
+        .site-header {
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(241, 228, 6, 0.3);
+        }
+
+        /* Hero / Topo Estilo Apresentação de Produto Apple */
         .page-header-container {
             text-align: center;
-            padding: 60px 20px 80px 20px;
-            background-color: #0b0f19;
+            padding: 100px 20px 80px 20px;
+            background-color: #0b0f19; /* Mantém o topo escuro corporativo imponente */
+            color: #fff;
         }
 
         .breadcrumb {
-            font-size: 0.9rem;
-            color: #f1e406;
-            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: #86868b;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
         }
 
         .breadcrumb a {
             color: #f1e406;
             text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
         }
 
         .breadcrumb span {
-            color: #ccc;
+            color: #86868b;
         }
 
         .badge-category {
             display: inline-block;
-            background: rgba(243, 232, 20, 0.1);
             color: #f1e406;
-            padding: 6px 14px;
-            border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 15px;
-            border: 1px solid rgba(241, 228, 6, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .content-card-main {
-            max-width: 1100px;
-            margin: -30px auto 60px auto;
-            background: #FFFBEB;
-            color: #222;
-            border-radius: 16px;
-            padding: 50px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(241, 228, 6, 0.3);
-            border-left: 6px solid #f1e406;
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #f5f5f7;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.015em;
         }
 
-        .segments-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
-            margin-top: 30px;
-
+        .page-title span {
+            color: #f1e406;
         }
 
-        .segment-box {
-            background: var(--bg-card, #dbd956);
-            border: 1px solid var(--border-light, #dbd956);
-            border-radius: 12px;
-            padding: 30px;
+        .page-subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #a1a1a6;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Seções Estilo Faixas Horizontais (Amarelo Claro e Alternado Sutil) */
+        .apple-section {
+            padding: 100px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
         }
 
-        .whatsapp-btn-card {
+        .apple-section:nth-child(odd) {
+            background-color: #FFFDF0; /* Amarelo claro principal */
+        }
+
+        .apple-section:nth-child(even) {
+            background-color: #F7F3D7; /* Tom de amarelo claro um pouco mais fechado para contraste suave */
+        }
+
+        .apple-section-content {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* Inverte a ordem em seções alternadas */
+        .apple-section.reverse .apple-section-content {
+            direction: rtl;
+        }
+
+        .apple-section.reverse .apple-section-text {
+            direction: ltr;
+        }
+
+        .apple-section-text h3 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #0b0f19; /* Títulos escuros marcantes */
+            margin: 0 0 20px 0;
+            letter-spacing: -0.01em;
+        }
+
+        .apple-section-text p {
+            font-size: 1.1rem;
+            color: #4b5563; /* Texto cinza escuro corporativo para excelente leitura */
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+        }
+
+        /* Imagens Imersivas Sem Caixas (Sombra elegante no claro) */
+        .apple-image-wrapper {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+            background: #fff;
+        }
+
+        .apple-image-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 380px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .apple-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Botão Minimalista Estilo Apple (Preto com destaque amarelo para contraste no fundo claro) */
+        .apple-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            background-color: #f1e406;
-            color: #060913;
-            padding: 10px 16px;
-            border-radius: 20px;
+            background-color: #0b0f19;
+            color: #f1e406;
+            padding: 12px 28px;
+            border-radius: 980px;
+            font-weight: 600;
+            font-size: 0.95rem;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-top: 20px;
-           transition: var(--transition-smooth);
-            box-shadow: 0 10px 25px rgba(19, 18, 13, 0.4);
+            transition: background 0.3s, transform 0.2s;
+            border: 1px solid #0b0f19;
         }
 
-        .whatsapp-btn-card:hover {
-            background-color: #e2dd78;
+        .apple-btn:hover {
+            background-color: #f1e406;
+            color: #0b0f19;
+            transform: scale(1.02);
+        }
+
+        /* Responsividade para Celulares */
+        @media (max-width: 768px) {
+            .apple-section-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .apple-section.reverse .apple-section-content {
+                direction: ltr;
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+            .apple-section-text h3 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -113,27 +207,26 @@
 
     <header class="site-header">
         <div class="container header-content"
-            style="display: flex; justify-content: space-between; align-items: center; padding: 20px; max-width: 1200px; margin: 0 auto;">
+            style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; max-width: 1200px; margin: 0 auto;">
             <a href="../index.html" class="logo" style="text-decoration: none;">
                 <h2
-                    style="font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1;">
+                    style="font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; display: inline-flex; align-items: baseline; gap: 8px; line-height: 1; margin: 0;">
                     <span class="logo-alarmas"
-                        style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #060913;">Alarmas</span>
+                        style="font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #ffffff !important;">Alarmas</span>
                     <span style="color: #f1e406; text-shadow: 0 1.5px 2px rgba(0,0,0,0.3);">INSA</span>
                     <span
-                        style="font-size: 0.85rem; font-weight: 800; background: #f1e406; color: #060913; padding: 3px 8px; border-radius: 4px; position: relative; top: 4px;box-shadow: 0 3px 8px rgba(0,0,0,0.3)">1983</span>
+                        style="font-size: 0.85rem; font-weight: 800; background: #f1e406; color: #060913; padding: 3px 8px; border-radius: 4px; position: relative; top: 4px; box-shadow: 0 3px 8px rgba(0,0,0,0.3)">1983</span>
                 </h2>
             </a>
 
             <nav style="display: flex; gap: 25px; align-items: center;">
-
                 <a href="../index.html#servicios" style="color: #ccc; text-decoration: none; font-weight: 500;"
                     data-i18n="nav_services">Servicios</a>
                 <a href="../index.html#contacto" style="color: #f1e406; text-decoration: none; font-weight: 500;"
                     data-i18n="nav_contact">Contacto</a>
 
                 <select id="langSelect" class="lang-selector"
-                    style="background: #060913; color: #fff; border: 1px solid #333; padding: 5px 8px; border-radius: 6px; cursor: pointer;">
+                    style="background: #111; color: #fff; border: 1px solid #333; padding: 6px 10px; border-radius: 6px; cursor: pointer;">
                     <option value="ca">CAT 🇪🇸</option>
                     <option value="es" selected>ESP 🇪🇸</option>
                     <option value="en">ENG 🇬🇧</option>
@@ -142,173 +235,99 @@
         </div>
     </header>
 
-
     <div class="page-header-container">
         <div class="breadcrumb">
-            <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> /
-
-            <a href="../index.html#soluciones" data-i18n="breadcrumb_services">Soluciones</a> /
-
-            <span style="font-size: 1.1rem ;" data-i18n="breadcrumb_alarma_hogar"></span>
+            <a href="../index.html" data-i18n="breadcrumb_home">Inicio</a> / 
+            <a href="../index.html#soluciones" data-i18n="breadcrumb_services">Soluciones</a> / 
+            <span data-i18n="breadcrumb_alarma_hogar">Sistemas de Alarma</span>
         </div>
-        <div class="badge-category" style="font-size: 1.80rem;" data-i18n="badge_protection_247">Protección Inteligente
-            24/7</div>
-
-        <p class="page-subtitle"
-            style="font-size: 1.13rem; font-weight: 500; color: #e9e5af; max-width: 950px; margin: 0 auto; line-height: 1.8; "
-            data-i18n="hero_desc">
-
+        <div class="badge-category" data-i18n="badge_protection_247">Protección Inteligente 24/7</div>
+        <h1 class="page-title" data-i18n="title_solutions">Protección a Medida. <br><span>Seguridad absoluta.</span></h1>
+        <p class="page-subtitle" data-i18n="hero_desc">
+            Sistemas de alarma avanzados conectados a central receptora para hogares, negocios e industrias en Barcelona.
         </p>
     </div>
 
-
-    <main class="content-card-main">
-        <h2 style="margin-bottom: 20px; font-size: 1.8rem; color: #060913;" data-i18n="title_solutions">Protección a
-            Medida</h2>
-        <p style="color: #666; margin-bottom: 30px;" data-i18n="alarmas_hogar_msg">Seleccione la opción que mejor se
-            adapta a sus necesidades...</p>
-
-        <div class="segments-grid"
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 25px;">
-
-
-            <div class="segment-box"
-                style="background: #FFFFFF; border: 1px solid #ebec8e; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <div style="text-align: center; overflow: hidden; border-radius: 18px; background: #FFFBEB;">
-                        <img src="../assets/img/CASA.jpg" alt="Cámara Bullet 8MP (4K) Pro"
-                            style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 18px; opacity: 1.92; transition: opacity 0.9s ease;"
-                            onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.92'">
-                    </div>
-                </div>
-
-                <h3 style="color: #060913; text-align: center; font-size: 1.1rem; margin-bottom: 15px; margin-top: 15px;"
-                    data-i18n="alarmas_hogar">
-                    Alarmas Para Hogar</h3>
-                <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_descricao">
-                    La alarma para hogar está conectada a nuestra propia Central Receptora de alarmas.
-                    Nuestros operadores se pondrán en contacto contigo en caso de ocurrir cualquier incidencia.
-                    Además, si es necesario enviarán el servicio de acuda.
+    <!-- SEÇÃO 1: HOGAR (Normal) -->
+    <section class="apple-section">
+        <div class="apple-section-content">
+            <div class="apple-section-text">
+                <span style="color: #857d02; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">Residencial</span>
+                <h3 data-i18n="alarmas_hogar">Alarmas Para Hogar</h3>
+                <p data-i18n="alarmas_hogar_descricao">
+                    La alarma para hogar está conectada a nuestra propia Central Receptora. Operadores se pondrán en contacto ante cualquier incidencia y enviarán el servicio de acuda si es necesario.
                 </p>
-
-                <div style="margin-top: 20px; text-align: center;">
-                    <a href="https://wa.me/34933004024?text=Hola,%20estoy%20interesado%20en%20una%20alarma"
-                        target="_blank" class="whatsapp-btn-card">
-                        <span data-i18n="btn_saibamas">Saíba más..</span>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class=" segment-box"
-            style="background: #FFFFFF; border: 1px solid #ebec8e; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
-           <div>
-                    <div style="text-align: center; overflow: hidden; border-radius: 18px; background: #FFFBEB;">
-                        <img src="../assets/img/Sua_Empresa.png" alt="Cámara Bullet 8MP (4K) Pro"
-                            style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 18px; opacity: 1.92; transition: opacity 0.9s ease;"
-                            onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.92'">
-                    </div>
-                </div>
-           
-           
-           
-           
-            <div>
-                <div style="font-size: 2.2rem; margin-bottom: 15px;">🏢</div>
-
-                <h3 style="color: #060913; font-size: 1.1rem; margin-bottom: 15px;" data-i18n="alarmas_hogar_empresa">
-                    Empresas y Negocios</h3>
-                <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_empresa.descricao">
-                    Protege tu local comercial con videovigilancia HD, control de accesos y conexión a
-                    Central
-                    Receptora.
-                </p>
-            </div>
-            <div style="margin-top: 20px;">
-                <a href="https://wa.me/34933004024?text=Hola,%20necesito%20información" target="_blank"
-                    class="whatsapp-btn-card">
+                <a href="https://wa.me/34933004024?text=Hola,%20estoy%20interesado%20en%20una%20alarma%20para%20hogar" target="_blank" class="apple-btn">
                     <span data-i18n="btn_saibamas">Saíba más..</span>
                 </a>
             </div>
-        </div>
-
-
-        <div class="segment-box"
-            style="background: #FFFFFF; border: 1px solid #ebec8e; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
-            
-             <div>
-                    <div style="text-align: center; overflow: hidden; border-radius: 18px; background: #FFFBEB;">
-                        <img src="../assets/img/Industrial_INSA.png" alt="Cámara Bullet 8MP (4K) Pro"
-                            style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 18px; opacity: 1.92; transition: opacity 0.9s ease;"
-                            onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.92'">
-                    </div>
-                </div>
-            
-            
-            <div>
-                <div style="font-size: 2.2rem; margin-bottom: 15px;">🏭</div>
-
-                <h3 style="color: #060913; font-size: 1.1rem; margin-bottom: 15px;" data-i18n="alarmas_hogar_indust">
-                    Industria y Naves</h3>
-                <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_indust.descricao">
-                    Proyectos de ingeniería de seguridad a medida, analítica de vídeo con IA y protección contra
-                    incendios.
-                </p>
+            <div class="apple-image-wrapper">
+                <img src="../assets/img/CASA.jpg" alt="Alarmas Para Hogar">
             </div>
-            <div style="margin-top: 20px;">
-                <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas" target="_blank"
-                    class="whatsapp-btn-card">
+        </div>
+    </section>
+
+    <!-- SEÇÃO 2: EMPRESAS (Invertida) -->
+    <section class="apple-section reverse">
+        <div class="apple-section-content">
+            <div class="apple-section-text">
+                <span style="color: #857d02; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">Comercial</span>
+                <h3 data-i18n="alarmas_hogar_empresa">Empresas y Negocios</h3>
+                <p data-i18n="alarmas_hogar_empresa.descricao">
+                    Protege tu local comercial con videovigilancia HD, control de accesos inteligente y conexión directa a Central Receptora 24 horas.
+                </p>
+                <a href="https://wa.me/34933004024?text=Hola,%20necesito%20información%20para%20mi%20negocio" target="_blank" class="apple-btn">
                     <span data-i18n="btn_saibamas">Saíba más..</span>
                 </a>
             </div>
-        </div>
-
-
-        <div class="segment-box"
-            style="background: #FFFFFF; border: 1px solid #ebec8e; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
-            
-            <div>
-                    <div style="text-align: center; overflow: hidden; border-radius: 18px; background: #FFFBEB;">
-                        <img src="../assets/img/Centros_Públicos.png" alt="Cámara Bullet 8MP (4K) Pro"
-                            style="width: 100%; max-height: 180px; object-fit: cover; border-radius: 18px; opacity: 1.92; transition: opacity 0.9s ease;"
-                            onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.92'">
-                    </div>
-                </div>
-            
-            <div>
-                <div style="font-size: 2.2rem; margin-bottom: 15px;">🏛️</div>
-
-                <h3 style="color: #060913; font-size: 1.1rem; margin-bottom: 15px;" data-i18n="alarmas_hogar_centro">
-                    Centros Públicos</h3>
-                <p style="color: #000000; line-height: 1.5;" data-i18n="alarmas_hogar_centro.descricao">
-                    Sistemas homologados de alta fiabilidad para edificios institucionales, colegios y centros
-                    deportivos.
-                </p>
+            <div class="apple-image-wrapper">
+                <img src="../assets/img/Sua_Empresa.png" alt="Empresas y Negocios">
             </div>
-            <div style="margin-top: 20px;">
-                <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas%20para%20centros%20publicos"
-                    target="_blank" class="whatsapp-btn-card">
+        </div>
+    </section>
+
+    <!-- SEÇÃO 3: INDUSTRIA (Normal) -->
+    <section class="apple-section">
+        <div class="apple-section-content">
+            <div class="apple-section-text">
+                <span style="color: #857d02; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">Industrial</span>
+                <h3 data-i18n="alarmas_hogar_indust">Industria y Naves</h3>
+                <p data-i18n="alarmas_hogar_indust.descricao">
+                    Proyectos de ingeniería de seguridad a medida, analítica de vídeo con IA y protección perimetral avanzada para grandes superficies.
+                </p>
+                <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas%20para%20industria" target="_blank" class="apple-btn">
                     <span data-i18n="btn_saibamas">Saíba más..</span>
                 </a>
             </div>
+            <div class="apple-image-wrapper">
+                <img src="../assets/img/Industrial_INSA.png" alt="Industria y Naves">
+            </div>
         </div>
+    </section>
 
+    <!-- SEÇÃO 4: CENTROS PÚBLICOS (Invertida) -->
+    <section class="apple-section reverse">
+        <div class="apple-section-content">
+            <div class="apple-section-text">
+                <span style="color: #857d02; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">Institucional</span>
+                <h3 data-i18n="alarmas_hogar_centro">Centros Públicos</h3>
+                <p data-i18n="alarmas_hogar_centro.descricao">
+                    Sistemas homologados de alta fiabilidad para edificios institucionales, colegios, centros deportivos y espacios de gran concurrencia.
+                </p>
+                <a href="https://wa.me/34933004024?text=Hola,%20busco%20sistemas%20para%20centros%20publicos" target="_blank" class="apple-btn">
+                    <span data-i18n="btn_saibamas">Saíba más..</span>
+                </a>
+            </div>
+            <div class="apple-image-wrapper">
+                <img src="../assets/img/Centros_Públicos.png" alt="Centros Públicos">
+            </div>
         </div>
-    </main>
+    </section>
 
-
-
-
-
-
-
-    <footer
-        style="background: #05070d; color: #888; text-align: center; padding: 30px 0; margin-top: 60px; font-size: 0.9rem;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+    <footer style="background: #0b0f19; color: #86868b; text-align: center; padding: 50px 0; font-size: 0.85rem; border-top: 3px solid #f1e406;">
+        <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
             <p>&copy; 2026 Alarmas INSA Barcelona. Todos los derechos reservados.</p>
-            <p style="margin-top: 5px; font-size: 0.8rem; color: #555;">Desarrollado Por Ricardo Mendes.</p>
+            <p style="margin-top: 5px; color: #555;">Desarrollado Por Ricardo Mendes.</p>
         </div>
     </footer>
 
